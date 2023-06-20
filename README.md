@@ -25,11 +25,12 @@ sh setup.sh
 After installing the required packages:
 
 - Run **blazegraph.jar** locally:
-- If the endpoint is empty, upload from the Blazegraph interface (**http://localhost:9999/**) both **data/odi.owl** and **data/bacodi.ttl**
-- Update the path to the endpoint in **app.py** 
 ```
 cd data
 java -server -Xmx4g -jar blazegraph.jar
 ```
+- If the endpoint is empty, upload from the Blazegraph interface (**http://localhost:9999/**) both **data/odi.owl** and **data/bacodi.ttl**
+- Update the path to the endpoint in **app.py** 
+
 - Run **app.py**
 - Open the application in your browser: **http://localhost:8000/**
