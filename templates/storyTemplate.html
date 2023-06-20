@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Pasqual Valentina, Enrica Bruno, Francesca Tomasi">
+  <title>BACODI</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+ <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+ <div id="graphContainer"></div>
+
+
+
+
+</style>
+</head>
+
+<body>
+
+  <!-- sticky sidebar -->
+    <div class="container-fluid overflow-hidden sidebar">
+      <div class="row vh-100 overflow-auto">
+          <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top pt-3">
+              <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
+                <a href="/" class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5">O<span class="d-none d-sm-inline">DI</span></span>
+                </a>
+                <p class="side-small-text"><i>Esplorazione semantica della macchina narrativa combinatoria de "Il castello dei destini incrociati" di Italo Calvino</i></p>
+                <hr>
+                  <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link px-sm-0 px-2">
+                              <i class="bi bi-arrow-down-left-square-fill"></i><span class="ms-1 d-none d-sm-inline">Indici</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../static/network.html" data-bs-toggle="collapse" class="nav-link px-sm-0 px-2">
+
+                            <i class="bi bi-bar-chart-line-fill"></i><span class="ms-1 d-none d-sm-inline">Visualizzazioni dei Dati</span> </a>
+                      </li>
+                      <li>
+                          <a href="#" class="nav-link px-sm-0 px-2">
+                            <i class="bi bi-journal-bookmark-fill"></i><span class="ms-1 d-none d-sm-inline">Documentazione</span> </a>
+                      </li>
+                      <li>
+                          <a href="#" class="nav-link px-sm-0 px-2">
+                            <i class="bi bi-person-circle"></i><span class="ms-1 d-none d-sm-inline">Contatti</span> </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col d-flex flex-column h-sm-100">
+              <main class="row overflow-auto">
+                  <div class="col pt-4">
+
+  <!-- main content -->
+  <main class="d-flex flex-nowrap">
+
+
+    <div class="card w-100">
+      <div class="card-header bg-dark">
+        <h1 class="text-white text-center">{{storyTitle}} {%if storyName != '' %}, <i>{{storyName}}</i>{% endif %}</h1>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-5">
+            <h5 class="card-title"></h5>
+            <p class="card-text">TO DO</p>
+          </div>
+          <div class="col-md-7">
+            <h5>Collegamenti semantici e relazioni narrative tra le rappresentazioni delle carte</h5>
+            <div id="legend-container">
+            <div id="legend"></div>
+            <div id="zoom-buttons" class="d-flex justify-content-end">
+          <button class="btn btn-outline-dark" onclick="zoomIn()"><i class="bi bi-zoom-in"></i></button>
+          <button class="btn btn-outline-dark" onclick="zoomOut()"><i class="bi bi-zoom-out"></i></button>
+          <button class="btn btn-outline-dark" onclick="resetZoom()"><i class="bi bi-arrow-counterclockwise"></i></button>
+        </div>
+        </div>
+        <div id="network"></div>
+                    </div>
+          </div>
+<div id="embedded-content"></div>
+      </div>
+      <div class="card-footer text-muted">
+        <h5 class="card-title">Le carte della Storia</h5>
+        <ul class="list-group list-group-flush">
+           {% for res in storyResults['results']['bindings'] %}
+
+            <li class="list-group-item" style="background-color:transparent">
+
+              <div class="row w-100">
+                <div class="col-md-2">
+                      Posizione <span class="badge badge-light bg-dark">{{res['position']['value']}}</span>
+                </div>
+                  <div class="col-md-5">
+                    {% for res2 in storyRepresentationResult['results']['bindings'] %}
+                    {% if res2['storyCard']['value'] == res['storyCard']['value'] %}
+                    Carta: <a href={{res['deckCard']['value']|replace('https://purl.org/ebr/odi/data/', '../carte/')}} class="card-text">{{res["deckCardLabel"]['value']}}</a>
+                    <p class="card-text">Significato: <a href={{res2['meaning']['value']|replace('https://purl.org/ebr/odi/data/', '../significati/')}} class="card-text">{{ res2['meaningLabel']['value'] }}</a></p>
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                <div class="col-md-5">
+                  <p class="card-text">{{res['texts']['value']}}</p>
+                </div>
+              </div>
+            </li>
+
+         {% endfor %}
+
+       </ul>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script type="text/javascript">
+   // Create a new network instance
+   var allNodes = [
+   {% for res in storyRelationsResult['results']['bindings'] %}
+   { id:"{{res['representation']['value']}}", label:"{{res['reprLabel']['value']}}", classLabel:"{{res['classLabel']['value']}}"},
+   { id:"{{res['representation2']['value']}}", label:"{{res['reprLabel2']['value']}}", classLabel:"{{res['classLabel2']['value']}}"},
+   {% endfor %}
+ ]
+
+  var uniqueNodes = Array.from(new Set(allNodes.map(JSON.stringify)), JSON.parse);
+
+   var container = document.getElementById("network")
+   var data = {
+     nodes: uniqueNodes,
+
+     edges: [
+
+    {% for res in storyRelationsResult['results']['bindings'] %}
+      { from:  "{{res['representation']['value']}}", to: "{{res['representation2']['value']}}" , label:"{{res['relLabel']['value']}}"},
+    {% endfor %}
+     ]
+   };
+
+
+   // Set colors based on classLabel value
+data.nodes.forEach(function(node) {
+  var color;
+  if (node.classLabel === "Personaggio") {
+    color = "#7FB77E";
+  } else if (node.classLabel === "Oggetto inanimato") {
+    color = "#F7F6DC";
+  } else if (node.classLabel === "Luogo ideale") {
+    color = "#B1D7B4";
+  } else if (node.classLabel === "Evento") {
+    color = "#FFC090";
+  } else {
+    color = "gray";
+  }
+  node.color = color;
+});
+
+   var options = {
+     layout: {
+         hierarchical: false, // Disable hierarchical layout
+         randomSeed: 2, // Set a random seed for consistent results
+         improvedLayout: true, // Enable improved layout algorithm
+       },
+  physics: {
+    barnesHut: {
+      gravitationalConstant: -2000,
+      centralGravity: 0.3,
+      springLength: 250,
+      springConstant: 0.05,
+      damping: 0.09,
+      avoidOverlap: 0
+    },
+    maxVelocity: 50,
+    minVelocity: 0.1,
+    solver: "barnesHut",
+    stabilization: {
+      iterations: 250
+    }
+  }
+};
+
+// Create the legend dynamically
+   var legendContainer = document.getElementById("legend");
+   var legendItems = {};
+
+   data.nodes.forEach(function(node) {
+     if (!legendItems[node.classLabel]) {
+       legendItems[node.classLabel] = node.color;
+     }
+   });
+
+   for (var classLabel in legendItems) {
+     var legendItem = document.createElement("span");
+     legendItem.className = "legend-item";
+
+     var legendColor = document.createElement("span");
+     legendColor.className = "legend-color";
+     legendColor.style.backgroundColor = legendItems[classLabel];
+
+     var legendLabel = document.createElement("span");
+     legendLabel.innerText = classLabel;
+
+     legendItem.appendChild(legendColor);
+     legendItem.appendChild(legendLabel);
+
+     legendContainer.appendChild(legendItem);
+
+   }
+
+   var network = new vis.Network(container, data, options);
+
+   // Zoom In function
+   function zoomIn() {
+     var scale = network.getScale();
+     network.moveTo({
+       scale: scale * 1.1, // Increase the scale by 10%
+       animation: true, // Enable animation
+       animationDuration: 1000 // Animation duration in milliseconds
+     });
+   }
+
+   // Zoom Out function
+   function zoomOut() {
+     var scale = network.getScale();
+     network.moveTo({
+       scale: scale * 0.9, // Decrease the scale by 10%
+       animation: true, // Enable animation
+       animationDuration: 1000 // Animation duration in milliseconds
+     });
+   }
+
+   // Reset Zoom function
+function resetZoom() {
+  network.moveTo({
+    scale: 0.7, // Set the scale to the default value (1)
+    animation: true, // Enable animation
+    animationDuration: 1000 // Animation duration in milliseconds
+  });
+}
+ </script>
+
+
+</body>
+</html>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 600px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "red", "id": "Due di Coppe", "label": "Due di Coppe", "shape": "square"}, {"color": "#97c2fc", "id": "Allestimento di una tavola per due", "label": "Allestimento di una tavola per due", "shape": "dot"}, {"color": "red", "id": "Cavaliere di Coppe", "label": "Cavaliere di Coppe", "shape": "square"}, {"color": "#97c2fc", "id": "Allontanamento del condottiero", "label": "Allontanamento del condottiero", "shape": "dot"}, {"color": "red", "id": "Il Carro", "label": "Il Carro", "shape": "square"}, {"color": "#97c2fc", "id": "Angelica si muove sul carro", "label": "Angelica si muove sul carro", "shape": "dot"}, {"color": "red", "id": "Cavaliere di Spade", "label": "Cavaliere di Spade", "shape": "square"}, {"color": "#97c2fc", "id": "Arcangelo", "label": "Arcangelo", "shape": "dot"}, {"color": "red", "id": "Il Penduto", "label": "Il Penduto", "shape": "square"}, {"color": "#97c2fc", "id": "Armonia interiore", "label": "Armonia interiore", "shape": "dot"}, {"color": "red", "id": "Asso di Spade", "label": "Asso di Spade", "shape": "square"}, {"color": "#97c2fc", "id": "Assenza di Orlando", "label": "Assenza di Orlando", "shape": "dot"}, {"color": "#97c2fc", "id": "Astolfo sulla Luna", "label": "Astolfo sulla Luna", "shape": "dot"}, {"color": "red", "id": "Dieci di Coppe", "label": "Dieci di Coppe", "shape": "square"}, {"color": "#97c2fc", "id": "Avelli del cimitero", "label": "Avelli del cimitero", "shape": "dot"}, {"color": "red", "id": "Il Sole", "label": "Il Sole", "shape": "square"}, {"color": "#97c2fc", "id": "Bambino", "label": "Bambino", "shape": "dot"}, {"color": "#97c2fc", "id": "Banchetto", "label": "Banchetto", "shape": "dot"}, {"color": "red", "id": "Due di Denari", "label": "Due di Denari", "shape": "square"}, {"color": "#97c2fc", "id": "Baratto", "label": "Baratto", "shape": "dot"}, {"color": "red", "id": "Dieci di Spade", "label": "Dieci di Spade", "shape": "square"}, {"color": "#97c2fc", "id": "Barriera degli arcangeli", "label": "Barriera degli arcangeli", "shape": "dot"}, {"color": "red", "id": "Asso di Coppe", "label": "Asso di Coppe", "shape": "square"}, {"color": "#97c2fc", "id": "Bevuta del protagonista", "label": "Bevuta del protagonista", "shape": "dot"}, {"color": "red", "id": "Cinque di Bastoni", "label": "Cinque di Bastoni", "shape": "square"}, {"color": "#97c2fc", "id": "Bosco", "label": "Bosco", "shape": "dot"}, {"color": "red", "id": "Dieci di Bastoni", "label": "Dieci di Bastoni", "shape": "square"}, {"color": "red", "id": "Fante di Bastoni", "label": "Fante di Bastoni", "shape": "square"}, {"color": "#97c2fc", "id": "Brigante", "label": "Brigante", "shape": "dot"}, {"color": "red", "id": "La Forza", "label": "La Forza", "shape": "square"}, {"color": "red", "id": "Cinque di Coppe", "label": "Cinque di Coppe", "shape": "square"}, {"color": "#97c2fc", "id": "Brindisi", "label": "Brindisi", "shape": "dot"}, {"color": "red", "id": "Il Matto", "label": "Il Matto", "shape": "square"}, {"color": "#97c2fc", "id": "Buffone di corte", "label": "Buffone di corte", "shape": "dot"}, {"color": "#97c2fc", "id": "Cadaveri squartati", "label": "Cadaveri squartati", "shape": "dot"}, {"color": "#97c2fc", "id": "Cavallo di Troia", "label": "Cavallo di Troia", "shape": "dot"}, {"color": "red", "id": "Il Mondo", "label": "Il Mondo", "shape": "square"}, {"color": "#97c2fc", "id": "Citt\u00e0 del Tutto e delle Parti", "label": "Citt\u00e0 del Tutto e delle Parti", "shape": "dot"}, {"color": "#97c2fc", "id": "Citt\u00e0 sotterranea", "label": "Citt\u00e0 sotterranea", "shape": "dot"}, {"color": "red", "id": "Il Giudizio", "label": "Il Giudizio", "shape": "square"}, {"color": "#97c2fc", "id": "Comando", "label": "Comando", "shape": "dot"}, {"color": "#97c2fc", "id": "Condottiero", "label": "Condottiero", "shape": "dot"}, {"color": "#97c2fc", "id": "Coppa sacra", "label": "Coppa sacra", "shape": "dot"}, {"color": "#97c2fc", "id": "Coppe", "label": "Coppe", "shape": "dot"}, {"color": "#97c2fc", "id": "Decisione degli D\u00e8i", "label": "Decisione degli D\u00e8i", "shape": "dot"}, {"color": "#97c2fc", "id": "Deposito", "label": "Deposito", "shape": "dot"}, {"color": "red", "id": "Il Diavolo", "label": "Il Diavolo", "shape": "square"}, {"color": "#97c2fc", "id": "Diavolo", "label": "Diavolo", "shape": "dot"}, {"color": "#97c2fc", "id": "Discorso", "label": "Discorso", "shape": "dot"}, {"color": "#97c2fc", "id": "Dualit\u00e0 del Bene e del Male", "label": "Dualit\u00e0 del Bene e del Male", "shape": "dot"}, {"color": "red", "id": "Due di Bastoni", "label": "Due di Bastoni", "shape": "square"}, {"color": "#97c2fc", "id": "Due bastoni", "label": "Due bastoni", "shape": "dot"}, {"color": "#97c2fc", "id": "Due denari", "label": "Due denari", "shape": "dot"}, {"color": "red", "id": "Due di Spade", "label": "Due di Spade", "shape": "square"}, {"color": "#97c2fc", "id": "Duello", "label": "Duello", "shape": "dot"}, {"color": "#97c2fc", "id": "Duello tra protagonista e condottiero", "label": "Duello tra protagonista e condottiero", "shape": "dot"}, {"color": "red", "id": "Asso di Denari", "label": "Asso di Denari", "shape": "square"}, {"color": "#97c2fc", "id": "Elemosina ", "label": "Elemosina ", "shape": "dot"}, {"color": "red", "id": "Dieci di Denari", "label": "Dieci di Denari", "shape": "square"}, {"color": "#97c2fc", "id": "Eredit\u00e0 ", "label": "Eredit\u00e0 ", "shape": "dot"}, {"color": "#97c2fc", "id": "Et\u00e0 dell\u0027oro", "label": "Et\u00e0 dell\u0027oro", "shape": "dot"}, {"color": "red", "id": "La Giustizia", "label": "La Giustizia", "shape": "square"}, {"color": "#97c2fc", "id": "Fanciulla", "label": "Fanciulla", "shape": "dot"}, {"color": "#97c2fc", "id": "Fonte della vita", "label": "Fonte della vita", "shape": "dot"}, {"color": "#97c2fc", "id": "Giudizio", "label": "Giudizio", "shape": "dot"}, {"color": "#97c2fc", "id": "Giudizio nel Gran Giorno", "label": "Giudizio nel Gran Giorno", "shape": "dot"}, {"color": "#97c2fc", "id": "Giustizia", "label": "Giustizia", "shape": "dot"}, {"color": "#97c2fc", "id": "Guardie", "label": "Guardie", "shape": "dot"}, {"color": "#97c2fc", "id": "Guerra", "label": "Guerra", "shape": "dot"}, {"color": "#97c2fc", "id": "Guerriero", "label": "Guerriero", "shape": "dot"}, {"color": "red", "id": "Fante di Spade", "label": "Fante di Spade", "shape": "square"}, {"color": "#97c2fc", "id": "I cavalieri seguono Orlando per rinsavirlo", "label": "I cavalieri seguono Orlando per rinsavirlo", "shape": "dot"}, {"color": "#97c2fc", "id": "Imprevisto", "label": "Imprevisto", "shape": "dot"}, {"color": "#97c2fc", "id": "Incontro d\u0027amore", "label": "Incontro d\u0027amore", "shape": "dot"}, {"color": "red", "id": "Il Papa", "label": "Il Papa", "shape": "square"}, {"color": "#97c2fc", "id": "La tomba di un papa", "label": "La tomba di un papa", "shape": "dot"}, {"color": "red", "id": "Cinque di Denari", "label": "Cinque di Denari", "shape": "square"}, {"color": "#97c2fc", "id": "Luce del mattino", "label": "Luce del mattino", "shape": "dot"}, {"color": "#97c2fc", "id": "Luna", "label": "Luna", "shape": "dot"}, {"color": "#97c2fc", "id": "Medoro", "label": "Medoro", "shape": "dot"}, {"color": "#97c2fc", "id": "Necessit\u00e0 di una scelta", "label": "Necessit\u00e0 di una scelta", "shape": "dot"}, {"color": "#97c2fc", "id": "Orlando", "label": "Orlando", "shape": "dot"}, {"color": "#97c2fc", "id": "Osteria", "label": "Osteria", "shape": "dot"}, {"color": "#97c2fc", "id": "Pagamento per uno scherano", "label": "Pagamento per uno scherano", "shape": "dot"}, {"color": "#97c2fc", "id": "Papa", "label": "Papa", "shape": "dot"}, {"color": "#97c2fc", "id": "Parigi assediata", "label": "Parigi assediata", "shape": "dot"}, {"color": "red", "id": "Il Bagatto", "label": "Il Bagatto", "shape": "square"}, {"color": "#97c2fc", "id": "Poeta", "label": "Poeta", "shape": "dot"}, {"color": "#97c2fc", "id": "Protagonista", "label": "Protagonista", "shape": "dot"}, {"color": "red", "id": "Cavaliere di Denari", "label": "Cavaliere di Denari", "shape": "square"}, {"color": "red", "id": "Fante di Coppe", "label": "Fante di Coppe", "shape": "square"}, {"color": "red", "id": "Fante di Denari", "label": "Fante di Denari", "shape": "square"}, {"color": "#97c2fc", "id": "Ricchezza", "label": "Ricchezza", "shape": "dot"}, {"color": "#97c2fc", "id": "Rintocchi", "label": "Rintocchi", "shape": "dot"}, {"color": "red", "id": "Asso di Bastoni", "label": "Asso di Bastoni", "shape": "square"}, {"color": "#97c2fc", "id": "Scettro", "label": "Scettro", "shape": "dot"}, {"color": "#97c2fc", "id": "Scherano", "label": "Scherano", "shape": "dot"}, {"color": "#97c2fc", "id": "Schianto dei tronchi", "label": "Schianto dei tronchi", "shape": "dot"}, {"color": "#97c2fc", "id": "Segreto", "label": "Segreto", "shape": "dot"}, {"color": "#97c2fc", "id": "Soldi", "label": "Soldi", "shape": "dot"}, {"color": "#97c2fc", "id": "Sole", "label": "Sole", "shape": "dot"}, {"color": "#97c2fc", "id": "Spreco", "label": "Spreco", "shape": "dot"}, {"color": "#97c2fc", "id": "Storia bellicosa di Orlando", "label": "Storia bellicosa di Orlando", "shape": "dot"}, {"color": "#97c2fc", "id": "Troia assediata", "label": "Troia assediata", "shape": "dot"}, {"color": "#97c2fc", "id": "Tronco", "label": "Tronco", "shape": "dot"}, {"color": "#97c2fc", "id": "Vagabondo", "label": "Vagabondo", "shape": "dot"}, {"color": "#97c2fc", "id": "Vino", "label": "Vino", "shape": "dot"}, {"color": "#97c2fc", "id": "Violenza", "label": "Violenza", "shape": "dot"}, {"color": "#97c2fc", "id": "Visitatore", "label": "Visitatore", "shape": "dot"}, {"color": "#97c2fc", "id": "Vista del massacro", "label": "Vista del massacro", "shape": "dot"}, {"color": "#97c2fc", "id": "Vittoria dell\u0027Altro sull\u0027Uno", "label": "Vittoria dell\u0027Altro sull\u0027Uno", "shape": "dot"}, {"color": "#97c2fc", "id": "Volont\u00e0 divina", "label": "Volont\u00e0 divina", "shape": "dot"}, {"color": "red", "id": "L\u0027Imperatore", "label": "L\u0027Imperatore", "shape": "square"}, {"color": "#97c2fc", "id": "Ambizione", "label": "Ambizione", "shape": "dot"}, {"color": "red", "id": "L\u0027Amore", "label": "L\u0027Amore", "shape": "square"}, {"color": "#97c2fc", "id": "Amore tra Angelica e Medoro", "label": "Amore tra Angelica e Medoro", "shape": "dot"}, {"color": "red", "id": "Tre di Coppe", "label": "Tre di Coppe", "shape": "square"}, {"color": "#97c2fc", "id": "Ampolla", "label": "Ampolla", "shape": "dot"}, {"color": "red", "id": "Regina di Spade", "label": "Regina di Spade", "shape": "square"}, {"color": "#97c2fc", "id": "Angelica", "label": "Angelica", "shape": "dot"}, {"color": "red", "id": "La Stella", "label": "La Stella", "shape": "square"}, {"color": "#97c2fc", "id": "Anima", "label": "Anima", "shape": "dot"}, {"color": "red", "id": "Quattro di Spade", "label": "Quattro di Spade", "shape": "square"}, {"color": "#97c2fc", "id": "Armatura", "label": "Armatura", "shape": "dot"}, {"color": "red", "id": "Sette di Spade", "label": "Sette di Spade", "shape": "square"}, {"color": "red", "id": "La Temperanza", "label": "La Temperanza", "shape": "square"}, {"color": "#97c2fc", "id": "Baccanti", "label": "Baccanti", "shape": "dot"}, {"color": "red", "id": "La Papessa", "label": "La Papessa", "shape": "square"}, {"color": "#97c2fc", "id": "Badessa", "label": "Badessa", "shape": "dot"}, {"color": "red", "id": "Nove di Coppe", "label": "Nove di Coppe", "shape": "square"}, {"color": "red", "id": "Otto di Coppe", "label": "Otto di Coppe", "shape": "square"}, {"color": "#97c2fc", "id": "Banchetto di nozze", "label": "Banchetto di nozze", "shape": "dot"}, {"color": "red", "id": "Sei di Spade", "label": "Sei di Spade", "shape": "square"}, {"color": "#97c2fc", "id": "Battaglie", "label": "Battaglie", "shape": "dot"}, {"color": "red", "id": "Quattro di Denari", "label": "Quattro di Denari", "shape": "square"}, {"color": "#97c2fc", "id": "Beatitudine", "label": "Beatitudine", "shape": "dot"}, {"color": "#97c2fc", "id": "Bevuta del brigante", "label": "Bevuta del brigante", "shape": "dot"}, {"color": "red", "id": "Nove di Bastoni", "label": "Nove di Bastoni", "shape": "square"}, {"color": "red", "id": "Otto di Bastoni", "label": "Otto di Bastoni", "shape": "square"}, {"color": "red", "id": "Sette di Bastoni", "label": "Sette di Bastoni", "shape": "square"}, {"color": "red", "id": "La Torre", "label": "La Torre", "shape": "square"}, {"color": "#97c2fc", "id": "Caduta dei cadaveri", "label": "Caduta dei cadaveri", "shape": "dot"}, {"color": "#97c2fc", "id": "Caduta tra i rami spezzati", "label": "Caduta tra i rami spezzati", "shape": "dot"}, {"color": "#97c2fc", "id": "Carlo Magno", "label": "Carlo Magno", "shape": "dot"}, {"color": "#97c2fc", "id": "Cibele", "label": "Cibele", "shape": "dot"}, {"color": "red", "id": "La Morte", "label": "La Morte", "shape": "square"}, {"color": "#97c2fc", "id": "Cimitero", "label": "Cimitero", "shape": "dot"}, {"color": "red", "id": "Sei di Denari", "label": "Sei di Denari", "shape": "square"}, {"color": "#97c2fc", "id": "Citt\u00e0 dell\u0027Oro", "label": "Citt\u00e0 dell\u0027Oro", "shape": "dot"}, {"color": "#97c2fc", "id": "Contesa", "label": "Contesa", "shape": "dot"}, {"color": "#97c2fc", "id": "Dea della distruzione", "label": "Dea della distruzione", "shape": "dot"}, {"color": "red", "id": "Otto di Denari", "label": "Otto di Denari", "shape": "square"}, {"color": "#97c2fc", "id": "Denaro", "label": "Denaro", "shape": "dot"}, {"color": "red", "id": "Sette di Denari", "label": "Sette di Denari", "shape": "square"}, {"color": "red", "id": "Quattro di Bastoni", "label": "Quattro di Bastoni", "shape": "square"}, {"color": "#97c2fc", "id": "Deserto", "label": "Deserto", "shape": "dot"}, {"color": "#97c2fc", "id": "Distesa dei cadaveri", "label": "Distesa dei cadaveri", "shape": "dot"}, {"color": "#97c2fc", "id": "Eros", "label": "Eros", "shape": "dot"}, {"color": "red", "id": "Nove di Spade", "label": "Nove di Spade", "shape": "square"}, {"color": "#97c2fc", "id": "Esito della guerra", "label": "Esito della guerra", "shape": "dot"}, {"color": "#97c2fc", "id": "Fantesca", "label": "Fantesca", "shape": "dot"}, {"color": "#97c2fc", "id": "Follia", "label": "Follia", "shape": "dot"}, {"color": "#97c2fc", "id": "Forza", "label": "Forza", "shape": "dot"}, {"color": "red", "id": "Otto di Spade", "label": "Otto di Spade", "shape": "square"}, {"color": "#97c2fc", "id": "Guerriera", "label": "Guerriera", "shape": "dot"}, {"color": "#97c2fc", "id": "I tetti della citt\u00e0", "label": "I tetti della citt\u00e0", "shape": "dot"}, {"color": "red", "id": "Sei di Coppe", "label": "Sei di Coppe", "shape": "square"}, {"color": "red", "id": "L\u0027Eremita", "label": "L\u0027Eremita", "shape": "square"}, {"color": "#97c2fc", "id": "Indovino", "label": "Indovino", "shape": "dot"}, {"color": "#97c2fc", "id": "Inganno", "label": "Inganno", "shape": "dot"}, {"color": "#97c2fc", "id": "Innamoramento della protagonista ", "label": "Innamoramento della protagonista ", "shape": "dot"}, {"color": "#97c2fc", "id": "La caduta di Troia", "label": "La caduta di Troia", "shape": "dot"}, {"color": "#97c2fc", "id": "La Durlindana appesa e dimenticata", "label": "La Durlindana appesa e dimenticata", "shape": "dot"}, {"color": "red", "id": "La Ruota della Fortuna", "label": "La Ruota della Fortuna", "shape": "square"}, {"color": "#97c2fc", "id": "La trasformazione di tutto in oro", "label": "La trasformazione di tutto in oro", "shape": "dot"}, {"color": "#97c2fc", "id": "Lame", "label": "Lame", "shape": "dot"}, {"color": "red", "id": "La Luna", "label": "La Luna", "shape": "square"}, {"color": "#97c2fc", "id": "Liberazione di notte", "label": "Liberazione di notte", "shape": "dot"}, {"color": "#97c2fc", "id": "Luccich\u00eco", "label": "Luccich\u00eco", "shape": "dot"}, {"color": "#97c2fc", "id": "Lume della Luna", "label": "Lume della Luna", "shape": "dot"}, {"color": "red", "id": "L\u0027Imperatrice", "label": "L\u0027Imperatrice", "shape": "square"}, {"color": "#97c2fc", "id": "Madre del condottiero", "label": "Madre del condottiero", "shape": "dot"}, {"color": "#97c2fc", "id": "Montagna", "label": "Montagna", "shape": "dot"}, {"color": "#97c2fc", "id": "Pace nel mondo", "label": "Pace nel mondo", "shape": "dot"}, {"color": "red", "id": "Re di Denari", "label": "Re di Denari", "shape": "square"}, {"color": "#97c2fc", "id": "Padre ", "label": "Padre ", "shape": "dot"}, {"color": "#97c2fc", "id": "Padre del condottiero", "label": "Padre del condottiero", "shape": "dot"}, {"color": "#97c2fc", "id": "Profezia", "label": "Profezia", "shape": "dot"}, {"color": "red", "id": "Re di Bastoni", "label": "Re di Bastoni", "shape": "square"}, {"color": "red", "id": "Re di Coppe", "label": "Re di Coppe", "shape": "square"}, {"color": "red", "id": "Re di Spade", "label": "Re di Spade", "shape": "square"}, {"color": "red", "id": "Regina di Bastoni", "label": "Regina di Bastoni", "shape": "square"}, {"color": "red", "id": "Regina di Denari", "label": "Regina di Denari", "shape": "square"}, {"color": "red", "id": "Sei di Bastoni", "label": "Sei di Bastoni", "shape": "square"}, {"color": "#97c2fc", "id": "Radura nel bosco", "label": "Radura nel bosco", "shape": "dot"}, {"color": "#97c2fc", "id": "Raggi di luce", "label": "Raggi di luce", "shape": "dot"}, {"color": "red", "id": "Nove di Denari", "label": "Nove di Denari", "shape": "square"}, {"color": "#97c2fc", "id": "Sacerdotessa", "label": "Sacerdotessa", "shape": "dot"}, {"color": "#97c2fc", "id": "Saggezza", "label": "Saggezza", "shape": "dot"}, {"color": "#97c2fc", "id": "Speranza", "label": "Speranza", "shape": "dot"}, {"color": "#97c2fc", "id": "Sposa", "label": "Sposa", "shape": "dot"}, {"color": "#97c2fc", "id": "Stelle", "label": "Stelle", "shape": "dot"}, {"color": "#97c2fc", "id": "Strega", "label": "Strega", "shape": "dot"}, {"color": "#97c2fc", "id": "Viatico", "label": "Viatico", "shape": "dot"}, {"color": "#97c2fc", "id": "Zeus", "label": "Zeus", "shape": "dot"}]);
+                  edges = new vis.DataSet([{"from": "Due di Coppe", "to": "Allestimento di una tavola per due", "value": 1}, {"from": "Cavaliere di Coppe", "to": "Allontanamento del condottiero", "value": 1}, {"from": "Il Carro", "to": "Angelica si muove sul carro", "value": 1}, {"from": "Cavaliere di Spade", "to": "Arcangelo", "value": 1}, {"from": "Il Penduto", "to": "Armonia interiore", "value": 1}, {"from": "Asso di Spade", "to": "Assenza di Orlando", "value": 1}, {"from": "Il Carro", "to": "Astolfo sulla Luna", "value": 1}, {"from": "Dieci di Coppe", "to": "Avelli del cimitero", "value": 1}, {"from": "Il Sole", "to": "Bambino", "value": 2}, {"from": "Dieci di Coppe", "to": "Banchetto", "value": 1}, {"from": "Due di Denari", "to": "Baratto", "value": 1}, {"from": "Dieci di Spade", "to": "Barriera degli arcangeli", "value": 1}, {"from": "Asso di Coppe", "to": "Bevuta del protagonista", "value": 1}, {"from": "Cinque di Bastoni", "to": "Bosco", "value": 1}, {"from": "Dieci di Bastoni", "to": "Bosco", "value": 1}, {"from": "Fante di Bastoni", "to": "Brigante", "value": 1}, {"from": "Il Penduto", "to": "Brigante", "value": 1}, {"from": "La Forza", "to": "Brigante", "value": 2}, {"from": "Cinque di Coppe", "to": "Brindisi", "value": 1}, {"from": "Il Matto", "to": "Buffone di corte", "value": 1}, {"from": "Dieci di Spade", "to": "Cadaveri squartati", "value": 1}, {"from": "Fante di Bastoni", "to": "Cavallo di Troia", "value": 1}, {"from": "Il Mondo", "to": "Citt\u00e0 del Tutto e delle Parti", "value": 1}, {"from": "Il Mondo", "to": "Citt\u00e0 sotterranea", "value": 1}, {"from": "Il Giudizio", "to": "Comando", "value": 1}, {"from": "Cavaliere di Spade", "to": "Condottiero", "value": 1}, {"from": "Asso di Coppe", "to": "Coppa sacra", "value": 1}, {"from": "Cinque di Coppe", "to": "Coppe", "value": 1}, {"from": "Il Giudizio", "to": "Decisione degli D\u00e8i", "value": 1}, {"from": "Dieci di Coppe", "to": "Deposito", "value": 1}, {"from": "Il Diavolo", "to": "Diavolo", "value": 3}, {"from": "Cinque di Coppe", "to": "Discorso", "value": 1}, {"from": "Due di Denari", "to": "Dualit\u00e0 del Bene e del Male", "value": 1}, {"from": "Due di Bastoni", "to": "Due bastoni", "value": 1}, {"from": "Due di Denari", "to": "Due denari", "value": 1}, {"from": "Due di Spade", "to": "Duello", "value": 1}, {"from": "Due di Spade", "to": "Duello tra protagonista e condottiero", "value": 1}, {"from": "Asso di Denari", "to": "Elemosina ", "value": 1}, {"from": "Dieci di Denari", "to": "Eredit\u00e0 ", "value": 1}, {"from": "Dieci di Denari", "to": "Et\u00e0 dell\u0027oro", "value": 1}, {"from": "La Giustizia", "to": "Fanciulla", "value": 1}, {"from": "Asso di Coppe", "to": "Fonte della vita", "value": 1}, {"from": "Il Giudizio", "to": "Giudizio", "value": 1}, {"from": "Il Giudizio", "to": "Giudizio nel Gran Giorno", "value": 1}, {"from": "La Giustizia", "to": "Giustizia", "value": 1}, {"from": "Due di Spade", "to": "Guardie", "value": 1}, {"from": "Dieci di Spade", "to": "Guerra", "value": 1}, {"from": "Cavaliere di Spade", "to": "Guerriero", "value": 1}, {"from": "Fante di Spade", "to": "Guerriero", "value": 1}, {"from": "La Giustizia", "to": "I cavalieri seguono Orlando per rinsavirlo", "value": 1}, {"from": "Cavaliere di Spade", "to": "Imprevisto", "value": 1}, {"from": "Due di Coppe", "to": "Incontro d\u0027amore", "value": 1}, {"from": "Il Papa", "to": "La tomba di un papa", "value": 1}, {"from": "Cinque di Denari", "to": "Luce del mattino", "value": 1}, {"from": "Asso di Denari", "to": "Luna", "value": 1}, {"from": "Fante di Bastoni", "to": "Medoro", "value": 1}, {"from": "Due di Bastoni", "to": "Necessit\u00e0 di una scelta", "value": 1}, {"from": "Il Matto", "to": "Orlando", "value": 1}, {"from": "Dieci di Coppe", "to": "Osteria", "value": 1}, {"from": "Dieci di Denari", "to": "Pagamento per uno scherano", "value": 1}, {"from": "Il Papa", "to": "Papa", "value": 2}, {"from": "Il Mondo", "to": "Parigi assediata", "value": 1}, {"from": "Il Bagatto", "to": "Poeta", "value": 1}, {"from": "Fante di Bastoni", "to": "Protagonista", "value": 1}, {"from": "Cavaliere di Coppe", "to": "Protagonista", "value": 1}, {"from": "Cavaliere di Denari", "to": "Protagonista", "value": 1}, {"from": "Fante di Coppe", "to": "Protagonista", "value": 1}, {"from": "Fante di Denari", "to": "Protagonista", "value": 1}, {"from": "Fante di Spade", "to": "Protagonista", "value": 1}, {"from": "Il Bagatto", "to": "Protagonista", "value": 1}, {"from": "Il Matto", "to": "Protagonista", "value": 1}, {"from": "Il Penduto", "to": "Protagonista", "value": 1}, {"from": "La Giustizia", "to": "Protagonista", "value": 1}, {"from": "Dieci di Denari", "to": "Ricchezza", "value": 1}, {"from": "Cinque di Coppe", "to": "Rintocchi", "value": 1}, {"from": "Asso di Bastoni", "to": "Scettro", "value": 1}, {"from": "Il Penduto", "to": "Scherano", "value": 1}, {"from": "La Forza", "to": "Scherano", "value": 1}, {"from": "Cinque di Bastoni", "to": "Schianto dei tronchi", "value": 1}, {"from": "Cinque di Coppe", "to": "Segreto", "value": 1}, {"from": "Due di Denari", "to": "Soldi", "value": 1}, {"from": "Il Sole", "to": "Sole", "value": 1}, {"from": "Cinque di Denari", "to": "Spreco", "value": 1}, {"from": "Dieci di Spade", "to": "Storia bellicosa di Orlando", "value": 1}, {"from": "Il Mondo", "to": "Troia assediata", "value": 1}, {"from": "Asso di Bastoni", "to": "Tronco", "value": 1}, {"from": "Il Matto", "to": "Vagabondo", "value": 1}, {"from": "Asso di Coppe", "to": "Vino", "value": 1}, {"from": "La Forza", "to": "Violenza", "value": 1}, {"from": "Il Bagatto", "to": "Visitatore", "value": 1}, {"from": "Il Diavolo", "to": "Visitatore", "value": 1}, {"from": "Cinque di Bastoni", "to": "Vista del massacro", "value": 1}, {"from": "Due di Bastoni", "to": "Vittoria dell\u0027Altro sull\u0027Uno", "value": 1}, {"from": "Asso di Spade", "to": "Volont\u00e0 divina", "value": 1}, {"from": "L\u0027Imperatore", "to": "Ambizione", "value": 1}, {"from": "L\u0027Amore", "to": "Amore tra Angelica e Medoro", "value": 1}, {"from": "Tre di Coppe", "to": "Ampolla", "value": 1}, {"from": "Regina di Spade", "to": "Angelica", "value": 1}, {"from": "La Stella", "to": "Anima", "value": 1}, {"from": "Quattro di Spade", "to": "Armatura", "value": 1}, {"from": "Sette di Spade", "to": "Armatura", "value": 1}, {"from": "La Temperanza", "to": "Baccanti", "value": 1}, {"from": "La Papessa", "to": "Badessa", "value": 1}, {"from": "Nove di Coppe", "to": "Banchetto", "value": 2}, {"from": "Otto di Coppe", "to": "Banchetto di nozze", "value": 2}, {"from": "Sei di Spade", "to": "Battaglie", "value": 2}, {"from": "Quattro di Denari", "to": "Beatitudine", "value": 1}, {"from": "Tre di Coppe", "to": "Bevuta del brigante", "value": 1}, {"from": "Nove di Bastoni", "to": "Bosco", "value": 3}, {"from": "Otto di Bastoni", "to": "Bosco", "value": 1}, {"from": "Sette di Bastoni", "to": "Bosco", "value": 1}, {"from": "La Torre", "to": "Caduta dei cadaveri", "value": 1}, {"from": "Nove di Bastoni", "to": "Caduta tra i rami spezzati", "value": 1}, {"from": "L\u0027Imperatore", "to": "Carlo Magno", "value": 1}, {"from": "La Papessa", "to": "Cibele", "value": 1}, {"from": "La Morte", "to": "Cimitero", "value": 1}, {"from": "Sei di Denari", "to": "Citt\u00e0 dell\u0027Oro", "value": 1}, {"from": "Quattro di Spade", "to": "Contesa", "value": 1}, {"from": "Regina di Spade", "to": "Dea della distruzione", "value": 1}, {"from": "Otto di Denari", "to": "Denaro", "value": 1}, {"from": "Sette di Denari", "to": "Denaro", "value": 1}, {"from": "Quattro di Bastoni", "to": "Deserto", "value": 1}, {"from": "La Morte", "to": "Diavolo", "value": 1}, {"from": "La Morte", "to": "Distesa dei cadaveri", "value": 1}, {"from": "L\u0027Amore", "to": "Eros", "value": 1}, {"from": "Nove di Spade", "to": "Esito della guerra", "value": 1}, {"from": "La Morte", "to": "Fanciulla", "value": 1}, {"from": "La Stella", "to": "Fanciulla", "value": 1}, {"from": "La Temperanza", "to": "Fanciulla", "value": 2}, {"from": "Regina di Spade", "to": "Fanciulla", "value": 1}, {"from": "La Stella", "to": "Fantesca", "value": 1}, {"from": "La Torre", "to": "Follia", "value": 1}, {"from": "Sei di Spade", "to": "Forza", "value": 1}, {"from": "Otto di Spade", "to": "Guerra", "value": 1}, {"from": "Sette di Spade", "to": "Guerra", "value": 1}, {"from": "Regina di Spade", "to": "Guerriera", "value": 1}, {"from": "La Torre", "to": "I tetti della citt\u00e0", "value": 1}, {"from": "Sei di Coppe", "to": "Incontro d\u0027amore", "value": 1}, {"from": "L\u0027Eremita", "to": "Indovino", "value": 2}, {"from": "Nove di Coppe", "to": "Inganno", "value": 1}, {"from": "L\u0027Amore", "to": "Innamoramento della protagonista ", "value": 1}, {"from": "La Torre", "to": "La caduta di Troia", "value": 1}, {"from": "Sette di Spade", "to": "La Durlindana appesa e dimenticata", "value": 1}, {"from": "La Ruota della Fortuna", "to": "La trasformazione di tutto in oro", "value": 1}, {"from": "Otto di Spade", "to": "Lame", "value": 1}, {"from": "La Luna", "to": "Liberazione di notte", "value": 1}, {"from": "Sette di Denari", "to": "Luccich\u00eco", "value": 1}, {"from": "La Luna", "to": "Lume della Luna", "value": 1}, {"from": "La Luna", "to": "Luna", "value": 2}, {"from": "L\u0027Imperatrice", "to": "Madre del condottiero", "value": 1}, {"from": "Otto di Denari", "to": "Montagna", "value": 1}, {"from": "Sei di Coppe", "to": "Pace nel mondo", "value": 1}, {"from": "Re di Denari", "to": "Padre ", "value": 1}, {"from": "Re di Denari", "to": "Padre del condottiero", "value": 1}, {"from": "L\u0027Amore", "to": "Profezia", "value": 1}, {"from": "L\u0027Imperatore", "to": "Profezia", "value": 1}, {"from": "La Temperanza", "to": "Protagonista", "value": 1}, {"from": "Re di Bastoni", "to": "Protagonista", "value": 1}, {"from": "Re di Coppe", "to": "Protagonista", "value": 1}, {"from": "Re di Spade", "to": "Protagonista", "value": 1}, {"from": "Regina di Bastoni", "to": "Protagonista", "value": 1}, {"from": "Regina di Denari", "to": "Protagonista", "value": 1}, {"from": "Sei di Bastoni", "to": "Radura nel bosco", "value": 1}, {"from": "Sette di Denari", "to": "Raggi di luce", "value": 1}, {"from": "Nove di Coppe", "to": "Ricchezza", "value": 1}, {"from": "Nove di Denari", "to": "Ricchezza", "value": 2}, {"from": "Otto di Denari", "to": "Ricchezza", "value": 1}, {"from": "Sette di Denari", "to": "Ricchezza", "value": 1}, {"from": "La Papessa", "to": "Sacerdotessa", "value": 1}, {"from": "Otto di Coppe", "to": "Saggezza", "value": 1}, {"from": "Nove di Spade", "to": "Speranza", "value": 1}, {"from": "L\u0027Imperatrice", "to": "Sposa", "value": 1}, {"from": "Otto di Coppe", "to": "Spreco", "value": 1}, {"from": "La Stella", "to": "Stelle", "value": 1}, {"from": "La Papessa", "to": "Strega", "value": 1}, {"from": "Quattro di Denari", "to": "Viatico", "value": 1}, {"from": "L\u0027Imperatore", "to": "Zeus", "value": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
