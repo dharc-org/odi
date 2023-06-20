@@ -1,6 +1,6 @@
-# Tell me the truth
+# ODI
 
-**Tell me the truth** is a [Python 3](https://www.python.org/downloads/) web application built in [Flask](https://flask.palletsprojects.com/en/2.3.x/). 
+**ODI** is a [Python 3](https://www.python.org/downloads/) web application built in [Flask](https://flask.palletsprojects.com/en/2.3.x/). 
 The project is ongoing and under development.
 
 ## Quick start
@@ -20,6 +20,7 @@ sh setup.sh
 After installing the required packages:
 
 - Run **blazegraph.jar** locally:
+- If the endpoint is empty, upload from the Blazegraph interface (**http://localhost:9999/**) both **data/odi.owl** and **data/bacodi.ttl**
 ```
 cd data
 java -server -Xmx4g -jar blazegraph.jar
