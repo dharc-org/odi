@@ -26,6 +26,7 @@ After installing the required packages:
 
 - Run **blazegraph.jar** locally:
 - If the endpoint is empty, upload from the Blazegraph interface (**http://localhost:9999/**) both **data/odi.owl** and **data/bacodi.ttl**
+- Update the path to the endpoint in **app.py** 
 ```
 cd data
 java -server -Xmx4g -jar blazegraph.jar
