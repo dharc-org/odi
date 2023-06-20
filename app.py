@@ -1,7 +1,6 @@
 from flask import Flask
 from flask import Blueprint, render_template, send_from_directory, jsonify
 
-from rdflib import Graph
 from SPARQLWrapper import SPARQLWrapper, JSON
 import uuid
 from pyvis.network import Network
