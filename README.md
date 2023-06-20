@@ -1,11 +1,14 @@
 # ODI
 
-**ODI** is a [Python 3](https://www.python.org/downloads/) web application built in [Flask](https://flask.palletsprojects.com/en/2.3.x/). 
+**ODI** is a project aiming at formally representing the narrative and structural elements of "Il castello dei destini incrociati" by Italo Calvino. In particular, **ODI** is the ontology describing the work, **BACODI** is the Knowledge Graph (KG) storing all data regarding the work. The data can be browsed via this interface which provides several paths to explore BACODI KG along with some specific data-visualisations. 
+
+This interface is a [Python 3](https://www.python.org/downloads/) web application built in [Flask](https://flask.palletsprojects.com/en/2.3.x/). 
 The project is ongoing and under development.
+ 
 
-## Quick start
+## Web app Quick start
 
-Clone this repository using the URL https://github.com/Tell-me-the-truth/web-app.git
+Clone this repository using the URL https://github.com/ValentinaPasqual/odi.git
 or download the folder.
 
 The project works with this **requirement**:
