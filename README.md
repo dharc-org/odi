@@ -33,4 +33,7 @@ java -server -Xmx4g -jar blazegraph.jar
 - Update the path to the endpoint in **app.py** 
 
 - Run **app.py**
+- ```
+python app.py
+```
 - Open the application in your browser: **http://localhost:8000/**
