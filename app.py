@@ -1,9 +1,8 @@
 from flask import Flask
-from flask import Blueprint, render_template, send_from_directory, jsonify
-
+from flask import Blueprint, render_template, send_from_directory, request,  url_for, redirect, session, Response, jsonify
 from SPARQLWrapper import SPARQLWrapper, JSON
+from urllib.parse import parse_qs , quote
 import uuid
-from pyvis.network import Network
 import requests
 import json
 
@@ -14,7 +13,7 @@ import json
 app = Flask(__name__, static_folder="assets")
 
 # endpoint
-endpoint = "http://10.200.9.68:9999/blazegraph/sparql"
+endpoint = "http://localhost:9999/blazegraph/sparql"
 sparql = SPARQLWrapper(endpoint)
 sparql.setTimeout(55)
 
@@ -41,34 +40,10 @@ def home():
       GROUP BY ?cardLabel ?meaningLabel
       """
 
-    # Set up the Pyvis network
-    # net = Network()
-
     # Execute the SPARQL query
     sparql.setQuery(networkQuery)
     sparql.setReturnFormat('json')
     networkResults = sparql.query().convert()
-
-    # Track the hierarchical level of each node
-    #level_map = {}
-
-    # Iterate over the query results and add nodes and edges to the network
-    # for result in results['results']['bindings']:
-    #     subject = result['cardLabel']['value']
-    #     object = result['meaningLabel']['value']
-    #     weight = result['n']['value']
-    #     net.add_node(subject, color='red', shape='square')
-    #     net.add_node(object)
-    #     net.add_edge(subject, object, value=int(weight))
-    #
-    # # Assign the hierarchical level to the nodes
-    # for node, level in level_map.items():
-    #     net.nodes[node]['level'] = level
-    #
-    # # Save the network as an HTML file
-    # net.save_graph("static/network.html")
-
-
 
     # retrieve all cards
     cardsQuery = """
@@ -144,6 +119,11 @@ def home():
 
     return render_template('index.html',  cardsResults = cardsResults, storiesResults = storiesResults, suitList = suitList, typologyList = typologyList, meaningsResults = meaningsResults, classList = classList, networkResults = networkResults)
 
+# SET THE ENDPOINT
+
+
+
+# KG BROWSING
 @app.route('/storie/<storyID>')
 def story(storyID):
 
@@ -198,7 +178,7 @@ def story(storyID):
     #net = Network()
 
     storyRelationsQuery = """
-PREFIX odi: <https://purl.org/ebr/odi#>
+    PREFIX odi: <https://purl.org/ebr/odi#>
     PREFIX bacodi: <https://purl.org/ebr/odi/data/>
 
     select ?representation ?reprLabel ?relation ?relLabel ?representation2 ?reprLabel2 ?classLabel ?classLabel2
@@ -419,6 +399,120 @@ def meaning(meaningID):
 @app.route('/static/<path:path>')
 def send_static(path):
     return send_from_directory('static', path)
+
+# ENDPOINT
+
+@app.route("/sparql", methods=['GET', 'POST'])
+def sparql_gui(active=None):
+	""" SPARQL endpoint GUI and request handler
+
+	Parameters
+	----------
+	active: str
+		Query string or None
+		If None, renders the GUI, else parse the query (__run_query_string)
+		If the query string includes an update, return error, else sends
+		the query to the endpoint (__contact_tp)
+	"""
+	if request.method == 'GET':
+		content_type = request.content_type
+		q = request.args.get("query")
+		return __run_query_string(active, q, content_type)
+	else:
+		content_type = request.content_type
+		cur_data = request.get_data()
+		if "application/x-www-form-urlencoded" in content_type:
+			return __run_query_string(active, cur_data, True, content_type)
+		elif "application/sparql-query" in content_type:
+			return __contact_tp(cur_data, True, content_type)
+		else:
+			return render_template('sparql.html',active=active)
+
+def __run_query_string(active, query_string,
+	is_post=False, content_type="application/x-www-form-urlencoded"):
+	try:
+		query_str_decoded = query_string.decode('utf-8')
+	except Exception as e:
+		query_str_decoded = query_string
+	parsed_query = parse_qs(query_str_decoded)
+
+	if query_str_decoded is None or query_str_decoded.strip() == "":
+		return render_template('sparql.html',active=active)
+
+	if re.search("updates?", query_str_decoded, re.IGNORECASE) is None:
+		if "query" in parsed_query or "select" in query_str_decoded.lower():
+			return __contact_tp(query_string, is_post, content_type)
+		else:
+			return render_template('sparql.html',active=active)
+	else:
+		return render_template('403.html'), 403
+
+def __contact_tp(data, is_post, content_type):
+	accept = request.args.get('HTTP_ACCEPT')
+	if accept is None or accept == "*/*" or accept == "":
+		accept = "application/sparql-results+json"
+
+	data = data if isinstance(data,bytes) else quote(data)
+	if is_post:
+		req = requests.post(endpoint, data=data,
+							headers={'content-type': content_type, "accept": accept})
+	else:
+		req = requests.get("%s?query=%s" % (endpoint,data ),
+						   headers={'content-type': content_type, "accept": accept})
+
+	if req.status_code == 200:
+		response = Response()
+		response.headers['Access-Control-Allow-Origin'] = '*'
+		response.headers['Access-Control-Allow-Credentials'] = 'true'
+		response.headers['Content-Type'] = req.headers["content-type"]
+		response.mimetype = "application/sparql-results+json"
+		return req.json()
+	else:
+		return render_template('error.html',
+			status_code=str(req.status_code),
+			headers={"Content-Type": request.content_type},
+			text=req.text)
+
+@app.route('/error')
+def error(status_code, headers, text):
+	return render_template('error.html',status_code, headers, text)
+
+@app.errorhandler(403)
+def page_not_found(e):
+	# note that we set the 403 status explicitly
+	return render_template('403.html'), 403
+
+# prova
+# @app.route('/pipo', methods=['GET', 'POST'])
+# def pipo():
+#     #query = request.form.get('query')
+#     data = request.get_json()
+#     query = data['string']
+#     sparql_endpoint = "http://10.200.13.4:9999/blazegraph/sparql"
+#     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+#     payload = {'query': query}
+#     response = requests.post(sparql_endpoint, headers=headers, data=payload)
+#     # Process the response as needed
+#     print(response.text)
+#     return response.text
+
+
+@app.route('/process_query', methods=['POST'])
+def process_query():
+    data = request.get_json()
+    query = data['string']
+
+    sparql.setQuery(query)
+    sparql.setReturnFormat(JSON)
+    query_result = sparql.query().convert()
+
+    print(query_result)
+
+    if isinstance(query_result, str):
+        return query_result
+    else:
+        # If the query result is a JSON response, return it as JSON
+        return jsonify(query_result)
 
 if __name__ == "__main__":
     app.run(debug = True, port = 8000)
