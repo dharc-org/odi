@@ -349,6 +349,53 @@ def suit(suitID):
 
     return render_template('suitTemplate.html',  suitLabel = suitLabel, suitMeaningsResults = suitMeaningsResults)
 
+@app.route('/tipologia/<typologyID>')
+def typology(typologyID):
+
+    typologyQuery = """
+    PREFIX odi: <https://purl.org/ebr/odi#>
+    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+
+    select distinct ?typologyLabel
+    where {
+      <https://purl.org/ebr/odi/data/""" + typologyID + """> rdfs:label ?typologyLabel
+    }
+    """
+
+    sparql.setQuery(typologyQuery)
+    sparql.setReturnFormat(JSON)
+    typologyResults = sparql.query().convert()
+
+    typologyLabel = typologyResults['results']['bindings'][0]['typologyLabel']
+
+    typologyCardsQuery = """
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX odi: <https://purl.org/ebr/odi#>
+    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+
+    select distinct ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position (group_concat(distinct ?text;separator="//") as ?texts)
+    where {
+      <https://purl.org/ebr/odi/data/""" + typologyID + """> ^odi:hasTypology ?deckCard.
+        ?deckCard ^odi:specifies ?storyCard;
+            odi:hasName ?cardName.
+      ?storyCard odi:carriesRepresentation ?representation;
+                  odi:hasPositionInTheText ?position;
+                 ^odi:hasCard ?story.
+      ?story rdfs:label ?storyTitle.
+      ?representation odi:hasMeaningOf ?meaning.
+      ?meaning rdfs:label ?meaningLabel
+    OPTIONAL {?story odi:hasTitle ?storyName}
+    OPTIONAL {?storyCard odi:hasTextualReference ?text}
+    }
+    GROUP BY ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position ORDER BY ASC (?position)
+    """
+
+    sparql.setQuery(typologyCardsQuery)
+    sparql.setReturnFormat(JSON)
+    typologyMeaningsResults = sparql.query().convert()
+
+    return render_template('typologyTemplate.html',  typologyLabel = typologyLabel, typologyMeaningsResults = typologyMeaningsResults)
+
 
 @app.route('/significati/<meaningID>')
 def meaning(meaningID):
@@ -482,19 +529,10 @@ def page_not_found(e):
 	# note that we set the 403 status explicitly
 	return render_template('403.html'), 403
 
-# prova
-# @app.route('/pipo', methods=['GET', 'POST'])
-# def pipo():
-#     #query = request.form.get('query')
-#     data = request.get_json()
-#     query = data['string']
-#     sparql_endpoint = "http://10.200.13.4:9999/blazegraph/sparql"
-#     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-#     payload = {'query': query}
-#     response = requests.post(sparql_endpoint, headers=headers, data=payload)
-#     # Process the response as needed
-#     print(response.text)
-#     return response.text
+@app.errorhandler(500)
+def server_error(e):
+	# note that we set the 403 status explicitly
+	return render_template('500.html'), 500
 
 
 @app.route('/process_query', methods=['POST'])
@@ -508,7 +546,7 @@ def process_query():
 
     if 'select' in query.lower() or 'construct' in query.lower():
         if isinstance(query_result, str):
-            return query_result
+            return render_template('500.html'), 500
         else:
             # If the query result is a JSON response, return it as JSON
             return jsonify(query_result)

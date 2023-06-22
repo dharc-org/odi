@@ -26,7 +26,7 @@ Array.from(playButton).forEach(function(button) {
         if (response.ok) {
           return response.json();
         } else {
-          throw new Error('Error: ' + response.status + ' ' + response.statusText);
+          throw new Error(response.status + ' ' + response.statusText);
         }
       })
       .then(data => {
@@ -54,7 +54,6 @@ Array.from(playButton).forEach(function(button) {
           // Hide the error paragraph if it was previously displayed
           var errorParagraph = document.getElementById("error-paragraph");
           errorParagraph.style.display = "none";
-
 
         } else {
           // If the response is a string, show an error message in the HTML

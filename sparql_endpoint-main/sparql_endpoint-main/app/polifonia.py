@@ -4,11 +4,11 @@ import re
 import requests
 
 app = Flask(__name__)
-MYENDPOINT = 'http://localhost:9999/bigdata/sparql'
+endpoint = 'http://localhost:9999/bigdata/sparql'
 
-@app.route("/")
+@app.route("/sparql")
 def home():
-	return render_template('index.html')
+	return render_template('endpoint.html')
 
 @app.route("/sparql", methods=['GET', 'POST'])
 def sparql_gui(active=None):
@@ -63,10 +63,10 @@ def __contact_tp(data, is_post, content_type):
 
 	data = data if isinstance(data,bytes) else quote(data)
 	if is_post:
-		req = requests.post(MYENDPOINT, data=data,
+		req = requests.post(endpoint, data=data,
 							headers={'content-type': content_type, "accept": accept})
 	else:
-		req = requests.get("%s?query=%s" % (MYENDPOINT,data ),
+		req = requests.get("%s?query=%s" % (endpoint,data ),
 						   headers={'content-type': content_type, "accept": accept})
 
 	if req.status_code == 200:
@@ -93,4 +93,3 @@ def page_not_found(e):
 
 if __name__ == "__main__":
 	app.run()
-
