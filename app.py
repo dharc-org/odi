@@ -506,13 +506,14 @@ def process_query():
     sparql.setReturnFormat(JSON)
     query_result = sparql.query().convert()
 
-    print(query_result)
-
-    if isinstance(query_result, str):
-        return query_result
+    if 'select' in query.lower() or 'construct' in query.lower():
+        if isinstance(query_result, str):
+            return query_result
+        else:
+            # If the query result is a JSON response, return it as JSON
+            return jsonify(query_result)
     else:
-        # If the query result is a JSON response, return it as JSON
-        return jsonify(query_result)
+        return render_template('403.html'), 403
 
 if __name__ == "__main__":
     app.run(debug = True, port = 8000)
