@@ -29,8 +29,7 @@ After installing the required packages:
 cd data
 java -server -Xmx4g -jar blazegraph.jar
 ```
-- If the endpoint is empty, upload from the Blazegraph interface (**http://localhost:9999/**) both **data/odi.owl** and **data/bacodi.ttl**
-- Update the path to the endpoint in **app.py** 
+- Upload data via the Blazegraph interface (accessible at **http://localhost:9999/**). Please upload both the ontology **data/odi.owl** and the KG **data/bacodi.ttl**
 
 - Run **app.py**
 ```
