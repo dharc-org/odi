@@ -1,330 +1,136 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Paolo Bonora, Martina Dello Buono, Francesca Giovannetti, Francesca Tomasi">
     <title>Tell me the truth</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
-    <!-- <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/style/style.css" rel="stylesheet"> -->
+    <!-- <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet"><link href="/assets/style/style.css" rel="stylesheet"> -->
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
-</head>
-
-<body>
+  </head>
+  <body>
     <main>
-
-
       <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
-      <div class="bg-dark p-4">
-        <h5 class="text-body-emphasis h4">Collapsed content</h5>
-        <span class="text-body-secondary">Toggleable via the navbar brand.</span>
+        <div class="bg-dark p-4">
+          <h5 class="text-body-emphasis h4">Collapsed content</h5>
+          <span class="text-body-secondary">Toggleable via the navbar brand.</span>
+        </div>
       </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
-        <!-- texts -->
-        <!--<div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-secondary bg-gradient bg-opacity-25 lw-3">-->
-            <!-- sidebar -->
-            <!--<a class="hamburger fs-3 text-dark text-center" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
-                    viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                </svg>
-            </a>
-            <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="offcanvasWithBothOptions"
-                aria-labelledby="offcanvasWithBothOptionsLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Tell me the truth</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="list-group mb-4">
-                        <a href="#" class="list-group-item list-group-item-action active">Home</a>
-                        <a href="#" class="list-group-item list-group-item-action">Introduction</a>
-                    </div>
-                    <div>
-                        <h6>Knowledge bases</h6>
-                    </div>
-                    <div class="list-group">
-                        <a href="/raimondi" class="list-group-item list-group-item-action" aria-current="true">Giuseppe
-                            Raimondi
-                            LOD</a>
-                        <a href="#" class="list-group-item list-group-item-action">RePIM</a>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-
-
-<div class="container">
-
-  <!-- <iframe class="w-100" id="mynetwork" src="static/network.html"></iframe> -->
-
-  <div class="row">
-
-    <!-- STORIES LIST -->
-    <div class="col-md-4 mt-4">
-
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Le storie</a>
-    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div> -->
-  </div>
-</nav>
-
-<ul class="list-group list-group-flush">
-  {% for res in storiesResults["results"]["bindings"] %}
-    <a class="list-group-item list-group-item-action" href={{res["story"]["value"]|replace('https://purl.org/ebr/odi/data/', 'storie/')}}>{{res["storyTitle"]["value"]}}{% if 'storyName' in res %},<i> {{res["storyName"]["value"]}}</i>{% endif %}
-
-    </a>
-  {% endfor %}
-
-</ul>
-
-    </div>
-
-
-    <!-- CARDS LIST -->
-      <div class="col-md-4">
+        </div>
+      </nav>
+      <div class="container">
+        <!-- <iframe class="w-100" id="mynetwork" src="static/network.html"></iframe> -->
+        <div class="row">
+          <!-- STORIES LIST -->
+          <div class="col-md-4 mt-4">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Le storie</a>
+              </div>
+            </nav>
+            <ul class="list-group list-group-flush"> {% for res in storiesResults["results"]["bindings"] %} <a class="list-group-item list-group-item-action" href={{res["story"]["value"]|replace('https://purl.org/ebr/odi/data/', 'storie/')}}>{{res["storyTitle"]["value"]}}{% if 'storyName' in res %}, <i> {{res["storyName"]["value"]}}</i>{% endif %} </a> {% endfor %} </ul>
+          </div>
+          <!-- CARDS LIST -->
+          <div class="col-md-4">
             <div class="container mt-4">
-
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Le Carte</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      Semi
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                      {% for res in suitList %}
-                      <li><a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a></li>
-                      {% endfor %}
+              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Le Carte</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item dropdown">
+                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Semi </button>
+                        
+                        <ul class="dropdown-menu dropdown-menu-dark"> {% for res in suitList %} <li>
+                            <a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a>
+                          </li> {% endfor %} </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Tipologia </button>
+                        <ul class="dropdown-menu dropdown-menu-dark"> {% for res in typologyList %} <li>
+                            <a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a>
+                          </li> {% endfor %} </ul>
+                      </li>
                     </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      Tipologia
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                      {% for res in typologyList %}
-                      <li><a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a></li>
-                      {% endfor %}
-                    </ul>
-                  </li>
-                </ul>
+                  </div>
+                </div>
+              </nav>
+              <!-- <h4>Filters</h4> -->
+              <!-- <h4>Search Results</h4> -->
+              <div class="list-group list-group-flush" id="searchResults">
+                <div class="row">
+                  <div class="col-md-5"></div>
+                </div> {% for res in cardsResults["results"]["bindings"] %} {% if 'suitLabel' in res %} <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['suitLabel']['value']}} {{ res['typologyLabel']['value']}}">{{res["cardName"]["value"]}}</a> {% else %} <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['typologyLabel']['value']}}">{{res["cardName"]["value"]}}</a> {% endif %} {% endfor %}
               </div>
             </div>
-
-          </nav>
-      <!-- <h4>Filters</h4> -->
-
-      <!-- <h4>Search Results</h4> -->
-
-      <div class="list-group list-group-flush" id="searchResults">
-    <div class="row">
-    <div class="col-md-5">
-
-
-</div>
-</div>
-  {% for res in cardsResults["results"]["bindings"] %}
-  {% if 'suitLabel' in res %}
-  <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['suitLabel']['value']}} {{ res['typologyLabel']['value']}}">{{res["cardName"]["value"]}}</a>
-{% else %}
-  <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['typologyLabel']['value']}}">{{res["cardName"]["value"]}}</a>
-  {% endif %}
-  {% endfor %}
-
-</div>
-</div>
-</div>
-
-<!-- CARDS MEANINGS LIST -->
-<div class="col-md-4 mt-4">
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">I significati</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Classe
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              {% for res in classList %}
-              <li><a class="dropdown-item dropdown-item list-group-item2" data-category={{res}} href="#">{{res}}</a></li>
-              {% endfor %}
-
-            </ul>
-          </li>
-        </ul>
+          </div>
+          <!-- CARDS MEANINGS LIST -->
+          <div class="col-md-4 mt-4">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">I significati</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                  <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                      <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Classe </button>
+                      <ul class="dropdown-menu dropdown-menu-dark"> {% for res in classList %} <li>
+                          <a class="dropdown-item dropdown-item list-group-item2" data-category={{res}} href="#">{{res}}</a>
+                        </li> {% endfor %} </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <ul class="list-group list-group-flush"> {% for res in meaningsResults["results"]["bindings"] %} <a href="{{res["meaning"]["value"]|replace('https://purl.org/ebr/odi/data/', 'significati/')}}" class="search-result-item2 list-group-item list-group-item-action {{ res['classLabel']['value']}}">{{res["meaningLabel"]["value"]}}
+                <span class="badge text-bg-secondary float-right" style="float:right;">{{res['nMeanings']['value']}}</span>
+              </a> {% endfor %} </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </nav>
-<ul class="list-group list-group-flush">
-  {% for res in meaningsResults["results"]["bindings"] %}
-  <a href="{{res["meaning"]["value"]|replace('https://purl.org/ebr/odi/data/', 'significati/')}}" class="search-result-item2 list-group-item list-group-item-action {{ res['classLabel']['value']}}">{{res["meaningLabel"]["value"]}}<span class="badge text-bg-secondary float-right" style="float:right;">{{res['nMeanings']['value']}}</span></a>
-  {% endfor %}
-</ul>
-
-</div>
-</div>
-</div>
-
-
-
-        <!-- <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-light bg-gradient bg-opacity-75 lw-100">
-            <div class="p-5">
-                <h1>Tell me the truth</h1>
-                <p class="text-body">Our proposal focuses on user annotation of existing knowledge bases (KB). When
-                    proposing new semantic
-                    relationships through an interface (UI), users expect that the annotation will extend the KB as well
-                    as that the annotation semantics will comply with the conceptual model underlying the KB. The
-                    annotation application should act as an intermediary between the user and the formal representation
-                    of the knowledge that is being inserted becoming, together with the UI, a critical component of the
-                    knowledge management chain. However, how can we ensure that the knowledge being added to the
-                    knowledge base is correctly aligned with the semantics of the user annotation? Leveraging two use
-                    cases from archival and textual scholarship, we outline a methodology and a testing approach for
-                    assessing the semantic neutrality of UIs in annotation applications.</p>
-            </div>
-            <div class="bg-secondary bg-gradient bg-opacity-50 p-5">
-                <h2 class="mb-4">Add knowledge to the knowledge bases</h2>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="card card-w-500">
-                            <div class="card-body">
-                                <h5 class="card-title">Giuseppe Raimondi LOD</h5>
-                                <p class="card-text">Insert one/two lines of description.</p>
-                                <a href="/raimondi" class="btn btn-texts">Go to Giuseppe Raimondi LOD</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card card-w-500">
-                            <div class="card-body">
-                                <h5 class="card-title">RePIM</h5>
-                                <p class="card-text">Insert one/two lines of description.</p>
-                                <a href="#" class="btn btn-texts">Go to RePIM</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- footer -->
-            <!-- <div class="bg-rimini-water p-5">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3 class="h5">Tell me the truth</h3>
-                        <ul>
-                            <li><a>Project specifics</a></li>
-                            <li><a>Web application development</a></li>
-                        </ul>
-                        <ul>
-                            <li>Credits</li>
-                            <li>Licence</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="h5">/DH.arc - Digital Humanities Advanced Research Centre</h3>
-                        <ul>
-                            <li><a href="https://centri.unibo.it/dharc/en" title="About Dharc research centre">About</a>
-                            </li>
-                            <li><a href="https://centri.unibo.it/dharc/en/research/projects-at-dh-arc"
-                                    title="All the projects by Dharc">All the projects by /DH.arc</a></li>
-                            <li><a href="https://centri.unibo.it/dharc/en/contacts" title="Contacts">Contacts</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-
-
-
     </main>
-
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 
-    <!-- <script type="text/javascript" src="/assets/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="/assets/js/main.js"></script> -->
-
-
-
     <script>
-
-    $(document).ready(function() {
-      // Handler for filter clicks
-      $('.list-group-item').on('click', function() {
-        var selectedCategory = $(this).data('category');
-
-        // Show all search result items
-        $('.search-result-item').fadeIn(800);
-
-        // Hide search result items not matching the selected category
-        if (selectedCategory !== 'all') {
-          $('.search-result-item').not('.' + selectedCategory).hide();
-        }
+      $(document).ready(function() {
+        // Handler for filter clicks
+        $('.list-group-item').on('click', function() {
+          var selectedCategory = $(this).data('category');
+          // Show all search result items
+          $('.search-result-item').fadeIn(800);
+          // Hide search result items not matching the selected category
+          if (selectedCategory !== 'all') {
+            $('.search-result-item').not('.' + selectedCategory).hide();
+          }
+        });
       });
-    });
-
-    $(document).ready(function() {
-      // Handler for filter clicks
-      $('.list-group-item2').on('click', function() {
-        var selectedCategory2 = $(this).data('category');
-
-        // Show all search result items
-        $('.search-result-item2').fadeIn(800);
-
-        // Hide search result items not matching the selected category
-        if (selectedCategory2 !== 'all') {
-          $('.search-result-item2').not('.' + selectedCategory2).hide();
-        }
+      $(document).ready(function() {
+        // Handler for filter clicks
+        $('.list-group-item2').on('click', function() {
+          var selectedCategory2 = $(this).data('category');
+          // Show all search result items
+          $('.search-result-item2').fadeIn(800);
+          // Hide search result items not matching the selected category
+          if (selectedCategory2 !== 'all') {
+            $('.search-result-item2').not('.' + selectedCategory2).hide();
+          }
+        });
       });
-    });
-  </script>
-
-</body>
-
+    </script>
+  </body>undefined
 </html>
