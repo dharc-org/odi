@@ -125,7 +125,7 @@ def story(storyID):
     PREFIX odi: <https://purl.org/ebr/odi#>
     PREFIX bacodi: <https://purl.org/ebr/odi/data/>
 
-    select distinct ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName (group_concat(distinct ?text;separator="//") as ?texts)
+    select distinct ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment (group_concat(distinct ?text;separator="//") as ?texts)
     where {
          <https://purl.org/ebr/odi/data/""" + storyID + """> rdfs:label ?storyTitle;
             odi:hasCard ?storyCard.
@@ -135,9 +135,10 @@ def story(storyID):
 
         OPTIONAL {<https://purl.org/ebr/odi/data/""" + storyID + """> odi:hasTitle ?storyName}
         OPTIONAL {?storyCard odi:hasTextualReference ?text}
+        OPTIONAL {<https://purl.org/ebr/odi/data/""" + storyID + """> rdfs:comment ?comment}
 
     }
-    GROUP BY ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ORDER BY ASC (?position)
+    GROUP BY ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment ORDER BY ASC (?position)
     """
 
     sparql.setQuery(storyQuery)
@@ -162,6 +163,7 @@ def story(storyID):
     storyRepresentationResult = sparql.query().convert()
 
     storyTitle = storyResults["results"]["bindings"][0]["storyTitle"]["value"]
+    storyDescription = storyResults["results"]["bindings"][0]["comment"]["value"]
 
     try:
         storyName = storyResults["results"]["bindings"][0]["storyName"]["value"]
@@ -211,21 +213,7 @@ def story(storyID):
     sparql.setReturnFormat(JSON)
     storyRelationsResult = sparql.query().convert()
 
-    # Track the hierarchical level of each node
-    # level_map = {}
-    #
-    # # Iterate over the query results and add nodes and edges to the network
-    # for result in storyRelationsResult['results']['bindings']:
-    #     subject = result['reprLabel']['value']
-    #     object = result['reprLabel2']['value']
-    #     net.add_node(subject, color='red', shape='square')
-    #     net.add_node(object)
-    #     net.add_edge(subject, object, label=result['relLabel']['value'], lenght=200)
-    #
-    #     # Serialize the network data to JSON
-    # network_data = str(net.get_network_data())
-
-    return render_template('storyTemplate.html',  storyResults = storyResults, storyRepresentationResult = storyRepresentationResult, storyTitle = storyTitle, storyName = storyName, storyRelationsResult=storyRelationsResult)
+    return render_template('storyTemplate.html',  storyResults = storyResults, storyRepresentationResult = storyRepresentationResult, storyTitle = storyTitle, storyDescription = storyDescription, storyName = storyName, storyRelationsResult=storyRelationsResult)
 
 @app.route('/carte/<cardID>')
 def card(cardID):
@@ -301,9 +289,10 @@ def suit(suitID):
     PREFIX odi: <https://purl.org/ebr/odi#>
     PREFIX bacodi: <https://purl.org/ebr/odi/data/>
 
-    select distinct ?suitLabel
+    select distinct ?suitLabel ?comment
     where {
-      <https://purl.org/ebr/odi/data/""" + suitID + """> rdfs:label ?suitLabel
+      <https://purl.org/ebr/odi/data/""" + suitID + """> rdfs:label ?suitLabel.
+      OPTIONAL {<https://purl.org/ebr/odi/data/""" + suitID + """> rdfs:comment ?comment}
     }
     """
 
@@ -312,6 +301,7 @@ def suit(suitID):
     suitResults = sparql.query().convert()
 
     suitLabel = suitResults['results']['bindings'][0]['suitLabel']
+    suitDescription = suitResults['results']['bindings'][0]['comment']
 
     suitCardsQuery = """
     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -341,7 +331,7 @@ def suit(suitID):
 
     print(suitMeaningsResults)
 
-    return render_template('suitTemplate.html',  suitLabel = suitLabel, suitMeaningsResults = suitMeaningsResults)
+    return render_template('suitTemplate.html',  suitLabel = suitLabel, suitDescription = suitDescription, suitMeaningsResults = suitMeaningsResults)
 
 @app.route('/tipologia/<typologyID>')
 def typology(typologyID):
@@ -350,9 +340,10 @@ def typology(typologyID):
     PREFIX odi: <https://purl.org/ebr/odi#>
     PREFIX bacodi: <https://purl.org/ebr/odi/data/>
 
-    select distinct ?typologyLabel
+    select distinct ?typologyLabel ?comment
     where {
-      <https://purl.org/ebr/odi/data/""" + typologyID + """> rdfs:label ?typologyLabel
+      <https://purl.org/ebr/odi/data/""" + typologyID + """> rdfs:label ?typologyLabel.
+      OPTIONAL {<https://purl.org/ebr/odi/data/""" + typologyID + """> rdfs:comment ?comment}
     }
     """
 
@@ -361,6 +352,8 @@ def typology(typologyID):
     typologyResults = sparql.query().convert()
 
     typologyLabel = typologyResults['results']['bindings'][0]['typologyLabel']
+    typologyDescription = typologyResults['results']['bindings'][0]['comment']
+
 
     typologyCardsQuery = """
     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -388,7 +381,7 @@ def typology(typologyID):
     sparql.setReturnFormat(JSON)
     typologyMeaningsResults = sparql.query().convert()
 
-    return render_template('typologyTemplate.html',  typologyLabel = typologyLabel, typologyMeaningsResults = typologyMeaningsResults)
+    return render_template('typologyTemplate.html',  typologyLabel = typologyLabel, typologyDescription = typologyDescription, typologyMeaningsResults = typologyMeaningsResults)
 
 
 @app.route('/significati/<meaningID>')
