@@ -22,6 +22,15 @@
            rdfs:label "Arriva a"@it ,
                       "Arrives at"@en .
 
+### https://purl.org/ebr/odi#hasIndirectRelationWith
+:hasIndirectRelationWith rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :Representation ;
+           rdfs:range :Representation ;
+           rdfs:comment "Questa proprietà collega un protagonista con un elemento della sua storia che non ha un legame diretto con lui, ma un legame indiretto attraverso un'altra carta della storia."@it ,
+                        "This property connects a main character with an element of his story that has no direct link to him, but an indirect link through another card of the story."@en ;
+           rdfs:label "ha una relazione indiretta con"@it ,
+                      "has indirect relation with"@en .
 
 ###  https://purl.org/ebr/odi#bumpsInto
 :bumpsInto rdf:type owl:ObjectProperty ;
@@ -146,18 +155,6 @@
                          "This property shows a chapter of the edition of reference."@en ;
             rdfs:label "Ha capitolo"@it ,
                        "Has chapter"@en .
-
-
-###  https://purl.org/ebr/odi#hasComplexRelationWith
-:hasComplexRelationWith rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf owl:topObjectProperty ;
-                        rdfs:domain :Representation ;
-                        rdfs:range :Representation ;
-                        rdfs:comment "Questa proprietà collega un protagonista con un elemento della sua storia che non ha un legame diretto con lui, ma un legame indiretto attraverso un'altra carta della storia."@it ,
-                                     "This property connects a main character with an element of his story that has no direct link to him, but an indirect link through another card of the story."@en ;
-                        rdfs:label "Ha una complessa relazione con"@it ,
-                                   "Has complex relation with"@en .
-
 
 ###  https://purl.org/ebr/odi#hasCurrentLocation
 :hasCurrentLocation rdf:type owl:ObjectProperty ;
