@@ -29,7 +29,7 @@ After installing the required packages:
 cd data
 java -server -Xmx4g -jar blazegraph.jar
 ```
-- Upload data via the Blazegraph interface (accessible at **http://localhost:9999/**). Please upload both the ontology **data/odi.owl** and the KG **data/bacodi.ttl**
+- Upload data via the Blazegraph interface (accessible at **http://localhost:9999/**). Please upload both the ontology **data/odi.owl** and the KG **data/bacodi.ttl**. A **blazegraph.jnl** file will be created in your **data** repository, no further data uploads are required. 
 
 - Run **app.py**
 ```
