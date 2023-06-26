@@ -46,15 +46,18 @@ def home():
     PREFIX odi: <https://purl.org/ebr/odi#>
     PREFIX bacodi: <https://purl.org/ebr/odi/data/>
 
-    select distinct ?card ?cardName ?typology ?typologyLabel ?suit ?suitLabel
+    select distinct ?card ?cardName ?typology ?typologyLabel ?suit ?suitLabel (COUNT(?storyCard) as ?nCards)
     where {
       ?card a odi:DeckCard ;
               odi:hasName ?cardName ;
               odi:hasTypology ?typology.
       ?typology rdfs:label ?typologyLabel.
+      OPTIONAL {?storyCard odi:specifies ?card. ?story odi:hasCard ?storyCard.}
 
       OPTIONAL {?card odi:hasSuit ?suit. ?suit rdfs:label ?suitLabel.}
     }
+
+    GROUP BY ?card ?cardName ?typology ?typologyLabel ?suit ?suitLabel ORDER BY DESC (?nCards)
     """
 
     sparql.setQuery(cardsQuery)

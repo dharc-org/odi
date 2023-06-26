@@ -69,7 +69,9 @@
               <div class="list-group list-group-flush" id="searchResults">
                 <div class="row">
                   <div class="col-md-5"></div>
-                </div> {% for res in cardsResults["results"]["bindings"] %} {% if 'suitLabel' in res %} <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['suitLabel']['value']}} {{ res['typologyLabel']['value']}}">{{res["cardName"]["value"]}}</a> {% else %} <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['typologyLabel']['value']}}">{{res["cardName"]["value"]}}</a> {% endif %} {% endfor %}
+                </div> {% for res in cardsResults["results"]["bindings"] %} {% if 'suitLabel' in res %} <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['suitLabel']['value']}} {{ res['typologyLabel']['value']}}">{{res["cardName"]["value"]}} <span class="badge text-bg-secondary float-right" style="float:right;">{{res['nCards']['value']}}</span></a> {% else %} <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['typologyLabel']['value']}}">{{res["cardName"]["value"]}} <span class="badge text-bg-secondary float-right" style="float:right;">{{res['nCards']['value']}}</span>
+                </a> {% endif %}
+                {% endfor %}
               </div>
             </div>
           </div>
