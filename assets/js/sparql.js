@@ -15,7 +15,7 @@ Array.from(playButton).forEach(function(button) {
     var query = yasqe.getValue();
 
     // Make an HTTP POST request to the backend
-    fetch('/process_query', {
+    fetch('./process_query', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
