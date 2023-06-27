@@ -433,9 +433,9 @@ def meaning(meaningID):
 
     return render_template('meaningTemplate.html',  meaningLabel = meaningLabel, meaningData = meaningData)
 
-@app.route('/static/<path:path>')
+@app.route('/data/visualisation/<path:path>')
 def send_static(path):
-    return send_from_directory('static', path)
+    return send_from_directory('visualisation', path)
 
 @app.route('/contatti')
 def contacts():

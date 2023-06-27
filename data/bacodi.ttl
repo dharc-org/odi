@@ -3849,8 +3849,7 @@ bacodi:morgan-library a odi:Place ;
 
 bacodi:numerale a odi:Typology ;
     rdfs:label "Numerale"^^xsd:string ;
-    rdfs:comment "I Numerali, insieme alle Carte di corte, costituiscono gli Arcani Minori. In particolare, i Numerali sono il sistema operativo dei tarocchi e vanno da 1 a 10 per ciascuno dei 4 segni. Nel mazzo Pierpont-Morgan Bergamo, il Tre di Spade è andato perduto ed è l'unica carta, tra le quattro perdute del mazzo, ad essere stata esclusa da Calvino per la creazione delle sequenze narrative.
-    Nei racconti, i Numerali rimandano maggiormente allo sfondo tematico e alle descrizioni delle vicende narrative, diversamente dalle Carte di corte e dai Trionfi."^^xsd:string .
+    rdfs:comment "I Numerali, insieme alle Carte di corte, costituiscono gli Arcani Minori. In particolare, i Numerali sono il sistema operativo dei tarocchi e vanno da 1 a 10 per ciascuno dei 4 segni. Nel mazzo Pierpont-Morgan Bergamo, il Tre di Spade è andato perduto ed è l'unica carta, tra le quattro perdute del mazzo, ad essere stata esclusa da Calvino per la creazione delle sequenze narrative. Nei racconti, i Numerali rimandano maggiormente allo sfondo tematico e alle descrizioni delle vicende narrative, diversamente dalle Carte di corte e dai Trionfi."^^xsd:string .
 
 bacodi:piccola a odi:Dimension ;
     rdfs:label "Piccola"^^xsd:string .
