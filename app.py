@@ -14,7 +14,7 @@ sparql = SPARQLWrapper(endpoint)
 sparql.setTimeout(55)
 
 # Define the routes using the example_routes blueprint
-@app.route('/')
+@app.route('/odi')
 def home():
 
     #net = Network(directed=True, layout='hierarchical')
