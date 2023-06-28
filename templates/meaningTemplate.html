@@ -74,14 +74,14 @@
           <main class="row overflow-auto">
             <div class="col pt-4">
               <div class="card w-100">
-                <div class="card-header bg-dark">
-                  <h1 class="text-white text-center">{{meaningLabel['value']}}</h1>
+                <div class="card-header bg-white">
+                  <h1 class="text-center">{{meaningLabel['value']}}</h1>
                 </div>
-                <div class="card-footer text-muted">
-                  <h5 class="card-title">Interpretazioni</h5>
+                <div class="card-footer text-muted bg-white">
+                  <h5 class="card-title text-center">Interpretazioni</h5>
                   <ul class="list-group list-group-flush"> {% for res in meaningData['results']['bindings'] %} <li class="list-group-item" style="background-color:transparent">
                       <div class="row w-100">
-                        <div class="col-md-2"> Posizione <span class="badge badge-light bg-dark">{{res['position']['value']}}</span>
+                        <div class="col-md-2"> Posizione <span class="badge rounded-pill bg-success">{{res['position']['value']}}</span>
                         </div>
                         <div class="col-md-5"> Compare in: <a href={{res['story']['value']|replace('https://purl.org/ebr/odi/data/', '../storie/')}} class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
                           <br> Carta: <a href={{res['deckCard']['value']|replace('https://purl.org/ebr/odi/data/', '../carte/')}} class="card-text">{{res["cardName"]['value']}}</a>

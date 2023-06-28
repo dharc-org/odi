@@ -99,7 +99,10 @@ a {
 
 .nav a:hover {color:#99c199 !important}
 hr {color:#99c199 !important}
-.list-group-item {border:0px solid transparent !important}
+#indexes .list-group-item {border:0px solid transparent !important}
+
+
+.card-header {background-color:#99c199 !important } 
 /* NETWORKS OF EACH STORY */
 
 #network {
