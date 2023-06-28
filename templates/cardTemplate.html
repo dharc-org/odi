@@ -11,17 +11,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   </head>
   <body>
+
     <!-- sticky sidebar -->
-    <div class="container-fluid overflow-hidden sidebar h-100">
+    <div class="container-fluid overflow-hidden sidebar">
       <div class="row vh-100 overflow-auto">
-        <div class="col-md-2 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top pt-3">
-          <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
+        <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top pt-3">
+          <div class="fixed-top d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white" id="the_sidebar">
             <a href="../" class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
               <span class="fs-5">ODI</span>
               </span>
             </a>
-            <p class="side-small-text d-none d-md-inline">
-              <i>Esplorazione semantica della macchina narrativa combinatoria de "Il castello dei destini incrociati" di Italo Calvino</i>
+            <p class="side-small-text d-none d-md-inline" style="word-break: break-all !important">
+              <i>Esplorazione semantica della <br>macchina narrativa combinatoria <br> de "Il castello dei destini incrociati"<br>di Italo Calvino</i>
             </p>
             <hr class="d-none d-md-inline">
             <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
@@ -43,19 +44,27 @@
                   <span class="ms-1 d-none d-sm-inline">SPARQL Endpoint</span>
                 </a>
               </li>
-              <hr class="d-none d-md-inline">
+            </ul>
+            <ul class="sticky-bottom-md nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu2">
               <li>
-                <a href="#" class="nav-link px-sm-0 px-2">
+                <a href="https://odi-documentation.github.io/materials/" class="nav-link px-sm-0 px-2" target="_blank">
                   <i class="bi bi-journal-bookmark-fill"></i>
-                  <span class="ms-1 d-none d-sm-inline">Documentazione</span>
+                  <span class="ms-1 d-none d-sm-inline">Documentazione <i class="bi bi-box-arrow-up-right"></i></span>
                 </a>
               </li>
               <li>
-                <a href="/contatti" class="nav-link px-sm-0 px-2">
+                <a href="https://github.com/ODI-documentation/materials" class="nav-link px-sm-0 px-2" target="_blank">
+                  <i class="bi bi-github"></i>
+                  <span class="ms-1 d-none d-sm-inline">Repository <i class="bi bi-box-arrow-up-right"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="../contatti" class="nav-link px-sm-0 px-2">
                   <i class="bi bi-person-circle"></i>
                   <span class="ms-1 d-none d-sm-inline">Contatti</span>
                 </a>
               </li>
+              <hr class="d-none d-md-inline">
             </ul>
           </div>
         </div>
