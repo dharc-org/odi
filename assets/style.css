@@ -90,14 +90,16 @@ cursor: pointer;
 }
 
 a {
-  color:#006600 !important;
+  color:black !important;
   text-decoration:none !important;}
 
-.nav a {color:white !important}
+.nav a {color:#006600 !important}
+#sidebar {border-right:15px solid #99c199}
 
-.nav a:hover {color:#006600 !important}
 
-
+.nav a:hover {color:#99c199 !important}
+hr {color:#99c199 !important}
+.list-group-item {border:0px solid transparent !important}
 /* NETWORKS OF EACH STORY */
 
 #network {
@@ -151,38 +153,7 @@ a {
 }
 
 .side-small-text {font-size:80% !Important}
-hr {width:100%}
+hr {width:100%;}
 
 
-/* LOADER */
-
-/* CSS for loader animation */
-.loader {
-  border: 8px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 8px solid #3498db;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
-  margin: 100px auto;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* SIDEBAR FOOTER */
-.sticky-bottom-md {
-      position: fixed;
-      bottom: 0;
-    }
-
-@media (max-width: 768px) {
-  .sticky-bottom-md {
-    position: relative;
-  }
-
-  #the_sidebar {background-color:#343a40 !important}
-}
-
-.sidebar > i {word-break: break-all;}
+/* SIDEBAR COLORS */

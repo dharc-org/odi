@@ -1,111 +1,163 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Enrica Bruno, Valentina Pasqual, Francesca Tomasi">
-    <title>ODI</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Pasqual Valentina, Enrica Bruno, Francesca Tomasi">
+  <title>ODI</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
   <body>
-    <main>
-      <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
-        <div class="bg-dark p-4">
-          <h5 class="text-body-emphasis h4">Collapsed content</h5>
-          <span class="text-body-secondary">Toggleable via the navbar brand.</span>
-        </div>
-      </div>
-      <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </nav>
-      <div class="container">
-        <!-- <iframe class="w-100" id="mynetwork" src="static/network.html"></iframe> -->
-        <div class="row">
-          <!-- STORIES LIST -->
-          <div class="col-md-4 mt-4">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">Le storie</a>
-              </div>
-            </nav>
-            <ul class="list-group list-group-flush"> {% for res in storiesResults["results"]["bindings"] %} <a class="list-group-item list-group-item-action" href={{res["story"]["value"]|replace('https://purl.org/ebr/odi/data/', 'storie/')}}>{{res["storyTitle"]["value"]}}{% if 'storyName' in res %}, <i> {{res["storyName"]["value"]}}</i>{% endif %} </a> {% endfor %} </ul>
-          </div>
-          <!-- CARDS LIST -->
-          <div class="col-md-4">
-            <div class="container mt-4">
-              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Le Carte</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                    <ul class="navbar-nav">
-                      <li class="nav-item dropdown">
-                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Semi </button>
 
-                        <ul class="dropdown-menu dropdown-menu-dark"> {% for res in suitList %} <li>
-                            <a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a>
-                          </li> {% endfor %} </ul>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Tipologia </button>
-                        <ul class="dropdown-menu dropdown-menu-dark"> {% for res in typologyList %} <li>
-                            <a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a>
-                          </li> {% endfor %} </ul>
-                      </li>
+    <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" id="sidebar">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+                <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline pt-4">ODI</span>
+                </a>
+                <p class="side-small-text d-none d-md-inline" style="word-break: break-all !important">
+                  <i>Esplorazione semantica della macchina narrativa combinatoria de "Il castello dei destini incrociati"<br>di Italo Calvino</i>
+                </p>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="bi bi-arrow-down-left-square-fill"></i>
+                            <span class="ms-1 d-none d-sm-inline">Indici</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"  class="nav-link align-middle px-0">
+                          <i class="bi bi-bar-chart-line-fill"></i>
+                          <span class="ms-1 d-none d-sm-inline">Visualizzazioni dei Dati</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/sparql" class="nav-link align-middle px-0">
+                          <i class="bi bi-question-circle"></i>
+                          <span class="ms-1 d-none d-sm-inline">SPARQL endpoint</span></a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                  <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="https://odi-documentation.github.io/materials/" class="nav-link align-middle px-0" target="_blank">
+                          <i class="bi bi-journal-bookmark-fill"></i>
+                            <span class="ms-1 d-none d-sm-inline">Documentazione <i class="bi bi-box-arrow-up-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://github.com/ODI-documentation/materials" class="nav-link align-middle px-0" target="_blank">
+                          <i class="bi bi-github"></i>
+                            <span class="ms-1 d-none d-sm-inline">Repository <i class="bi bi-box-arrow-up-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contatti" class="nav-link align-middle px-0">
+                          <i class="bi bi-person-circle"></i>
+                            <span class="ms-1 d-none d-sm-inline">Contatti</span>
+                        </a>
+                    </li>
                     </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col py-3">
+          <!-- main content -->
+          <div class="col d-flex flex-column h-sm-100">
+
+            <main class="row overlow-auto">
+                <!-- STORIES LIST -->
+                <div class="col-md-4 mt-4">
+                  <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                      <h4>Le storie</h4>
+                    </div>
+                  </nav>
+                  <hr>
+                  <ul class="list-group list-group-flush"> {% for res in storiesResults["results"]["bindings"] %} <a class="list-group-item list-group-item-action" href={{res["story"]["value"]|replace('https://purl.org/ebr/odi/data/', 'storie/')}}>{{res["storyTitle"]["value"]}}{% if 'storyName' in res %}, <i> {{res["storyName"]["value"]}}</i>{% endif %} </a> {% endfor %} </ul>
+                </div>
+                <!-- CARDS LIST -->
+                <div class="col-md-4">
+                  <div class="container mt-4">
+                    <nav class="navbar navbar-expand-lg">
+                      <div class="container-fluid">
+                        <h4>Le Carte</h4>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse  d-md-flex justify-content-md-end" id="navbarNavDarkDropdown">
+                          <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                              <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Semi </button>
+
+                              <ul class="dropdown-menu"> {% for res in suitList %} <li>
+                                  <a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a>
+                                </li> {% endfor %} </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Tipologia </button>
+                              <ul class="dropdown-menu"> {% for res in typologyList %} <li>
+                                  <a class="dropdown-item dropdown-item" data-category={{res}} href="#">{{res}}</a>
+                                </li> {% endfor %} </ul>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </nav>
+                    <hr>
+                    <!-- <h4>Filters</h4> -->
+                    <!-- <h4>Search Results</h4> -->
+                    <div class="list-group list-group-flush" id="searchResults">
+                      <div class="row">
+                        <div class="col-md-5"></div>
+                      </div> {% for res in cardsResults["results"]["bindings"] %} {% if 'suitLabel' in res %} <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['suitLabel']['value']}} {{ res['typologyLabel']['value']}}">{{res["cardName"]["value"]}} <span class="badge rounded-pill bg-success float-right" style="float:right;">{{res['nCards']['value']}}</span></a> {% else %} <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['typologyLabel']['value']}}">{{res["cardName"]["value"]}} <span class="badge rounded-pill bg-success float-right" style="float:right;">{{res['nCards']['value']}}</span>
+                      </a> {% endif %}
+                      {% endfor %}
+                    </div>
                   </div>
                 </div>
-              </nav>
-              <!-- <h4>Filters</h4> -->
-              <!-- <h4>Search Results</h4> -->
-              <div class="list-group list-group-flush" id="searchResults">
-                <div class="row">
-                  <div class="col-md-5"></div>
-                </div> {% for res in cardsResults["results"]["bindings"] %} {% if 'suitLabel' in res %} <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['suitLabel']['value']}} {{ res['typologyLabel']['value']}}">{{res["cardName"]["value"]}} <span class="badge text-bg-secondary float-right" style="float:right;">{{res['nCards']['value']}}</span></a> {% else %} <a href="{{res["card"]["value"]|replace('https://purl.org/ebr/odi/data/', 'carte/')}}" class="search-result-item list-group-item list-group-item-action {{res['typologyLabel']['value']}}">{{res["cardName"]["value"]}} <span class="badge text-bg-secondary float-right" style="float:right;">{{res['nCards']['value']}}</span>
-                </a> {% endif %}
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-          <!-- CARDS MEANINGS LIST -->
-          <div class="col-md-4 mt-4">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">I significati</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                  <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                      <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Classe </button>
-                      <ul class="dropdown-menu dropdown-menu-dark"> {% for res in classList %} <li>
-                          <a class="dropdown-item dropdown-item list-group-item2" data-category={{res}} href="#">{{res}}</a>
-                        </li> {% endfor %} </ul>
-                    </li>
-                  </ul>
+                <!-- CARDS MEANINGS LIST -->
+                <div class="col-md-4 mt-4">
+                  <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                      <h4>I significati</h4>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse  d-md-flex justify-content-md-end" id="navbarNavDarkDropdown">
+                        <ul class="navbar-nav">
+                          <li class="nav-item dropdown dropstart">
+                            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Classe</button>
+                            <ul class="dropdown-menu"> {% for res in classList %} <li>
+                                <a class="dropdown-item dropdown-item list-group-item2" data-category={{res}} href="#">{{res}}</a>
+                              </li> {% endfor %} </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                  <hr>
+                  <ul class="list-group list-group-flush"> {% for res in meaningsResults["results"]["bindings"] %} <a href="{{res["meaning"]["value"]|replace('https://purl.org/ebr/odi/data/', 'significati/')}}" class="search-result-item2 list-group-item list-group-item-action {{ res['classLabel']['value']}}">{{res["meaningLabel"]["value"]}}
+                      <span class="badge rounded-pill bg-success float-right" style="float:right;">{{res['nMeanings']['value']}}</span>
+                    </a> {% endfor %} </ul>
                 </div>
-              </div>
-            </nav>
-            <ul class="list-group list-group-flush"> {% for res in meaningsResults["results"]["bindings"] %} <a href="{{res["meaning"]["value"]|replace('https://purl.org/ebr/odi/data/', 'significati/')}}" class="search-result-item2 list-group-item list-group-item-action {{ res['classLabel']['value']}}">{{res["meaningLabel"]["value"]}}
-                <span class="badge text-bg-secondary float-right" style="float:right;">{{res['nMeanings']['value']}}</span>
-              </a> {% endfor %} </ul>
-          </div>
+          </main>
         </div>
-      </div>
-    </main>
+    </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+
+  </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 
     <script>
       $(document).ready(function() {
