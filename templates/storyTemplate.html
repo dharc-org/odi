@@ -86,31 +86,22 @@
 
     <div class="card w-100">
       <div class="card-header">
-        <h1 class="text-center p-3">{{storyTitle}} {%if storyName != '' %}, <i>{{storyName}}</i>{% endif %}</h1>
+        <h1 class="text-center p-3">{{storyTitle}}{%if storyName != '' %}, <i>{{storyName}}</i>{% endif %}</h1>
       </div>
       <div class="card-body">
-        <div class="row">
-          <div class="col-md-5">
             <h5 class="card-title p-3">Sinossi della storia</h5>
             <p class="card-text p-3">{{storyDescription}}</p>
-          </div>
-          <div class="col-md-7">
-            <h5 class="p-3">Collegamenti semantici e relazioni narrative tra le rappresentazioni delle carte</h5>
-            <div id="legend-container">
-            <div id="legend"></div>
-            <div id="zoom-buttons" class="d-flex justify-content-end">
-          <button class="btn btn-outline-dark" onclick="zoomIn()"><i class="bi bi-zoom-in"></i></button>
-          <button class="btn btn-outline-dark" onclick="zoomOut()"><i class="bi bi-zoom-out"></i></button>
-          <button class="btn btn-outline-dark" onclick="resetZoom()"><i class="bi bi-arrow-counterclockwise"></i></button>
-        </div>
-        </div>
-        <div id="network"></div>
-                    </div>
-          </div>
 <div id="embedded-content"></div>
       </div>
       <div class="card-footer text-muted">
-        <h5 class="card-title p-3">Interpretazioni</h5>
+        <div class="row">
+          <div class="col-md-8">
+          <h5 class="card-title p-3">Interpretazioni</h5>
+        </div>
+          <div class="col-md-4 p-3 text-end">
+          <a href="#network-container" class="p-3">Network delle relazioni<i class="bi bi-arrow-down"></i></a>
+        </div>
+      </div>
         <ul class="list-group list-group-flush pt-3">
            {% for res in storyResults['results']['bindings'] %}
 
@@ -139,6 +130,21 @@
        </ul>
 
       </div>
+
+      <div class="network card-footer" id="network-container">
+        <h5 class="p-3">Collegamenti semantici e relazioni narrative tra le rappresentazioni delle carte</h5>
+        <div class="network-contents p-3">
+        <div id="legend-container">
+        <div id="legend"></div>
+        <div id="zoom-buttons" class="d-flex justify-content-end">
+      <button class="btn btn-outline-dark" onclick="zoomIn()"><i class="bi bi-zoom-in"></i></button>
+      <button class="btn btn-outline-dark" onclick="zoomOut()"><i class="bi bi-zoom-out"></i></button>
+      <button class="btn btn-outline-dark" onclick="resetZoom()"><i class="bi bi-arrow-counterclockwise"></i></button>
+    </div>
+    </div>
+    </div>
+    <div id="network" class="p-3"></div>
+                </div>
     </div>
 
 
