@@ -85,17 +85,17 @@
 
 
     <div class="card w-100">
-      <div class="card-header bg-dark">
-        <h1 class="text-white text-center">{{storyTitle}} {%if storyName != '' %}, <i>{{storyName}}</i>{% endif %}</h1>
+      <div class="card-header">
+        <h1 class="text-center p-3">{{storyTitle}} {%if storyName != '' %}, <i>{{storyName}}</i>{% endif %}</h1>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col-md-5">
-            <h5 class="card-title">Sinossi della storia</h5>
-            <p class="card-text">{{storyDescription}}</p>
+            <h5 class="card-title p-3">Sinossi della storia</h5>
+            <p class="card-text p-3">{{storyDescription}}</p>
           </div>
           <div class="col-md-7">
-            <h5>Collegamenti semantici e relazioni narrative tra le rappresentazioni delle carte</h5>
+            <h5 class="p-3">Collegamenti semantici e relazioni narrative tra le rappresentazioni delle carte</h5>
             <div id="legend-container">
             <div id="legend"></div>
             <div id="zoom-buttons" class="d-flex justify-content-end">
@@ -110,15 +110,15 @@
 <div id="embedded-content"></div>
       </div>
       <div class="card-footer text-muted">
-        <h5 class="card-title">Interpretazioni</h5>
-        <ul class="list-group list-group-flush">
+        <h5 class="card-title p-3">Interpretazioni</h5>
+        <ul class="list-group list-group-flush pt-3">
            {% for res in storyResults['results']['bindings'] %}
 
-            <li class="list-group-item" style="background-color:transparent">
+            <li class="list-group-item">
 
               <div class="row w-100">
                 <div class="col-md-2">
-                      Posizione <span class="badge badge-light bg-dark">{{res['position']['value']}}</span>
+                      Posizione <span class="badge rounded-pill bg-success">{{res['position']['value']}}</span>
                 </div>
                   <div class="col-md-5">
                     {% for res2 in storyRepresentationResult['results']['bindings'] %}

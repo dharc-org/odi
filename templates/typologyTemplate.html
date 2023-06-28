@@ -37,18 +37,18 @@
             <main class="row overflow-auto">
               <div class="col pt-4">
                 <div class="card w-100">
-                  <div class="card-header bg-dark">
-                    <h1 class="text-center text-white">{{typologyLabel['value']}}</h1>
+                  <div class="card-header">
+                    <h1 class="text-center p-3">{{typologyLabel['value']}}</h1>
                   </div>
                   <div class="card-body">
-                    <h5 class="card-title">Descrizione</h5>
-                    <p>{{typologyDescription['value']}}</p>
+                    <h5 class="card-title p-3">Descrizione</h5>
+                    <p class="p-3">{{typologyDescription['value']}}</p>
                   </div>
                   <div class="card-footer text-muted">
-                    <h5 class="card-title">Interpretazioni</h5>
-                    <ul class="list-group list-group-flush"> {% for res in typologyMeaningsResults['results']['bindings'] %} <li class="list-group-item" style="background-color:transparent">
+                    <h5 class="card-title p-3">Interpretazioni</h5>
+                    <ul class="list-group list-group-flush pt-3"> {% for res in typologyMeaningsResults['results']['bindings'] %} <li class="list-group-item" style="background-color:transparent">
                         <div class="row w-100">
-                          <div class="col-md-2"> Posizione <span class="badge badge-light bg-dark">{{res['position']['value']}}</span></div>
+                          <div class="col-md-2"> Posizione <span class="badge rounded-pill bg-success">{{res['position']['value']}}</span></div>
                           <div class="col-md-5"> Compare in: <a href={{res['story']['value']|replace('https://purl.org/ebr/odi/data/', '../storie/')}} class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %},<i> {{res["storyName"]['value']}}</i>{% endif %}</a><br> Carta: <a href={{res['deckCard']['value']|replace('https://purl.org/ebr/odi/data/', '../carte/')}} class="card-text">{{res["cardName"]['value']}}</a><br> Significato: <a href={{res['meaning']['value']|replace('https://purl.org/ebr/odi/data/', '../carte/')}} class="card-text">{{res["meaningLabel"]['value']}}</a></div>
                           <div class="col-md-5">
                             <p class="card-text">{{res['texts']['value']}}</p>

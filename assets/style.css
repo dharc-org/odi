@@ -90,25 +90,34 @@ cursor: pointer;
 }
 
 a {
-  color:black !important;
+  color:#006600 !important;
   text-decoration:none !important;}
 
 .nav a {color:#006600 !important}
 #sidebar {border-right:15px solid #99c199}
 
-
 .nav a:hover {color:#99c199 !important}
 hr {color:#99c199 !important}
 #indexes .list-group-item {border:0px solid transparent !important}
 
+.card {border:0px solid transparent !important}
 
-.card-header {background-color:#99c199 !important } 
+.card-header {background-color:transparent !important }
+.card-footer {background-color:transparent !important }
+
+button {
+  background-color: transparent !important;
+  border:0px solid transparent !important;
+  color:#006600 !important}
 /* NETWORKS OF EACH STORY */
 
 #network {
   width: 100% !important;
   height: 80vh;
+  font-family: 'Open Sans', sans-serif;
 }
+
+canvas {font-family: 'Open Sans', sans-serif;}
 
 
 #legend-container {
@@ -157,6 +166,5 @@ hr {color:#99c199 !important}
 
 .side-small-text {font-size:80% !Important}
 hr {width:100%;}
-
 
 /* SIDEBAR COLORS */
