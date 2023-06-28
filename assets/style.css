@@ -171,7 +171,18 @@ hr {width:100%}
   100% { transform: rotate(360deg); }
 }
 
-/* CSS to hide the loader when the page finishes loading */
-.hide-loader {
-  display: none;
+/* SIDEBAR FOOTER */
+.sticky-bottom-md {
+      position: fixed;
+      bottom: 0;
+    }
+
+@media (max-width: 768px) {
+  .sticky-bottom-md {
+    position: relative;
+  }
+
+  #the_sidebar {background-color:#343a40 !important}
 }
+
+.sidebar > i {word-break: break-all;}
