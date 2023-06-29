@@ -97,7 +97,13 @@
                       <div class="row w-100">
                         <div class="col-md-2"> Posizione <span class="badge rounded-pill bg-success">{{res['position']['value']}}</span>
                         </div>
-                        <div class="col-md-5"> Compare in: <a href={{res['story']['value']|replace('https://purl.org/ebr/odi/data/', '../storie/')}} class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a> {% for res2 in representationCardData['results']['bindings'] %} {% if res2['story']['value'] == res['story']['value'] %} <br> Significato: <a href={{res2['meaning']['value']|replace('https://purl.org/ebr/odi/data/', '../significati/')}} class="card-text">{{ res2['meaningLabel']['value'] }}</a> {% endif %} {% endfor %} </div>
+                        <div class="col-md-5"> Compare in: <a href={{res['story']['value']|replace('https://purl.org/ebr/odi/data/', '../storie/')}} class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
+                          {% for res2 in representationCardData['results']['bindings'] %}
+                            {% if res2['story']['value'] == res['story']['value'] %}
+                            <br> Significato: <a  class="card-text" href={{res2['meaning']['value']|replace('https://purl.org/ebr/odi/data/', '../significati/')}}>{{ res2['meaningLabel']['value'] }}</a>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
                         <div class="col-md-5">
                           <p class="card-text">{{res['texts']['value']}}</p>
                         </div>

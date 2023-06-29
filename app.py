@@ -269,11 +269,12 @@ def card(cardID):
     where {
       <https://purl.org/ebr/odi/data/""" + cardID + """> ^odi:specifies ?storyCard.
       ?storyCard odi:carriesRepresentation ?representation;
-        odi:hasTextualReference ?text;
         odi:hasPositionInTheText ?position;
         ^odi:hasCard ?story.
         ?representation odi:hasMeaningOf ?meaning.
         ?meaning rdfs:label ?meaningLabel.
+
+    OPTIONAL {?storyCard odi:hasTextualReference ?text;}
 
     }
     """
