@@ -56,7 +56,7 @@
                               {{res["storyTitle"]['value']}}{% if 'storyName' in res %},<i>
                                 {{res["storyName"]['value']}}</i>{% endif %}</a><br>
                                 Carta: <a href="../{{res['deckCard']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["cardName"]['value']}}</a><br>
-                                Significato: <a href="../{{res['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}>" class="card-text">{{res["meaningLabel"]['value']}}</a></div>
+                                Significato: <a href="../{{res['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["meaningLabel"]['value']}}</a></div>
                           <div class="col-md-5">
                             <p class="card-text">{{res['texts']['value']}}</p>
                           </div>
