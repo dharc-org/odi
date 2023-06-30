@@ -83,12 +83,15 @@ def indexes():
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
 
-    select distinct ?story ?storyTitle ?storyName
+    select distinct ?story ?storyTitle ?storyName ?position
     where {
          ?story a odi:Story.
          ?story rdfs:label ?storyTitle.
+         ?story odi:hasPositionInTheBook ?position.
          OPTIONAL {?story odi:hasTitle ?storyName}
+
     }
+    GROUP BY ?story ?storyTitle ?storyName ?position ORDER BY ASC (?position)
     """
     sparql.setQuery(storiesQuery)
     sparql.setReturnFormat(JSON)
