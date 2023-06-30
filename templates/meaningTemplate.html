@@ -39,7 +39,8 @@
                     <li class="nav-item">
                         <a href="#"  class="nav-link align-middle px-0">
                           <i class="bi bi-bar-chart-line-fill"></i>
-                          <span class="ms-1 d-none d-sm-inline">Visualizzazioni dei Dati</span> </a>
+                          <span class="ms-1 d-none d-sm-inline">Visualizzazioni dei Dati</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a href="../sparql" class="nav-link align-middle px-0">
@@ -77,6 +78,8 @@
         <!-- main content -->
 
         <div class="col d-flex flex-column h-sm-100">
+          <div id="breadcrumbs" class="text-end"></div>
+
           <main class="row overflow-auto">
             <div class="col pt-4">
               <div class="card w-100">
@@ -93,7 +96,7 @@
                       <div class="row w-100">
                         <div class="col-md-2"> Posizione <span class="badge rounded-pill bg-success">{{res['position']['value']}}</span>
                         </div>
-                        <div class="col-md-5"> Compare in: <a href="../"{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
+                        <div class="col-md-5"> Compare in: <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
                           <br> Carta: <a href="../{{res['deckCard']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["cardName"]['value']}}</a>
                         </div>
                         <div class="col-md-5">
@@ -121,5 +124,7 @@
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
   </script>
+  <script src="../assets/js/script.js"></script>
+
   </body>
 </html>
