@@ -101,7 +101,7 @@
                   <div class="container mt-4">
                     <nav class="navbar navbar-expand-lg">
                       <div class="container-fluid">
-                        <h4>Le Carte</h4>
+                        <h4>Le carte</h4>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
@@ -121,6 +121,7 @@
                                 </li> {% endfor %} </ul>
                             </li>
                           </ul>
+                          <button id="resetFiltersButton"><i class="bi bi-x-lg"></i></button>
                         </div>
                       </div>
                     </nav>
@@ -165,6 +166,7 @@
                               </li>
                               {% endfor %}
                             </ul>
+                            <button id="resetFiltersButton2"><i class="bi bi-x-lg"></i></button>
                           </li>
                         </ul>
                       </div>
@@ -199,8 +201,18 @@
           if (selectedCategory !== 'all') {
             $('.search-result-item').not('.' + selectedCategory).hide();
           }
+
+          // Button for resetting filters
+          $('#resetFiltersButton').on('click', function() {
+            // Show all search result items
+            $('.search-result-item').fadeIn(800);
+            // Clear the selected category filter
+            $('.list-group-item').removeClass('active');
+          });
         });
       });
+
+
       $(document).ready(function() {
         // Handler for filter clicks
         $('.list-group-item2').on('click', function() {
@@ -211,6 +223,14 @@
           if (selectedCategory2 !== 'all') {
             $('.search-result-item2').not('.' + selectedCategory2).hide();
           }
+
+          // Button for resetting filters
+          $('#resetFiltersButton2').on('click', function() {
+            // Show all search result items
+            $('.search-result-item2').fadeIn(800);
+            // Clear the selected category filter
+            $('.list-group-item2').removeClass('active');
+          });
         });
       });
     </script>
