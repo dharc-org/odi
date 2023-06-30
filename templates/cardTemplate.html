@@ -26,6 +26,12 @@
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="../" class="nav-link align-middle px-0">
+                          <i class="bi bi-house-fill"></i>
+                            <span class="ms-1 d-none d-sm-inline">Introduzione</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../indici" class="nav-link align-middle px-0">
                             <i class="bi bi-arrow-down-left-square-fill"></i>
                             <span class="ms-1 d-none d-sm-inline">Indici</span>
                         </a>
@@ -78,7 +84,9 @@
                 <div class="card-body">
                   <h3 class="card-title p-3">Descrizione</h3>
                   <div class="row pt-3">
-                    <div class="col-md-3 d-flex align-items-center"> {% for res in cardDescriptionData['results']['bindings'] %} {% if 'Ha immagine' in res['pLabel']['value'] %} <img id="myImg" class="mx-auto" style="max-width: 50%; height: auto" src={{res['object']['value']}}>
+                    <div class="col-md-3 d-flex align-items-center"> {% for res in cardDescriptionData['results']['bindings'] %}
+                      {% if 'Ha immagine' in res['pLabel']['value'] %}
+                      <img id="myImg" class="mx-auto" style="max-width: 50%; height: auto" src={{res['object']['value']}}>
                       <!-- The Modal -->
                       <div id="myModal" class="modal">
                         <span class="close">&times;</span>
@@ -86,9 +94,17 @@
                         <div id="caption"></div>
                       </div> {% endif %} {% endfor %}
                     </div>
-                    <div class="col-md-9"> {% for res in cardDescriptionData['results']['bindings'] %} {% if 'Ha immagine' not in res['pLabel']['value'] %} {% if 'objectLabel' in res %} {% if res['pLabel']['value'] == 'Ha seme' %} <p>{{ res['pLabel']['value'] }}: <a href="{{ res['object']['value']|replace('https://purl.org/ebr/odi/data/', '../semi/')}}"> {{ res['objectLabel']['value'] }} </a>
-                      </p> {% elif res['pLabel']['value'] == 'Ha tipologia' %} <p>{{ res['pLabel']['value'] }}: <a href="{{ res['object']['value']|replace('https://purl.org/ebr/odi/data/', '../tipologia/')}}"> {{ res['objectLabel']['value'] }} </a>
-                      </p> {% else %} <p>{{ res['pLabel']['value'] }}: {{ res['objectLabel']['value'] }}</p> {% endif %} {% else %} <p>{{ res['pLabel']['value'] }}: {{ res['object']['value'] }}</p> {% endif %} {% endif %} {% endfor %} </div>
+                    <div class="col-md-9">
+                      {% for res in cardDescriptionData['results']['bindings'] %}
+                      {% if 'Ha immagine' not in res['pLabel']['value'] %}
+                      {% if 'objectLabel' in res %}
+                      {% if res['pLabel']['value'] == 'Ha seme' %}
+                      <p>{{ res['pLabel']['value'] }}: <a href="../{{ res['object']['value']|replace('https://w3id.org/odi/data/', '')}}"> {{ res['objectLabel']['value'] }} </a>
+                    </p> {% elif res['pLabel']['value'] == 'Ha tipologia' %} <p>{{ res['pLabel']['value'] }}: <a href="../{{res['object']['value']|replace('https://w3id.org/odi/data/', '')}}"> {{ res['objectLabel']['value'] }} </a>
+                      </p> {% else %} <p>{{ res['pLabel']['value'] }}: {{ res['objectLabel']['value'] }}</p> {% endif %} {% else %} <p>{{ res['pLabel']['value'] }}: {{ res['object']['value'] }}</p>
+                      {% endif %}
+                      {% endif %}
+                      {% endfor %} </div>
                   </div>
                 </div>
                 <div class="card-footer text-muted">
@@ -97,10 +113,10 @@
                       <div class="row w-100">
                         <div class="col-md-2"> Posizione <span class="badge rounded-pill bg-success">{{res['position']['value']}}</span>
                         </div>
-                        <div class="col-md-5"> Compare in: <a href={{res['story']['value']|replace('https://purl.org/ebr/odi/data/', '../storie/')}} class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
+                        <div class="col-md-5"> Compare in: <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
                           {% for res2 in representationCardData['results']['bindings'] %}
                             {% if res2['story']['value'] == res['story']['value'] %}
-                            <br> Significato: <a  class="card-text" href={{res2['meaning']['value']|replace('https://purl.org/ebr/odi/data/', '../significati/')}}>{{ res2['meaningLabel']['value'] }}</a>
+                            <br> Significato: <a  class="card-text" href="../{{res2['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}">{{ res2['meaningLabel']['value'] }}</a>
                             {% endif %}
                           {% endfor %}
                         </div>

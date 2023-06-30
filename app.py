@@ -16,12 +16,17 @@ sparql.setTimeout(55)
 # Define the routes using the example_routes blueprint
 @app.route('/')
 def home():
+    return render_template('index.html')
+
+# Define the routes using the example_routes blueprint
+@app.route('/indici/')
+def indexes():
 
     #net = Network(directed=True, layout='hierarchical')
 
     networkQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?cardLabel ?meaningLabel (COUNT(?meaning) as ?n)
     where {
@@ -43,8 +48,8 @@ def home():
 
     # retrieve all cards
     cardsQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?card ?cardName ?typology ?typologyLabel ?suit ?suitLabel (COUNT(?storyCard) as ?nCards)
     where {
@@ -75,8 +80,8 @@ def home():
 
     # retrieve all stories
     storiesQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?story ?storyTitle ?storyName
     where {
@@ -91,8 +96,8 @@ def home():
 
     # retrieve all meanings
     meaningsQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?meaning ?meaningLabel ?classLabel (COUNT(?meaning) as ?nMeanings)
     where {
@@ -116,7 +121,7 @@ def home():
 
     classList = list(set(classList))
 
-    return render_template('index.html',  cardsResults = cardsResults, storiesResults = storiesResults, suitList = suitList, typologyList = typologyList, meaningsResults = meaningsResults, classList = classList, networkResults = networkResults)
+    return render_template('indexes.html',  cardsResults = cardsResults, storiesResults = storiesResults, suitList = suitList, typologyList = typologyList, meaningsResults = meaningsResults, classList = classList, networkResults = networkResults)
 
 # SET THE ENDPOINT
 
@@ -125,20 +130,20 @@ def home():
 def story(storyID):
 
     storyQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment (group_concat(distinct ?text;separator="//") as ?texts)
     where {
-         <https://purl.org/ebr/odi/data/""" + storyID + """> rdfs:label ?storyTitle;
+         <https://w3id.org/odi/data/storie/""" + storyID + """> rdfs:label ?storyTitle;
             odi:hasCard ?storyCard.
         ?storyCard odi:hasPositionInTheText ?position ;
             odi:specifies ?deckCard.
         ?deckCard odi:hasName ?deckCardLabel.
 
-        OPTIONAL {<https://purl.org/ebr/odi/data/""" + storyID + """> odi:hasTitle ?storyName}
+        OPTIONAL {<https://w3id.org/odi/data/storie/""" + storyID + """> odi:hasTitle ?storyName}
         OPTIONAL {?storyCard odi:hasTextualReference ?text}
-        OPTIONAL {<https://purl.org/ebr/odi/data/""" + storyID + """> rdfs:comment ?comment}
+        OPTIONAL {<https://w3id.org/odi/data/storie/""" + storyID + """> rdfs:comment ?comment}
 
     }
     GROUP BY ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment ORDER BY ASC (?position)
@@ -149,12 +154,12 @@ def story(storyID):
     storyResults = sparql.query().convert()
 
     storyRepresentationQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?storyCard ?meaning ?meaningLabel
     where {
-         <https://purl.org/ebr/odi/data/""" + storyID + """> odi:hasCard ?storyCard.
+         <https://w3id.org/odi/data/storie/""" + storyID + """> odi:hasCard ?storyCard.
         ?storyCard odi:carriesRepresentation ?representation.
         ?representation odi:hasMeaningOf ?meaning.
         ?meaning rdfs:label ?meaningLabel.
@@ -177,13 +182,13 @@ def story(storyID):
     #net = Network()
 
     storyRelationsQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select ?representation ?reprLabel ?relation ?relLabel ?representation2 ?reprLabel2 ?classLabel ?classLabel2
     where {
 
-        <https://purl.org/ebr/odi/data/""" + storyID + """> odi:hasCard ?card,?card2.
+        <https://w3id.org/odi/data/storie/""" + storyID + """> odi:hasCard ?card,?card2.
 
        ?card odi:carriesRepresentation ?representation.
        ?card2 odi:carriesRepresentation ?representation2.
@@ -222,12 +227,12 @@ def story(storyID):
 def card(cardID):
 
     cardDescriptionQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?pLabel ?object ?objectLabel
     where {
-      <https://purl.org/ebr/odi/data/""" + cardID + """> ?p ?object.
+      <https://w3id.org/odi/data/carte/""" + cardID + """> ?p ?object.
       ?p rdfs:label ?pLabel.
       OPTIONAL {?object rdfs:label ?objectLabel}
       FILTER (lang(?pLabel) = 'it')
@@ -239,12 +244,12 @@ def card(cardID):
     cardDescriptionData = sparql.query().convert()
 
     cardQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?cardName ?story ?storyTitle ?storyName ?position (group_concat(distinct ?text;separator="//") as ?texts)
     where {
-      <https://purl.org/ebr/odi/data/""" + cardID + """> odi:hasName ?cardName ;
+      <https://w3id.org/odi/data/carte/""" + cardID + """> odi:hasName ?cardName ;
            ^odi:specifies ?storyCard.
       ?storyCard ^odi:hasCard ?story;
         odi:hasPositionInTheText ?position.
@@ -262,12 +267,12 @@ def card(cardID):
     cardName = cardResults["results"]["bindings"][0]["cardName"]["value"]
 
     representationsCardQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?cardName ?story ?representation ?meaning ?meaningLabel
     where {
-      <https://purl.org/ebr/odi/data/""" + cardID + """> ^odi:specifies ?storyCard.
+      <https://w3id.org/odi/data/carte/""" + cardID + """> ^odi:specifies ?storyCard.
       ?storyCard odi:carriesRepresentation ?representation;
         odi:hasPositionInTheText ?position;
         ^odi:hasCard ?story.
@@ -290,13 +295,13 @@ def card(cardID):
 def suit(suitID):
 
     suitQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?suitLabel ?comment
     where {
-      <https://purl.org/ebr/odi/data/""" + suitID + """> rdfs:label ?suitLabel.
-      OPTIONAL {<https://purl.org/ebr/odi/data/""" + suitID + """> rdfs:comment ?comment}
+      <https://w3id.org/odi/data/semi/""" + suitID + """> rdfs:label ?suitLabel.
+      OPTIONAL {<https://w3id.org/odi/data/semi/""" + suitID + """> rdfs:comment ?comment}
     }
     """
 
@@ -309,12 +314,12 @@ def suit(suitID):
 
     suitCardsQuery = """
     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position (group_concat(distinct ?text;separator="//") as ?texts)
     where {
-      <https://purl.org/ebr/odi/data/""" + suitID + """> ^odi:hasSuit ?deckCard.
+      <https://w3id.org/odi/data/semi/""" + suitID + """> ^odi:hasSuit ?deckCard.
         ?deckCard ^odi:specifies ?storyCard;
             odi:hasName ?cardName.
       ?storyCard odi:carriesRepresentation ?representation;
@@ -341,13 +346,13 @@ def suit(suitID):
 def typology(typologyID):
 
     typologyQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?typologyLabel ?comment
     where {
-      <https://purl.org/ebr/odi/data/""" + typologyID + """> rdfs:label ?typologyLabel.
-      OPTIONAL {<https://purl.org/ebr/odi/data/""" + typologyID + """> rdfs:comment ?comment}
+      <https://w3id.org/odi/data/tipologia/""" + typologyID + """> rdfs:label ?typologyLabel.
+      OPTIONAL {<https://w3id.org/odi/data/tipologia/""" + typologyID + """> rdfs:comment ?comment}
     }
     """
 
@@ -361,12 +366,12 @@ def typology(typologyID):
 
     typologyCardsQuery = """
     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position (group_concat(distinct ?text;separator="//") as ?texts)
     where {
-      <https://purl.org/ebr/odi/data/""" + typologyID + """> ^odi:hasTypology ?deckCard.
+      <https://w3id.org/odi/data/tipologia/""" + typologyID + """> ^odi:hasTypology ?deckCard.
         ?deckCard ^odi:specifies ?storyCard;
             odi:hasName ?cardName.
       ?storyCard odi:carriesRepresentation ?representation;
@@ -392,12 +397,12 @@ def typology(typologyID):
 def meaning(meaningID):
 
     meaningDescriptionQuery = """
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?suitLabel
     where {
-      <https://purl.org/ebr/odi/data/""" + meaningID + """> rdfs:label ?suitLabel
+      <https://w3id.org/odi/data/significati/""" + meaningID + """> rdfs:label ?suitLabel
     }
     """
 
@@ -409,12 +414,12 @@ def meaning(meaningID):
 
     meaningQuery = """
 
-    PREFIX odi: <https://purl.org/ebr/odi#>
-    PREFIX bacodi: <https://purl.org/ebr/odi/data/>
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
 
     select distinct ?deckCard ?cardName ?story ?storyTitle ?storyName ?position (group_concat(distinct ?text;separator="//") as ?texts)
     where {
-      <https://purl.org/ebr/odi/data/""" + meaningID + """> ^odi:hasMeaningOf ?representation .
+      <https://w3id.org/odi/data/significati/""" + meaningID + """> ^odi:hasMeaningOf ?representation .
       ?storyCard odi:carriesRepresentation ?representation.
       ?storyCard odi:specifies ?deckCard;
               odi:hasPositionInTheText ?position.
