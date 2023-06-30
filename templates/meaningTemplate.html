@@ -87,10 +87,31 @@
                   <h1 class="text-center p-3">{{meaningLabel['value']}}</h1>
                 </div>
                 <div class="card-footer text-muted bg-white">
-                  <h3 class="card-title p-3">Interpretazioni
-                    <button type="button" class="info-tooltip btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="TO DO">
-                      <i class="bi bi-info-circle-fill"></i>
-                    </button></h3>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+<h3 class="card-title p-3">Interpretazioni</h3>
+                            <i class="bi bi-info-circle-fill"></i>
+                          </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <ul>
+                            <li>
+                              <b>Posizione</b>: Ogni storia si forma tramite la scelta sequenziale di alcune carte del mazzo dei Tarocchi. La posizione indica dunque la sequenza di carte che forma la narrativa della storia.
+                            </li>
+                          <li><b>Carta</b>: Rappresenta il nome della carta del mazzo dei Tarocchi. Ogni carta ha un significato simbolico e rappresenta un'idea o una situazione specifica.</li>
+                          <li><b>Compare in</b>: Indica il contesto (e dunque la storia) in cui la carta appare.</b>
+
+                          <li><b>Significato</b>: Rappresenta il significato associato alla carta. Ogni carta dei Tarocchi ha una serie di significati interpretativi, che possono variare in base al contesto e alla posizione nella lettura.</li>
+
+                          <li><b>Riferimento al testo</b>: Fornisce un estratto o una descrizione del testo che accompagna o descrive la carta. In questo caso, viene fornita una o più brevi citazioni (indicate tra uncinate) o una spiegazione il simbolismo della carta (in testo libero). Se un'interpretazione si basa su più riferimenti testuali, questi vengono separati tramite il segno //"</li>
+                        </ul>
+                        </div>
+                    </div>
+                  </div>
+                </div>
                   <ul class="list-group list-group-flush pt-3"> {% for res in meaningData['results']['bindings'] %}
                     <li class="list-group-item">
                       <div class="row w-100">

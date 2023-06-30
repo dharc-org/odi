@@ -166,3 +166,17 @@ canvas {font-family: 'Open Sans', sans-serif;}
 
 .side-small-text {font-size:80% !Important}
 hr {width:100%;}
+
+.tooltip.bs-tooltip-auto .tooltip-inner {
+  background-color:#99c199;
+  color:black;
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px transparent !important;
+}
+
+button:after {
+  display:none
+}
