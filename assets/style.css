@@ -180,3 +180,8 @@ button:focus {
 button:after {
   display:none
 }
+
+.collapse > .accordion-body {
+  color:grey; 
+  font-size:80%
+}
