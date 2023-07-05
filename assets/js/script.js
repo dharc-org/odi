@@ -15,9 +15,10 @@ function breadcrumbs() {
   const pageName = linkElements[4].replaceAll('-', ' ')
   const pageName2 = pageName.replaceAll(/([a-z])([A-Z])/g, '$1 $2');
   const pageName3 = pageName2.replaceAll('tuttelealtrestorie', 'Tutte le altre storie');
+  const pageName4 = decodeURIComponent(pageName3)
 
-  if (pageName3 != '') {
-  var breadcrumbHTML = '<div class="btn btn-light">Ritorna a: <a href=\"' + previousPageUrl + '\">'+ category + ' > ' + pageName3 + '</a></div>';
+  if (pageName4 != '') {
+  var breadcrumbHTML = '<div class="btn btn-light">Ritorna a: <a href=\"' + previousPageUrl + '\">'+ category + ' > ' + pageName4 + '</a></div>';
   }
   else {
     var breadcrumbHTML = ''
