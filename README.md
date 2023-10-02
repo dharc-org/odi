@@ -43,3 +43,14 @@ A **blazegraph.jnl** file will be created in your **data** repository, no furthe
 python app.py
 ```
 - Open the application in your browser: **http://localhost:8000/**
+
+## Online Server Start
+```
+[15:08] Tommaso Vitale
+
+service nginx start
+
+/usr/bin/nohup /usr/lib/java/bin/java  -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -server -Xmx2g  -Djetty.port=9999 -jar blazegraph.jar
+
+nohup gunicorn -w 4 -b 0.0.0.0:8080 app:app
+```
