@@ -486,4 +486,4 @@ def process_query():
         return render_template('403.html'), 403
 
 if __name__ == "__main__":
-    app.run(debug = True, port = 8000)
+    app.run(debug = True, port = 8080)
