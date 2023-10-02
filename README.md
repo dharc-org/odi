@@ -46,8 +46,6 @@ python app.py
 
 ## Online Server Start
 ```
-[15:08] Tommaso Vitale
-
 service nginx start
 
 /usr/bin/nohup /usr/lib/java/bin/java  -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -server -Xmx2g  -Djetty.port=9999 -jar blazegraph.jar
