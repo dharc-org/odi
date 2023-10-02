@@ -3,7 +3,22 @@ const yasqe = new Yasqe(document.getElementById("yasqe"));
 // Set the response in the Yasgui results table
 const yasr = new Yasr(document.getElementById("yasr"));
 // Set the query text
-yasqe.setValue("SELECT DISTINCT ?subject ?predicate ?object WHERE { ?subject ?predicate ?object . }");
+yasqe.setValue(`PREFIX odi:<https://w3id.org/odi/>
+PREFIX bacodi: <https://w3id.org/odi/data/>
+
+select distinct ?cardDeck1 ?story1 ?cardDeck2 ?story2 ?meaning
+         where {
+             ?cardStory1 odi:specifies ?cardDeck1.
+             ?cardStory1 odi:carriesRepresentation ?representation1.
+             ?story1 odi:hasCard ?cardStory1.
+             ?representation1 odi:hasMeaningOf ?meaning.
+             ?cardStory2 odi:specifies ?cardDeck2.
+             ?cardStory2 odi:carriesRepresentation ?representation2.
+             ?story2 odi:hasCard ?cardStory2.
+             ?representation2 odi:hasMeaningOf ?meaning.
+             ?representation1 odi:sameAs ?representation2
+             FILTER (?cardDeck1 != ?cardDeck2)
+    }`);
 
 // Get the "play" button element
 var playButton = document.getElementsByClassName("yasqe_queryButton");
