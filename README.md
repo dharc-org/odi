@@ -8,7 +8,7 @@ This interface is a [Python 3](https://www.python.org/downloads/) web applicatio
 The project is ongoing and under development.
  
 
-## Web app Quick start
+## LOCAL SETUP (Quick start)
 
 Clone this repository using the URL https://github.com/ValentinaPasqual/odi.git
 or download the folder.
@@ -44,7 +44,7 @@ python app.py
 ```
 - Open the application in your browser: **http://localhost:8000/**
 
-## Online Server Start
+## DEPLOYMENT SETUP
 ```
 service nginx start
 
