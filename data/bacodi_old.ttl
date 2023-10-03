@@ -54,10 +54,10 @@ bacodi:il-castello-dei-destini-incrociati a odi:Edition ;
         bacodi:capitolotre,
         bacodi:capitolouno,
         bacodi:tuttelealtrestorie ;
-    odi:hasPublicationDate "1973"^^xsd:year ;
+    odi:hasPublicationDate "2014"^^xsd:year ;
     odi:hasTitle "Il castello dei destini incrociati"^^xsd:string ;
-    odi:placeOfPublication bacodi:torino ;
-    odi:publisher bacodi:einaudi .
+    odi:placeOfPublication bacodi:milano ;
+    odi:publisher bacodi:mondadori .
 
 bacodi:il-sole-tuttelealtrestorie-Sei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-sole-tuttelealtrestorie-Sei-apparizione_della_protagonista ;
