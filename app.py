@@ -188,13 +188,18 @@ def story(storyID):
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
 
-    select ?representation ?reprLabel ?relation ?relLabel ?representation2 ?reprLabel2 ?classLabel ?classLabel2
+    select ?representation ?reprLabel ?relation ?relLabel ?representation2 ?reprLabel2 ?classLabel ?classLabel2 ?cardDeck ?cardDeck2 ?cardDeckLabel ?cardDeckLabel2
     where {
 
         <https://w3id.org/odi/data/storie/""" + storyID + """> odi:hasCard ?card,?card2.
 
        ?card odi:carriesRepresentation ?representation.
        ?card2 odi:carriesRepresentation ?representation2.
+
+       ?card odi:specifies ?cardDeck.
+       ?card2 odi:specifies ?cardDeck2.
+       ?cardDeck odi:hasName ?cardDeckLabel.
+       ?cardDeck2 odi:hasName ?cardDeckLabel2.
 
        ?representation a ?class.
        ?class rdfs:label ?classLabel.
@@ -211,7 +216,6 @@ def story(storyID):
       	?representation ?relation ?representation2.
       	?relation rdfs:label ?relLabel
 
-
       FILTER (lang(?relLabel) = 'it')
       FILTER (lang(?classLabel) = 'it')
       FILTER (lang(?classLabel2) = 'it')
@@ -223,6 +227,8 @@ def story(storyID):
     sparql.setQuery(storyRelationsQuery)
     sparql.setReturnFormat(JSON)
     storyRelationsResult = sparql.query().convert()
+
+    print(storyRelationsResult)
 
     return render_template('storyTemplate.html',  storyResults = storyResults, storyRepresentationResult = storyRepresentationResult, storyTitle = storyTitle, storyDescription = storyDescription, storyName = storyName, storyRelationsResult=storyRelationsResult)
 
