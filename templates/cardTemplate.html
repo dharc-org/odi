@@ -139,6 +139,7 @@
                   </div>
                 </div>
               </div>
+                    {% if representationCardData['results']['bindings']|length > 0 %}
                   <ul class="list-group list-group-flush pt-3"> {% for res in cardResults['results']['bindings'] %} <li class="list-group-item" style="background-color:transparent">
                       <div class="row w-100">
                         <div class="col-md-2"> Posizione <span class="badge rounded-pill bg-success">{{res['position']['value']}}</span>
@@ -154,7 +155,11 @@
                           <p class="card-text">{{res['texts']['value']}}</p>
                         </div>
                       </div>
-                    </li> {% endfor %} </ul>
+                    </li> {% endfor %}
+                  </ul>
+                  {% else %}
+                    <div><p class="card text-center">Questa carta non ha alcuna occorrenza nell'opera</p></div>
+                  {% endif %}
                 </div>
               </div>
             </div>

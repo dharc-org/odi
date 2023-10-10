@@ -267,7 +267,10 @@ def card(cardID):
     sparql.setReturnFormat(JSON)
     cardResults = sparql.query().convert()
 
-    cardName = cardResults["results"]["bindings"][0]["cardName"]["value"]
+    try:
+        cardName = cardResults["results"]["bindings"][0]["cardName"]["value"]
+    except:
+        cardName = ''
 
     representationsCardQuery = """
     PREFIX odi: <https://w3id.org/odi/>
