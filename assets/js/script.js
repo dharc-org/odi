@@ -29,3 +29,47 @@ function breadcrumbs() {
 }
 
 window.onload = breadcrumbs;
+
+// FIRST FILTER IN INDEXES (CARDS)
+$(document).ready(function() {
+  // Handler for filter clicks
+  $('.list-group-item').on('click', function() {
+    var selectedCategory = $(this).data('category');
+    // Show all search result items
+    $('.search-result-item').fadeIn(800);
+    // Hide search result items not matching the selected category
+    if (selectedCategory !== 'all') {
+      $('.search-result-item').not('.' + selectedCategory).hide();
+    }
+
+    // Button for resetting filters
+    $('#resetFiltersButton').on('click', function() {
+      // Show all search result items
+      $('.search-result-item').fadeIn(800);
+      // Clear the selected category filter
+      $('.list-group-item').removeClass('active');
+    });
+  });
+});
+
+// SECOND FILTER IN INDEXES (MEANINGS)
+$(document).ready(function() {
+  // Handler for filter clicks
+  $('.list-group-item2').on('click', function() {
+    var selectedCategory2 = $(this).data('category');
+    // Show all search result items
+    $('.search-result-item2').fadeIn(800);
+    // Hide search result items not matching the selected category
+    if (selectedCategory2 !== 'all') {
+      $('.search-result-item2').not('.' + selectedCategory2).hide();
+    }
+
+    // Button for resetting filters
+    $('#resetFiltersButton2').on('click', function() {
+      // Show all search result items
+      $('.search-result-item2').fadeIn(800);
+      // Clear the selected category filter
+      $('.list-group-item2').removeClass('active');
+    });
+  });
+});

@@ -12,7 +12,6 @@
   <!-- cookies and analytics -->
   <script src="../assets/js/stats.js"></script>
   <script src="../assets/js/matomo.js"></script>
-  <script src="https://www.unibo.it/++resource++unibo.cookiebanner/unibo-cookies.min.js?v=20"></script>
 </head>
   <body>
 
@@ -114,15 +113,23 @@
                             <li class="nav-item dropdown">
                               <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Semi</button>
 
-                              <ul class="dropdown-menu"> {% for res in suitList %} <li>
-                                  <a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a>
-                                </li> {% endfor %} </ul>
+                              <ul class="dropdown-menu">
+                                {% for res in suitList %}
+                                  <li>
+                                    <a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a>
+                                  </li>
+                                {% endfor %}
+                              </ul>
                             </li>
                             <li class="nav-item dropdown">
                               <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Tipologia</button>
-                              <ul class="dropdown-menu"> {% for res in typologyList %} <li>
-                                  <a class="dropdown-item dropdown-item" data-category={{res}} href="#">{{res}}</a>
-                                </li> {% endfor %} </ul>
+                              <ul class="dropdown-menu">
+                                {% for res in typologyList %}
+                                <li>
+                                  <a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a>
+                                </li>
+                                {% endfor %}
+                              </ul>
                             </li>
                           </ul>
                           <button id="resetFiltersButton"><i class="bi bi-x-lg"></i></button>
@@ -193,50 +200,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+   <script src="../assets/js/script.js"></script>
 
-    <script>
-      $(document).ready(function() {
-        // Handler for filter clicks
-        $('.list-group-item').on('click', function() {
-          var selectedCategory = $(this).data('category');
-          // Show all search result items
-          $('.search-result-item').fadeIn(800);
-          // Hide search result items not matching the selected category
-          if (selectedCategory !== 'all') {
-            $('.search-result-item').not('.' + selectedCategory).hide();
-          }
-
-          // Button for resetting filters
-          $('#resetFiltersButton').on('click', function() {
-            // Show all search result items
-            $('.search-result-item').fadeIn(800);
-            // Clear the selected category filter
-            $('.list-group-item').removeClass('active');
-          });
-        });
-      });
-
-
-      $(document).ready(function() {
-        // Handler for filter clicks
-        $('.list-group-item2').on('click', function() {
-          var selectedCategory2 = $(this).data('category');
-          // Show all search result items
-          $('.search-result-item2').fadeIn(800);
-          // Hide search result items not matching the selected category
-          if (selectedCategory2 !== 'all') {
-            $('.search-result-item2').not('.' + selectedCategory2).hide();
-          }
-
-          // Button for resetting filters
-          $('#resetFiltersButton2').on('click', function() {
-            // Show all search result items
-            $('.search-result-item2').fadeIn(800);
-            // Clear the selected category filter
-            $('.list-group-item2').removeClass('active');
-          });
-        });
-      });
-    </script>
   </body>
 </html>
