@@ -141,7 +141,7 @@
                     {% if representationCardData['results']['bindings']|length > 0 %}
                   <ul class="list-group list-group-flush pt-3"> {% for res in cardResults['results']['bindings'] %} <li class="list-group-item" style="background-color:transparent">
                       <div class="row w-100">
-                        <div class="col-md-2"> Posizione <span class="badge rounded-pill bg-success">{{res['position']['value']}}</span>
+                        <div class="col-md-2"> Posizione <span class="badge bg-light-success">{{res['position']['value']}}</span>
                         </div>
                         <div class="col-md-5"> Compare in: <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
                           {% for res2 in representationCardData['results']['bindings'] %}

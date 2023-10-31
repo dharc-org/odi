@@ -216,3 +216,8 @@ button:after {
   padding: 10px;
   z-index: 1;
 }
+
+/* Position badges colors and shape */
+span.badge.bg-light-success {
+  color:#016600;
+  background-color: #99C199}
