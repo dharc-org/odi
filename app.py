@@ -196,11 +196,6 @@ def story(storyID):
        ?card odi:carriesRepresentation ?representation.
        ?card2 odi:carriesRepresentation ?representation2.
 
-       ?card odi:specifies ?cardDeck.
-       ?card2 odi:specifies ?cardDeck2.
-       ?cardDeck odi:hasName ?cardDeckLabel.
-       ?cardDeck2 odi:hasName ?cardDeckLabel2.
-
        ?representation a ?class.
        ?class rdfs:label ?classLabel.
        ?class rdfs:subClassOf odi:Representation.
@@ -221,16 +216,39 @@ def story(storyID):
       FILTER (lang(?classLabel2) = 'it')
       FILTER (?relation != odi:hasMeaningOf)
       FILTER (?relation != rdf:type)
-
     }"""
 
     sparql.setQuery(storyRelationsQuery)
     sparql.setReturnFormat(JSON)
     storyRelationsResult = sparql.query().convert()
 
-    print(storyRelationsResult)
+    representations = set(set([row['representation']['value'] for row in storyRelationsResult['results']['bindings']]) | set([row['representation2']['value'] for row in storyRelationsResult['results']['bindings']]))
 
-    return render_template('storyTemplate.html',  storyResults = storyResults, storyRepresentationResult = storyRepresentationResult, storyTitle = storyTitle, storyDescription = storyDescription, storyName = storyName, storyRelationsResult=storyRelationsResult)
+    cardRelationsResult = []
+    for uri in representations:
+        cardRelationsQuery = """
+             PREFIX odi: <https://w3id.org/odi/>
+             PREFIX bacodi: <https://w3id.org/odi/data/>
+
+             select ?card ?cardLabel
+             where {
+
+                 <""" + uri + """> ^odi:carriesRepresentation ?storyCard.
+                  ?storyCard odi:specifies ?card.
+                  ?card odi:hasName ?cardLabel.
+               }"""
+
+        sparql.setQuery(cardRelationsQuery)
+        sparql.setReturnFormat(JSON)
+        temp_res = sparql.query().convert()
+
+        temp_dict = {}
+        temp_dict.update({'representation':uri})
+        temp_dict.update({'card':temp_res['results']['bindings'][0]['card']['value']})
+        temp_dict.update({'cardLabel':temp_res['results']['bindings'][0]['cardLabel']['value']})
+        cardRelationsResult.append(temp_dict)
+
+    return render_template('storyTemplate.html',  storyResults = storyResults, storyRepresentationResult = storyRepresentationResult, storyTitle = storyTitle, storyDescription = storyDescription, storyName = storyName, storyRelationsResult=storyRelationsResult, cardRelationsResult=cardRelationsResult)
 
 @app.route('/carte/<cardID>')
 def card(cardID):

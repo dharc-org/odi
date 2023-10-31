@@ -13,10 +13,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <!-- escape characters -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/he/1.2.0/he.js"></script>
   <!-- cookies and analytics -->
   <script src="../assets/js/stats.js"></script>
   <script src="../assets/js/matomo.js"></script>
-  <script src="https://www.unibo.it/++resource++unibo.cookiebanner/unibo-cookies.min.js?v=20"></script>
 </head>
 <body>
  <div id="graphContainer"></div>
@@ -169,14 +170,17 @@
    // Create a new network instance
    var allNodes = [
    {% for res in storyRelationsResult['results']['bindings'] %}
-   { id:"{{res['representation']['value']}}", label:"{{res['reprLabel']['value']}}", classLabel:"{{res['classLabel']['value']}}"},
-   { id:"{{res['representation2']['value']}}", label:"{{res['reprLabel2']['value']}}", classLabel:"{{res['classLabel2']['value']}}"},
-   { id:"{{res['cardDeck']['value']}}", label:"{{res['cardDeckLabel']['value']}}", classLabel:"None"},
-   { id:"{{res['cardDeck2']['value']}}", label:"{{res['cardDeckLabel2']['value']}}", classLabel:"None"},
+   { id:"{{res['representation']['value']}}", label:"{{res['reprLabel']['value']}}", classLabel:he.decode("{{res['classLabel']['value']}}")},
+   { id:"{{res['representation2']['value']}}", label:"{{res['reprLabel2']['value']}}", classLabel:he.decode("{{res['classLabel2']['value']}}")},
+   {% endfor %}
+   {% for res in cardRelationsResult %}
+   { id:"{{res['card']}}", label:"{{res['cardLabel']}}", classLabel:"Carta"},
    {% endfor %}
  ]
 
   var uniqueNodes = Array.from(new Set(allNodes.map(JSON.stringify)), JSON.parse);
+
+  console.log(uniqueNodes)
 
    var container = document.getElementById("network")
    var data = {
@@ -185,11 +189,15 @@
      edges: [
 
     {% for res in storyRelationsResult['results']['bindings'] %}
-      { from:  "{{res['representation']['value']}}", to: "{{res['representation2']['value']}}" , label:"{{res['relLabel']['value']}}"},
-      { from:  "{{res['cardDeck2']['value']}}", to: "{{res['representation2']['value']}}" , label:""},
+      { from:  "{{res['representation']['value']}}", to: "{{res['representation2']['value']}}" , label: he.decode("{{res['relLabel']['value']}}")},
+    {% endfor %}
+    {% for res in cardRelationsResult %}
+      { from:  "{{res['representation']}}", to: "{{res['card']}}" , label:""},
     {% endfor %}
      ]
    };
+
+   console.log(data)
 
 
    // Set colors based on classLabel value
@@ -293,7 +301,6 @@ function resetZoom() {
 }
  </script>
 
- <script src="../assets/js/script.js"></script>
 
 </body>
 </html>
