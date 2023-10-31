@@ -164,6 +164,7 @@ bacodi:asso-di-coppe-tuttelealtrestorieCinque a odi:StoryCard ;
     odi:carriesRepresentation bacodi:asso-di-coppe-tuttelealtrestorieCinque-coppa_sacra ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 13 ;
+    odi:hasTextualReference "«la coppa sacra»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/asso-di-coppe> .
 
 bacodi:asso-di-coppe-tuttelealtrestorieSei a odi:StoryCard ;
@@ -176,7 +177,7 @@ bacodi:asso-di-coppe-tuttelealtrestorieSei a odi:StoryCard ;
 bacodi:asso-di-denari-storiaSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:asso-di-denari-storiaSei-luna ;
     odi:hasPositionInTheText 17 ;
-    odi:hasTextualReference "«la Luna è un deserto, [...] da questa sfera arida parte ogni discorso e ogni poema [...].»"^^xsd:string ;
+    odi:hasTextualReference "«la Luna è un deserto, [...] da questa sfera arida parte ogni discorso e ogni poema; e ogni viaggio attraverso foreste battaglie tesori banchetti alcove ci riporta qui, al centro d'un orizzonte vuoto»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/asso-di-denari> .
 
 bacodi:asso-di-denari-tuttelealtrestorieUno a odi:StoryCard ;
@@ -223,25 +224,28 @@ bacodi:cavaliere-di-bastoni-storiaSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:cavaliere-di-bastoni-storiaSei-protagonista ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 1 ;
-    odi:hasTextualReference "Astolfo"^^xsd:string ;
+    odi:hasTextualReference "«un tipo leggero come un fantino o un folletto»"^^xsd:string,
+        "«cavaliere inglese»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/cavaliere-di-bastoni> .
 
 bacodi:cavaliere-di-bastoni-tuttelealtrestorieUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:cavaliere-di-bastoni-tuttelealtrestorieUno-cavallo_di_troia ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 18 ;
+    odi:hasTextualReference "«nel ventre stesso del Cavallo di Troia»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/cavaliere-di-bastoni> .
 
 bacodi:cavaliere-di-coppe-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:cavaliere-di-coppe-storiaUno-protagonista ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 1 ;
-    odi:hasTextualReference "«un giovane roseo e biondo che sfoggiava un mantello raggiante di ricami a forma di sole, [...] mosso [...] più dal desiderio d'apparire che da una vera vocazione cavalleresca.»"^^xsd:string ;
+    odi:hasTextualReference "«un giovane roseo e biondo che sfoggiava un mantello raggiante di ricami a forma di sole, [...] mosso [...] più dal desiderio d'apparire che da una vera vocazione cavalleresca»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/cavaliere-di-coppe> .
 
 bacodi:cavaliere-di-coppe-tuttelealtrestorieSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:cavaliere-di-coppe-tuttelealtrestorieSei-allontanamento_del_condottiero ;
     odi:hasPositionInTheText 11 ;
+    odi:hasTextualReference "«Appena lo sposo dovette ripartire»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/cavaliere-di-coppe> .
 
 bacodi:cavaliere-di-coppe-tuttelealtrestorieSei-allontanamento_del_condottiero a odi:Event ;
@@ -264,7 +268,8 @@ bacodi:cavaliere-di-spade-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:cavaliere-di-spade-storiaUno-imprevisto ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 13 ;
-    odi:hasTextualReference "«o un messaggero a cavallo aveva fatto irruzione nella festa portando una notizia inquietante, o lo sposo in persona aveva abbandonato il banchetto [...], o forse le due cose insieme: lo sposo era stato avvertito di un'apparizione imprevista e subito aveva imbracciato le armi ed era saltato in sella.»"^^xsd:string ;
+    odi:hasTextualReference "«imprevisto»"^^xsd:string,
+    "«o un messaggero a cavallo aveva fatto irruzione nella festa portando una notizia inquietante, o lo sposo in persona aveva abbandonato il banchetto di nozze [...], o forse le due cose insieme: lo sposo era stato avvertito di un'apparizione imprevista e subito aveva imbracciato le armi ed era saltato in sella»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/cavaliere-di-spade> .
 
 bacodi:cavaliere-di-spade-storiaUno-imprevisto a odi:Event ;
@@ -299,12 +304,12 @@ bacodi:cinque-di-bastoni-storiaTre a odi:StoryCard ;
     odi:specifies <https://w3id.org/odi/data/carte/cinque-di-bastoni> .
 
 bacodi:cinque-di-bastoni-tuttelealtrestorieQuattro a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:cinque-di-bastoni-tuttelealtrestorieQuattro-vista_del_massacro ;
+    odi:carriesRepresentation bacodi:cinque-di-bastoni-tuttelealtrestorieQuattro-bosco ;
     odi:hasPositionInTheText 5 ;
-    odi:hasTextualReference "«vista del massacro»"^^xsd:string ;
+    odi:hasTextualReference "«bosco»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/cinque-di-bastoni> .
 
-bacodi:cinque-di-bastoni-tuttelealtrestorieQuattro-vista_del_massacro a odi:Event ;
+bacodi:cinque-di-bastoni-tuttelealtrestorieQuattro-bosco a odi:FictionalPlace ;
     odi:carriedOutBy bacodi:cavaliere-di-denari-tuttelealtrestorieQuattro-protagonista ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/vista-del-massacro> .
 
@@ -315,10 +320,7 @@ bacodi:cinque-di-coppe-storiaDue a odi:StoryCard ;
         bacodi:cinque-di-coppe-storiaDue-segreto_alchimistico ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 11 ;
-    odi:hasTextualReference "I rintocchi delle campane"^^xsd:string,
-        "Il segreto alchimistico"^^xsd:string,
-        "Un brindisi del patto"^^xsd:string,
-        "Un discorso sull'anima e il corpo"^^xsd:string ;
+    odi:hasTextualReference "«poteva leggersi tanto come il segreto alchimistico che il Diavolo rivelava a Faust, quanto come un brindisi per concludere il patto, oppure come le campane che coi loro rintocchi mettevano in fuga il visitatore infernale. Ma potevamo pure intenderlo come un discorso sull'anima e sul corpo come vaso dell'anima»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/cinque-di-coppe> .
 
 bacodi:cinque-di-coppe-storiaDue-brindisi_del_patto a odi:Event ;
@@ -352,7 +354,7 @@ bacodi:cinque-di-denari-tuttelealtrestorieDue a odi:StoryCard ;
 bacodi:dieci-di-bastoni-storiaCinque a odi:StoryCard ;
     odi:carriesRepresentation bacodi:dieci-di-bastoni-storiaCinque-bosco ;
     odi:hasPositionInTheText 4 ;
-    odi:hasTextualReference "«Vedemmo la foresta schiudersi malvolentieri all'avanzare del campione [...].»"^^xsd:string ;
+    odi:hasTextualReference "«Vedemmo la foresta schiudersi malvolentieri all'avanzare del campione [...]. Tutto il bosco pareva dirgli: - Non andare!»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/dieci-di-bastoni> .
 
 bacodi:dieci-di-bastoni-tuttelealtrestorieDue a odi:StoryCard ;
@@ -364,14 +366,14 @@ bacodi:dieci-di-bastoni-tuttelealtrestorieDue a odi:StoryCard ;
 bacodi:dieci-di-coppe-storiaQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:dieci-di-coppe-storiaQuattro-avelli_del_cimitero ;
     odi:hasPositionInTheText 7 ;
-    odi:hasTextualReference "«la vista dall'alto del cimitero, come lui lo contemplava d'in cima alla pianta, con tutti gli avelli allineati sui loro piedistalli lungo i viali.»"^^xsd:string ;
+    odi:hasTextualReference "«la vista dall'alto del cimitero, come lui lo contemplava d'in cima alla pianta, con tutti gli avelli allineati sui loro piedistalli lungo i viali»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/dieci-di-coppe> .
 
 bacodi:dieci-di-coppe-storiaSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:dieci-di-coppe-storiaSei-deposito ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 12 ;
-    odi:hasTextualReference "«uno sterminato deposito» che conserva il \"non vissuto\", il \"non detto\", il \"non fatto\""^^xsd:string ;
+    odi:hasTextualReference "«uno sterminato deposito conserva dentro ampolle messe in fila, [...] le storie che gli uomini non vivono, i pensieri che bussano una volta alla soglia della coscienza e svaniscono per sempre, le particelle del possibile scartate nel gioco delle combinazioni, le soluzioni acui si potrebbe arrivare e non si arriva...»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/dieci-di-coppe> .
 
 bacodi:dieci-di-coppe-tuttelealtrestorieTre a odi:StoryCard ;
@@ -384,7 +386,7 @@ bacodi:dieci-di-coppe-tuttelealtrestorieUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:dieci-di-coppe-tuttelealtrestorieUno-banchetto ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 7 ;
-    odi:hasTextualReference "«i banchetti risonanti di canti e strimpellìo di cetre [...] che gli Achei preparavano per il giorno sospirato della espugnazione.»"^^xsd:string ;
+    odi:hasTextualReference "«i banchetti risonanti di canti e strimpellìo di cetre erano quelli che gli Achei preparavano per il giorno sospirato della espugnazione»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/dieci-di-coppe> .
 
 bacodi:dieci-di-coppe-tuttelealtrestorieUno-banchetto a odi:Event ;
@@ -393,6 +395,7 @@ bacodi:dieci-di-coppe-tuttelealtrestorieUno-banchetto a odi:Event ;
 bacodi:dieci-di-denari-storiaQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:dieci-di-denari-storiaQuattro-ricchezza ;
     odi:hasPositionInTheText 15 ;
+    odi:hasTextualReference "«- Scelgo la ricchezza!»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/dieci-di-denari> .
 
 bacodi:dieci-di-denari-storiaUno a odi:StoryCard ;
@@ -410,8 +413,8 @@ bacodi:dieci-di-denari-tuttelealtrestorieSei a odi:StoryCard ;
     odi:specifies <https://w3id.org/odi/data/carte/dieci-di-denari> .
 
 bacodi:dieci-di-denari-tuttelealtrestorieSei-pagamento_per_uno_scherano a odi:Event ;
-    odi:carriedOutBy bacodi:la-imperatrice-tuttelealtrestorieSei-madre_del_condottiero,
-        bacodi:re-di-denari-tuttelealtrestorieSei-padre_del_condottiero ;
+    odi:carriedOutBy bacodi:la-imperatrice-tuttelealtrestorieSei-madre,
+        bacodi:re-di-denari-tuttelealtrestorieSei-padre ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/pagamento-per-uno-scherano> ;
     odi:isRelatedWith bacodi:nove-di-bastoni-tuttelealtrestorieSei-bosco .
 
@@ -434,13 +437,13 @@ bacodi:dieci-di-spade-storiaCinque a odi:StoryCard ;
     odi:carriesRepresentation bacodi:dieci-di-spade-storiaCinque-storia_di_orlando ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 2 ;
-    odi:hasTextualReference "«E subito i nostri occhi furono come accecati dal polverone delle battaglie [...].»"^^xsd:string ;
+    odi:hasTextualReference "«E subito i nostri occhi furono come accecati dal polverone delle battaglie, udimmo il suono delle trombe, già le spade un po' di taglio un po' di piatto battevano un po' sul taglio un po' sul piatto d'altre spade»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/dieci-di-spade> .
 
 bacodi:dieci-di-spade-storiaTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:dieci-di-spade-storiaTre-barriera ;
     odi:hasPositionInTheText 13 ;
-    odi:hasTextualReference "«era barriera degli arcangeli che vietava l'accesso al cielo dell'anima dannata?»"^^xsd:string ;
+    odi:hasTextualReference "«era la barriera degli arcangeli che vietava l'accesso al cielo dell'anima dannata?»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/dieci-di-spade> .
 
 bacodi:dieci-di-spade-tuttelealtrestorieDue a odi:StoryCard ;
@@ -468,8 +471,8 @@ bacodi:due-di-bastoni-tuttelealtrestorieQuattro a odi:StoryCard ;
         bacodi:due-di-bastoni-tuttelealtrestorieQuattro-vittoria_altro_su_uno ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 11 ;
-    odi:hasTextualReference "«Due sono le strade. Scegli»"^^xsd:string,
-        "«l'Altro è stato vinto dall'Uno!»"^^xsd:string ;
+    odi:hasTextualReference "«Da gran tempo questo segno ricorda che l'Altro è stato vinto dall'Uno!»"^^xsd:string,
+        "«Due sono le strade. Scegli»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/due-di-bastoni> .
 
 bacodi:due-di-bastoni-tuttelealtrestorieQuattro-necessità_di_una_scelta a odi:Event ;
@@ -481,20 +484,19 @@ bacodi:due-di-coppe-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:due-di-coppe-storiaUno-incontro_di_amore ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 9 ;
-    odi:hasTextualReference "«idillio boschivo»"^^xsd:string,
-        "«incontro amoroso»"^^xsd:string ;
+    odi:hasTextualReference "«un incontro amoroso»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/due-di-coppe> .
 
 bacodi:due-di-coppe-storiaUno-incontro_di_amore a odi:Event ;
     odi:carriedOutBy bacodi:cavaliere-di-coppe-storiaUno-protagonista,
         bacodi:la-temperanza-storiaUno-fanciulla ;
-    odi:hasMeaningOf <https://w3id.org/odi/data/significati/incontro-di-amore> .
+    odi:hasMeaningOf <https://w3id.org/odi/data/significati/incontro_di_amore> .
 
 bacodi:due-di-coppe-tuttelealtrestorieSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:due-di-coppe-tuttelealtrestorieSei-tavola_per_due ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 18 ;
-    odi:hasTextualReference "«Eccola ora apparecchiare una tavola per due, attendere il ritorno dello sposo [...].»"^^xsd:string ;
+    odi:hasTextualReference "«Eccola ora apparecchiare una tavola per due, attendere il ritorno dello sposo, e spiare ogni muovere di fronda in questo bosco, ogni tirar di carte in questo mazzo di tarocchi, ogni colpo di scena in questo incastro di racconti, finché non si arriva alla fine del gioco»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/due-di-coppe> .
 
 bacodi:due-di-coppe-tuttelealtrestorieSei-tavola_per_due a odi:Event ;
@@ -506,7 +508,7 @@ bacodi:due-di-denari-storiaDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:due-di-denari-storiaDue-baratto ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 8 ;
-    odi:hasTextualReference "«segno di uno scambio [...], d'una compravendita, un baratto.»"^^xsd:string ;
+    odi:hasTextualReference "«segno di uno scambio, - veniva da pensare, - d'una compravendita, un baratto»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/due-di-denari> .
 
 bacodi:due-di-denari-storiaDue-baratto a odi:Event ;
@@ -539,14 +541,14 @@ bacodi:due-di-spade-storiaDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:due-di-spade-storiaDue-guardie ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 15 ;
-    odi:hasTextualReference "«guardie armate sbarravano il passo a chiunque volesse entrare [...].»"^^xsd:string ;
+    odi:hasTextualReference "«guardie armate sbarravano il passo a chiunque volesse entrare per impedire l'accesso all'Esattore Piè Forcuto, sotto qualsiasi aspetto si presentasse»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/due-di-spade> .
 
 bacodi:due-di-spade-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:due-di-spade-storiaUno-duello ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 16 ;
-    odi:hasTextualReference "«Volavano tagliuzzate le foglie del bosco e le piante rampicanti s'attorcigliavano alle lame.»"^^xsd:string ;
+    odi:hasTextualReference "«Volavano tagliuzzate le foglie del bosco e le piante rampicanti s'attorcigliavano alle lame»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/due-di-spade> .
 
 bacodi:due-di-spade-storiaUno-duello a odi:Event ;
@@ -558,6 +560,7 @@ bacodi:due-di-spade-tuttelealtrestorieSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:due-di-spade-tuttelealtrestorieSei-duello ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 4 ;
+    odi:hasTextualReference "«duello»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/due-di-spade> .
 
 bacodi:due-di-spade-tuttelealtrestorieSei-duello a odi:Event ;
@@ -620,8 +623,8 @@ bacodi:fante-di-spade-tuttelealtrestorieQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:fante-di-spade-tuttelealtrestorieQuattro-guerriero ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 9 ;
-    odi:hasTextualReference "«Principe delle Opposizioni»"^^xsd:string,
-        "«un guerriero dall'aria sprezzante»"^^xsd:string ;
+    odi:hasTextualReference "«un guerriero dall'aria sprezzante»"^^xsd:string,
+        "«- Riconosci in me il Principe delle Opposizioni»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/fante-di-spade> .
 
 bacodi:il--bagatto-tuttelealtrestorieuno rdfs:label "il -bagatto-tuttelealtrestorieUno"^^xsd:string .
@@ -630,12 +633,13 @@ bacodi:il-bagatto-storiaDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-bagatto-storiaDue-visitatore ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 6 ;
-    odi:hasTextualReference "«un ciarlatano o mago intento ai suoi esercizi.»"^^xsd:string ;
+    odi:hasTextualReference "«c'è chi riconosce un ciarlatano o mago intento ai suoi esercizi»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-bagatto> .
 
 bacodi:il-bagatto-storiaSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-bagatto-storiaSei-poeta ;
     odi:hasPositionInTheText 16 ;
+    odi:hasTextualReference "«nome e immagine di significato controverso ma che qui pure può intendersi - dal calamo che tiene in mano come se scrivesse - un poeta»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-bagatto> .
 
 bacodi:il-bagatto-tuttelealtrestorieCinque a odi:StoryCard ;
@@ -675,8 +679,8 @@ bacodi:il-carro-tuttelealtrestorieuno rdfs:label "il carro-tuttelealtrestorieUno
 bacodi:il-diavolo-storiaDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-diavolo-storiaDue-visitatore ;
     odi:hasPositionInTheText 9 ;
-    odi:hasTextualReference "Mefistofele"^^xsd:string,
-        "«egli aveva riconosciuto nel ciarlatano il vecchio principe d'ogni mescolanza e ambiguità»"^^xsd:string ;
+    odi:hasTextualReference "«egli aveva riconosciuto nel ciarlatano il vecchio principe d'ogni mescolanza e ambiguità»"^^xsd:string,
+        "«Mefistofele»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-diavolo> .
 
 bacodi:il-diavolo-storiaTre a odi:StoryCard ;
@@ -695,13 +699,14 @@ bacodi:il-diavolo-tuttelealtrestorieCinque a odi:StoryCard ;
 bacodi:il-diavolo-tuttelealtrestorieQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-diavolo-tuttelealtrestorieQuattro-diavolo ;
     odi:hasPositionInTheText 6 ;
+    odi:hasTextualReference "«una voce»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-diavolo> .
 
 bacodi:il-giudizio-storiaQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-giudizio-storiaQuattro-giudizio_nel_gran_giorno ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 8 ;
-    odi:hasTextualReference "«guardava le tombe dall'alto come gli abitanti del cielo nel Gran Giorno.»"^^xsd:string ;
+    odi:hasTextualReference "«guardava le tombe dall'alto come gli abitanti del cielo nel Gran Giorno»"^^xsd:string ;
     odi:hasVariantName "L'Angelo"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-giudizio> .
 
@@ -709,14 +714,14 @@ bacodi:il-giudizio-storiaSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-giudizio-storiaSei-comando ;
     odi:hasPositionInTheText 11 ;
     odi:hasTextualReference "«ascensione sovrumana»"^^xsd:string,
-        "«È in cielo che tu devi salire Astolfo»"^^xsd:string ;
+        "«- È in cielo che tu devi salire, Astolfo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-giudizio> .
 
 bacodi:il-giudizio-tuttelealtrestorieTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-giudizio-tuttelealtrestorieTre-giudizio ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 13 ;
-    odi:hasTextualReference "Età dell'Oro: «E le tombe abitate dai vivi in tripudio erano quelle dei cimiteri ormai inutili dove i gaudenti si riunivano per le loro orge, sotto lo sguardo esterrefatto degli angeli e di Dio»"^^xsd:string ;
+    odi:hasTextualReference "«E le tombe abitate dai vivi in tripudio erano quelle dei cimiteri ormai inutili dove i gaudenti si riunivano per le loro orge, sotto lo sguardo esterrefatto degli angeli e di Dio»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-giudizio> .
 
 bacodi:il-giudizio-tuttelealtrestorieUno a odi:StoryCard ;
@@ -729,14 +734,14 @@ bacodi:il-matto-storiaCinque a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-matto-storiaCinque-protagonista ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 14 ;
-    odi:hasTextualReference "«Sfogato ormai il più grosso groppo di furore, [...] con la testa piene di penne [...] ecco che Orlando ersa disceso giù nel cuore caotico delle cose, [...] al punto d'intersezione di tutti gli ordini possibili.»"^^xsd:string ;
+    odi:hasTextualReference "«ecco che Orlando ersa disceso giù nel cuore caotico delle cose, al centro del quadrato dei tarocchi e del mondo, al punto d'intersezione di tutti gli ordini possibili»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-matto> .
 
 bacodi:il-matto-storiaSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-matto-storiaSei-orlando ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 5 ;
-    odi:hasTextualReference "«[...] Orlando, nostro nipote, ha perso il lume che distingue l'uomo e le bestie savie dalle bestie e dagli uomini matti, e adesso corre [...] cosparso di penne d'uccelli [...].»"^^xsd:string ;
+    odi:hasTextualReference "«- [...] il principe dei nostri paladini, Orlando nostro nipote, ha perso il lume che distingue l'uomo e le bestie savie dalle bestie e dagli uomini matti, e adesso corre [...] e cosparso di penne d'uccelli risponde solo al pigolìo dei volatili come se altro linguaggio non intendesse»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-matto> .
 
 bacodi:il-matto-tuttelealtrestorieDue a odi:StoryCard ;
@@ -769,7 +774,7 @@ bacodi:il-mondo-storiaSei a odi:StoryCard ;
     odi:hasTextualReference "«Parigi nella cerchia dei suoi baluardi, stretta da mesi nell'assedio saraceno»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-mondo> .
 
-bacodi:il-mondo-storiaSei-parigi_assediata a odi:FinctionalPlace ;
+bacodi:il-mondo-storiaSei-parigi_assediata a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/parigi-assediata> ;
     odi:represents bacodi:il-mondo-storiaSei-parigi_assediata_luogo .
 
@@ -785,7 +790,7 @@ bacodi:il-mondo-tuttelealtrestorieUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-mondo-tuttelealtrestorieUno-troia_assediata ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 6 ;
-    odi:hasTextualReference "«quella città fortificata e assediata [...] era vista come Troia [...].»"^^xsd:string ;
+    odi:hasTextualReference "«quella città fortificata e assediata [...] era vista come Troia [...]»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-mondo> .
 
 bacodi:il-mondo-tuttelealtrestorieUno-troia_assediata_luogo a odi:Place .
@@ -800,13 +805,13 @@ bacodi:il-papa-storiaQuattro a odi:StoryCard ;
 bacodi:il-papa-storiaQuattro-papa odi:isRelatedWith bacodi:due-di-bastoni-storiaQuattro ;
     odi:isSpecifiedWith bacodi:otto-di-denari-storiaQuattro-denaro .
 
-bacodi:il-papa-storiaQuattro-tomba_di_un_papa a odi:FinctionalPlace ;
+bacodi:il-papa-storiaQuattro-tomba_di_un_papa a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/la-tomba-di-un-papa> .
 
 bacodi:il-papa-storiaTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-papa-storiaTre-papa ;
     odi:hasPositionInTheText 11 ;
-    odi:hasTextualReference "«un Papa dall'austera barba bianca, come il primo dei pontefici ora custode della Porta del Cielo.»"^^xsd:string ;
+    odi:hasTextualReference "«un Papa dall'austera barba bianca, come il primo dei pontefici ora custode della Porta del Cielo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-papa> .
 
 bacodi:il-papa-storiaTre-papa a odi:Character ;
@@ -820,7 +825,7 @@ bacodi:il-papa-tuttelealtrestorieTre a odi:StoryCard ;
     odi:specifies <https://w3id.org/odi/data/carte/il-papa> .
 
 bacodi:il-penduto-storiaCinque a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:il-penduto-storiaCinque-armonia_interiore ;
+    odi:carriesRepresentation bacodi:il-penduto-storiaCinque-protagonista;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 17 ;
     odi:hasTextualReference "«Lasciatemi così. Ho fatto tutto il giro e ho capito. Il mondo si legge all'incontrario. Tutto è chiaro.»"^^xsd:string ;
@@ -831,13 +836,13 @@ bacodi:il-penduto-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-penduto-storiaUno-protagonista ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 6 ;
-    odi:hasTextualReference "«il nostro giovane biondo spogliato d'ogni avere, e lasciato a penzolare da un ramo, a testa in giù.»"^^xsd:string ;
+    odi:hasTextualReference "«il nostro giovane biondo [...] spogliato d'ogni avere, e lasciato a penzolare da un ramo, a testa in giù»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-penduto> .
 
 bacodi:il-penduto-tuttelealtrestorieDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-penduto-tuttelealtrestorieDue-brigante ;
     odi:hasPositionInTheText 3 ;
-    odi:hasTextualReference "«un feroce brigante [...] appeso a uno strumento di tortura»"^^xsd:string ;
+    odi:hasTextualReference "«feroce brigante [...] appeso a uno strumento di tortura»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-penduto> .
 
 bacodi:il-penduto-tuttelealtrestorieSei a odi:StoryCard ;
@@ -852,14 +857,14 @@ bacodi:il-sole-storiaCinque a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-sole-storiaCinque-bambino ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 8 ;
-    odi:hasTextualReference "«Un amorino fuggiva a volo portando via il lume della saggezza d'Orlando [...].»"^^xsd:string ;
+    odi:hasTextualReference "«Un amorino fuggiva a volo portando via il lume della saggezza d'Orlando [...]»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-sole> .
 
 bacodi:il-sole-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-sole-storiaUno-bambino ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 14 ;
-    odi:hasTextualReference "«un bambino seminudo era stato visto correre [...]» sventolando il mantello del protagonista"^^xsd:string ;
+    odi:hasTextualReference "«un bambino seminudo era stato visto correre nelle vicinanze del castello dove si celebravano le nozze» sventolando il mantello del protagonista"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-sole> .
 
 bacodi:il-sole-tuttelealtrestorie-Sei-apparizione_della_protagonista a odi:Event ;
@@ -869,6 +874,7 @@ bacodi:il-sole-tuttelealtrestorie-Sei-apparizione_della_protagonista a odi:Event
 bacodi:il-sole-tuttelealtrestorieDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-sole-tuttelealtrestorieDue-sole ;
     odi:hasPositionInTheText 4 ;
+    odi:hasTextualReference "«sotto Il Sole»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-sole> .
 
 bacodi:italo-calvino a odi:Person ;
@@ -878,7 +884,8 @@ bacodi:la-forza-storiaCinque a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-forza-storiaCinque-violenza ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 9 ;
-    odi:hasTextualReference "«massacro» di Orlando"^^xsd:string ;
+    odi:hasTextualReference "«il vorticare della sua clava abbatteva le bestie feroci [...]»"^^xsd:string,
+        "«massacro»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-forza> .
 
 bacodi:la-forza-storiaCinque-violenza a odi:Event ;
@@ -892,8 +899,8 @@ bacodi:la-forza-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-forza-storiaUno-brigante ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 5 ;
-    odi:hasTextualReference "«feroce brigante»"^^xsd:string,
-        "«un energumeno armato»"^^xsd:string ;
+    odi:hasTextualReference "«un energumeno armato»"^^xsd:string,
+        "«un feroce brigante»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-forza> .
 
 bacodi:la-forza-tuttelealtrestorieDue a odi:StoryCard ;
@@ -913,7 +920,7 @@ bacodi:la-giustizia-storiaCinque a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-giustizia-storiaCinque-cavalieri ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 16 ;
-    odi:hasTextualReference "«i cavalieri dell'Armata di Carlomagno seguivano le piste del loro campione [...], non rinunciavano a riportare la sua spada al servizio di Ragione e Giustizia.»"^^xsd:string ;
+    odi:hasTextualReference "«i cavalieri dell'Armata di Carlomagno seguivano le piste del loro campione [...], non rinunciavano a riportare la sua spada al servizio di Ragione e Giustizia»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-giustizia> .
 
 bacodi:la-giustizia-storiaCinque-cavalieri a odi:Event ;
@@ -924,13 +931,14 @@ bacodi:la-giustizia-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-giustizia-storiaUno-fanciulla ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 15 ;
-    odi:hasTextualReference "«la sua salvatrice del bosco, fatta più piena e risoluta e calma, con un melanconico sorriso [...].»"^^xsd:string,
+    odi:hasTextualReference "«la sua salvatrice del bosco, fatta più piena e risoluta e calma, con un melanconico sorriso appena accennato sulle labbra»"^^xsd:string,
         "«spadaccina agguerita»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-giustizia> .
 
 bacodi:la-giustizia-tuttelealtrestorieDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-giustizia-tuttelealtrestorieDue-giustizia ;
     odi:hasPositionInTheText 5 ;
+    odi:hasTextualReference "«per verdetto della Giustizia»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-giustizia> .
 
 bacodi:la-giustizia-tuttelealtrestorieSei a odi:StoryCard ;
@@ -944,13 +952,14 @@ bacodi:la-imperatrice-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-imperatrice-storiaUno-sposa ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 11 ;
-    odi:hasTextualReference "«una sposa d'alto e dovizioso lignaggio [...] col suo scudo di famiglia e la sua faccia insipida...»"^^xsd:string ;
+    odi:hasTextualReference "«una sposa d'alto e dovizioso lignaggio [...] col suo scudo di famiglia e la sua faccia insipida [...] e anche un po' più vecchia di lui»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-imperatrice> .
 
 bacodi:la-imperatrice-tuttelealtrestorieSei a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:la-imperatrice-tuttelealtrestorieSei-madre_del_condottiero ;
+    odi:carriesRepresentation bacodi:la-imperatrice-tuttelealtrestorieSei-madre ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 9 ;
+    odi:hasTextualReference "«genitori dello sposo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-imperatrice> .
 
 bacodi:la-luna-storiaCinque a odi:StoryCard ;
@@ -963,7 +972,7 @@ bacodi:la-luna-storiaCinque a odi:StoryCard ;
 bacodi:la-luna-storiaSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-luna-storiaSei-luna ;
     odi:hasPositionInTheText 14 ;
-    odi:hasTextualReference "«la Luna era dipinta con più dolcezza [...].»"^^xsd:string ;
+    odi:hasTextualReference "«la Luna era dipinta con più dolcezza di come le notti di mezza estate rustici attori la rappresentino nel dramma di Piramo e Tisbe [...]»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-luna> .
 
 bacodi:la-luna-tuttelealtrestorieDue a odi:StoryCard ;
@@ -977,7 +986,7 @@ bacodi:la-luna-tuttelealtrestorieUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-luna-tuttelealtrestorieUno-lume_della_luna ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 10 ;
-    odi:hasTextualReference "«che spingeva la bella e adultera sposa di Menelao a fuggire al lume della luna dalla città assediata [...]»"^^xsd:string ;
+    odi:hasTextualReference "«- che spingeva la bella e adultera sposa di Menelao a fuggire al lume della luna dalla città assediata, celata sotto umili vesti»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-luna> .
 
 bacodi:la-morte-storiaQuattro a odi:StoryCard ;
@@ -990,7 +999,7 @@ bacodi:la-morte-storiaQuattro a odi:StoryCard ;
 bacodi:la-morte-storiaTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-morte-storiaTre-fanciulla ;
     odi:hasPositionInTheText 12 ;
-    odi:hasTextualReference "«[...] una barriera di denti senza gengive né labbra, due narici scavate nell'osso, i gialli zigomi d'un teschio, [...] le membra stecchite d'un cadavere.»"^^xsd:string ;
+    odi:hasTextualReference "«[...] una barriera di denti senza gengive né labbra, due narici scavate nell'osso, i gialli zigomi d'un teschio, e aveva sentito mescolate alle sue le membra stecchite d'un cadavere»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-morte> .
 
 bacodi:la-morte-tuttelealtrestorieQuattro a odi:StoryCard ;
@@ -1036,7 +1045,7 @@ bacodi:la-ruota-della-fortuna-storiaDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-ruota-della-fortuna-storiaDue-la_trasformazione_di_tutto_in_oro ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 12 ;
-    odi:hasTextualReference "«[...] Gran Mulino dell'Oro, il meccanismo gigantesco che avrebbe innalzato la Metropoli Tutta Quanta di Metallo Prezioso [...].»"^^xsd:string ;
+    odi:hasTextualReference "«gli ingranaggi all'opera nel Gran Mulino dell'Oro, il meccanismo gigantesco che avrebbe innalzato la Metropoli Tutta Quanta di Metallo Prezioso [...]»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-ruota-della-fortuna> .
 
 bacodi:la-ruota-della-fortuna-storiaDue-la_trasformazione_di_tutto_in_oro a odi:Event,
@@ -1053,13 +1062,14 @@ bacodi:la-stella-storiaDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-stella-storiaDue-anima ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 10 ;
+    odi:hasTextualReference "«- L'Anima! - [...] un concetto che non può rappresentarsi altrimenti che con la figura di Psiche»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-stella> .
 
 bacodi:la-stella-storiaTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-stella-storiaTre-fanciulla ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 4 ;
-    odi:hasTextualReference "«una giovinetta di sidereo pallore che s'aggirava nella notte in camicia e coi capelli sciolti, levando alto un cero acceso.»"^^xsd:string ;
+    odi:hasTextualReference "«una giovinetta di sidereo pallore che s'aggirava nella notte in camicia e coi capelli sciolti, levando alto un cero acceso»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-stella> .
 
 bacodi:la-stella-tuttelealtrestorieCinque a odi:StoryCard ;
@@ -1079,21 +1089,22 @@ bacodi:la-temperanza-storiaDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-temperanza-storiaDue-fanciulla ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 16 ;
-    odi:hasTextualReference "«Era una ninfa acquatica? Era una regina degli elfi dell'aria? Un angelo del fuoco liquido al centro della Terra?»"^^xsd:string,
-        "«una semplice fanciulla»"^^xsd:string ;
+    odi:hasTextualReference "«una semplice fanciulla»"^^xsd:string,
+        "«Era una ninfa acquatica? Era una regina degli elfi dell'aria? Un angelo del fuoco liquido al centro della Terra?»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-temperanza> .
 
 bacodi:la-temperanza-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-temperanza-storiaUno-fanciulla ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 7 ;
-    odi:hasTextualReference "«forse figlia d'un boscaiolo o d'un capraio, che avanzava [...] reggendo due brocche d'acqua, certo di ritorno dalla fonte.»"^^xsd:string,
+    odi:hasTextualReference "«forse figlia d'un boscaiolo o d'un capraio, che avanzava [...] reggendo due brocche d'acqua, certo di ritorno dalla fonte»"^^xsd:string,
         "«semplice figlia dei boschi»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-temperanza> .
 
 bacodi:la-temperanza-tuttelealtrestorieCinque a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-temperanza-tuttelealtrestorieCinque-baccanti ;
     odi:hasPositionInTheText 12 ;
+    odi:hasTextualReference "«- Restituisci alle Baccanti»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-temperanza> .
 
 bacodi:la-temperanza-tuttelealtrestorieSei a odi:StoryCard ;
@@ -1106,7 +1117,7 @@ bacodi:la-temperanza-tuttelealtrestorieSei a odi:StoryCard ;
 bacodi:la-torre-storiaQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-torre-storiaQuattro-i_tetti_della_città ;
     odi:hasPositionInTheText 10 ;
-    odi:hasTextualReference "La città aveva i tetti che «toccavano la volta del cielo»"^^xsd:string ;
+    odi:hasTextualReference "«Era una città i cui tetti toccavano la volta del cielo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-torre> .
 
 bacodi:la-torre-storiaSei a odi:StoryCard ;
@@ -1118,7 +1129,7 @@ bacodi:la-torre-storiaSei a odi:StoryCard ;
 bacodi:la-torre-tuttelealtrestorieTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-torre-tuttelealtrestorieTre-follia ;
     odi:hasPositionInTheText 12 ;
-    odi:hasTextualReference "Età dell'Oro: «si buttavano indenni giù da alte torri»"^^xsd:string ;
+    odi:hasTextualReference "«si buttavano indenni giù da alte torri»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-torre> .
 
 bacodi:la-torre-tuttelealtrestorieUno a odi:StoryCard ;
@@ -1131,20 +1142,21 @@ bacodi:lo-amore-storiaCinque a odi:StoryCard ;
     odi:carriesRepresentation bacodi:lo-amore-storiaCinque-amore_angelica_e_medoro ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 6 ;
-    odi:hasTextualReference "«una stretta d'amore morbida e struggente univa intanto Angelica e Medoro.»"^^xsd:string ;
+    odi:hasTextualReference "«una stretta d'amore morbida e struggente univa intanto Angelica e Medoro»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/lo-amore> .
 
 bacodi:lo-amore-storiaSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:lo-amore-storiaSei-amore ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 6 ;
-    odi:hasTextualReference "«[...] alla pazzia lo ha spinto Eros, dio pagano, che più è represso più devasta...»"^^xsd:string ;
+    odi:hasTextualReference "«alla pazzia lo ha spinto Eros, dio pagano, che più è represso più devasta...»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/lo-amore> .
 
 bacodi:lo-amore-tuttelealtrestorieDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:lo-amore-tuttelealtrestorieDue-innamoramento_della_protagonista ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 9 ;
+    odi:hasTextualReference "«regina [...] innamoratasi del prigioniero»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/lo-amore> .
 
 bacodi:lo-amore-tuttelealtrestorieDue-innamoramento_della_protagonista a odi:Event ;
@@ -1159,16 +1171,15 @@ bacodi:lo-amore-tuttelealtrestorieUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:lo-amore-tuttelealtrestorieUno-profezia ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 9 ;
-    odi:hasTextualReference "La profezia dell'indovino: «il tuo Paride cadrà innamorato di lei»"^^xsd:string ;
+    odi:hasTextualReference "«- [...] il tuo Paride cadrà innamorato di lei»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/lo-amore> .
 
 bacodi:lo-eremita-storiaSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:lo-eremita-storiaSei-indovino ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 10 ;
-    odi:hasTextualReference "«magomerlino»"^^xsd:string,
-        "«sapiente»"^^xsd:string,
-        "«un vecchio gobbo con la clessidra in mano, un indovino che rovescia il tempo irreversibile e prima del prima vede il dopo.»"^^xsd:string ;
+    odi:hasTextualReference "«sapiente o magomerlino»"^^xsd:string,
+        "«un vecchio gobbo con la clessidra in mano, un indovino che rovescia il tempo irreversibile e prima del prima vede il dopo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/lo-eremita> .
 
 bacodi:lo-eremita-tuttelealtrestorieUno a odi:StoryCard ;
@@ -1182,7 +1193,7 @@ bacodi:lo-imperatore-storiaDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:lo-imperatore-storiaDue-profezia ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 5 ;
-    odi:hasTextualReference "«Tu diventerai l'uomo più potente del mondo.»"^^xsd:string ;
+    odi:hasTextualReference "profezia della strega: «Tu diventerai l'uomo più potente del mondo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/lo-imperatore> .
 
 bacodi:lo-imperatore-storiaSei a odi:StoryCard ;
@@ -1216,7 +1227,7 @@ bacodi:mondadori a odi:Organization ;
 bacodi:nove-di-bastoni-storiaQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:nove-di-bastoni-storiaQuattro-caduta_tra_rami_spezzati ;
     odi:hasPositionInTheText 16 ;
-    odi:hasTextualReference " «la città e l'albero si dissolvevano in fumo e il ladrone precipitava in un rovinio di rami spezzati in mezzo al bosco.»"^^xsd:string ;
+    odi:hasTextualReference " «la città e l'albero si dissolvevano in fumo e il ladrone precipitava in un rovinio di rami spezzati in mezzo al bosco»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/nove-di-bastoni> .
 
 bacodi:nove-di-bastoni-storiaQuattro-caduta_tra_rami_spezzati a odi:Event ;
@@ -1227,13 +1238,14 @@ bacodi:nove-di-bastoni-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:nove-di-bastoni-storiaUno-bosco ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 4 ;
-    odi:hasTextualReference "«[...] il segmento verticale che incrocia gli altri legni obliqui suggeriva appunto l'idea della strada che penetra nel folto della foresta.»"^^xsd:string,
-        "«ci ricordava il bosco...»"^^xsd:string ;
+    odi:hasTextualReference "«[...] il segmento verticale che incrocia gli altri legni obliqui suggeriva appunto l'idea della strada che penetra nel folto della foresta»"^^xsd:string,
+        "«ci ricordava il bosco che avevamo or è poco attraversato»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/nove-di-bastoni> .
 
 bacodi:nove-di-bastoni-tuttelealtrestorieSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:nove-di-bastoni-tuttelealtrestorieSei-bosco ;
     odi:hasPositionInTheText 13 ;
+    odi:hasTextualReference "«bosco»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/nove-di-bastoni> .
 
 bacodi:nove-di-bastoni-tuttelealtrestorieTre a odi:StoryCard ;
@@ -1284,6 +1296,7 @@ bacodi:nove-di-coppe-tuttelealtrestorieUno-banchetto a odi:Event ;
 bacodi:nove-di-denari-storiaQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:nove-di-denari-storiaQuattro-ricchezza ;
     odi:hasPositionInTheText 11 ;
+    odi:hasTextualReference "«- Vuoi la ricchezza»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/nove-di-denari> .
 
 bacodi:nove-di-denari-tuttelealtrestorieTre a odi:StoryCard ;
@@ -1303,24 +1316,26 @@ bacodi:nove-di-spade-tuttelealtrestorieUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:nove-di-spade-tuttelealtrestorieUno-esito_della_guerra ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 3 ;
-    odi:hasTextualReference "«quale fine avrebbe avuto la guerra che da anni la teneva assediata in una città a lei straniera»"^^xsd:string ;
+    odi:hasTextualReference "«per sapere quale fine avrebbe avuto la guerra che da anni la teneva assediata in una città a lei straniera»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/nove-di-spade> .
 
 bacodi:otto-di-bastoni-storiaDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:otto-di-bastoni-storiaDue-bosco ;
     odi:hasPositionInTheText 4 ;
+    odi:hasTextualReference "«un bosco»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/otto-di-bastoni> .
 
 bacodi:otto-di-coppe-storiaQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:otto-di-coppe-storiaQuattro-saggezza ;
     odi:hasPositionInTheText 13 ;
+    odi:hasTextualReference "«oppure la saggezza»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/otto-di-coppe> .
 
 bacodi:otto-di-coppe-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:otto-di-coppe-storiaUno-banchetto_di_nozze ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 12 ;
-    odi:hasTextualReference "«banchetto di nozze con due file di convitati che brindavano ai due sposi [...].»"^^xsd:string ;
+    odi:hasTextualReference "«banchetto di nozze con due file di convitati che brindavano ai due sposi in fondo al tavolo dalla tovaglia inghirlandata»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/otto-di-coppe> .
 
 bacodi:otto-di-coppe-storiaUno-banchetto_di_nozze a odi:Event ;
@@ -1331,25 +1346,26 @@ bacodi:otto-di-coppe-storiaUno-banchetto_di_nozze a odi:Event ;
 bacodi:otto-di-coppe-tuttelealtrestorieSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:otto-di-coppe-tuttelealtrestorieSei-banchetto_di_nozze ;
     odi:hasPositionInTheText 8 ;
+    odi:hasTextualReference "«banchetto di nozze»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/otto-di-coppe> .
 
 bacodi:otto-di-coppe-tuttelealtrestorieSei-banchetto_di_nozze a odi:Event ;
     odi:carriedOutBy bacodi:cavaliere-di-spade-tuttelealtrestorieSei-condottiero,
         bacodi:regina-di-bastoni-tuttelealtrestorieSei-protagonista ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/banchetto-di-nozze> ;
-    odi:isRelatedWith bacodi:la-imperatrice-tuttelealtrestorieSei-madre_del_condottiero,
-        bacodi:re-di-denari-tuttelealtrestorieSei-padre_del_condottiero .
+    odi:isRelatedWith bacodi:la-imperatrice-tuttelealtrestorieSei-madre,
+        bacodi:re-di-denari-tuttelealtrestorieSei-padre .
 
 bacodi:otto-di-coppe-tuttelealtrestorieTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:otto-di-coppe-tuttelealtrestorieTre-spreco ;
     odi:hasPositionInTheText 10 ;
-    odi:hasTextualReference "Età dell'Oro: «gli uomini scialacquavano in bagordi»"^^xsd:string ;
+    odi:hasTextualReference "«gli uomini scialacquavano in bagordi»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/otto-di-coppe> .
 
 bacodi:otto-di-denari-storiaQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:otto-di-denari-storiaQuattro-ricchezza ;
     odi:hasPositionInTheText 4 ;
-    odi:hasTextualReference "«[...] i pontefici scendono nel sepolcro in tutto lo splendore dei loro arredi.»"^^xsd:string ;
+    odi:hasTextualReference "«i pontefici scendono nel sepolcro in tutto lo splendore dei loro arredi»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/otto-di-denari> .
 
 bacodi:otto-di-denari-storiaTre a odi:StoryCard ;
@@ -1367,7 +1383,7 @@ bacodi:otto-di-denari-tuttelealtrestorieTre a odi:StoryCard ;
 bacodi:otto-di-spade-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:otto-di-spade-storiaUno-lame ;
     odi:hasPositionInTheText 18 ;
-    odi:hasTextualReference "«le lame taglienti delle scarmigliate seguaci di Cibele s'avventavano addosso a lui, straziandolo.»"^^xsd:string ;
+    odi:hasTextualReference "«le lame taglienti delle scarmigliate seguaci di Cibele s'avventavano addosso a lui, straziandolo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/otto-di-spade> .
 
 bacodi:otto-di-spade-tuttelealtrestorieSei a odi:StoryCard ;
@@ -1385,13 +1401,13 @@ bacodi:quattro-di-bastoni-tuttelealtrestorieTre a odi:StoryCard ;
 bacodi:quattro-di-denari-storiaTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:quattro-di-denari-storiaTre-beatitudine ;
     odi:hasPositionInTheText 10 ;
-    odi:hasTextualReference "«Mi sembrò d'entrare in Paradiso...»"^^xsd:string ;
+    odi:hasTextualReference "«- Mi sembrò d'entrare in Paradiso...»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/quattro-di-denari> .
 
 bacodi:quattro-di-denari-tuttelealtrestorieQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:quattro-di-denari-tuttelealtrestorieQuattro-viatico ;
     odi:hasPositionInTheText 2 ;
-    odi:hasTextualReference "«egli aveva abbandonato i fasti della corte papale per portare l'estremo viatico ai moribondi sul campo di battaglia.»"^^xsd:string ;
+    odi:hasTextualReference "«egli aveva abbandonato i fasti della corte papale per portare l'estremo viatico ai moribondi sul campo di battaglia»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/quattro-di-denari> .
 
 bacodi:quattro-di-spade-storiaTre a odi:StoryCard ;
@@ -1411,15 +1427,15 @@ bacodi:re-di-bastoni-tuttelealtrestorieTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:re-di-bastoni-tuttelealtrestorieTre-protagonista ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 1 ;
-    odi:hasTextualReference "«un tale»"^^xsd:string ;
+    odi:hasTextualReference "«un tale che s'era presentato con le solide, conviviali fattezze»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/re-di-bastoni> .
 
 bacodi:re-di-coppe-storiaDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:re-di-coppe-storiaDue-protagonista ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 1 ;
-    odi:hasTextualReference "«il dottor Faust»"^^xsd:string,
-        "«uno di quei sapienti [...] che tentano di strappare alla natura i suoi segreti, particolarmente quello della trasformazione dei metalli.»"^^xsd:string ;
+    odi:hasTextualReference "«uno di quei sapienti [...] che tentano di strappare alla natura i suoi segreti, particolarmente quello della trasformazione dei metalli»"^^xsd:string,
+        "«il dottor Faust»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/re-di-coppe> .
 
 bacodi:re-di-denari-storiaUno a odi:StoryCard ;
@@ -1430,16 +1446,17 @@ bacodi:re-di-denari-storiaUno a odi:StoryCard ;
     odi:specifies <https://w3id.org/odi/data/carte/re-di-denari> .
 
 bacodi:re-di-denari-tuttelealtrestorieSei a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:re-di-denari-tuttelealtrestorieSei-padre_del_condottiero ;
+    odi:carriesRepresentation bacodi:re-di-denari-tuttelealtrestorieSei-padre;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 10 ;
+    odi:hasTextualReference "«genitori dello sposo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/re-di-denari> .
 
 bacodi:re-di-spade-storiaCinque a odi:StoryCard ;
     odi:carriesRepresentation bacodi:re-di-spade-storiaCinque-protagonista ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 1 ;
-    odi:hasTextualReference "«Orlando paladino che mulinava la sua Durlindana.»"^^xsd:string ;
+    odi:hasTextualReference "«Orlando paladino che mulinava la sua Durlindana»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/re-di-spade> .
 
 bacodi:regina-di-bastoni-tuttelealtrestorieSei a odi:StoryCard ;
@@ -1460,8 +1477,8 @@ bacodi:regina-di-denari-tuttelealtrestorieUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:regina-di-denari-tuttelealtrestorieUno-protagonista ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 1 ;
-    odi:hasTextualReference "Elena di Troia"^^xsd:string,
-        "«una delle più belle dame della compagnia, presentatasi col profilo da donna amorosa»"^^xsd:string ;
+    odi:hasTextualReference "«una delle più belle dame della compagnia, presentatasi col profilo da donna amorosa»"^^xsd:string,
+        "«Elena di Troia»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/regina-di-denari> .
 
 bacodi:regina-di-spade-storiaCinque a odi:StoryCard ;
@@ -1475,7 +1492,7 @@ bacodi:regina-di-spade-storiaTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:regina-di-spade-storiaTre-fanciulla ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 6 ;
-    odi:hasTextualReference "«ecco la meschinella trasformarsi in regina da torneo, pavoneggiarsi, far la gatta.»"^^xsd:string ;
+    odi:hasTextualReference "«ecco la meschinella trasformarsi in regina da torneo, pavoneggiarsi, far la gatta»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/regina-di-spade> .
 
 bacodi:regina-di-spade-tuttelealtrestorieDue a odi:StoryCard ;
@@ -1489,7 +1506,7 @@ bacodi:regina-di-spade-tuttelealtrestorieQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:regina-di-spade-tuttelealtrestorieQuattro-dea_della_distruzione ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 12 ;
-    odi:hasTextualReference "«io sono la gioiosa Dea della Distruzione, che governa il disfarsi e il rifarsi ininterrotto del mondo.»"^^xsd:string ;
+    odi:hasTextualReference "«io sono la gioiosa Dea della Distruzione, che governa il disfarsi e il rifarsi ininterrotto del mondo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/regina-di-spade> .
 
 bacodi:ruota-della-fortuna-tuttelealtrestorieCinque a odi:StoryCard ;
@@ -1516,25 +1533,28 @@ bacodi:sei-di-coppe-storiaTre a odi:StoryCard ;
     odi:hasTextualReference "«un convito amoroso?»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sei-di-coppe> .
 
-bacodi:sei-di-coppe-storiaTre-incontro_di_amore a odi:Event ;
+bacodi:sei-di-coppe-storiaTre-incontro-di-amore a odi:Event ;
     odi:carriedOutBy bacodi:fante-di-spade-storiaTre-protagonista,
         bacodi:regina-di-spade-storiaTre-fanciulla ;
-    odi:hasMeaningOf <https://w3id.org/odi/data/significati/incontro-di-amore> .
+    odi:hasMeaningOf <https://w3id.org/odi/data/significati/incontro_di_amore> .
 
 bacodi:sei-di-coppe-tuttelealtrestorieQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sei-di-coppe-tuttelealtrestorieQuattro-pace_nel_mondo ;
     odi:hasPositionInTheText 10 ;
+    odi:hasTextualReference "«e io farò regnare la pace nel mondo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sei-di-coppe> .
 
 bacodi:sei-di-denari-storiaDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sei-di-denari-storiaDue-città_di_oro ;
     odi:hasPositionInTheText 14 ;
-    odi:hasTextualReference "«forse [...] le cupole splendenti di grattacieli d'oro che fiancheggiavano le vie della Metropoli.»"^^xsd:string ;
+    odi:hasTextualReference "«Città dell'Oro»"^^xsd:string,
+        "«I circoli gialli in fila forse evocavano cupole splendenti di grattacieli d'oro che fiancheggiavano le vie della Metropoli»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sei-di-denari> .
 
 bacodi:sei-di-spade-storiaQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sei-di-spade-storiaQuattro-forza ;
     odi:hasPositionInTheText 12 ;
+    odi:hasTextualReference "«o la forza»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sei-di-spade> .
 
 bacodi:sei-di-spade-tuttelealtrestorieQuattro a odi:StoryCard ;
@@ -1546,14 +1566,14 @@ bacodi:sei-di-spade-tuttelealtrestorieQuattro a odi:StoryCard ;
 bacodi:sei-di-spade-tuttelealtrestorieTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sei-di-spade-tuttelealtrestorieTre-battaglie ;
     odi:hasPositionInTheText 11 ;
-    odi:hasTextualReference "Età dell'Oro: «incrociavano le spade in innocue zuffe»"^^xsd:string ;
+    odi:hasTextualReference "«incrociavano le spade in innocue zuffe»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sei-di-spade> .
 
 bacodi:sette-di-bastoni-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sette-di-bastoni-storiaUno-bosco ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 10 ;
-    odi:hasTextualReference "«dove tra gli scuri tronchi della foresta pareva di veder allontanarsi la sua ombra sottile.»"^^xsd:string ;
+    odi:hasTextualReference "«dove tra gli scuri tronchi della foresta pareva di veder allontanarsi la sua ombra sottile»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sette-di-bastoni> .
 
 bacodi:sette-di-denari-storiaDue a odi:StoryCard ;
@@ -1592,20 +1612,20 @@ bacodi:sette-di-spade-storiaTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sette-di-spade-storiaTre-armatura ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 5 ;
-    odi:hasTextualReference "«Nobile cavaliere, ti supplico, spogliati delle tue armi e della tua corazza, e lascia che io le indossi!»"^^xsd:string ;
+    odi:hasTextualReference "«- Nobile cavaliere, ti supplico, spogliati delle tue armi e della tua corazza, e lascia che io le indossi! -»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sette-di-spade> .
 
 bacodi:sette-di-spade-tuttelealtrestorieQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sette-di-spade-tuttelealtrestorieQuattro-guerra ;
     odi:hasPositionInTheText 13 ;
-    odi:hasTextualReference "«Una guerra senza fine agita l'universo [...] e non risparmia gli spiriti né gli atomi.»"^^xsd:string ;
+    odi:hasTextualReference "«Una guerra senza fine agita l'universo [...] e non risparmia gli spiriti né gli atomi»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sette-di-spade> .
 
 bacodi:tre-di-coppe-storiaCinque a odi:StoryCard ;
     odi:carriesRepresentation bacodi:tre-di-coppe-storiaCinque-ampolla ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 15 ;
-    odi:hasTextualReference "«un'ampolla custodita nella Valle delle Ragioni Perdute» dove si trova la ragione di Orlando"^^xsd:string ;
+    odi:hasTextualReference "«un'ampolla custodita nella Valle delle Ragioni Perdute»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/tre-di-coppe> .
 
 bacodi:tre-di-coppe-tuttelealtrestorieDue a odi:StoryCard ;
@@ -1807,9 +1827,6 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 <https://w3id.org/odi/data/significati/arcangelo> a odi:Meaning ;
     rdfs:label "Arcangelo"^^xsd:string .
 
-<https://w3id.org/odi/data/significati/armonia-interiore> a odi:Meaning ;
-    rdfs:label "Armonia interiore"^^xsd:string .
-
 <https://w3id.org/odi/data/significati/assenza-di-orlando> a odi:Meaning ;
     rdfs:label "Assenza di Orlando"^^xsd:string .
 
@@ -1928,7 +1945,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     rdfs:label "Elemosina "^^xsd:string .
 
 <https://w3id.org/odi/data/significati/eredità> a odi:Meaning ;
-    rdfs:label "Eredità "^^xsd:string .
+    rdfs:label "Eredità"^^xsd:string .
 
 <https://w3id.org/odi/data/significati/eros> a odi:Meaning ;
     rdfs:label "Eros"^^xsd:string .
@@ -2011,8 +2028,8 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 <https://w3id.org/odi/data/significati/lume-della-luna> a odi:Meaning ;
     rdfs:label "Lume della Luna"^^xsd:string .
 
-<https://w3id.org/odi/data/significati/madre-del-condottiero> a odi:Meaning ;
-    rdfs:label "Madre del condottiero"^^xsd:string .
+<https://w3id.org/odi/data/significati/madre> a odi:Meaning ;
+    rdfs:label "Madre"^^xsd:string .
 
 <https://w3id.org/odi/data/significati/medoro> a odi:Meaning ;
     rdfs:label "Medoro"^^xsd:string .
@@ -2034,9 +2051,6 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/significati/padre> a odi:Meaning ;
     rdfs:label "Padre "^^xsd:string .
-
-<https://w3id.org/odi/data/significati/padre-del-condottiero> a odi:Meaning ;
-    rdfs:label "Padre del condottiero"^^xsd:string .
 
 <https://w3id.org/odi/data/significati/pagamento-per-uno-scherano> a odi:Meaning ;
     rdfs:label "Pagamento per uno scherano"^^xsd:string .
@@ -2145,7 +2159,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/storiaDue> a odi:Story ;
     rdfs:label "Storia due"^^xsd:string ;
-    rdfs:comment "Un alchimista, alla ricerca della fonte della vita e della formula per trasformare i metalli in oro, si imbatte in un mago che presto si rivela essere il diavolo. Quest'ultimo promette al Faust il segreto dell'oro in cambio dell'anima. L'alchimista non crede di avere un'anima, così Mefistofele gli ordina di costruire una città con l'oro e chiede, in cambio, l'anima di tutti gli abitanti. Una volta costruita la città, una fanciulla si presenta alla porta e alla domanda delle sentinelle se voglia entrare lei risponde di non poter entrare in luoghi di metallo impenetrabile. Le guardie mal interpretano le sue parole, pensando che la ninfa non voglia perdere l'anima: lei, in verità, afferma di aver paura di non avere anima da dargli."^^xsd:string ;
+    rdfs:comment "Un alchimista, alla ricerca della Fonte della Vita e della formula per trasformare i metalli in oro, si imbatte in un mago che presto si rivela essere il diavolo. Quest'ultimo promette al Faust «il segreto dell'oro» in cambio dell'anima di tutti gli abitanti della nuova città costruita  con la ricchezza. Una fanciulla si presenta alle porte della città e alla domanda delle sentinelle se voglia entrare lei risponde di non poter accedere in luoghi di metallo impenetrabile. Le guardie mal interpretano le sue parole, pensando che la ninfa non voglia perdere l'anima: lei, in verità, afferma di aver paura di non avere anima da dargli."^^xsd:string ;
     odi:hasCard bacodi:asso-di-coppe-storiaDue,
         bacodi:cinque-di-coppe-storiaDue,
         bacodi:due-di-denari-storiaDue,
@@ -2239,7 +2253,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/storiaUno> a odi:Story ;
     rdfs:label "Storia uno"^^xsd:string ;
-    rdfs:comment "Un giovane cavaliere, dopo aver ereditato una grossa somma dal padre, si mette in cammino nel bosco. Dopo essere stato sorpreso e derubato da un brigante, viene salvato da una fanciulla di ritorno da una fonte. I due giovani si innamorano, ma presto il cavaliere abbandona la fanciulla per sposare una donna d'alto rango. Durante il banchetto nuziale, lo sposo vede correre un bambino con in mano il suo mantello dimenticato nel bosco. Il giovane decide di rincorrerlo, ma presto viene fermato dalla fanciulla abbandonata e celata sotto l'armatura di un cavaliere. La fanciulla rivela al giovane che quel bambino è loro figlio e decide di vendicarsi sguainando la spada e gettando a terra il cavaliere sanguinante. Una volta rinsavito, il giovane viene finito dalle seguaci di Cibele."^^xsd:string ;
+    rdfs:comment "Un giovane cavaliere, dopo aver ereditato una grossa somma dal padre, si mette in cammino nel bosco. Sorpreso e derubato da un brigante, viene salvato da una fanciulla di ritorno da una fonte. I due giovani si innamorano, ma presto il cavaliere abbandona la fanciulla per sposare una donna d'alto rango. Durante il banchetto nuziale, lo sposo vede correre un bambino con in mano il suo mantello dimenticato nel bosco. Il giovane decide di rincorrerlo, ma viene fermato dalla fanciulla abbandonata adesso nascosta in un'armatura da cavaliere. La fanciulla rivela al giovane che quel bambino è loro figlio e decide di vendicarsi sguainando la spada e gettando a terra il cavaliere sanguinante. Una volta rinsavito, il giovane viene finito dalle seguaci di Cibele."^^xsd:string ;
     odi:hasCard bacodi:asso-di-coppe-storiaUno,
         bacodi:cavaliere-di-coppe-storiaUno,
         bacodi:cavaliere-di-spade-storiaUno,
@@ -2283,7 +2297,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieDue> a odi:Story ;
     rdfs:label "Tutte le altre storie Due"^^xsd:string ;
-    rdfs:comment "Una donna, avendo trovato un prigioniero appeso nel bosco, decide di liberarlo e di scappare con lui camuffato da vagabondo. La donna aspetta fino all'alba il brigante e poi viene fermata da una guerriera che vuole lo stesso uomo. La contesa tra le due donne non si conclude prima dell'aurora."^^xsd:string ;
+    rdfs:comment "Una donna, avendo trovato un prigioniero appeso nel bosco, decide di liberarlo e di scappare con lui camuffato da vagabondo. La donna aspetta fino all'alba il brigante, poi viene fermata da una guerriera che vuole lo stesso uomo. La contesa tra le due donne non si conclude prima dell'aurora."^^xsd:string ;
     odi:hasCard bacodi:cinque-di-denari-tuttelealtrestorieDue,
         bacodi:dieci-di-bastoni-tuttelealtrestorieDue,
         bacodi:dieci-di-spade-tuttelealtrestorieDue,
@@ -2304,7 +2318,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieQuattro> a odi:Story ;
     rdfs:label "Tutte le altre storie Quattro"^^xsd:string ;
-    rdfs:comment "Un papa, sotto le mentite spoglie di un cavaliere, abbandona i fasti della corte papale per portare l'estremo viatico ai moribondi sul campo di battaglia. Preso dal dubbio, chiede a Dio perché permette gli stermini ed una voce dal bosco gli risponde che sono in due a dividersi il mondo e le anime. Poco dopo, il papa si imbatte in un guerriero che si presenta come il Principe delle Opposizioni in grado di far ritornare l’Età dell’Oro. Il papa ed il guerriero cominciano la contesa, ma questa viene presto fermata dalla Dea della Distruzione che governa il disfarsi ed il rifarsi ininterrotto del mondo. Le carte si mescolano ed una guerra senza fine agita l'universo: le anime sono in guerra."^^xsd:string ;
+    rdfs:comment "Un papa, sotto le mentite spoglie di un cavaliere, abbandona i fasti della corte papale per portare l'estremo viatico ai moribondi sul campo di battaglia. Preso dal dubbio, chiede a Dio come mai permetta gli stermini ed una voce dal bosco gli risponde che sono in due a dividersi il mondo e le anime. Poco dopo, il papa si imbatte in un guerriero che si presenta come il Principe delle Opposizioni in grado di far ritornare l’Età dell’Oro. Il papa ed il guerriero cominciano la contesa, ma questa viene presto fermata dalla Dea della Distruzione che governa il disfarsi ed il rifarsi ininterrotto del mondo. Le carte si mescolano ed una guerra senza fine agita l'universo: le anime sono in guerra."^^xsd:string ;
     odi:hasCard bacodi:cavaliere-di-denari-tuttelealtrestorieQuattro,
         bacodi:cinque-di-bastoni-tuttelealtrestorieQuattro,
         bacodi:dieci-di-spade-tuttelealtrestorieQuattro,
@@ -2350,7 +2364,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieTre> a odi:Story ;
     rdfs:label "Tutte le altre storie Tre"^^xsd:string ;
-    rdfs:comment "Un tale, munito di un randello dai poteri straordinari, raggiunge una città sotterranea per aver seguito uno sconosciuto che gli vantava le sue ricchezze. In un alterco d'osteria, il misterioso compagno di viaggio decide di giocarsi lo scettro della città combattendo contro il protagonista. Questi vince la lotta, ma la città si rivela quella della morte ed il compagno il Principe della Discontinuità. Chiusa la Città della Morte, comincia una nuova Età dell’Oro. A causa della decadenza dei costumi che ne consegue, interviene il pontefice che ordina al protagonista di riaprire le porte della Morte."^^xsd:string ;
+    rdfs:comment "Un tale, munito di un randello dai poteri straordinari, raggiunge una città sotterranea per aver seguito uno sconosciuto che gli vantava le sue ricchezze. In un alterco d'osteria, il misterioso compagno di viaggio decide di giocarsi lo scettro della città combattendo contro il protagonista. Questi vince la lotta, ma la città si rivela quella della morte e lo sfidante il Principe della Discontinuità. Chiusa la Città della Morte, comincia una nuova Età dell’Oro. A causa della decadenza dei costumi che ne consegue, interviene il pontefice che ordina al protagonista di riaprire le porte della Morte."^^xsd:string ;
     odi:hasCard bacodi:asso-di-bastoni-tuttelealtrestorieTre,
         bacodi:cavaliere-di-spade-tuttelealtrestorieTre,
         bacodi:dieci-di-coppe-tuttelealtrestorieTre,
@@ -2372,7 +2386,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieUno> a odi:Story ;
     rdfs:label "Tutte le altre storie Uno"^^xsd:string ;
-    rdfs:comment "Elena di Troia, assediata in una città straniera e condannata dagli Dei, riceve una profezia da un indovino: Paride si innamorerà di un'altra donna. Elena raggiunge l'Olimpo e, presentandosi al banchetto degli Dei, chiede a Zeus di riferire al poeta che scriverà l'Iliade che lei si darà ad Ulisse nel ventre del Cavallo di Troia."^^xsd:string ;
+    rdfs:comment "Elena, assediata in una città straniera e condannata dagli Dei, riceve una profezia da un indovino: Paride si innamorerà di un'altra donna. Elena raggiunge l'Olimpo e, presentandosi al banchetto degli Dei, chiede a Zeus di riferire al poeta dell'Iliade che lei si darà ad Ulisse nel ventre del Cavallo di Troia."^^xsd:string ;
     odi:hasCard bacodi:asso-di-denari-tuttelealtrestorieUno,
         bacodi:asso-di-spade-tuttelealtrestorieUno,
         bacodi:cavaliere-di-bastoni-tuttelealtrestorieUno,
@@ -2426,16 +2440,16 @@ bacodi:cinque-di-coppe-tuttelealtrestorieCinque-coppe a odi:InanimateObject ;
 bacodi:cinque-di-denari-tuttelealtrestorieDue-luce_del_mattino a odi:Event ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/luce-del-mattino> .
 
-bacodi:dieci-di-bastoni-storiaCinque-bosco a odi:FinctionalPlace ;
+bacodi:dieci-di-bastoni-storiaCinque-bosco a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/bosco> .
 
-bacodi:dieci-di-bastoni-tuttelealtrestorieDue-bosco a odi:FinctionalPlace ;
+bacodi:dieci-di-bastoni-tuttelealtrestorieDue-bosco a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/bosco> .
 
 bacodi:dieci-di-coppe-storiaQuattro-avelli_del_cimitero a odi:InanimateObject ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/avelli-del-cimitero> .
 
-bacodi:dieci-di-coppe-tuttelealtrestorieTre-osteria a odi:FinctionalPlace ;
+bacodi:dieci-di-coppe-tuttelealtrestorieTre-osteria a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/osteria> ;
     odi:isRelatedWith bacodi:asso-di-bastoni-tuttelealtrestorieTre-scettro .
 
@@ -2451,7 +2465,7 @@ bacodi:due-di-bastoni-storiaQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:due-di-bastoni-storiaQuattro-due_bastoni ;
     odi:hasIconography bacodi:grande ;
     odi:hasPositionInTheText 5 ;
-    odi:hasTextualReference "«Il ladro [...] doveva aver sollevato il pesante coperchio della tomba facendo leva su Due Bastoni [...].»"^^xsd:string ;
+    odi:hasTextualReference "«Il ladro, in una notte senza luna, doveva aver sollevato il pesante coperchio della tomba facendo leva su Due Bastoni e s'era calato nel sepolcro»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/due-di-bastoni> .
 
 bacodi:due-di-bastoni-storiaQuattro-due_bastoni a odi:InanimateObject ;
@@ -2513,11 +2527,11 @@ bacodi:il-giudizio-storiaSei-comando a odi:InanimateObject ;
 bacodi:il-matto-storiaCinque-protagonista a odi:Character ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/protagonista> .
 
-bacodi:il-mondo-storiaQuattro-città a odi:FinctionalPlace ;
+bacodi:il-mondo-storiaQuattro-città a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/città-del-tutto-e-delle-parti> ;
     odi:isSpecifiedWith bacodi:la-torre-storiaQuattro-i_tetti_della_città .
 
-bacodi:il-mondo-tuttelealtrestorieTre-città_sotterranea a odi:FinctionalPlace ;
+bacodi:il-mondo-tuttelealtrestorieTre-città_sotterranea a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/città-sotterranea> .
 
 bacodi:il-papa-tuttelealtrestorieTre-papa a odi:Character ;
@@ -2525,8 +2539,8 @@ bacodi:il-papa-tuttelealtrestorieTre-papa a odi:Character ;
     odi:isRelatedWith bacodi:otto-di-denari-tuttelealtrestorieTre-montagna,
         bacodi:quattro-di-bastoni-tuttelealtrestorieTre-deserto .
 
-bacodi:il-penduto-storiaCinque-armonia_interiore a odi:Symbol ;
-    odi:hasMeaningOf <https://w3id.org/odi/data/significati/armonia-interiore> .
+bacodi:il-penduto-storiaCinque-protagonista a odi:Character ;
+    odi:hasMeaningOf <https://w3id.org/odi/data/significati/protagonista> .
 
 bacodi:il-sole-storiaCinque-bambino a odi:Character ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/bambino> .
@@ -2543,10 +2557,10 @@ bacodi:la-forza-tuttelealtrestorieSei-scherano a odi:Character ;
     odi:changesIn bacodi:il-penduto-tuttelealtrestorieSei-scherano ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/scherano> .
 
-bacodi:la-luna-storiaCinque-luna a odi:FinctionalPlace ;
+bacodi:la-luna-storiaCinque-luna a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/luna> .
 
-bacodi:la-luna-storiaSei-luna a odi:FinctionalPlace ;
+bacodi:la-luna-storiaSei-luna a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/luna> ;
     odi:isSpecifiedWith bacodi:asso-di-denari-storiaSei-luna,
         bacodi:la-ruota-della-fortuna-storiaSei-luna .
@@ -2556,10 +2570,10 @@ bacodi:la-luna-tuttelealtrestorieDue-liberazione_di_notte a odi:Event ;
         bacodi:regina-di-coppe-tuttelealtrestorieDue-protagonista ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/liberazione-di-notte> .
 
-bacodi:la-morte-storiaQuattro-cimitero a odi:FinctionalPlace ;
+bacodi:la-morte-storiaQuattro-cimitero a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/cimitero> .
 
-bacodi:la-morte-tuttelealtrestorieQuattro-distesa_dei_cadaveri a odi:FinctionalPlace ;
+bacodi:la-morte-tuttelealtrestorieQuattro-distesa_dei_cadaveri a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/distesa-dei-cadaveri> ;
     odi:isSpecifiedWith bacodi:dieci-di-spade-tuttelealtrestorieQuattro-cadaveri_squartati .
 
@@ -2609,10 +2623,10 @@ bacodi:lo-imperatore-tuttelealtrestorieUno-Zeus a odi:Character ;
         bacodi:cavaliere-di-bastoni-tuttelealtrestorieUno-cavallo_di_troia,
         bacodi:il-bagatto-tuttelealtrestorieUno-poeta .
 
-bacodi:nove-di-bastoni-storiaUno-bosco a odi:FinctionalPlace ;
+bacodi:nove-di-bastoni-storiaUno-bosco a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/bosco> .
 
-bacodi:nove-di-bastoni-tuttelealtrestorieTre-bosco a odi:FinctionalPlace ;
+bacodi:nove-di-bastoni-tuttelealtrestorieTre-bosco a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/bosco> .
 
 bacodi:nove-di-spade-tuttelealtrestorieUno-esito_della_guerra a odi:Event ;
@@ -2622,7 +2636,7 @@ bacodi:nove-di-spade-tuttelealtrestorieUno-esito_della_guerra a odi:Event ;
     odi:isSpecifiedWith bacodi:il-giudizio-tuttelealtrestorieUno-decisione_degli_Dèi,
         bacodi:la-torre-tuttelealtrestorieUno-la_caduta_di_troia .
 
-bacodi:otto-di-bastoni-storiaDue-bosco a odi:FinctionalPlace ;
+bacodi:otto-di-bastoni-storiaDue-bosco a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/bosco> .
 
 bacodi:otto-di-denari-storiaQuattro-ricchezza a odi:Symbol ;
@@ -2664,10 +2678,10 @@ bacodi:regina-di-bastoni-tuttelealtrestorieSei-protagonista a odi:Character ;
     odi:changesIn bacodi:la-temperanza-tuttelealtrestorieSei-protagonista ;
     odi:hasIndirectRelationWith bacodi:asso-di-coppe-tuttelealtrestorieSei-vino,
         bacodi:il-penduto-tuttelealtrestorieSei-scherano,
-        bacodi:la-imperatrice-tuttelealtrestorieSei-madre_del_condottiero,
+        bacodi:la-imperatrice-tuttelealtrestorieSei-madre,
         bacodi:nove-di-bastoni-tuttelealtrestorieSei-bosco,
         bacodi:otto-di-spade-tuttelealtrestorieSei-guerra,
-        bacodi:re-di-denari-tuttelealtrestorieSei-padre_del_condottiero ;
+        bacodi:re-di-denari-tuttelealtrestorieSei-padre ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/protagonista> ;
     odi:marries bacodi:cavaliere-di-spade-tuttelealtrestorieSei-condottiero ;
     odi:sameAs bacodi:la-giustizia-tuttelealtrestorieSei-protagonista .
@@ -2678,13 +2692,13 @@ bacodi:regina-di-spade-tuttelealtrestorieQuattro-dea_della_distruzione a odi:Cha
 bacodi:ruota-della-fortuna-tuttelealtrestorieCinque-intenzione_di_capovolgere_il_mondo a odi:Symbol ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/intenzione-di-capovolgere-il-mondo> .
 
-bacodi:ruota-della-fortuna-tuttelealtrestorieUno-Olimpo a odi:FinctionalPlace ;
+bacodi:ruota-della-fortuna-tuttelealtrestorieUno-Olimpo a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/olimpo> .
 
-bacodi:sei-di-bastoni-storiaTre-bosco a odi:FinctionalPlace ;
+bacodi:sei-di-bastoni-storiaTre-bosco a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/radura-nel-bosco> .
 
-bacodi:sette-di-bastoni-storiaUno-bosco a odi:FinctionalPlace ;
+bacodi:sette-di-bastoni-storiaUno-bosco a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/bosco> .
 
 bacodi:sette-di-denari-storiaTre-luccichìo a odi:InanimateObject ;
@@ -2750,7 +2764,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/2/28/Bembo-Visconti-tarot-staves-12-knight.jpg"^^xsd:anyURI ;
-    odi:hasName "Fante di Bastoni"^^xsd:string ;
+    odi:hasName "Cavaliere di Bastoni"^^xsd:string ;
     odi:hasSuit <https://w3id.org/odi/data/semi/bastoni> ;
     odi:hasTypology <https://w3id.org/odi/data/tipologia/carta-di-corte> ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
@@ -2950,7 +2964,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
 <https://w3id.org/odi/data/significati/guerriero> a odi:Meaning ;
     rdfs:label "Guerriero"^^xsd:string .
 
-<https://w3id.org/odi/data/significati/incontro-di-amore> a odi:Meaning ;
+<https://w3id.org/odi/data/significati/incontro_di_amore> a odi:Meaning ;
     rdfs:label "Incontro d'amore"^^xsd:string .
 
 <https://w3id.org/odi/data/significati/indovino> a odi:Meaning ;
@@ -2996,14 +3010,14 @@ bacodi:cinque-di-bastoni-storiaCinque-schianto_dei_tronchi a odi:Event ;
     odi:carriedOutBy bacodi:re-di-spade-storiaCinque-protagonista ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/schianto-dei-tronchi> .
 
-bacodi:cinque-di-bastoni-storiaTre-bosco a odi:FinctionalPlace ;
+bacodi:cinque-di-bastoni-storiaTre-bosco a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/bosco> .
 
 bacodi:cinque-di-denari-storiaCinque-spreco a odi:Event ;
     odi:carriedOutBy bacodi:re-di-spade-storiaCinque-protagonista ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/spreco> .
 
-bacodi:dieci-di-coppe-storiaSei-deposito a odi:FinctionalPlace ;
+bacodi:dieci-di-coppe-storiaSei-deposito a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/deposito> .
 
 bacodi:dieci-di-denari-storiaQuattro-ricchezza a odi:Symbol ;
@@ -3086,7 +3100,7 @@ bacodi:il-matto-tuttelealtrestorieUno-buffone_di_corte a odi:Character ;
 
 bacodi:il-mondo-storiaSei-parigi odi:isSpecifiedWith bacodi:la-torre-storiaSei-caduta_dei_cadaveri .
 
-bacodi:il-mondo-tuttelealtrestorieUno-troia_assediata a odi:FinctionalPlace ;
+bacodi:il-mondo-tuttelealtrestorieUno-troia_assediata a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/troia-assediata> ;
     odi:isRelatedWith bacodi:dieci-di-coppe-tuttelealtrestorieUno-banchetti ;
     odi:isSpecifiedWith bacodi:la-torre-tuttelealtrestorieUno-la_caduta_di_troia ;
@@ -3120,7 +3134,7 @@ bacodi:la-morte-storiaTre-fanciulla a odi:Character ;
 bacodi:la-morte-tuttelealtrestorieTre-principe_della_discontinuità a odi:Character ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/diavolo> .
 
-bacodi:la-ruota-della-fortuna-storiaSei-luna a odi:FinctionalPlace ;
+bacodi:la-ruota-della-fortuna-storiaSei-luna a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/luna> .
 
 bacodi:la-stella-storiaDue-anima a odi:InanimateObject ;
@@ -3164,7 +3178,7 @@ bacodi:lo-imperatore-storiaSei-carlo_magno a odi:Character ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/carlo-magno> ;
     odi:represents bacodi:lo-imperatore-storiaSei-carlo_magno_persona .
 
-bacodi:nove-di-bastoni-tuttelealtrestorieSei-bosco a odi:FinctionalPlace ;
+bacodi:nove-di-bastoni-tuttelealtrestorieSei-bosco a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/bosco> .
 
 bacodi:nove-di-coppe-storiaDue-ricchezza a odi:Symbol ;
@@ -3192,13 +3206,13 @@ bacodi:otto-di-coppe-tuttelealtrestorieTre-spreco a odi:Symbol ;
 bacodi:otto-di-denari-storiaTre-denaro a odi:InanimateObject ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/denaro> .
 
-bacodi:otto-di-denari-tuttelealtrestorieTre-montagna a odi:FinctionalPlace ;
+bacodi:otto-di-denari-tuttelealtrestorieTre-montagna a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/montagna> .
 
 bacodi:otto-di-spade-tuttelealtrestorieSei-guerra a odi:Event ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/guerra> .
 
-bacodi:quattro-di-bastoni-tuttelealtrestorieTre-deserto a odi:FinctionalPlace ;
+bacodi:quattro-di-bastoni-tuttelealtrestorieTre-deserto a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/deserto> .
 
 bacodi:quattro-di-spade-storiaTre-armatura a odi:InanimateObject ;
@@ -3235,7 +3249,7 @@ bacodi:regina-di-spade-tuttelealtrestorieDue-guerriera a odi:Character ;
 bacodi:sei-di-coppe-tuttelealtrestorieQuattro-pace_nel_mondo a odi:Event ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/pace-nel-mondo> .
 
-bacodi:sei-di-denari-storiaDue-città_di_oro a odi:FinctionalPlace ;
+bacodi:sei-di-denari-storiaDue-città_di_oro a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/città-dello-oro> ;
     odi:isRelatedWith bacodi:due-di-spade-storiaDue-guardie,
         bacodi:la-temperanza-storiaDue-fanciulla .
@@ -3339,7 +3353,7 @@ bacodi:sette-di-spade-storiaCinque-la_durlindana_appesa_e_dimenticata a odi:Inan
 <https://w3id.org/odi/data/significati/profezia> a odi:Meaning ;
     rdfs:label "Profezia"^^xsd:string .
 
-bacodi:asso-di-denari-storiaSei-luna a odi:FinctionalPlace ;
+bacodi:asso-di-denari-storiaSei-luna a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/luna> .
 
 bacodi:cavaliere-di-bastoni-storiaSei-protagonista a odi:Character ;
@@ -3387,8 +3401,8 @@ bacodi:la-giustizia-storiaUno-fanciulla a odi:Character ;
 bacodi:la-giustizia-tuttelealtrestorieSei-protagonista a odi:Character ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/protagonista> .
 
-bacodi:la-imperatrice-tuttelealtrestorieSei-madre_del_condottiero a odi:Character ;
-    odi:hasMeaningOf <https://w3id.org/odi/data/significati/madre-del-condottiero> .
+bacodi:la-imperatrice-tuttelealtrestorieSei-madre a odi:Character ;
+    odi:hasMeaningOf <https://w3id.org/odi/data/significati/madre> .
 
 bacodi:la-temperanza-storiaUno-fanciulla a odi:Character ;
     odi:changesIn bacodi:la-giustizia-storiaUno-fanciulla ;
@@ -3397,8 +3411,8 @@ bacodi:la-temperanza-storiaUno-fanciulla a odi:Character ;
 bacodi:perduta a odi:Condition ;
     rdfs:label "Perduta"^^xsd:string .
 
-bacodi:re-di-denari-tuttelealtrestorieSei-padre_del_condottiero a odi:Character ;
-    odi:hasMeaningOf <https://w3id.org/odi/data/significati/padre-del-condottiero> .
+bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
+    odi:hasMeaningOf <https://w3id.org/odi/data/significati/padre> .
 
 <https://w3id.org/odi/data/carte/asso-di-coppe> a odi:DeckCard ;
     odi:hasAuthor bacodi:bonifacio-bembo ;
@@ -3751,7 +3765,7 @@ bacodi:re-di-spade-storiaCinque-protagonista a odi:Character ;
     odi:bumpsInto bacodi:il-sole-storiaCinque-bambino ;
     odi:changesIn bacodi:il-matto-storiaCinque-protagonista ;
     odi:discovers bacodi:lo-amore-storiaCinque-amore_angelica_e_medoro ;
-    odi:hasAParticularConditionOf bacodi:il-penduto-storiaCinque-armonia_interiore,
+    odi:changesIn bacodi:il-penduto-storiaCinque-protagonista,
         bacodi:tre-di-coppe-storiaCinque-ampolla ;
     odi:hasIndirectRelationWith bacodi:cinque-di-bastoni-storiaCinque-schianto_dei_tronchi,
         bacodi:cinque-di-denari-storiaCinque-spreco,

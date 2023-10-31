@@ -16,7 +16,7 @@
 :arrivesAt rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
            rdfs:domain :Character ;
-           rdfs:range :FinctionalPlace ;
+           rdfs:range :FictionalPlace ;
            rdfs:comment "It means that a main character arrives at a place in his story."@en ,
                         "Significa che un protagonista arriva in un luogo nella sua storia."@it ;
            rdfs:label "Arriva a"@it ,
@@ -29,8 +29,8 @@
            rdfs:range :Representation ;
            rdfs:comment "Questa proprietà collega un protagonista con un elemento della sua storia che non ha un legame diretto con lui, ma un legame indiretto attraverso un'altra carta della storia."@it ,
                         "This property connects a main character with an element of his story that has no direct link to him, but an indirect link through another card of the story."@en ;
-           rdfs:label "ha una relazione indiretta con"@it ,
-                      "has indirect relation with"@en .
+           rdfs:label "Ha una relazione indiretta con"@it ,
+                      "Has indirect relation with"@en .
 
 ###  https://purl.org/ebr/odi#bumpsInto
 :bumpsInto rdf:type owl:ObjectProperty ;
@@ -349,7 +349,7 @@
 :movingThrough rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
                rdfs:domain :Character ;
-               rdfs:range :FinctionalPlace ;
+               rdfs:range :FictionalPlace ;
                rdfs:comment "It means that a main character is moving through a place in his story."@en ,
                             "Significa che un protagonista si muove in un luogo nella sua storia."@it ;
                rdfs:label "Moving through"@en ,
@@ -393,7 +393,7 @@
 :represents rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf owl:topObjectProperty ;
             rdfs:domain :Character ,
-                        :FinctionalPlace ;
+                        :FictionalPlace ;
             rdfs:range :Person ,
                        :Place ;
             rdfs:comment "Mostra cosa rappresenta una carta in una storia."@it ,
@@ -665,12 +665,12 @@ owl:topObjectProperty rdfs:subPropertyOf owl:topObjectProperty .
        rdfs:label "Evento"@it .
 
 
-###  https://purl.org/ebr/odi#FinctionalPlace
-:FinctionalPlace rdf:type owl:Class ;
+###  https://purl.org/ebr/odi#FictionalPlace
+:FictionalPlace rdf:type owl:Class ;
                  rdfs:subClassOf :Representation ;
                  rdfs:comment "A place where a character is moving through or arrives at in a story."@en ,
                               "Un luogo in cui un personaggio si muove o arriva in una storia."@it ;
-                 rdfs:label "Finctional Place"@en ,
+                 rdfs:label "Fictional Place"@en ,
                             "Luogo ideale"@it .
 
 
