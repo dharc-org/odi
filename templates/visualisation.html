@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Pasqual Valentina, Enrica Bruno, Francesca Tomasi">
+  <title>ODI</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- cookies and analytics -->
+  <script src="../assets/js/stats.js"></script>
+  <script src="../assets/js/matomo.js"></script>
+  <!-- visnetwork -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -15px 0 0 -15px;
+  animation: spin 2s linear infinite;
+  z-index: 1;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+  <body>
+
+    <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" id="sidebar">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+                <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline pt-4">ODI</span>
+                </a>
+                <p class="side-small-text d-none d-md-inline" style="word-break: break-all !important">
+                  <i>Esplorazione semantica della macchina narrativa combinatoria de "Il castello dei destini incrociati"<br>di Italo Calvino</i>
+                </p>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="../" class="nav-link align-middle px-0">
+                          <i class="bi bi-house-fill"></i>
+                            <span class="ms-1 d-none d-sm-inline">Introduzione</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../indici" class="nav-link align-middle px-0">
+                            <i class="bi bi-arrow-down-left-square-fill"></i>
+                            <span class="ms-1 d-none d-sm-inline">Indici</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"  class="nav-link align-middle px-0">
+                          <i class="bi bi-bar-chart-line-fill"></i>
+                          <span class="ms-1 d-none d-sm-inline">Visualizzazioni dei Dati</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../sparql" class="nav-link align-middle px-0">
+                          <i class="bi bi-question-circle"></i>
+                          <span class="ms-1 d-none d-sm-inline">SPARQL endpoint</span></a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                  <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="https://odi-documentation.github.io/materials/" class="nav-link align-middle px-0" target="_blank">
+                          <i class="bi bi-journal-bookmark-fill"></i>
+                            <span class="ms-1 d-none d-sm-inline">Documentazione <i class="bi bi-box-arrow-up-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://github.com/ODI-documentation/materials" class="nav-link align-middle px-0" target="_blank">
+                          <i class="bi bi-github"></i>
+                            <span class="ms-1 d-none d-sm-inline">Repository <i class="bi bi-box-arrow-up-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./contatti" class="nav-link align-middle px-0">
+                          <i class="bi bi-person-circle"></i>
+                            <span class="ms-1 d-none d-sm-inline">Contatti</span>
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col py-3">
+          <!-- main content -->
+          <div class="col d-flex flex-column h-sm-100">
+            <div id="loader" class="loader"></div>
+            <div id="network"></div>
+
+          </div>
+
+
+  </div>
+</div>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+
+<script>
+
+function replaceHtmlEntities(input) {
+return input.replace(/&#39;/g, "'");
+}
+
+// activate loader
+var loader = document.getElementById('loader');
+loader.style.display = 'block';
+
+var nodes = [
+  {% for res in networkResults['results']['bindings'] %}
+    { id:"{{res['card']['value']}}", label:replaceHtmlEntities("{{res['cardLabel']['value']}}"), color: '#99C199', shape: 'square'},
+    { id:"{{res['meaning']['value']}}", label:replaceHtmlEntities("{{res['meaningLabel']['value']}}"), color: 'gray', shape: 'dot'},
+  {% endfor %}
+];
+
+var uniqueNodes = Array.from(new Set(nodes.map(JSON.stringify)), JSON.parse);
+
+var edges = [
+  {% for res in networkResults['results']['bindings'] %}
+    { from:  "{{res['card']['value']}}", to:replaceHtmlEntities("{{res['meaning']['value']}}") , label:"", value:"{{res['n']['value']}}"},
+  {% endfor %}
+];
+
+// Create a new network instance
+var container = document.getElementById('network');
+var data = {
+  nodes: new vis.DataSet(uniqueNodes),
+  edges: new vis.DataSet(edges)
+};
+
+var options = {};
+
+var network = new vis.Network(container, data, options);
+
+// Hide the loader once the network is loaded
+network.on('stabilizationIterationsDone', function () {
+  loader.style.display = 'none';
+});
+</script>
+
+
+  </body>
+</html>

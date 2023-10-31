@@ -22,30 +22,6 @@ def home():
 @app.route('/indici/')
 def indexes():
 
-    #net = Network(directed=True, layout='hierarchical')
-
-    networkQuery = """
-    PREFIX odi: <https://w3id.org/odi/>
-    PREFIX bacodi: <https://w3id.org/odi/data/>
-
-    select distinct ?cardLabel ?meaningLabel (COUNT(?meaning) as ?n)
-    where {
-      ?card a odi:DeckCard .
-      ?card odi:hasName ?cardLabel.
-      ?story odi:hasCard ?storyCard.
-      ?storyCard odi:specifies ?card.
-      ?storyCard odi:carriesRepresentation ?representation.
-      ?representation odi:hasMeaningOf ?meaning.
-      ?meaning rdfs:label ?meaningLabel.
-      }
-      GROUP BY ?cardLabel ?meaningLabel
-      """
-
-    # Execute the SPARQL query
-    sparql.setQuery(networkQuery)
-    sparql.setReturnFormat('json')
-    networkResults = sparql.query().convert()
-
     # retrieve all cards
     cardsQuery = """
     PREFIX odi: <https://w3id.org/odi/>
@@ -124,9 +100,35 @@ def indexes():
 
     classList = list(set(classList))
 
-    return render_template('indexes.html',  cardsResults = cardsResults, storiesResults = storiesResults, suitList = suitList, typologyList = typologyList, meaningsResults = meaningsResults, classList = classList, networkResults = networkResults)
+    return render_template('indexes.html',  cardsResults = cardsResults, storiesResults = storiesResults, suitList = suitList, typologyList = typologyList, meaningsResults = meaningsResults, classList = classList)
 
-# SET THE ENDPOINT
+# VISUALISATIONS
+@app.route('/visualisation/')
+def visualisation():
+
+    networkQuery = """
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
+
+    select distinct ?card ?cardLabel ?meaning ?meaningLabel (COUNT(?meaning) as ?n)
+    where {
+      ?card a odi:DeckCard .
+      ?card odi:hasName ?cardLabel.
+      ?story odi:hasCard ?storyCard.
+      ?storyCard odi:specifies ?card.
+      ?storyCard odi:carriesRepresentation ?representation.
+      ?representation odi:hasMeaningOf ?meaning.
+      ?meaning rdfs:label ?meaningLabel.
+      }
+      GROUP BY ?card ?cardLabel ?meaning ?meaningLabel
+      """
+
+    # Execute the SPARQL query
+    sparql.setQuery(networkQuery)
+    sparql.setReturnFormat('json')
+    networkResults = sparql.query().convert()
+
+    return render_template('visualisation.html', networkResults = networkResults)
 
 # KG BROWSING
 @app.route('/storie/<storyID>')
@@ -469,9 +471,9 @@ def meaning(meaningID):
 
     return render_template('meaningTemplate.html',  meaningLabel = meaningLabel, meaningData = meaningData)
 
-@app.route('/data/visualisation/<path:path>')
-def send_static(path):
-    return send_from_directory('visualisation', path)
+# @app.route('/data/visualisation/<path:path>')
+# def send_static(path):
+#     return send_from_directory('visualisation', path)
 
 @app.route('/contatti')
 def contacts():

@@ -145,17 +145,17 @@
       <div class="network card-footer" id="network-container">
         <h5 class="p-3">Collegamenti semantici e relazioni narrative tra le rappresentazioni delle carte</h5>
         <div class="network-contents p-3">
-        <div id="legend-container">
-        <div id="legend"></div>
-        <div id="zoom-buttons" class="d-flex justify-content-end">
-      <button class="btn btn-outline-dark" onclick="zoomIn()"><i class="bi bi-zoom-in"></i></button>
-      <button class="btn btn-outline-dark" onclick="zoomOut()"><i class="bi bi-zoom-out"></i></button>
-      <button class="btn btn-outline-dark" onclick="resetZoom()"><i class="bi bi-arrow-counterclockwise"></i></button>
-    </div>
-    </div>
-    </div>
-    <div id="network" class="p-3"></div>
-                </div>
+          <div id="legend-container">
+            <div id="legend"></div>
+            <div id="zoom-buttons" class="d-flex justify-content-end">
+              <button class="btn btn-outline-dark" onclick="zoomIn()"><i class="bi bi-zoom-in"></i></button>
+              <button class="btn btn-outline-dark" onclick="zoomOut()"><i class="bi bi-zoom-out"></i></button>
+              <button class="btn btn-outline-dark" onclick="resetZoom()"><i class="bi bi-arrow-counterclockwise"></i></button>
+            </div>
+          </div>
+        </div>
+        <div id="network" class="p-3"></div>
+      </div>
     </div>
 
 
@@ -180,8 +180,6 @@
  ]
 
   var uniqueNodes = Array.from(new Set(allNodes.map(JSON.stringify)), JSON.parse);
-
-  console.log(uniqueNodes)
 
    var container = document.getElementById("network")
    var data = {
