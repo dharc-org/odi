@@ -164,11 +164,15 @@
 </div>
 </div>
   <script type="text/javascript">
+
+    function replaceHtmlEntities(input) {
+    return input.replace(/&#39;/g, "'");
+  }
    // Create a new network instance
    var allNodes = [
    {% for res in storyRelationsResult['results']['bindings'] %}
-   { id:"{{res['representation']['value']}}", label:"{{res['reprLabel']['value']}}", classLabel:he.decode("{{res['classLabel']['value']}}")},
-   { id:"{{res['representation2']['value']}}", label:"{{res['reprLabel2']['value']}}", classLabel:he.decode("{{res['classLabel2']['value']}}")},
+   { id:"{{res['representation']['value']}}", label:replaceHtmlEntities("{{res['reprLabel']['value']}}"), classLabel:replaceHtmlEntities("{{res['classLabel']['value']}}")},
+   { id:"{{res['representation2']['value']}}", label:replaceHtmlEntities("{{res['reprLabel2']['value']}}"), classLabel:replaceHtmlEntities("{{res['classLabel2']['value']}}")},
    {% endfor %}
    {% for res in cardRelationsResult %}
    { id:"{{res['card']}}", label:"{{res['cardLabel']}}", classLabel:"Carta"},
@@ -186,7 +190,7 @@
      edges: [
 
     {% for res in storyRelationsResult['results']['bindings'] %}
-      { from:  "{{res['representation']['value']}}", to: "{{res['representation2']['value']}}" , label: he.decode("{{res['relLabel']['value']}}")},
+      { from:  "{{res['representation']['value']}}", to:replaceHtmlEntities("{{res['representation2']['value']}}") , label: replaceHtmlEntities("{{res['relLabel']['value']}}")},
     {% endfor %}
     {% for res in cardRelationsResult %}
       { from:  "{{res['representation']}}", to: "{{res['card']}}" , label:""},
