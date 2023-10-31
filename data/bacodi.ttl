@@ -47,12 +47,12 @@ bacodi:il-carro-tuttelealtrestoriedue rdfs:label "il carro-tuttelealtrestorieDue
 bacodi:il-castello-dei-destini-incrociati a odi:Edition ;
     odi:hasAuthor bacodi:italo-calvino ;
     odi:hasChapter bacodi:capitoloIntroduttivo,
-        bacodi:capitolocinque,
-        bacodi:capitolodue,
-        bacodi:capitoloquattro,
-        bacodi:capitolosei,
-        bacodi:capitolotre,
-        bacodi:capitolouno,
+        bacodi:capitoloCinque,
+        bacodi:capitoloDue,
+        bacodi:capitoloQuattro,
+        bacodi:capitoloSei,
+        bacodi:capitoloTre,
+        bacodi:capitoloUno,
         bacodi:tuttelealtrestorie ;
     odi:hasPublicationDate "1973"^^xsd:year ;
     odi:hasTitle "Il castello dei destini incrociati"^^xsd:string ;
@@ -208,17 +208,17 @@ bacodi:asso-di-spade-tuttelealtrestorieUno a odi:StoryCard ;
 bacodi:capitoloIntroduttivo a odi:Chapter ;
     odi:includes bacodi:storiazero .
 
-bacodi:capitolocinque rdfs:label "Capitolo cinque"^^xsd:string .
+bacodi:capitoloCinque rdfs:label "Capitolo cinque"^^xsd:string .
 
-bacodi:capitolodue rdfs:label "Capitolo due"^^xsd:string .
+bacodi:capitoloDue rdfs:label "Capitolo due"^^xsd:string .
 
-bacodi:capitoloquattro rdfs:label "Capitolo quattro"^^xsd:string .
+bacodi:capitoloQuattro rdfs:label "Capitolo quattro"^^xsd:string .
 
-bacodi:capitolosei rdfs:label "Capitolo sei"^^xsd:string .
+bacodi:capitoloSei rdfs:label "Capitolo sei"^^xsd:string .
 
-bacodi:capitolotre rdfs:label "Capitolo tre"^^xsd:string .
+bacodi:capitoloTre rdfs:label "Capitolo tre"^^xsd:string .
 
-bacodi:capitolouno rdfs:label "Capitolo uno"^^xsd:string .
+bacodi:capitoloUno rdfs:label "Capitolo uno"^^xsd:string .
 
 bacodi:cavaliere-di-bastoni-storiaSei a odi:StoryCard ;
     odi:carriesRepresentation bacodi:cavaliere-di-bastoni-storiaSei-protagonista ;
