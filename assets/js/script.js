@@ -1,3 +1,10 @@
+// ENABLE POPOVERS
+
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+
 // BREADCRUMBS
 
 function toCamelCase(text) {
@@ -33,7 +40,7 @@ window.onload = breadcrumbs;
 // FIRST FILTER IN INDEXES (CARDS)
 $(document).ready(function() {
   // Handler for filter clicks
-  $('.list-group-item').on('click', function() {
+  $('.list-group-item1').on('click', function() {
     var selectedCategory = $(this).data('category');
     // Show all search result items
     $('.search-result-item').fadeIn(800);

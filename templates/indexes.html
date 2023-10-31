@@ -84,19 +84,29 @@
                 <div class="col-md-4 mt-4">
                   <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                      <h4>Le storie</h4>
+                      <h4 class="mb-0">
+                        Le storie
+                        <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-content="Informazioni">
+                          <i class="bi bi-info-circle-fill"></i>
+                        </button>
+                      </h4>
                     </div>
                   </nav>
                   <hr>
                   <ul class="list-group list-group-flush">
                     {% for res in storiesResults["results"]["bindings"] %}
-                    <a class="list-group-item list-group-item-action" href="../{{res["story"]["value"]|replace('https://w3id.org/odi/data/', '')}}">
-                      {{res["storyTitle"]["value"]}}{% if 'storyName' in res %}, <i>
-                        {{res["storyName"]["value"]}}
-                      </i>
-                      {% endif %}
-                    </a>
+                    <h6 class="ps-3 pt-2">{{res["chapterLabel"]["value"]}}</h6>
+                      <a class="list-group-item list-group-item-action ps-5" href="../{{res["story"]["value"]|replace('https://w3id.org/odi/data/', '')}}">
+                         {% if 'storyName' in res %}<i>{{res["storyName"]["value"]}}</i>{% endif %}
+                      </a>
                     {% endfor %}
+                    <h6 class="ps-4 pt-2">Capitolo sette, <i>Tutte le altre storie</i></h6>
+                    {% for res in otherStoriesResults["results"]["bindings"] %}
+                      <a class="list-group-item list-group-item-action ps-5" href="../{{res["story"]["value"]|replace('https://w3id.org/odi/data/', '')}}">
+                        {{res["storyTitle"]["value"]}}{% if 'storyName' in res %}, <i>{{res["storyName"]["value"]}}</i>{% endif %}
+                      </a>
+                    {% endfor %}
+
                   </ul>
                 </div>
                 <!-- CARDS LIST -->
@@ -104,7 +114,11 @@
                   <div class="container mt-4">
                     <nav class="navbar navbar-expand-lg">
                       <div class="container-fluid">
-                        <h4>Le carte</h4>
+                        <h4 class="mb-0">Le carte
+                          <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-content="Informazioni">
+                            <i class="bi bi-info-circle-fill"></i>
+                          </button>
+                        </h4>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
@@ -116,7 +130,7 @@
                               <ul class="dropdown-menu">
                                 {% for res in suitList %}
                                   <li>
-                                    <a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a>
+                                    <a class="dropdown-item dropdown-item list-group-item1" data-category={{res}} href="#">{{res}}</a>
                                   </li>
                                 {% endfor %}
                               </ul>
@@ -126,7 +140,7 @@
                               <ul class="dropdown-menu">
                                 {% for res in typologyList %}
                                 <li>
-                                  <a class="dropdown-item list-group-item" data-category={{res}} href="#">{{res}}</a>
+                                  <a class="dropdown-item dropdown-item list-group-item1" data-category={{res}} href="#">{{res}}</a>
                                 </li>
                                 {% endfor %}
                               </ul>
@@ -164,7 +178,11 @@
                 <div class="col-md-4 mt-4">
                   <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                      <h4>I significati</h4>
+                      <h4 class="mb-0">I significati
+                          <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-content="Informazioni">
+                            <i class="bi bi-info-circle-fill"></i>
+                          </button>
+                      </h4>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>

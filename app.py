@@ -59,19 +59,43 @@ def indexes():
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
 
-    select distinct ?story ?storyTitle ?storyName ?position
+    select distinct ?chapter ?chapterLabel ?story ?storyTitle ?storyName ?position
     where {
          ?story a odi:Story.
+         ?chapter odi:includes ?story.
+         ?chapter rdfs:label ?chapterLabel.
+         ?story rdfs:label ?storyTitle.
+         ?story odi:hasPositionInTheBook ?position.
+         OPTIONAL {?story odi:hasTitle ?storyName}
+         FILTER(?chapter != bacodi:tuttelealtrestorie)
+
+    }
+    GROUP BY ?chapter ?chapterLabel ?story ?storyTitle ?storyName ?position ORDER BY ASC (?position)
+    """
+    sparql.setQuery(storiesQuery)
+    sparql.setReturnFormat(JSON)
+    storiesResults = sparql.query().convert()
+
+    # retrieve all stories
+    otherStoriesQuery = """
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
+
+    select distinct ?chapter ?chapterLabel ?story ?storyTitle ?storyName ?position
+    where {
+         ?story a odi:Story.
+         bacodi:tuttelealtrestorie odi:includes ?story.
+         bacodi:tuttelealtrestorie rdfs:label ?chapterLabel.
          ?story rdfs:label ?storyTitle.
          ?story odi:hasPositionInTheBook ?position.
          OPTIONAL {?story odi:hasTitle ?storyName}
 
     }
-    GROUP BY ?story ?storyTitle ?storyName ?position ORDER BY ASC (?position)
+    GROUP BY ?chapter ?chapterLabel ?story ?storyTitle ?storyName ?position ORDER BY ASC (?position)
     """
-    sparql.setQuery(storiesQuery)
+    sparql.setQuery(otherStoriesQuery)
     sparql.setReturnFormat(JSON)
-    storiesResults = sparql.query().convert()
+    otherStoriesResults = sparql.query().convert()
 
     # retrieve all meanings
     meaningsQuery = """
@@ -100,7 +124,7 @@ def indexes():
 
     classList = list(set(classList))
 
-    return render_template('indexes.html',  cardsResults = cardsResults, storiesResults = storiesResults, suitList = suitList, typologyList = typologyList, meaningsResults = meaningsResults, classList = classList)
+    return render_template('indexes.html',  cardsResults = cardsResults, storiesResults = storiesResults, otherStoriesResults = otherStoriesResults, suitList = suitList, typologyList = typologyList, meaningsResults = meaningsResults, classList = classList)
 
 # VISUALISATIONS
 @app.route('/visualisation/')
