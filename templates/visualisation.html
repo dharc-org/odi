@@ -15,28 +15,6 @@
   <!-- visnetwork -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<style>
-.loader {
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid #3498db;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -15px 0 0 -15px;
-  animation: spin 2s linear infinite;
-  z-index: 1;
-  display: none;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-</style>
 </head>
   <body>
 
@@ -103,8 +81,10 @@
         <div class="col py-3">
           <!-- main content -->
           <div class="col d-flex flex-column h-sm-100">
-            <div id="loader" class="loader"></div>
+            <div id="networkLoader" class="networkLoader"></div>
+            <div id="networkPopup" class="networkPopup" style="display: none;"></div>
             <div id="network"></div>
+
 
           </div>
 
@@ -125,7 +105,7 @@ return input.replace(/&#39;/g, "'");
 
 // activate loader
 var loader = document.getElementById('loader');
-loader.style.display = 'block';
+networkLoader.style.display = 'block';
 
 var nodes = [
   {% for res in networkResults['results']['bindings'] %}
@@ -153,9 +133,26 @@ var options = {};
 
 var network = new vis.Network(container, data, options);
 
+
+const customPopup = document.getElementById('networkPopup');
+
+   network.on('click', function (params) {
+     if (params.nodes.length > 0) {
+       const message = `<a href="${params.nodes[0]}" target="__blank">Vai alla risorsa</a>`
+       displayCustomPopup(message, params.pointer.DOM.x, params.pointer.DOM.y);
+     }
+   });
+
+   function displayCustomPopup(content, x, y) {
+     customPopup.innerHTML = content;
+     customPopup.style.left = x + 'px';
+     customPopup.style.top = y + 'px';
+     customPopup.style.display = 'block';
+   }
+
 // Hide the loader once the network is loaded
 network.on('stabilizationIterationsDone', function () {
-  loader.style.display = 'none';
+  networkLoader.style.display = 'none';
 });
 </script>
 
