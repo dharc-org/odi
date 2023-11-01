@@ -80,3 +80,35 @@ $(document).ready(function() {
     });
   });
 });
+
+
+// NETOWORK TOOLS
+
+// Zoom In function
+function zoomIn() {
+  var scale = network.getScale();
+  network.moveTo({
+    scale: scale * 1.1, // Increase the scale by 10%
+    animation: true, // Enable animation
+    animationDuration: 1000 // Animation duration in milliseconds
+  });
+}
+
+// Zoom Out function
+function zoomOut() {
+  var scale = network.getScale();
+  network.moveTo({
+    scale: scale * 0.9, // Decrease the scale by 10%
+    animation: true, // Enable animation
+    animationDuration: 1000 // Animation duration in milliseconds
+  });
+}
+
+// Reset Zoom function
+function resetZoom() {
+network.moveTo({
+ scale: 0.7, // Set the scale to the default value (1)
+ animation: true, // Enable animation
+ animationDuration: 1000 // Animation duration in milliseconds
+});
+}
