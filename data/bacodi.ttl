@@ -66,7 +66,7 @@ bacodi:il-sole-tuttelealtrestorie-Sei a odi:StoryCard ;
     odi:hasTextualReference "«sfolgorante apparizione»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-sole> .
 
-bacodi:ruota-della-fortuna-storiaDue-la_trasformazione_di_tutto_in_oro a odi:Event ;
+bacodi:la-ruota-della-fortuna-storiaDue-la_trasformazione_di_tutto_in_oro a odi:Event ;
     odi:carriedOutBy bacodi:re-di-coppe-storiaDue-protagonista .
 
 <https://w3id.org/odi/data/carte/cinque-di-spade> a odi:DeckCard ;
@@ -361,7 +361,7 @@ bacodi:dieci-di-bastoni-tuttelealtrestorieDue a odi:StoryCard ;
     odi:carriesRepresentation bacodi:dieci-di-bastoni-tuttelealtrestorieDue-bosco ;
     odi:hasPositionInTheText 12 ;
     odi:hasTextualReference "«nell'oscurità del bosco»"^^xsd:string ;
-    odi:specifies bacodi:dieci-bastoni .
+    odi:specifies <https://w3id.org/odi/data/carte/dieci-di-bastoni> .
 
 bacodi:dieci-di-coppe-storiaQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:dieci-di-coppe-storiaQuattro-avelli_del_cimitero ;
@@ -594,7 +594,7 @@ bacodi:fante-di-coppe-tuttelealtrestorieCinque-protagonista a odi:Character ;
         bacodi:la-papessa-tuttelealtrestorieCinque-sacerdotessa,
         bacodi:la-stella-tuttelealtrestorieCinque-fantesca ;
     odi:hasAParticularConditionOf bacodi:lo-imperatore-tuttelealtrestorieCinque-ambizione,
-        bacodi:ruota-della-fortuna-tuttelealtrestorieCinque-intenzione_di_capovolgere_il_mondo ;
+        bacodi:la-ruota-della-fortuna-tuttelealtrestorieCinque-intenzione_di_capovolgere_il_mondo ;
     odi:hasIndirectRelationWith bacodi:asso-di-coppe-tuttelealtrestorieCinque-coppa_sacra,
         bacodi:due-di-denari-tuttelealtrestorieCinque-due_denari,
         bacodi:la-temperanza-tuttelealtrestorieCinque-baccanti,
@@ -1509,17 +1509,17 @@ bacodi:regina-di-spade-tuttelealtrestorieQuattro a odi:StoryCard ;
     odi:hasTextualReference "«io sono la gioiosa Dea della Distruzione, che governa il disfarsi e il rifarsi ininterrotto del mondo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/regina-di-spade> .
 
-bacodi:ruota-della-fortuna-tuttelealtrestorieCinque a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:ruota-della-fortuna-tuttelealtrestorieCinque-intenzione_di_capovolgere_il_mondo ;
+bacodi:la-ruota-della-fortuna-tuttelealtrestorieCinque a odi:StoryCard ;
+    odi:carriesRepresentation bacodi:la-ruota-della-fortuna-tuttelealtrestorieCinque-intenzione_di_capovolgere_il_mondo ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 10 ;
-    odi:specifies bacodi:ruota-della-fortuna .
+    odi:specifies <https://w3id.org/odi/data/carte/la-ruota-della-fortuna> .
 
-bacodi:ruota-della-fortuna-tuttelealtrestorieUno a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:ruota-della-fortuna-tuttelealtrestorieUno-Olimpo ;
+bacodi:la-ruota-della-fortuna-tuttelealtrestorieUno a odi:StoryCard ;
+    odi:carriesRepresentation bacodi:la-ruota-della-fortuna-tuttelealtrestorieUno-Olimpo ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 12 ;
-    odi:specifies bacodi:ruota-della-fortuna .
+    odi:specifies <https://w3id.org/odi/data/carte/la-ruota-della-fortuna> .
 
 bacodi:sei-di-bastoni-storiaTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sei-di-bastoni-storiaTre-bosco ;
@@ -2222,7 +2222,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
         bacodi:lo-imperatore-storiaSei,
         bacodi:nove-di-coppe-storiaSei,
         bacodi:nove-di-spade-storiaSei,
-        bacodi:ruota-della-fortuna-storiaSei ;
+        bacodi:la-ruota-della-fortuna-storiaSei ;
     odi:hasPositionInTheBook 6 ;
     odi:hasTitle "Storia di Astolfo sulla Luna"^^xsd:string ;
     odi:hasTotalNumberOfCards 17 .
@@ -2290,7 +2290,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
         bacodi:la-temperanza-tuttelealtrestorieCinque,
         bacodi:lo-imperatore-tuttelealtrestorieCinque,
         bacodi:nove-di-coppe-tuttelealtrestorieCinque,
-        bacodi:ruota-della-fortuna-tuttelealtrestorieCinque,
+        bacodi:la-ruota-della-fortuna-tuttelealtrestorieCinque,
         bacodi:sette-di-denari-tuttelealtrestorieCinque ;
     odi:hasPositionInTheBook 11 ;
     odi:hasTotalNumberOfCards 13 .
@@ -2404,7 +2404,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
         bacodi:nove-di-coppe-tuttelealtrestorieUno,
         bacodi:nove-di-spade-tuttelealtrestorieUno,
         bacodi:regina-di-denari-tuttelealtrestorieUno,
-        bacodi:ruota-della-fortuna-tuttelealtrestorieUno ;
+        bacodi:la-ruota-della-fortuna-tuttelealtrestorieUno ;
     odi:hasPositionInTheBook 7 ;
     odi:hasTotalNumberOfCards 18 .
 
@@ -2689,10 +2689,10 @@ bacodi:regina-di-bastoni-tuttelealtrestorieSei-protagonista a odi:Character ;
 bacodi:regina-di-spade-tuttelealtrestorieQuattro-dea_della_distruzione a odi:Character ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/dea-della-distruzione> .
 
-bacodi:ruota-della-fortuna-tuttelealtrestorieCinque-intenzione_di_capovolgere_il_mondo a odi:Symbol ;
+bacodi:la-ruota-della-fortuna-tuttelealtrestorieCinque-intenzione_di_capovolgere_il_mondo a odi:Symbol ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/intenzione-di-capovolgere-il-mondo> .
 
-bacodi:ruota-della-fortuna-tuttelealtrestorieUno-Olimpo a odi:FictionalPlace ;
+bacodi:la-ruota-della-fortuna-tuttelealtrestorieUno-Olimpo a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/olimpo> .
 
 bacodi:sei-di-bastoni-storiaTre-bosco a odi:FictionalPlace ;
@@ -3222,7 +3222,7 @@ bacodi:quattro-di-spade-tuttelealtrestorieQuattro-contesa a odi:Event ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/contesa> .
 
 bacodi:regina-di-denari-tuttelealtrestorieUno-protagonista a odi:Character ;
-    odi:arrivesAt bacodi:ruota-della-fortuna-tuttelealtrestorieUno-Olimpo ;
+    odi:arrivesAt bacodi:la-ruota-della-fortuna-tuttelealtrestorieUno-Olimpo ;
     odi:hasIndirectRelationWith bacodi:asso-di-denari-tuttelealtrestorieUno-elemosina,
         bacodi:asso-di-spade-tuttelealtrestorieUno-volontà_divina,
         bacodi:cavaliere-di-bastoni-tuttelealtrestorieUno-cavallo_di_troia,
