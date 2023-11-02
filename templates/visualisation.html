@@ -83,6 +83,12 @@
             <!-- Main content in a column with width 4 -->
             <div class="col-md-2 bg-light pt-3">
               <h5>Strumenti</h5>
+              <div class="network-tool">
+                <h6>Descrizione</h6>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#network-description-modal">
+                  <i class="bi bi-info-circle-fill"></i>
+                </button>
+              </div>
               <!-- Network search -->
               <div class="network-tool">
                 <h6>Legenda</h6>
@@ -128,6 +134,53 @@
           </div>
         </div>
 </div>
+</div>
+
+<div class="modal fade" id="network-description-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Descrizione</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Il network mostra le relazioni tra le carte in base ai significati che ricoprono all’interno della raccolta. I riguardi verdi sono le carte mentre i cerchi grigi quello che le carte rappresentano. Lo spessore delle linee mette in evidenza il numero di occorrenze nelle quali ogni carta assume lo stesso significato. </p>
+        <p>La visualizzazione, a partire dal centro, presenta una convergenza nel personaggio-protagonista dal momento che l’analisi dei dati è stata svolta prendendo come punto di riferimento proprio il personaggio principale delle varie storie. Significativa è la concordanza delle carte: appartengono tutte alla tipologia delle
+          <a href="https://w3id.org/odi/data/tipologia/carta-di-corte" target="__blank">carte di corte</a> (tipologia privilegiata da Calvino per presentare il protagonista) e le poche carte che non condividono la medesima tipologia sono distanziate ponendo l’attenzione sul loro utilizzo secondario all’interno della storia come espressione di una identità o di un cambiamento del protagonista (i.e.
+          <a href="https://w3id.org/odi/tipologia/trionfo" target="__blank">i trionfi</a>:
+          <a href="https://w3id.org/odi/data/carte/la-temperanza" target="__blank">La Temperanza</a>,
+          <a href="https://w3id.org/https://w3id.org/odi/data/carte/il-matto" target="__blank">Il Matto</a>,
+          <a href="https://w3id.org/odi/data/carte/il-bagatto" target="__blank">Il Bagatto</a>,
+          <a href="https://w3id.org/odi/data/carte/la-giustizia" target="__blank">La Giustizia</a> e
+          <a href="https://w3id.org/odi/data/carte/il-penduto" target="__blank">Il Penduto</a>).
+          Soffermandosi su alcune carte è, inoltre, possibile notare l’utilizzo delle carte di corte per esprimere altre rappresentazioni oltre a quella del
+          <a href="https://w3id.org/odi/data/significati/protagonista" target="__blank">protagonista</a> (e.g.
+          <a href="https://w3id.org/odi/carte/data/fante-di-spade" target="__blank">Fante di Spade</a> che assume sia il ruolo del personaggio
+          <a href="https://w3id.org/odi/data/significati/protagonista" target="__blank">protagonista</a> che del personaggio secondario
+          <a href="https://w3id.org/odi/data/significati/guerriero" target="__blank">“guerriero”</a>).</p>
+        <p>Un secondo livello di visualizzazione delinea la condivisione di alcune sfere semantiche del seme di coppe con gli altri semi, in particolare con il
+          <a href="https://w3id.org/odi/data/semi/denari" target="__blank">seme di Denari</a>: ad esempio, lo
+          <a href="https://w3id.org/odi/data/significati/spreco" target="__blank">“spreco”</a>, che rimanda alla sfera materiale del denaro, è rappresentato sia dall’
+          <a href="https://w3id.org/odi/data/carte/otto-di-coppe" target="__blank">Otto di Coppe</a> sia dal
+          <a href="https://w3id.org/odi/data/carte/cinque-di-denari" target="__blank">Cinque di Denari</a>; più evidente è la rappresentazione della
+          <a href="https://w3id.org/data/significati/ricchezza" target="__blank">“ricchezza”</a> da parte di vari
+          <a href="https://w3id.org/odi/data/tipologia/numerali" target="__blank">numerali</a> con il
+          <a href="https://w3id.org/odi/data/semi/denari" target="__blank">seme di Denari</a> ma anche dal
+          <a href="https://w3id.org/odi/data/carte/nove-di-coppe" target="__blank">Nove di Coppe</a>.</p>
+        <p>I restanti due semi,
+          <a href="https://w3id.org/odi/data/semi/bastoni" target="__blank">Bastoni</a> e
+          <a href="https://w3id.org/odi/data/semi/spade" target="__blank">Spade</a>, presentano una precisa sfera semantica di riferimento che non richiede ulteriori spiegazioni. Un terzo livello è definito da alcune carte che rappresentano una convergenza di rappresentazioni ma che non sempre appartengono alla stessa tipologia (e.g.
+          <a href="https://w3id.org/odi/data/carte/la-luna" target="__blank">La Luna</a> e
+          <a href="https://w3id.org/odi/data/carte/asso-di-denari" target="__blank">Asso di Denari</a>;
+          <a href="https://w3id.org/odi/data/carte/la-stella" target="__blank">La Stella</a> e
+          <a href="https://w3id.org/odi/data/carte/regina-di-spade" target="__blank">Regina di Spade</a>).</p>
+	      <p>Un ultimo livello di visualizzazione mostra gli <i>outliers</i></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Torna alla visualizzazione</button>
+      </div>
+    </div>
+  </div>
 </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
