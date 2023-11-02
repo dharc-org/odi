@@ -127,7 +127,7 @@ def indexes():
     return render_template('indexes.html',  cardsResults = cardsResults, storiesResults = storiesResults, otherStoriesResults = otherStoriesResults, suitList = suitList, typologyList = typologyList, meaningsResults = meaningsResults, classList = classList)
 
 # VISUALISATIONS
-@app.route('/visualisation/')
+@app.route('/visualizzazioni/')
 def visualisation():
 
     networkQuery = """
