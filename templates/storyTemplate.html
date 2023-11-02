@@ -148,7 +148,7 @@
                 <div class="col-md-2">
                       Posizione <span class="badge bg-light-success">{{res['position']['value']}}</span>
                 </div>
-                  <div class="col-md-5">
+                  <div class="col-md-3">
                     {% for res2 in storyRepresentationResult['results']['bindings'] %}
                     {% if res2['storyCard']['value'] == res['storyCard']['value'] %}
                     Carta: <a href="../{{res['deckCard']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["deckCardLabel"]['value']}}</a>
@@ -156,8 +156,19 @@
                     {% endif %}
                     {% endfor %}
                   </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                   <p class="card-text">{{res['texts']['value']}}</p>
+                </div>
+                <div class="col-md-1">
+                  {% if "image" in res and "imageURL" in res %}
+                  <img class="image-click rounded float-end card-text {{ res['image']['value']|replace('https://w3id.org/odi/data/', '') }}" src="{{ res['imageURL']['value']}}">
+                  {% endif %}
+                  <!-- The Modal -->
+                  <div class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                  </div>
                 </div>
               </div>
             </li>

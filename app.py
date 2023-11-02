@@ -162,20 +162,24 @@ def story(storyID):
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
 
-    select distinct ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment (group_concat(distinct ?text;separator="//") as ?texts)
+    select distinct ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment ?image ?imageURL (group_concat(distinct ?text;separator="//") as ?texts)
     where {
          <https://w3id.org/odi/data/storie/""" + storyID + """> rdfs:label ?storyTitle;
             odi:hasCard ?storyCard.
         ?storyCard odi:hasPositionInTheText ?position ;
             odi:specifies ?deckCard.
-        ?deckCard odi:hasName ?deckCardLabel.
 
+        ?deckCard odi:hasName ?deckCardLabel;
+
+
+        OPTIONAL {?storyCard odi:hasIconography ?image.}
+        OPTIONAL {?deckCard odi:hasImage ?imageURL}
         OPTIONAL {<https://w3id.org/odi/data/storie/""" + storyID + """> odi:hasTitle ?storyName}
         OPTIONAL {?storyCard odi:hasTextualReference ?text}
         OPTIONAL {<https://w3id.org/odi/data/storie/""" + storyID + """> rdfs:comment ?comment}
 
     }
-    GROUP BY ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment ORDER BY ASC (?position)
+    GROUP BY ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment ?image ?imageURL ORDER BY ASC (?position)
     """
 
     sparql.setQuery(storyQuery)
@@ -268,8 +272,11 @@ def story(storyID):
         sparql.setReturnFormat(JSON)
         temp_res = sparql.query().convert()
 
+        print(uri, temp_res)
+
         temp_dict = {}
         temp_dict.update({'representation':uri})
+
         temp_dict.update({'card':temp_res['results']['bindings'][0]['card']['value']})
         temp_dict.update({'cardLabel':temp_res['results']['bindings'][0]['cardLabel']['value']})
         cardRelationsResult.append(temp_dict)

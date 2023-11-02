@@ -1,11 +1,19 @@
-// ENABLE POPOVERS
+/*
+  ==========================
+  |    ENABLE POPOVERS     |
+  ==========================
+*/
 
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
   return new bootstrap.Popover(popoverTriggerEl)
 })
 
-// BREADCRUMBS
+/*
+  ==========================
+  |     BREADCRUMBS       |
+  ==========================
+*/
 
 function toCamelCase(text) {
   return text.replace(/(?:^\w|[A-Z]|\b\w)/g, function(match, index) {
@@ -37,52 +45,82 @@ function breadcrumbs() {
 
 window.onload = breadcrumbs;
 
-// FIRST FILTER IN INDEXES (CARDS)
-$(document).ready(function() {
-  // Handler for filter clicks
-  $('.list-group-item1').on('click', function() {
-    var selectedCategory = $(this).data('category');
-    // Show all search result items
-    $('.search-result-item').fadeIn(800);
-    // Hide search result items not matching the selected category
-    if (selectedCategory !== 'all') {
-      $('.search-result-item').not('.' + selectedCategory).hide();
-    }
+/*
+  ==========================
+  |    INDEXES FILTERS      |
+  ==========================
+*/
 
-    // Button for resetting filters
-    $('#resetFiltersButton').on('click', function() {
-      // Show all search result items
-      $('.search-result-item').fadeIn(800);
-      // Clear the selected category filter
-      $('.list-group-item').removeClass('active');
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if the elements with class 'list-group-item1' and 'search-result-item' exist on the page
+  var listGroupItem1Elements = document.querySelectorAll('.list-group-item1');
+  var searchResultItemElements = document.querySelectorAll('.search-result-item');
+
+  if (listGroupItem1Elements.length > 0 && searchResultItemElements.length > 0) {
+    // Attach event handlers for the first set of elements
+    listGroupItem1Elements.forEach(function(element) {
+      element.addEventListener('click', function() {
+        var selectedCategory = element.dataset.category;
+        // Rest of your event handling code for the first set of elements
+      });
     });
-  });
+  }
+
+  // Check if the elements with class 'list-group-item2' and 'search-result-item2' exist on the page
+  var listGroupItem2Elements = document.querySelectorAll('.list-group-item2');
+  var searchResultItem2Elements = document.querySelectorAll('.search-result-item2');
+
+  if (listGroupItem2Elements.length > 0 && searchResultItem2Elements.length > 0) {
+    // Attach event handlers for the second set of elements
+    listGroupItem2Elements.forEach(function(element) {
+      element.addEventListener('click', function() {
+        var selectedCategory2 = element.dataset.category;
+        // Rest of your event handling code for the second set of elements
+      });
+    });
+  }
 });
 
-// SECOND FILTER IN INDEXES (MEANINGS)
-$(document).ready(function() {
-  // Handler for filter clicks
-  $('.list-group-item2').on('click', function() {
-    var selectedCategory2 = $(this).data('category');
-    // Show all search result items
-    $('.search-result-item2').fadeIn(800);
-    // Hide search result items not matching the selected category
-    if (selectedCategory2 !== 'all') {
-      $('.search-result-item2').not('.' + selectedCategory2).hide();
-    }
+/*
+  ==========================
+  |     IMAGE VIEWER       |
+  ==========================
+*/
 
-    // Button for resetting filters
-    $('#resetFiltersButton2').on('click', function() {
-      // Show all search result items
-      $('.search-result-item2').fadeIn(800);
-      // Clear the selected category filter
-      $('.list-group-item2').removeClass('active');
-    });
+// Get all the modal elements
+var modals = document.querySelectorAll(".modal");
+
+// Get all the trigger elements (images)
+var triggerImages = document.querySelectorAll(".image-click");
+
+// Loop through all the trigger elements and attach a click event handler
+for (var i = 0; i < triggerImages.length; i++) {
+  triggerImages[i].addEventListener("click", function() {
+    var modal = this.closest(".col-md-1").querySelector(".modal");
+    var modalImg = modal.querySelector(".modal-content");
+    var captionText = modal.querySelector("#caption");
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
   });
-});
+}
 
+// Get all the close buttons
+var closeButtons = document.querySelectorAll(".close");
 
-// NETOWORK TOOLS
+// Loop through all the close buttons and attach a click event handler
+for (var i = 0; i < closeButtons.length; i++) {
+  closeButtons[i].addEventListener("click", function() {
+    var modal = this.closest(".modal");
+    modal.style.display = "none";
+  });
+}
+
+/*
+  ==========================
+  |     NETWORK TOOLS      |
+  ==========================
+*/
 
 // Zoom In function
 function zoomIn() {

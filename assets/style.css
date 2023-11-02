@@ -55,8 +55,9 @@ margin: auto !important;
 display: block;
 width: auto !important;
 max-width: auto !important;
-max-height:100% !important;
+max-height:90vh !important;
 }
+
 /* Caption of Modal Image */
 #caption {
 margin: auto;
@@ -128,6 +129,17 @@ hr {color:#99c199 !important}
 
 .card-header {background-color:transparent !important }
 .card-footer {background-color:transparent !important }
+
+/* Images in tables */
+img.grande {
+  width:3vw;
+  height:auto
+}
+
+img.piccola {
+  width:2vw;
+  height:auto
+}
 
 button {
   background-color: transparent !important;
@@ -254,5 +266,5 @@ ul#suggestedNodes:empty {
 }
 
 .modal {
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(0,0,0,.9);
 }
