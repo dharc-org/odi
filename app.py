@@ -38,7 +38,7 @@ def indexes():
       OPTIONAL {?card odi:hasSuit ?suit. ?suit rdfs:label ?suitLabel.}
     }
 
-    GROUP BY ?card ?cardName ?typology ?typologyLabel ?suit ?suitLabel ORDER BY DESC (?nCards)
+    GROUP BY ?card ?cardName ?typology ?typologyLabel ?suit ?suitLabel ORDER BY DESC (?nCards) ?cardName
     """
 
     sparql.setQuery(cardsQuery)
@@ -112,7 +112,7 @@ def indexes():
       FILTER (lang(?classLabel) = 'it')
     }
 
-    GROUP BY ?meaning ?meaningLabel ?classLabel ORDER BY DESC (?nMeanings) """
+    GROUP BY ?meaning ?meaningLabel ?classLabel ORDER BY DESC (?nMeanings) ?meaningLabel """
 
     sparql.setQuery(meaningsQuery)
     sparql.setReturnFormat(JSON)
