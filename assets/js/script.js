@@ -96,7 +96,7 @@ var triggerImages = document.querySelectorAll(".image-click");
 // Loop through all the trigger elements and attach a click event handler
 for (var i = 0; i < triggerImages.length; i++) {
   triggerImages[i].addEventListener("click", function() {
-    var modal = this.closest(".col-md-1").querySelector(".modal");
+    var modal = this.closest("div").querySelector(".modal");
     var modalImg = modal.querySelector(".modal-content");
     var captionText = modal.querySelector("#caption");
     modal.style.display = "block";
