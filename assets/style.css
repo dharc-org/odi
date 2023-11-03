@@ -27,13 +27,13 @@ body  {
 
 
 
-#myImg {
+.image-click {
 border-radius: 5px;
 cursor: pointer;
 transition: 0.3s;
 }
 
-#myImg:hover {opacity: 0.7;}
+.image-click:hover {opacity: 0.7;}
 
 /* The Modal (background) */
 .modal {
