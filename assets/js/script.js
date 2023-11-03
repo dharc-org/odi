@@ -52,33 +52,61 @@ window.onload = breadcrumbs;
 */
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Check if the elements with class 'list-group-item1' and 'search-result-item' exist on the page
-  var listGroupItem1Elements = document.querySelectorAll('.list-group-item1');
-  var searchResultItemElements = document.querySelectorAll('.search-result-item');
+  // FIRST FILTER IN INDEXES (CARDS)
+  var listGroupItems = document.querySelectorAll('.list-group-item1');
+  var searchResultItems = document.querySelectorAll('.search-result-item');
 
-  if (listGroupItem1Elements.length > 0 && searchResultItemElements.length > 0) {
-    // Attach event handlers for the first set of elements
-    listGroupItem1Elements.forEach(function(element) {
-      element.addEventListener('click', function() {
-        var selectedCategory = element.dataset.category;
-        // Rest of your event handling code for the first set of elements
+  listGroupItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var selectedCategory = item.getAttribute('data-category');
+
+      searchResultItems.forEach(function(resultItem) {
+        resultItem.style.display = 'block';
+        if (selectedCategory !== 'all' && !resultItem.classList.contains(selectedCategory)) {
+          resultItem.style.display = 'none';
+        }
+      });
+
+      // Button for resetting filters
+      var resetFiltersButton = document.getElementById('resetFiltersButton');
+      resetFiltersButton.addEventListener('click', function() {
+        searchResultItems.forEach(function(resultItem) {
+          resultItem.style.display = 'block';
+        });
+        listGroupItems.forEach(function(listItem) {
+          listItem.classList.remove('active');
+        });
       });
     });
-  }
+  });
 
-  // Check if the elements with class 'list-group-item2' and 'search-result-item2' exist on the page
-  var listGroupItem2Elements = document.querySelectorAll('.list-group-item2');
-  var searchResultItem2Elements = document.querySelectorAll('.search-result-item2');
+  // SECOND FILTER IN INDEXES (MEANINGS)
+  var listGroupItems2 = document.querySelectorAll('.list-group-item2');
+  var searchResultItems2 = document.querySelectorAll('.search-result-item2');
 
-  if (listGroupItem2Elements.length > 0 && searchResultItem2Elements.length > 0) {
-    // Attach event handlers for the second set of elements
-    listGroupItem2Elements.forEach(function(element) {
-      element.addEventListener('click', function() {
-        var selectedCategory2 = element.dataset.category;
-        // Rest of your event handling code for the second set of elements
+  listGroupItems2.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var selectedCategory2 = item.getAttribute('data-category');
+
+      searchResultItems2.forEach(function(resultItem) {
+        resultItem.style.display = 'block';
+        if (selectedCategory2 !== 'all' && !resultItem.classList.contains(selectedCategory2)) {
+          resultItem.style.display = 'none';
+        }
+      });
+
+      // Button for resetting filters
+      var resetFiltersButton2 = document.getElementById('resetFiltersButton2');
+      resetFiltersButton2.addEventListener('click', function() {
+        searchResultItems2.forEach(function(resultItem) {
+          resultItem.style.display = 'block';
+        });
+        listGroupItems2.forEach(function(listItem) {
+          listItem.classList.remove('active');
+        });
       });
     });
-  }
+  });
 });
 
 /*
