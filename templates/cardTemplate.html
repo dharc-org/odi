@@ -92,7 +92,7 @@
                     <div class="col-md-3 d-flex align-items-center">
                       {% for res in cardDescriptionData['results']['bindings'] %}
                         {% if 'Ha immagine' in res['pLabel']['value'] %}
-                        <img id="myImg" class="image-click mx-auto card-text" style="max-width: 50%; height: auto" src={{res['object']['value']}}>
+                        <img class="image-click mx-auto card-text" style="max-width: 50%; height: auto" src={{res['object']['value']}}>
                         <!-- The Modal -->
                         <div class="modal">
                           <span class="close">&times;</span>
