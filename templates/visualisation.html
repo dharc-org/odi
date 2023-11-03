@@ -233,6 +233,8 @@ var options = {
 
 var network = new vis.Network(container, data, options);
 
+network.moveTo({scale: 0.1}) 
+
 
 // Display "Select a node" message initially
 customMessage.innerText = 'Nessun elemento selezionato';
