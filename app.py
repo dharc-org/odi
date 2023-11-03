@@ -307,17 +307,20 @@ def card(cardID):
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
 
-    select distinct ?cardName ?story ?storyTitle ?storyName ?position (group_concat(distinct ?text;separator="//") as ?texts)
+    select distinct ?cardName ?story ?storyTitle ?storyName ?position ?image ?imageURL (group_concat(distinct ?text;separator="//") as ?texts)
     where {
       <https://w3id.org/odi/data/carte/""" + cardID + """> odi:hasName ?cardName ;
            ^odi:specifies ?storyCard.
       ?storyCard ^odi:hasCard ?story;
         odi:hasPositionInTheText ?position.
       ?story rdfs:label ?storyTitle.
+
+      OPTIONAL {?storyCard odi:hasIconography ?image}
+      OPTIONAL {<https://w3id.org/odi/data/carte/""" + cardID + """> odi:hasImage ?imageURL}
       OPTIONAL {?story odi:hasTitle ?storyName}
       OPTIONAL {?storyCard odi:hasTextualReference ?text}
     }
-    GROUP BY  ?cardName ?story ?storyTitle ?storyName ?position ORDER BY ASC (?position)
+    GROUP BY  ?cardName ?story ?storyTitle ?storyName ?position ?image ?imageURL ORDER BY ASC (?position)
     """
 
     sparql.setQuery(cardQuery)
@@ -380,7 +383,7 @@ def suit(suitID):
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
 
-    select distinct ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position (group_concat(distinct ?text;separator="//") as ?texts)
+    select distinct ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position ?image ?imageURL (group_concat(distinct ?text;separator="//") as ?texts)
     where {
       <https://w3id.org/odi/data/semi/""" + suitID + """> ^odi:hasSuit ?deckCard.
         ?deckCard ^odi:specifies ?storyCard;
@@ -390,11 +393,14 @@ def suit(suitID):
                  ^odi:hasCard ?story.
       ?story rdfs:label ?storyTitle.
       ?representation odi:hasMeaningOf ?meaning.
-      ?meaning rdfs:label ?meaningLabel
+      ?meaning rdfs:label ?meaningLabel.
+
+    OPTIONAL {?storyCard odi:hasIconography ?image}
+    OPTIONAL {?deckCard odi:hasImage ?imageURL}
     OPTIONAL {?story odi:hasTitle ?storyName}
     OPTIONAL {?storyCard odi:hasTextualReference ?text}
     }
-    GROUP BY ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position ORDER BY ASC (?position)
+    GROUP BY ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position ?image ?imageURL ORDER BY ASC (?position)
     """
 
     sparql.setQuery(suitCardsQuery)
@@ -432,7 +438,7 @@ def typology(typologyID):
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
 
-    select distinct ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position (group_concat(distinct ?text;separator="//") as ?texts)
+    select distinct ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position ?image ?imageURL (group_concat(distinct ?text;separator="//") as ?texts)
     where {
       <https://w3id.org/odi/data/tipologia/""" + typologyID + """> ^odi:hasTypology ?deckCard.
         ?deckCard ^odi:specifies ?storyCard;
@@ -442,11 +448,14 @@ def typology(typologyID):
                  ^odi:hasCard ?story.
       ?story rdfs:label ?storyTitle.
       ?representation odi:hasMeaningOf ?meaning.
-      ?meaning rdfs:label ?meaningLabel
+      ?meaning rdfs:label ?meaningLabel.
+
+    OPTIONAL {?storyCard odi:hasIconography ?image}
+    OPTIONAL {?deckCard odi:hasImage ?imageURL}
     OPTIONAL {?story odi:hasTitle ?storyName}
     OPTIONAL {?storyCard odi:hasTextualReference ?text}
     }
-    GROUP BY ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position ORDER BY ASC (?position)
+    GROUP BY ?cardName ?deckCard ?story ?storyTitle ?storyName ?meaning ?meaningLabel ?position ?image ?imageURL ORDER BY ASC (?position)
     """
 
     sparql.setQuery(typologyCardsQuery)
@@ -480,7 +489,7 @@ def meaning(meaningID):
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
 
-    select distinct ?deckCard ?cardName ?story ?storyTitle ?storyName ?position (group_concat(distinct ?text;separator="//") as ?texts)
+    select distinct ?deckCard ?cardName ?story ?storyTitle ?storyName ?position ?image ?imageURL (group_concat(distinct ?text;separator="//") as ?texts)
     where {
       <https://w3id.org/odi/data/significati/""" + meaningID + """> ^odi:hasMeaningOf ?representation .
       ?storyCard odi:carriesRepresentation ?representation.
@@ -489,10 +498,13 @@ def meaning(meaningID):
       ?story odi:hasCard ?storyCard;
              rdfs:label ?storyTitle.
       ?deckCard odi:hasName ?cardName.
+
+      OPTIONAL {?storyCard odi:hasIconography ?image}
+      OPTIONAL {?deckCard odi:hasImage ?imageURL}
       OPTIONAL {?story odi:hasTitle ?storyName}
       OPTIONAL {?storyCard odi:hasTextualReference ?text}
     }
-    GROUP BY ?deckCard ?cardName ?story ?storyTitle ?storyName ?position ORDER BY ASC (?position)
+    GROUP BY ?deckCard ?cardName ?story ?storyTitle ?storyName ?position ?image ?imageURL ORDER BY ASC (?position)
     """
 
     sparql.setQuery(meaningQuery)

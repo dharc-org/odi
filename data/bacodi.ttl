@@ -1718,7 +1718,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasAuthor bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
-    odi:hasImage "https://www.pinterest.it/pin/410601691001899122/"^^xsd:anyURI ;
+    odi:hasImage "https://i.pinimg.com/564x/b6/54/2b/b6542b636af4ffe54c829f7fe63c316b.jpg"^^xsd:anyURI ;
     odi:hasName "Re di Coppe"^^xsd:string ;
     odi:hasSuit <https://w3id.org/odi/data/semi/coppe> ;
     odi:hasTypology <https://w3id.org/odi/data/tipologia/carta-di-corte> ;
