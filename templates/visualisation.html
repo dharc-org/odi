@@ -193,9 +193,10 @@ function replaceHtmlEntities(input) {
 return input.replace(/&#39;/g, "'");
 }
 
+
 var nodes = [
   {% for res in networkResults['results']['bindings'] %}
-    { id:"{{res['card']['value']}}", label:replaceHtmlEntities("{{res['cardLabel']['value']}}"), class:'Carta', color: '#99C199', shape: 'square'},
+      { id:"{{res['card']['value']}}", label:replaceHtmlEntities("{{res['cardLabel']['value']}}"), class:'Carta', color: '#99C199', shape: 'square'},
     { id:"{{res['meaning']['value']}}", label:replaceHtmlEntities("{{res['meaningLabel']['value']}}"), class:'Significato', color: 'gray', shape: 'dot'},
   {% endfor %}
 ];
@@ -233,7 +234,7 @@ var options = {
 
 var network = new vis.Network(container, data, options);
 
-network.moveTo({scale: 0.1}) 
+network.moveTo({scale: 0.1})
 
 
 // Display "Select a node" message initially

@@ -136,7 +136,9 @@ def visualisation():
 
     select distinct ?card ?cardLabel ?meaning ?meaningLabel (COUNT(?meaning) as ?n)
     where {
-      ?card a odi:DeckCard .
+      ?card a odi:DeckCard ;
+        odi:hasSuit ?suit;
+        odi:hasTypology ?typology.
       ?card odi:hasName ?cardLabel.
       ?story odi:hasCard ?storyCard.
       ?storyCard odi:specifies ?card.
