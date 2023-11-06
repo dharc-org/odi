@@ -96,7 +96,7 @@
 
     <div class="card w-100">
       <div class="card-header">
-        <h1 class="text-center p-3">{{storyTitle}}{%if storyName != '' %}, <i>{{storyName}}</i>{% endif %}</h1>
+        <h1 class="text-center p-3">{{storyChapter}}, {%if storyName != '' %} <i>{{storyName}}</i>{%else%} {{storyTitle}} {% endif %}</h1>
       </div>
       <div class="card-body">
             <h5 class="card-title p-3">Sinossi della storia</h5>

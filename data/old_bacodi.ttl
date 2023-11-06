@@ -2277,7 +2277,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasTotalNumberOfCards 18 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieCinque> a odi:Story ;
-    rdfs:label "Storia Cinque"^^xsd:string ;
+    rdfs:label "Tutte le altre storie Cinque"^^xsd:string ;
     rdfs:comment "Un insolito avventore si presenta alla locanda di un castellano-locandiere. Al momento di pagare, l'ospite mostra di apprezzare la taverna e paga alla fantesca rovesciando una cascata di monete da una coppa. Il protagonista decide di travestirsi da giocoliere e far fortuna usando quella coppa, ma nel bosco si imbatte in una Gran Sacerdotessa che gli ordina di restituire la coppa alle Baccanti."^^xsd:string ;
     odi:hasCard bacodi:asso-di-coppe-tuttelealtrestorieCinque,
         bacodi:cinque-di-coppe-tuttelealtrestorieCinque,
@@ -2296,7 +2296,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasTotalNumberOfCards 13 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieDue> a odi:Story ;
-    rdfs:label "Storia Due"^^xsd:string ;
+    rdfs:label "Tutte le altre storie Due"^^xsd:string ;
     rdfs:comment "Una donna, avendo trovato un prigioniero appeso nel bosco, decide di liberarlo e di scappare con lui camuffato da vagabondo. La donna aspetta fino all'alba il brigante, poi viene fermata da una guerriera che vuole lo stesso uomo. La contesa tra le due donne non si conclude prima dell'aurora."^^xsd:string ;
     odi:hasCard bacodi:cinque-di-denari-tuttelealtrestorieDue,
         bacodi:dieci-di-bastoni-tuttelealtrestorieDue,
@@ -2317,7 +2317,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasTotalNumberOfCards 15 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieQuattro> a odi:Story ;
-    rdfs:label "Storia Quattro"^^xsd:string ;
+    rdfs:label "Tutte le altre storie Quattro"^^xsd:string ;
     rdfs:comment "Un papa, sotto le mentite spoglie di un cavaliere, abbandona i fasti della corte papale per portare l'estremo viatico ai moribondi sul campo di battaglia. Preso dal dubbio, chiede a Dio come mai permetta gli stermini ed una voce dal bosco gli risponde che sono in due a dividersi il mondo e le anime. Poco dopo, il papa si imbatte in un guerriero che si presenta come il Principe delle Opposizioni in grado di far ritornare l’Età dell’Oro. Il papa ed il guerriero cominciano la contesa, ma questa viene presto fermata dalla Dea della Distruzione che governa il disfarsi ed il rifarsi ininterrotto del mondo. Le carte si mescolano ed una guerra senza fine agita l'universo: le anime sono in guerra."^^xsd:string ;
     odi:hasCard bacodi:cavaliere-di-denari-tuttelealtrestorieQuattro,
         bacodi:cinque-di-bastoni-tuttelealtrestorieQuattro,
@@ -2339,7 +2339,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasTotalNumberOfCards 16 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieSei> a odi:Story ;
-    rdfs:label "Storia Sei"^^xsd:string ;
+    rdfs:label "Tutte le altre storie Sei"^^xsd:string ;
     rdfs:comment "Un'educanda, per vincere il terrore che regna tra le monache per l'approssimarsi della guerra, decide di affrontare il condottiero nemico grazie alle sue abilità di provetta spadaccina. All'aurora, sul campo di battaglia, il nemico si innamora della donna e la sposa. I suoceri dello sposo, tuttavia, pagano un sicario per uccidere la sposa nel bosco. La donna riesce a sconfiggere l’assassino e, nascondendosi sotto le vesti di un’ostessa, aspetta il suo sposo nella foresta."^^xsd:string ;
     odi:hasCard bacodi:asso-di-coppe-tuttelealtrestorieSei,
         bacodi:cavaliere-di-coppe-tuttelealtrestorieSei,
@@ -2363,7 +2363,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasTotalNumberOfCards 18 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieTre> a odi:Story ;
-    rdfs:label "Storia Tre"^^xsd:string ;
+    rdfs:label "Tutte le altre storie Tre"^^xsd:string ;
     rdfs:comment "Un tale, munito di un randello dai poteri straordinari, raggiunge una città sotterranea per aver seguito uno sconosciuto che gli vantava le sue ricchezze. In un alterco d'osteria, il misterioso compagno di viaggio decide di giocarsi lo scettro della città combattendo contro il protagonista. Questi vince la lotta, ma la città si rivela quella della morte e lo sfidante il Principe della Discontinuità. Chiusa la Città della Morte, comincia una nuova Età dell’Oro. A causa della decadenza dei costumi che ne consegue, interviene il pontefice che ordina al protagonista di riaprire le porte della Morte."^^xsd:string ;
     odi:hasCard bacodi:asso-di-bastoni-tuttelealtrestorieTre,
         bacodi:cavaliere-di-spade-tuttelealtrestorieTre,
@@ -2385,7 +2385,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasTotalNumberOfCards 16 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieUno> a odi:Story ;
-    rdfs:label "Storia Uno"^^xsd:string ;
+    rdfs:label "Tutte le altre storie Uno"^^xsd:string ;
     rdfs:comment "Elena, assediata in una città straniera e condannata dagli Dei, riceve una profezia da un indovino: Paride si innamorerà di un'altra donna. Elena raggiunge l'Olimpo e, presentandosi al banchetto degli Dei, chiede a Zeus di riferire al poeta dell'Iliade che lei si darà ad Ulisse nel ventre del Cavallo di Troia."^^xsd:string ;
     odi:hasCard bacodi:asso-di-denari-tuttelealtrestorieUno,
         bacodi:asso-di-spade-tuttelealtrestorieUno,

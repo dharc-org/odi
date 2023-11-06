@@ -164,15 +164,16 @@ def story(storyID):
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
 
-    select distinct ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment ?image ?imageURL (group_concat(distinct ?text;separator="//") as ?texts)
+    select distinct ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment ?image ?imageURL ?chapter ?chapterLabel (group_concat(distinct ?text;separator="//") as ?texts)
     where {
          <https://w3id.org/odi/data/storie/""" + storyID + """> rdfs:label ?storyTitle;
             odi:hasCard ?storyCard.
+        ?chapter odi:includes <https://w3id.org/odi/data/storie/""" + storyID + """> ;
+            rdfs:label ?chapterLabel.
         ?storyCard odi:hasPositionInTheText ?position ;
             odi:specifies ?deckCard.
 
         ?deckCard odi:hasName ?deckCardLabel;
-
 
         OPTIONAL {?storyCard odi:hasIconography ?image.}
         OPTIONAL {?deckCard odi:hasImage ?imageURL}
@@ -181,7 +182,7 @@ def story(storyID):
         OPTIONAL {<https://w3id.org/odi/data/storie/""" + storyID + """> rdfs:comment ?comment}
 
     }
-    GROUP BY ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment ?image ?imageURL ORDER BY ASC (?position)
+    GROUP BY ?storyTitle ?storyCard ?deckCard ?deckCardLabel ?position ?storyName ?comment ?image ?imageURL ?chapter ?chapterLabel ORDER BY ASC (?position)
     """
 
     sparql.setQuery(storyQuery)
@@ -207,6 +208,7 @@ def story(storyID):
 
     storyTitle = storyResults["results"]["bindings"][0]["storyTitle"]["value"]
     storyDescription = storyResults["results"]["bindings"][0]["comment"]["value"]
+    storyChapter = storyResults["results"]["bindings"][0]["chapterLabel"]["value"]
 
     try:
         storyName = storyResults["results"]["bindings"][0]["storyName"]["value"]
@@ -283,7 +285,7 @@ def story(storyID):
         temp_dict.update({'cardLabel':temp_res['results']['bindings'][0]['cardLabel']['value']})
         cardRelationsResult.append(temp_dict)
 
-    return render_template('storyTemplate.html',  storyResults = storyResults, storyRepresentationResult = storyRepresentationResult, storyTitle = storyTitle, storyDescription = storyDescription, storyName = storyName, storyRelationsResult=storyRelationsResult, cardRelationsResult=cardRelationsResult)
+    return render_template('storyTemplate.html',  storyResults = storyResults, storyRepresentationResult = storyRepresentationResult, storyTitle = storyTitle, storyChapter = storyChapter, storyDescription = storyDescription, storyName = storyName, storyRelationsResult=storyRelationsResult, cardRelationsResult=cardRelationsResult)
 
 @app.route('/carte/<cardID>')
 def card(cardID):
