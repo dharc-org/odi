@@ -30,6 +30,12 @@
                     <li class="nav-item">
                         <a href="../" class="nav-link align-middle px-0">
                           <i class="bi bi-house-fill"></i>
+                            <span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../introduzione" class="nav-link align-middle px-0">
+                          <i class="bi bi-journal-bookmark-fill"></i>
                             <span class="ms-1 d-none d-sm-inline">Introduzione</span>
                         </a>
                     </li>
@@ -55,7 +61,7 @@
                   <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="https://odi-documentation.github.io/materials/" class="nav-link align-middle px-0" target="_blank">
-                          <i class="bi bi-journal-bookmark-fill"></i>
+                          <i class="bi bi-bar-chart-line-fill"></i>
                             <span class="ms-1 d-none d-sm-inline">Documentazione <i class="bi bi-box-arrow-up-right"></i></span>
                         </a>
                     </li>
@@ -120,17 +126,14 @@
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="flush-headingOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-<h3 class="card-title p-3">Interpretazioni</h3>
+                          <h3 class="card-title p-3">Interpretazioni</h3>
                           <i class="bi bi-info-circle-fill"></i>
                         </button>
                       </h2>
                       <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                       <div class="accordion-body">
                         <ul>
-                          <li>
-                            <b>Posizione</b>: Ogni storia si forma tramite la scelta sequenziale di alcune carte del mazzo dei Tarocchi. La posizione indica dunque la sequenza di carte che forma la narrativa della storia.
-                          </li>
-                        <li><b>Carta</b>: Rappresenta il nome della carta del mazzo dei Tarocchi. Ogni carta ha un significato simbolico e rappresenta un'idea o una situazione specifica.</li>
+
                         <li><b>Compare in</b>: Indica il contesto (e dunque la storia) in cui la carta appare.</b>
 
                         <li><b>Significato</b>: Rappresenta il significato associato alla carta. Ogni carta dei Tarocchi ha una serie di significati interpretativi, che possono variare in base al contesto e alla posizione nella lettura.</li>
@@ -143,22 +146,64 @@
                   </div>
                 </div>
               </div>
+              <div class="row w-100">
+                <div class="col-md-2">
+                  <h6>Posizione nella sequenza
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Ogni storia si forma tramite la scelta sequenziale di alcune carte del mazzo dei Tarocchi. La posizione indica dunque la sequenza di carte che forma la narrativa della storia.">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-2">
+                  <h6 class="center-text">Storia
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content=" Indica il contesto (e dunque la storia) in cui la carta appare.">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-2">
+                  <h6 class="center-text">Significato
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Rappresenta il significato associato alla carta. Ogni carta dei Tarocchi ha una serie di significati interpretativi, che possono variare in base al contesto e alla posizione nella lettura">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="center-text">Riferimento testuale
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Fornisce un estratto o una descrizione del testo che accompagna o descrive la carta. In questo caso, viene fornita una o più brevi citazioni (indicate tra uncinate) o una spiegazione il simbolismo della carta (in testo libero). Se un'interpretazione si basa su più riferimenti testuali, questi vengono separati tramite il segno">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-2">
+                  <h6 class="center-text">Iconografia
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Se presente, è associata all'evento della carta nella storia. Ciascuna iconografia è rappresentata nelle sue dimensioni originali come riportata nell'edizione di riferimento (ad esempio, grande o piccola)">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+              </div>
                     {% if representationCardData['results']['bindings']|length > 0 %}
                   <ul class="list-group list-group-flush pt-3"> {% for res in cardResults['results']['bindings'] %} <li class="list-group-item" style="background-color:transparent">
+
                       <div class="row w-100">
-                        <div class="col-md-2"> Posizione <span class="badge bg-light-success">{{res['position']['value']}}</span>
+                        <div class="col-md-2">
+                          <p>{{res['position']['value']}}</p>
                         </div>
-                        <div class="col-md-3"> Compare in: <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
+                        <div class="col-md-2">
+                          <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
+                        </div>
+                        <div class="col-md-2">
                           {% for res2 in representationCardData['results']['bindings'] %}
                             {% if res2['story']['value'] == res['story']['value'] %}
-                            <br> Significato: <a  class="card-text" href="../{{res2['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}">{{ res2['meaningLabel']['value'] }}</a>
+                            <a  class="card-text" href="../{{res2['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}">{{ res2['meaningLabel']['value'] }}</a>
                             {% endif %}
                           {% endfor %}
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                           <p class="card-text">{{res['texts']['value']}}</p>
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-2">
                           {% if "image" in res and "imageURL" in res %}
                           <img class="image-click rounded float-end card-text {{ res['image']['value']|replace('https://w3id.org/odi/data/', '') }}" src="{{ res['imageURL']['value']}}">
                           {% endif %}
