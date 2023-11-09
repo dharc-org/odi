@@ -19,6 +19,11 @@ def home():
     return render_template('index.html')
 
 # Define the routes using the example_routes blueprint
+@app.route('/introduzione/')
+def introduction():
+    return render_template('introduction.html')
+
+# Define the routes using the example_routes blueprint
 @app.route('/indici/')
 def indexes():
 
@@ -526,6 +531,7 @@ def meaning(meaningID):
 def contacts():
     return render_template('contacts.html')
 
+
 # ENDPOINT
 
 @app.route("/sparql", methods=['GET', 'POST'])
@@ -541,7 +547,6 @@ def page_not_found(e):
 def server_error(e):
 	# note that we set the 403 status explicitly
 	return render_template('500.html'), 500
-
 
 @app.route('/process_query', methods=['POST'])
 def process_query():
