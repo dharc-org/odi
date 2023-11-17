@@ -42,7 +42,7 @@
                     <li class="nav-item">
                         <a href="../indici" class="nav-link align-middle px-0">
                             <i class="bi bi-arrow-down-left-square-fill"></i>
-                            <span class="ms-1 d-none d-sm-inline">Indici</span>
+                            <span class="ms-1 d-none d-sm-inline">Strumenti d'accesso</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -148,50 +148,51 @@
               </div>
               <div class="row w-100">
                 <div class="col-md-2">
-                  <h6>Posizione nella sequenza
-                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Ogni storia si forma tramite la scelta sequenziale di alcune carte del mazzo dei Tarocchi. La posizione indica dunque la sequenza di carte che forma la narrativa della storia.">
-                      <i class="bi bi-info-circle"></i>
-                    </button>
-                  </h6>
-                </div>
-                <div class="col-md-2">
-                  <h6 class="center-text">Storia
+                  <h6 class="text-center">Storia
                     <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content=" Indica il contesto (e dunque la storia) in cui la carta appare.">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
                 </div>
                 <div class="col-md-2">
-                  <h6 class="center-text">Significato
+                  <h6 class="text-center">Posizione nella sequenza
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Ogni storia si forma tramite la scelta sequenziale di alcune carte del mazzo dei Tarocchi. La posizione indica dunque la sequenza di carte che forma la narrativa della storia.">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-2">
+                  <h6 class="text-center">Significato
                     <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Rappresenta il significato associato alla carta. Ogni carta dei Tarocchi ha una serie di significati interpretativi, che possono variare in base al contesto e alla posizione nella lettura">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
                 </div>
                 <div class="col-md-4">
-                  <h6 class="center-text">Riferimento testuale
+                  <h6 class="text-center">Riferimento testuale
                     <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Fornisce un estratto o una descrizione del testo che accompagna o descrive la carta. In questo caso, viene fornita una o più brevi citazioni (indicate tra uncinate) o una spiegazione il simbolismo della carta (in testo libero). Se un'interpretazione si basa su più riferimenti testuali, questi vengono separati tramite il segno">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
                 </div>
                 <div class="col-md-2">
-                  <h6 class="center-text">Iconografia
+                  <h6 class="text-center">Iconografia
                     <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Se presente, è associata all'evento della carta nella storia. Ciascuna iconografia è rappresentata nelle sue dimensioni originali come riportata nell'edizione di riferimento (ad esempio, grande o piccola)">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
                 </div>
+                <hr>
               </div>
                     {% if representationCardData['results']['bindings']|length > 0 %}
                   <ul class="list-group list-group-flush pt-3"> {% for res in cardResults['results']['bindings'] %} <li class="list-group-item" style="background-color:transparent">
 
                       <div class="row w-100">
                         <div class="col-md-2">
-                          <p>{{res['position']['value']}}</p>
+                          <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
                         </div>
                         <div class="col-md-2">
-                          <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
+                          <p class="text-center">{{res['position']['value']}}</p>
                         </div>
                         <div class="col-md-2">
                           {% for res2 in representationCardData['results']['bindings'] %}
@@ -205,7 +206,7 @@
                         </div>
                         <div class="col-md-2">
                           {% if "image" in res and "imageURL" in res %}
-                          <img class="image-click rounded float-end card-text {{ res['image']['value']|replace('https://w3id.org/odi/data/', '') }}" src="{{ res['imageURL']['value']}}">
+                          <img class="image-click rounded mx-auto d-block card-text {{ res['image']['value']|replace('https://w3id.org/odi/data/', '') }}" src="{{ res['imageURL']['value']}}">
                           {% endif %}
                           <!-- The Modal -->
                           <div class="modal">
