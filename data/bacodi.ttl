@@ -33,6 +33,7 @@ bacodi:il-bagatto-tuttelealtrestorieUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-bagatto-tuttelealtrestorieUno-poeta ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 15 ;
+    odi:hasTextualReference "«poeta»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-bagatto> .
 
 bacodi:il-carro-tuttelealtrestorieUno a odi:StoryCard ;
@@ -1519,6 +1520,7 @@ bacodi:la-ruota-della-fortuna-tuttelealtrestorieUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-ruota-della-fortuna-tuttelealtrestorieUno-Olimpo ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 12 ;
+    odi:hasTextualReference "«Olimpo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-ruota-della-fortuna> .
 
 bacodi:sei-di-bastoni-storiaTre a odi:StoryCard ;
