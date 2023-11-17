@@ -602,7 +602,7 @@ bacodi:fante-di-coppe-tuttelealtrestorieCinque-protagonista a odi:Character ;
         bacodi:nove-di-coppe-tuttelealtrestorieCinque-inganno ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/protagonista> ;
     odi:receives bacodi:cinque-di-coppe-tuttelealtrestorieCinque-coppe,
-        bacodi:sette-di-denari-tuttelealtrestorieCinque-ricchezza ;
+        bacodi:sei-di-denari-tuttelealtrestorieCinque-ricchezza ;
     odi:sameAs bacodi:il-bagatto-tuttelealtrestorieCinque-protagonista .
 
 bacodi:fante-di-denari-storiaQuattro a odi:StoryCard ;
@@ -1591,11 +1591,12 @@ bacodi:sette-di-denari-storiaTre a odi:StoryCard ;
     odi:hasTextualReference "«un luccichìo come di fuochi fatui»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sette-di-denari> .
 
-bacodi:sette-di-denari-tuttelealtrestorieCinque a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:sette-di-denari-tuttelealtrestorieCinque-ricchezza ;
+# interpretazione
+bacodi:sei-di-denari-tuttelealtrestorieCinque a odi:StoryCard ;
+    odi:carriesRepresentation bacodi:sei-di-denari-tuttelealtrestorieCinque-ricchezza ;
     odi:hasPositionInTheText 6 ;
     odi:hasTextualReference "«un fiume di Denari»"^^xsd:string ;
-    odi:specifies <https://w3id.org/odi/data/carte/sette-di-denari> .
+    odi:specifies <https://w3id.org/odi/data/carte/sei-di-denari> .
 
 bacodi:sette-di-denari-tuttelealtrestorieQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sette-di-denari-tuttelealtrestorieQuattro-raggi_di_luce ;
@@ -2293,7 +2294,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
         bacodi:lo-imperatore-tuttelealtrestorieCinque,
         bacodi:nove-di-coppe-tuttelealtrestorieCinque,
         bacodi:la-ruota-della-fortuna-tuttelealtrestorieCinque,
-        bacodi:sette-di-denari-tuttelealtrestorieCinque ;
+        bacodi:sei-di-denari-tuttelealtrestorieCinque ;
     odi:hasPositionInTheBook 11 ;
     odi:hasTotalNumberOfCards 13 .
 
@@ -2706,7 +2707,7 @@ bacodi:sette-di-bastoni-storiaUno-bosco a odi:FictionalPlace ;
 bacodi:sette-di-denari-storiaTre-luccichìo a odi:InanimateObject ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/luccichìo> .
 
-bacodi:sette-di-denari-tuttelealtrestorieCinque-ricchezza a odi:Symbol ;
+bacodi:sei-di-denari-tuttelealtrestorieCinque-ricchezza a odi:Symbol ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/ricchezza> .
 
 bacodi:sette-di-denari-tuttelealtrestorieQuattro-raggi_di_luce a odi:InanimateObject ;
