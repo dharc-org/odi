@@ -74,7 +74,7 @@
                     <li class="nav-item">
                         <a href="../contatti" class="nav-link align-middle px-0">
                           <i class="bi bi-person-circle"></i>
-                            <span class="ms-1 d-none d-sm-inline">Contatti</span>
+                            <span class="ms-1 d-none d-sm-inline">Credits</span>
                         </a>
                     </li>
                     </ul>
@@ -99,6 +99,7 @@
                       {% for res in cardDescriptionData['results']['bindings'] %}
                         {% if 'Ha immagine' in res['pLabel']['value'] %}
                         <img class="image-click mx-auto card-text" style="max-width: 50%; height: auto" src={{res['object']['value']}}>
+                        <!--<img src="https://it.m.wikipedia.org/wiki/File:Commons-icon.svg" alt="Wikimedia" width="100" height="100" style="vertical-align: bottom;">-->
                         <!-- The Modal -->
                         <div class="modal">
                           <span class="close">&times;</span>
@@ -149,35 +150,35 @@
               <div class="row w-100">
                 <div class="col-md-2">
                   <h6 class="text-center">Storia
-                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content=" Indica il contesto (e dunque la storia) in cui la carta appare.">
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content=" Indica la storia in cui la carta appare">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
                 </div>
                 <div class="col-md-2">
-                  <h6 class="text-center">Posizione nella sequenza
-                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Ogni storia si forma tramite la scelta sequenziale di alcune carte del mazzo dei Tarocchi. La posizione indica dunque la sequenza di carte che forma la narrativa della storia.">
+                  <h6 class="text-center">Posizione
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica la posizione della carta all'interno della sequenza di carte (quindi la sequenza narrativa) in cui occorre">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
                 </div>
                 <div class="col-md-2">
-                  <h6 class="text-center">Significato
-                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Rappresenta il significato associato alla carta. Ogni carta dei Tarocchi ha una serie di significati interpretativi, che possono variare in base al contesto e alla posizione nella lettura">
+                  <h6 class="text-center">Istanza
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica l'istanza narrativa della carta, quindi il suo significato all'interno della storia">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
                 </div>
                 <div class="col-md-4">
-                  <h6 class="text-center">Riferimento testuale
-                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Fornisce un estratto o una descrizione del testo che accompagna o descrive la carta. In questo caso, viene fornita una o più brevi citazioni (indicate tra uncinate) o una spiegazione il simbolismo della carta (in testo libero). Se un'interpretazione si basa su più riferimenti testuali, questi vengono separati tramite il segno">
+                  <h6 class="text-center">Testo
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Fornisce il riferimento testuale per una maggiore comprensione dell'istanza narrativa della carta nella storia. Ove sono presenti più estratti dal testo, questi vengono separati tramite il segno //">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
                 </div>
                 <div class="col-md-2">
-                  <h6 class="text-center">Iconografia
-                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Se presente, è associata all'evento della carta nella storia. Ciascuna iconografia è rappresentata nelle sue dimensioni originali come riportata nell'edizione di riferimento (ad esempio, grande o piccola)">
+                  <h6 class="text-center">Miniatura
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Se presente a margine del testo, l'icona è rappresentata nelle sue dimensioni originali come riportata nell'edizione di riferimento (i.e. grande o piccola)">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>

@@ -69,7 +69,7 @@
                     <li class="nav-item">
                         <a href="../contatti" class="nav-link align-middle px-0">
                           <i class="bi bi-person-circle"></i>
-                            <span class="ms-1 d-none d-sm-inline">Contatti</span>
+                            <span class="ms-1 d-none d-sm-inline">Credits</span>
                         </a>
                     </li>
                     </ul>
@@ -117,10 +117,42 @@
                     </div>
                   </div>
                 </div>
+                <div class="row w-100">
+                <div class="col-md-2">
+                  <h6 class="text-center">Posizione
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica la posizione della carta all'interno della sequenza di carte (quindi la sequenza narrativa) in cui occorre">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-2">
+                  <h6 class="text-center">Istanza
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica l'istanza narrativa della rappresentazione in questione, quindi la storia in cui occorre e con quali carte">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="text-center">Testo
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Fornisce il riferimento testuale per una maggiore comprensione dell'istanza narrativa della carta nella storia. Ove sono presenti più estratti dal testo, questi vengono separati tramite il segno //">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-2">
+                  <h6 class="text-center">Miniatura
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Se presente a margine del testo, l'icona è rappresentata nelle sue dimensioni originali come riportata nell'edizione di riferimento (i.e. grande o piccola)">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <hr>
+              </div>
                   <ul class="list-group list-group-flush pt-3"> {% for res in meaningData['results']['bindings'] %}
                     <li class="list-group-item">
                       <div class="row w-100">
-                        <div class="col-md-2"> Posizione <span class="badge bg-light-success">{{res['position']['value']}}</span>
+                        <div class="col-md-2">
+                          <p class="text-center">{{res['position']['value']}}</p>
                         </div>
                         <div class="col-md-3"> Compare in: <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
                           <br> Carta: <a href="../{{res['deckCard']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["cardName"]['value']}}</a>

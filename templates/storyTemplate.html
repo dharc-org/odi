@@ -81,7 +81,7 @@
                   <li class="nav-item">
                       <a href="../contatti" class="nav-link align-middle px-0">
                         <i class="bi bi-person-circle"></i>
-                          <span class="ms-1 d-none d-sm-inline">Contatti</span>
+                          <span class="ms-1 d-none d-sm-inline">Credits</span>
                       </a>
                   </li>
                   </ul>
@@ -101,8 +101,11 @@
       <div class="card-body">
             <h5 class="card-title p-3">Sinossi della storia</h5>
             <p class="card-text p-3">{{storyDescription}}</p>
-<div id="embedded-content"></div>
+            <div id="embedded-content"></div>
       </div>
+          <div class="col-md-12 p-3 text-end">
+          <a href="#network-container" class="p-3">Network delle relazioni<i class="bi bi-arrow-down"></i></a>
+        </div>
       <div class="card-footer text-muted">
 
         <div class="row">
@@ -133,14 +136,39 @@
           </div>
         </div>
       </div>
-          <div class="col-md-8">
+      <div class="row w-100">
+                <div class="col-md-2">
+                  <h6 class="text-center">Posizione
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica la posizione della carta all'interno della sequenza di carte (quindi la sequenza narrativa) in cui occorre">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-2">
+                  <h6 class="text-center">Istanza
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica l'istanza narrativa della tipologia di carta in questione, quindi la storia in cui occorre, con quali carte ed il relativo significato">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="text-center">Testo
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Fornisce il riferimento testuale per una maggiore comprensione dell'istanza narrativa della carta nella storia. Ove sono presenti più estratti dal testo, questi vengono separati tramite il segno //">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-2">
+                  <h6 class="text-center">Miniatura
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Se presente a margine del testo, l'icona è rappresentata nelle sue dimensioni originali come riportata nell'edizione di riferimento (i.e. grande o piccola)">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <hr>
+              </div>
 
 
-        </div>
-          <div class="col-md-4 p-3 text-end">
-          <a href="#network-container" class="p-3">Network delle relazioni<i class="bi bi-arrow-down"></i></a>
-        </div>
-      </div>
         <ul class="list-group list-group-flush pt-3">
            {% for res in storyResults['results']['bindings'] %}
 
@@ -148,16 +176,16 @@
 
               <div class="row w-100">
                 <div class="col-md-2">
-                      Posizione <span class="badge bg-light-success">{{res['position']['value']}}</span>
+                  <p class="text-center">{{res['position']['value']}}</p>
                 </div>
-                  <div class="col-md-3">
+                <div class="col-md-3">
                     {% for res2 in storyRepresentationResult['results']['bindings'] %}
                     {% if res2['storyCard']['value'] == res['storyCard']['value'] %}
                     Carta: <a href="../{{res['deckCard']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["deckCardLabel"]['value']}}</a>
                     <p class="card-text">Significato: <a href="../{{res2['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{ res2['meaningLabel']['value'] }}</a></p>
                     {% endif %}
                     {% endfor %}
-                  </div>
+                </div>
                 <div class="col-md-6">
                   <p class="card-text">{{res['texts']['value']}}</p>
                 </div>
