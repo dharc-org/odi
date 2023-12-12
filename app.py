@@ -6,7 +6,13 @@ import uuid
 import requests
 import json
 
+import plotly.express as px
+
+
 app = Flask(__name__, static_folder="assets")
+
+app.secret_key = 'odi_secret'
+
 
 # endpoint
 endpoint = "http://localhost:9999/blazegraph/sparql"
@@ -369,6 +375,25 @@ def card(cardID):
 @app.route('/semi/<suitID>')
 def suit(suitID):
 
+    suitBarQuery = """
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
+
+    select ?position (COUNT(?position) as ?n)
+    where {
+      <https://w3id.org/odi/data/semi/""" + suitID + """> ^odi:hasSuit ?deckCard.
+        ?deckCard ^odi:specifies ?storyCard.
+      ?storyCard odi:hasPositionInTheText ?position.
+    }
+    GROUP BY ?position ORDER BY ?position
+    """
+
+    sparql.setQuery(suitBarQuery)
+    sparql.setReturnFormat(JSON)
+    suitBarResults = sparql.query().convert()
+
+    plot_html = generate_bar_chart(suitBarResults)
+
     suitQuery = """
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
@@ -418,10 +443,50 @@ def suit(suitID):
 
     print(suitMeaningsResults)
 
-    return render_template('suitTemplate.html',  suitLabel = suitLabel, suitDescription = suitDescription, suitMeaningsResults = suitMeaningsResults)
+    return render_template('suitTemplate.html',  suitLabel = suitLabel, suitDescription = suitDescription, suitMeaningsResults = suitMeaningsResults, plot_html=plot_html)
+
+
+def generate_bar_chart(query_result):
+
+    labels = [entry['position']['value'] for entry in query_result['results']['bindings']]
+    values = [int(entry['n']['value']) for entry in query_result['results']['bindings']]
+
+    unique_numbers = set(map(int, labels))
+    all_labels = [str(num) for num in range(1, max(unique_numbers) + 1)]
+    all_values = [0] * len(all_labels)
+
+    fig = px.bar(x=labels, y=values, color_discrete_sequence=['teal'],
+                labels={'x': 'Posizione', 'y': 'Numero di occorrenze'},
+                 title='Numero di occorrenze rispetto alla posizione nelle storie')
+    fig.update_layout(plot_bgcolor='ghostwhite')
+
+    plot_html = fig.to_html(full_html=False)
+
+    return plot_html
+
+
 
 @app.route('/tipologia/<typologyID>')
 def typology(typologyID):
+
+    typeBarQuery = """
+    PREFIX odi: <https://w3id.org/odi/>
+    PREFIX bacodi: <https://w3id.org/odi/data/>
+
+    select ?position (COUNT(?position) as ?n)
+    where {
+      <https://w3id.org/odi/data/tipologia/""" + typologyID + """> ^odi:hasTypology ?deckCard.
+        ?deckCard ^odi:specifies ?storyCard.
+      ?storyCard odi:hasPositionInTheText ?position.
+    }
+    GROUP BY ?position ORDER BY ?position
+    """
+
+    sparql.setQuery(typeBarQuery)
+    sparql.setReturnFormat(JSON)
+    typologyBarResults = sparql.query().convert()
+
+    plot_html = generate_bar_chart(typologyBarResults)
 
     typologyQuery = """
     PREFIX odi: <https://w3id.org/odi/>
@@ -471,7 +536,7 @@ def typology(typologyID):
     sparql.setReturnFormat(JSON)
     typologyMeaningsResults = sparql.query().convert()
 
-    return render_template('typologyTemplate.html',  typologyLabel = typologyLabel, typologyDescription = typologyDescription, typologyMeaningsResults = typologyMeaningsResults)
+    return render_template('typologyTemplate.html',  typologyLabel = typologyLabel, typologyDescription = typologyDescription, typologyMeaningsResults = typologyMeaningsResults, plot_html=plot_html)
 
 
 @app.route('/significati/<meaningID>')
