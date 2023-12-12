@@ -61,7 +61,7 @@
                   <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="https://odi-documentation.github.io/materials/" class="nav-link align-middle px-0" target="_blank">
-                          <i class="bi bi-bar-chart-line-fill"></i>
+                          <i class="bi bi-file-earmark-code"></i>
                             <span class="ms-1 d-none d-sm-inline">Documentazione <i class="bi bi-box-arrow-up-right"></i></span>
                         </a>
                     </li>
@@ -123,30 +123,8 @@
                   </div>
                 </div>
                 <div class="card-footer text-muted">
-                  <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                          <h3 class="card-title p-3">Interpretazioni</h3>
-                          <i class="bi bi-info-circle-fill"></i>
-                        </button>
-                      </h2>
-                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                        <ul>
+                  <h5 class="card-title p-3">Interpretazioni</h5>
 
-                        <li><b>Compare in</b>: Indica il contesto (e dunque la storia) in cui la carta appare.</b>
-
-                        <li><b>Significato</b>: Rappresenta il significato associato alla carta. Ogni carta dei Tarocchi ha una serie di significati interpretativi, che possono variare in base al contesto e alla posizione nella lettura.</li>
-
-                        <li><b>Riferimento al testo</b>: Fornisce un estratto o una descrizione del testo che accompagna o descrive la carta. In questo caso, viene fornita una o più brevi citazioni (indicate tra uncinate) o una spiegazione il simbolismo della carta (in testo libero). Se un'interpretazione si basa su più riferimenti testuali, questi vengono separati tramite il segno //"</li>
-                        <li><b>Iconografia</b>: Se presente, è associata all'evento della carta nella storia. Ciascuna iconografia è rappresentata nelle sue dimensioni originali come riportata nell'edizione di riferimento (ad esempio, grande o piccola)</li>
-
-                      </ul>
-                      </div>
-                  </div>
-                </div>
-              </div>
               <div class="row w-100 p-md-3">
                 <div class="col-md-2">
                   <h6 class="text-center">Storia
@@ -192,7 +170,7 @@
 
                         <!-- storia -->
                         <div class="col-md-2">
-                          <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
+                          <p class="text-center"><a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a></p>
                         </div>
 
                         <!-- posizione -->
@@ -204,14 +182,14 @@
                         <div class="col-md-2">
                           {% for res2 in representationCardData['results']['bindings'] %}
                             {% if res2['story']['value'] == res['story']['value'] %}
-                            <a  class="card-text" href="../{{res2['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}">{{ res2['meaningLabel']['value'] }}</a>
+                            <p class="text-center"><a href="../{{res2['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}">{{ res2['meaningLabel']['value'] }}</a></p>
                             {% endif %}
                           {% endfor %}
                         </div>
 
                         <!-- testo -->
                         <div class="col-md-4">
-                          <p class="card-text">{{res['texts']['value']}}</p>
+                          <p class="card-center">{{res['texts']['value']}}</p>
                         </div>
 
                         <!-- iconografia -->

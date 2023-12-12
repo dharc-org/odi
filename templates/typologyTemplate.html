@@ -12,29 +12,75 @@
     <!-- cookies and analytics -->
     <script src="../assets/js/stats.js"></script>
     <script src="../assets/js/matomo.js"></script>
+    <!-- plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" id="sidebar">
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100"><a href="../" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none"><span class="fs-5 d-none d-sm-inline pt-4">MACODI</span></a>
-            <p class="side-small-text d-none d-md-inline" style="word-break: word-wrap !important">Esplorazione semantica della «macchina narrativa combinatoria» de <i>Il castello dei destini incrociati</i> di Italo Calvino</p>
-            <hr>
-            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-              <li class="nav-item"><a href="../" class="nav-link align-middle px-0"><i class="bi bi-house-fill"></i><span class="ms-1 d-none d-sm-inline">Introduzione</span></a></li>
-              <li class="nav-item"><a href="../indici" class="nav-link align-middle px-0"><i class="bi bi-arrow-down-left-square-fill"></i><span class="ms-1 d-none d-sm-inline">Indici</span></a></li>
-              <li class="nav-item"><a href="../visualizzazioni" class="nav-link align-middle px-0"><i class="bi bi-bar-chart-line-fill"></i><span class="ms-1 d-none d-sm-inline">Visualizzazioni dei Dati</span></a></li>
-              <li class="nav-item"><a href="../sparql" class="nav-link align-middle px-0"><i class="bi bi-question-circle"></i><span class="ms-1 d-none d-sm-inline">SPARQL endpoint</span></a></li>
-            </ul>
-            <hr>
-            <div class="dropdown pb-4">
-              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                <li class="nav-item"><a href="https://odi-documentation.github.io/materials/" class="nav-link align-middle px-0" target="_blank"><i class="bi bi-journal-bookmark-fill"></i><span class="ms-1 d-none d-sm-inline">Documentazione <i class="bi bi-box-arrow-up-right"></i></span></a></li>
-                <li class="nav-item"><a href="https://github.com/ODI-documentation/materials" class="nav-link align-middle px-0" target="_blank"><i class="bi bi-github"></i><span class="ms-1 d-none d-sm-inline">Repository <i class="bi bi-box-arrow-up-right"></i></span></a></li>
-                <li class="nav-item"><a href="../contatti" class="nav-link align-middle px-0"><i class="bi bi-person-circle"></i><span class="ms-1 d-none d-sm-inline">Credits</span></a></li>
-              </ul>
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+                <a href="../" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline pt-4">MACODI</span>
+                </a>
+                <p class="side-small-text d-none d-md-inline" style="word-break: word-wrap !important">
+                  Esplorazione semantica della «macchina narrativa combinatoria» de <i>Il castello dei destini incrociati</i> di Italo Calvino
+                </p>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="../" class="nav-link align-middle px-0">
+                          <i class="bi bi-house-fill"></i>
+                            <span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="../introduzione" class="nav-link align-middle px-0">
+                        <i class="bi bi-journal-bookmark-fill"></i>
+                        <span class="ms-1 d-none d-sm-inline">Introduzione</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../indici" class="nav-link align-middle px-0">
+                            <i class="bi bi-arrow-down-left-square-fill"></i>
+                            <span class="ms-1 d-none d-sm-inline">Strumenti d'accesso</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../visualizzazioni"  class="nav-link align-middle px-0">
+                          <i class="bi bi-bar-chart-line-fill"></i>
+                          <span class="ms-1 d-none d-sm-inline">Visualizzazioni dei Dati</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../sparql" class="nav-link align-middle px-0">
+                          <i class="bi bi-question-circle"></i>
+                          <span class="ms-1 d-none d-sm-inline">SPARQL endpoint</span></a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                  <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="https://odi-documentation.github.io/materials/" class="nav-link align-middle px-0" target="_blank">
+                          <i class="bi bi-file-earmark-code"></i>
+                            <span class="ms-1 d-none d-sm-inline">Documentazione <i class="bi bi-box-arrow-up-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://github.com/ODI-documentation/materials" class="nav-link align-middle px-0" target="_blank">
+                          <i class="bi bi-github"></i>
+                            <span class="ms-1 d-none d-sm-inline">Repository <i class="bi bi-box-arrow-up-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../contatti" class="nav-link align-middle px-0">
+                          <i class="bi bi-person-circle"></i>
+                            <span class="ms-1 d-none d-sm-inline">Credits</span>
+                        </a>
+                    </li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </div>
         <div class="col py-3">
           <div class="col d-flex flex-column h-sm-100">
@@ -48,15 +94,34 @@
                   <div class="card-body">
                     <h5 class="card-title p-2">Descrizione</h5>
                     <p class="p-3">{{typologyDescription['value']}}</p>
+
+                      <div>
+                          {{ plot_html|safe }}
+                      </div>
+
                     <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <h5 class="card-title p-2">Interpretazioni</h5> 
+                    <h5 class="card-title p-2">Interpretazioni</h5>
                   </div>
                 </div>
               </div>
                 <div class="row w-100">
                 <div class="col-md-2">
+                  <h6 class="text-center">Storia
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica la storia in cui la carta appare">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-1">
                   <h6 class="text-center">Posizione
                     <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Ogni storia coincide con una sequenza di carte. La posizione corrisponde dunque alla posizione nella sequenza della suddetta tipologia con la sua corrispettiva carta.">
+                      <i class="bi bi-info-circle"></i>
+                    </button>
+                  </h6>
+                </div>
+                <div class="col-md-2">
+                  <h6 class="text-center">Carta
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica la carta che viene utilizzata come espediente narrativo nella storia corrente">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
@@ -68,7 +133,7 @@
                     </button>
                   </h6>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <h6 class="text-center">Testo
                     <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Fornisce il riferimento testuale per una maggiore comprensione dell'istanza narrativa della carta nella storia. Ove sono presenti più estratti dal testo, questi vengono separati tramite il segno //">
                       <i class="bi bi-info-circle"></i>
@@ -84,30 +149,62 @@
                 </div>
                 <hr>
               </div>
-                    <ul class="list-group list-group-flush pt-3"> {% for res in typologyMeaningsResults['results']['bindings'] %} <li class="list-group-item" style="background-color:transparent">
-                        <div class="row w-100">
-                          <div class="col-md-2">
-                          <p class="text-center">{{res['position']['value']}}</p>
-                        </div>
-                          <div class="col-md-3"> Compare in: <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">
-                              {{res["storyTitle"]['value']}}{% if 'storyName' in res %},<i>
-                                {{res["storyName"]['value']}}</i>{% endif %}</a><br> Carta: <a href="../{{res['deckCard']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["cardName"]['value']}}</a><br> Significato: <a href="../{{res['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["meaningLabel"]['value']}}</a></div>
-                          <div class="col-md-6">
-                            <p class="card-text">{{res['texts']['value']}}</p>
-                          </div>
-                          <div class="col-md-1">
-                            {% if "image" in res and "imageURL" in res %}
-                            <img class="image-click rounded float-end card-text {{ res['image']['value']|replace('https://w3id.org/odi/data/', '') }}" src="{{ res['imageURL']['value']}}">
-                            {% endif %}
-                            <!-- The Modal -->
-                            <div class="modal">
-                              <span class="close">&times;</span>
-                              <img class="modal-content" id="img01">
-                              <div id="caption"></div>
+                    <ul class="list-group list-group-flush pt-3"> {% for res in typologyMeaningsResults['results']['bindings'] %}
+                      <li class="list-group-item" style="background-color:transparent">
+                            <div class="row w-100 p-3">
+
+                              <!-- storia -->
+                              <div class="col-md-2">
+                                {% if 'storyName' in res %}
+                                  <p class="text-center">
+                                    <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}">
+                                      {{res["storyTitle"]['value']}},
+                                      <i>{{res["storyName"]['value']}}</i>
+                                    </a>
+                                  </p>
+                                {% else %}
+                                  <p class="text-center"><a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}">Tutte le altre storie, {{res["storyTitle"]['value']}}</a></p>
+                                {% endif %}
+                              </div>
+
+                              <!-- posizione -->
+                              <div class="col-md-1">
+                                <p class="text-center">{{res['position']['value']}}</p>
+                              </div>
+
+                              <!-- carta -->
+                              <div class="col-md-2">
+                                  <p class="text-center"><a href="../{{res['deckCard']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["cardName"]['value']}}</a></p>
+                              </div>
+
+                              <!-- istanza -->
+                              <div class="col-md-2">
+                                <p class="text-center"><a href="../{{res['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["meaningLabel"]['value']}}</a></p>
+                              </div>
+
+                              <!-- testo -->
+                              <div class="col-md-3">
+                                <p class="text-center">{{res['texts']['value']}}</p>
+                              </div>
+
+                              <!-- iconografia -->
+                              <div class="col-md-2">
+                                {% if "image" in res and "imageURL" in res %}
+                                <img class="image-click rounded mx-auto d-block card-text {{ res['image']['value']|replace('https://w3id.org/odi/data/', '') }}" src="{{ res['imageURL']['value']}}">
+                                {% endif %}
+                                <!-- The Modal -->
+                                <div class="modal">
+                                  <span class="close">&times;</span>
+                                  <img class="modal-content" id="img01">
+                                  <div id="caption"></div>
+                                </div>
+                              </div>
+
+
                             </div>
-                          </div>
-                        </div>
-                      </li> {% endfor %} </ul>
+                      </li>
+                      {% endfor %}
+                    </ul>
                   </div>
                 </div>
               </div>
