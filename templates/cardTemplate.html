@@ -147,7 +147,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row w-100">
+              <div class="row w-100 p-md-3">
                 <div class="col-md-2">
                   <h6 class="text-center">Storia
                     <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content=" Indica la storia in cui la carta appare">
@@ -186,15 +186,21 @@
                 <hr>
               </div>
                     {% if representationCardData['results']['bindings']|length > 0 %}
-                  <ul class="list-group list-group-flush pt-3"> {% for res in cardResults['results']['bindings'] %} <li class="list-group-item" style="background-color:transparent">
+                  <ul class="list-group list-group-flush p-md-3"> {% for res in cardResults['results']['bindings'] %} <li class="list-group-item" style="background-color:transparent">
 
                       <div class="row w-100">
+
+                        <!-- storia -->
                         <div class="col-md-2">
                           <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a>
                         </div>
+
+                        <!-- posizione -->
                         <div class="col-md-2">
                           <p class="text-center">{{res['position']['value']}}</p>
                         </div>
+
+                        <!-- significato -->
                         <div class="col-md-2">
                           {% for res2 in representationCardData['results']['bindings'] %}
                             {% if res2['story']['value'] == res['story']['value'] %}
@@ -202,9 +208,13 @@
                             {% endif %}
                           {% endfor %}
                         </div>
+
+                        <!-- testo -->
                         <div class="col-md-4">
                           <p class="card-text">{{res['texts']['value']}}</p>
                         </div>
+
+                        <!-- iconografia -->
                         <div class="col-md-2">
                           {% if "image" in res and "imageURL" in res %}
                           <img class="image-click rounded mx-auto d-block card-text {{ res['image']['value']|replace('https://w3id.org/odi/data/', '') }}" src="{{ res['imageURL']['value']}}">
