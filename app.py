@@ -540,6 +540,16 @@ def sparql_gui(active=None):
     elif request.method == 'POST':
         return process_query()
 
+@app.errorhandler(403)
+def page_not_found(e):
+	# note that we set the 403 status explicitly
+	return render_template('403.html'), 403
+
+@app.errorhandler(500)
+def server_error(e):
+	# note that we set the 403 status explicitly
+	return render_template('500.html'), 500
+
 @app.route('/process_query', methods=['POST'])
 def process_query():
     data = request.get_json()
@@ -557,17 +567,6 @@ def process_query():
             return jsonify(query_result)
     else:
         return render_template('403.html'), 403
-
-
-@app.errorhandler(403)
-def page_not_found(e):
-	# note that we set the 403 status explicitly
-	return render_template('403.html'), 403
-
-@app.errorhandler(500)
-def server_error(e):
-	# note that we set the 403 status explicitly
-	return render_template('500.html'), 500
 
 if __name__ == "__main__":
     app.run(debug = True, port = 8080)
