@@ -16,14 +16,15 @@
   <body>
 
     <div class="container-fluid">
-    <div class="row flex-nowrap">
-      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" id="sidebar">
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+      <div class="row flex-nowrap">
+        <div id="sidebar-container" class="col-auto px-0">
+          <div id="sidebar" class="collapse collapse-horizontal show border-end">
+            <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100 p-3" style="white-space: nowrap !important">
               <a href="../" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none">
                   <span class="fs-5 d-none d-sm-inline pt-4">MACODI</span>
               </a>
-              <p class="side-small-text d-none d-md-inline" style="word-break: word-wrap !important">
-                Esplorazione semantica della «macchina narrativa combinatoria» de <i>Il castello dei destini incrociati</i> di Italo Calvino
+              <p class="side-small-text d-none d-md-inline" style="word-break: break-all !important">
+                Esplorazione semantica della<br>«macchina narrativa combinatoria»<br> de <i>Il castello dei destini incrociati</i><br>di Italo Calvino
               </p>
               <hr>
               <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
@@ -41,7 +42,7 @@
                   </li>
                   <li class="nav-item">
                       <a href="../indici" class="nav-link align-middle px-0">
-                          <i class="bi bi-arrow-down-left-square-fill"></i>
+                        <i class="bi bi-book-half"></i>
                           <span class="ms-1 d-none d-sm-inline">Strumenti d'accesso</span>
                       </a>
                   </li>
@@ -52,7 +53,7 @@
                   </li>
                   <li class="nav-item">
                       <a href="../sparql" class="nav-link align-middle px-0">
-                        <i class="bi bi-question-circle"></i>
+                        <i class="bi bi-lightbulb"></i>
                         <span class="ms-1 d-none d-sm-inline">SPARQL endpoint</span></a>
                   </li>
               </ul>
@@ -78,14 +79,16 @@
                       </a>
                   </li>
                   </ul>
-              </div>
+            </div>
           </div>
+        </div>
       </div>
-        <div class="col py-3">
 
         <!-- main content -->
 
-        <div class="col d-flex flex-column h-sm-100">
+        <main class="col ps-md-2 pt-2">
+        <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="border rounded-3 p-1 text-decoration-none"><i class="bi bi-list bi-lg py-2 p-1"></i></a>
+        <div class="row">
           <div id="breadcrumbs" class="text-end"></div>
 
           <main class="row overflow-auto">
@@ -94,6 +97,11 @@
                 <div class="card-header bg-white">
                   <h1 class="text-center p-3">{{meaningLabel['value']}}</h1>
                 </div>
+                <div class="card-body">
+
+                  <h5 class="card-title p-3">Descrizione</h5>
+                  <p class="p-3">{{meaningDescription['value']}}</p>
+
                       <h5 class="card-title p-3">Interpretazioni</h5>
                 <div class="row w-100 p-3">
                 <div class="col-md-2">
@@ -170,15 +178,15 @@
                           </div>
                         </div>
                       </div>
-                    </li> {% endfor %} </ul>
+                    </li> {% endfor %}
+                  </ul>
+                </div>
                   </div>
                 </div>
               </div>
             </main>
           </div>
         </div>
-      </div>
-    </div>
 
 
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
