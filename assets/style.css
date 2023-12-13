@@ -1,24 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 h2 {
-  font-family: 'Open Sans', sans-serif;
   color: #006600 !important;
 }
 
 h3 {
-  font-family: 'Open Sans', sans-serif;
   color: #006600 !important;
   font-size: 20px !important;
   font-weight: bold !important;
 }
 
-p.intro 
+p.intro
  {
  text-align: left !important;
-}
-
-body  {
-  font-family: 'Open Sans', sans-serif;
 }
 
 /* =============================================
@@ -145,7 +139,7 @@ a {
   text-decoration:none !important;}
 
 .nav a {color:#006600 !important}
-#sidebar {border-right:15px solid #99c199}
+#sidebar-container {border-right:15px solid #99c199}
 
 .nav a:hover {color:#99c199 !important}
 hr {color:#99c199 !important}
@@ -162,7 +156,7 @@ hr {color:#99c199 !important}
   text-align: justify;
 }
 .card-footer {
-  background-color:transparent !important; 
+  background-color:transparent !important;
 }
 
 /* Images in tables */
@@ -177,8 +171,8 @@ img.piccola {
 }
 
 img.marsigliesi {
-  display: block;  
-  margin-left: auto;  
+  display: block;
+  margin-left: auto;
   margin-right: auto;
   max-width: 20%;
   padding-top: 10px;
@@ -186,8 +180,8 @@ img.marsigliesi {
 }
 
 img.orlando {
-  display: block;  
-  margin-left: auto;  
+  display: block;
+  margin-left: auto;
   margin-right: auto;
   max-width: 40%;
   padding-top: 10px;
@@ -195,8 +189,8 @@ img.orlando {
 }
 
 img.visconteo{
-  display: block;  
-  margin-left: auto;  
+  display: block;
+  margin-left: auto;
   margin-right: auto;
   max-width: 40%;
   padding-top: 10px;
@@ -204,8 +198,8 @@ img.visconteo{
 }
 
 img.oulipo {
-   display: block;  
-  margin-left: auto;  
+   display: block;
+  margin-left: auto;
   margin-right: auto;
   max-width: 40%;
   padding-top: 10px;
@@ -233,6 +227,8 @@ button {
   height: 100vh;
   font-family: 'Open Sans', sans-serif;
 }
+
+#network-sidebar {border-radius: 25px;}
 
 canvas {font-family: 'Open Sans', sans-serif;}
 
@@ -342,3 +338,5 @@ ul#suggestedNodes:empty {
 .modal {
   background-color: rgba(0,0,0,.9);
 }
+
+#sparql-gui {background:transparent;}
