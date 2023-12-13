@@ -2,6 +2,8 @@
 @prefix odi: <https://w3id.org/odi/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix wd: <http://wwww.wikidata.org/entity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 bacodi:capitoloCinque a odi:Chapter ;
     odi:includes <https://w3id.org/odi/data/storie/storiaCinque> .
@@ -33,7 +35,6 @@ bacodi:il-bagatto-tuttelealtrestorieUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:il-bagatto-tuttelealtrestorieUno-poeta ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 15 ;
-    odi:hasTextualReference "«poeta»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/il-bagatto> .
 
 bacodi:il-carro-tuttelealtrestorieUno a odi:StoryCard ;
@@ -383,14 +384,14 @@ bacodi:dieci-di-coppe-tuttelealtrestorieTre a odi:StoryCard ;
     odi:hasTextualReference "«alterco d'osteria»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/dieci-di-coppe> .
 
-bacodi:dieci-di-coppe-tuttelealtrestorieUno a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:dieci-di-coppe-tuttelealtrestorieUno-banchetto ;
+bacodi:nove-di-coppe-tuttelealtrestorieUno a odi:StoryCard ;
+    odi:carriesRepresentation bacodi:nove-di-coppe-tuttelealtrestorieUno-banchetto ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 7 ;
     odi:hasTextualReference "«i banchetti risonanti di canti e strimpellìo di cetre erano quelli che gli Achei preparavano per il giorno sospirato della espugnazione»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/dieci-di-coppe> .
 
-bacodi:dieci-di-coppe-tuttelealtrestorieUno-banchetto a odi:Event ;
+bacodi:nove-di-coppe-tuttelealtrestorieUno-banchetto a odi:Event ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/banchetto> .
 
 bacodi:dieci-di-denari-storiaQuattro a odi:StoryCard ;
@@ -602,7 +603,7 @@ bacodi:fante-di-coppe-tuttelealtrestorieCinque-protagonista a odi:Character ;
         bacodi:nove-di-coppe-tuttelealtrestorieCinque-inganno ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/protagonista> ;
     odi:receives bacodi:cinque-di-coppe-tuttelealtrestorieCinque-coppe,
-        bacodi:sei-di-denari-tuttelealtrestorieCinque-ricchezza ;
+        bacodi:sette-di-denari-tuttelealtrestorieCinque-ricchezza ;
     odi:sameAs bacodi:il-bagatto-tuttelealtrestorieCinque-protagonista .
 
 bacodi:fante-di-denari-storiaQuattro a odi:StoryCard ;
@@ -1520,7 +1521,6 @@ bacodi:la-ruota-della-fortuna-tuttelealtrestorieUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:la-ruota-della-fortuna-tuttelealtrestorieUno-Olimpo ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 12 ;
-    odi:hasTextualReference "«Olimpo»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/la-ruota-della-fortuna> .
 
 bacodi:sei-di-bastoni-storiaTre a odi:StoryCard ;
@@ -1591,12 +1591,11 @@ bacodi:sette-di-denari-storiaTre a odi:StoryCard ;
     odi:hasTextualReference "«un luccichìo come di fuochi fatui»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sette-di-denari> .
 
-# interpretazione
-bacodi:sei-di-denari-tuttelealtrestorieCinque a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:sei-di-denari-tuttelealtrestorieCinque-ricchezza ;
+bacodi:sette-di-denari-tuttelealtrestorieCinque a odi:StoryCard ;
+    odi:carriesRepresentation bacodi:sette-di-denari-tuttelealtrestorieCinque-ricchezza ;
     odi:hasPositionInTheText 6 ;
     odi:hasTextualReference "«un fiume di Denari»"^^xsd:string ;
-    odi:specifies <https://w3id.org/odi/data/carte/sei-di-denari> .
+    odi:specifies <https://w3id.org/odi/data/carte/sette-di-denari> .
 
 bacodi:sette-di-denari-tuttelealtrestorieQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sette-di-denari-tuttelealtrestorieQuattro-raggi_di_luce ;
@@ -2280,7 +2279,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasTotalNumberOfCards 18 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieCinque> a odi:Story ;
-    rdfs:label "Storia Cinque"^^xsd:string ;
+    rdfs:label "Storia cinque"^^xsd:string ;
     rdfs:comment "Un insolito avventore si presenta alla locanda di un castellano-locandiere. Al momento di pagare, l'ospite mostra di apprezzare la taverna e paga alla fantesca rovesciando una cascata di monete da una coppa. Il protagonista decide di travestirsi da giocoliere e far fortuna usando quella coppa, ma nel bosco si imbatte in una Gran Sacerdotessa che gli ordina di restituire la coppa alle Baccanti."^^xsd:string ;
     odi:hasCard bacodi:asso-di-coppe-tuttelealtrestorieCinque,
         bacodi:cinque-di-coppe-tuttelealtrestorieCinque,
@@ -2294,12 +2293,12 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
         bacodi:lo-imperatore-tuttelealtrestorieCinque,
         bacodi:nove-di-coppe-tuttelealtrestorieCinque,
         bacodi:la-ruota-della-fortuna-tuttelealtrestorieCinque,
-        bacodi:sei-di-denari-tuttelealtrestorieCinque ;
+        bacodi:sette-di-denari-tuttelealtrestorieCinque ;
     odi:hasPositionInTheBook 11 ;
     odi:hasTotalNumberOfCards 13 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieDue> a odi:Story ;
-    rdfs:label "Storia Due"^^xsd:string ;
+    rdfs:label "Storia due"^^xsd:string ;
     rdfs:comment "Una donna, avendo trovato un prigioniero appeso nel bosco, decide di liberarlo e di scappare con lui camuffato da vagabondo. La donna aspetta fino all'alba il brigante, poi viene fermata da una guerriera che vuole lo stesso uomo. La contesa tra le due donne non si conclude prima dell'aurora."^^xsd:string ;
     odi:hasCard bacodi:cinque-di-denari-tuttelealtrestorieDue,
         bacodi:dieci-di-bastoni-tuttelealtrestorieDue,
@@ -2320,7 +2319,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasTotalNumberOfCards 15 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieQuattro> a odi:Story ;
-    rdfs:label "Storia Quattro"^^xsd:string ;
+    rdfs:label "Storia quattro"^^xsd:string ;
     rdfs:comment "Un papa, sotto le mentite spoglie di un cavaliere, abbandona i fasti della corte papale per portare l'estremo viatico ai moribondi sul campo di battaglia. Preso dal dubbio, chiede a Dio come mai permetta gli stermini ed una voce dal bosco gli risponde che sono in due a dividersi il mondo e le anime. Poco dopo, il papa si imbatte in un guerriero che si presenta come il Principe delle Opposizioni in grado di far ritornare l’Età dell’Oro. Il papa ed il guerriero cominciano la contesa, ma questa viene presto fermata dalla Dea della Distruzione che governa il disfarsi ed il rifarsi ininterrotto del mondo. Le carte si mescolano ed una guerra senza fine agita l'universo: le anime sono in guerra."^^xsd:string ;
     odi:hasCard bacodi:cavaliere-di-denari-tuttelealtrestorieQuattro,
         bacodi:cinque-di-bastoni-tuttelealtrestorieQuattro,
@@ -2342,7 +2341,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasTotalNumberOfCards 16 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieSei> a odi:Story ;
-    rdfs:label "Storia Sei"^^xsd:string ;
+    rdfs:label "Storia sei"^^xsd:string ;
     rdfs:comment "Un'educanda, per vincere il terrore che regna tra le monache per l'approssimarsi della guerra, decide di affrontare il condottiero nemico grazie alle sue abilità di provetta spadaccina. All'aurora, sul campo di battaglia, il nemico si innamora della donna e la sposa. I suoceri dello sposo, tuttavia, pagano un sicario per uccidere la sposa nel bosco. La donna riesce a sconfiggere l’assassino e, nascondendosi sotto le vesti di un’ostessa, aspetta il suo sposo nella foresta."^^xsd:string ;
     odi:hasCard bacodi:asso-di-coppe-tuttelealtrestorieSei,
         bacodi:cavaliere-di-coppe-tuttelealtrestorieSei,
@@ -2366,7 +2365,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasTotalNumberOfCards 18 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieTre> a odi:Story ;
-    rdfs:label "Storia Tre"^^xsd:string ;
+    rdfs:label "Storia tre"^^xsd:string ;
     rdfs:comment "Un tale, munito di un randello dai poteri straordinari, raggiunge una città sotterranea per aver seguito uno sconosciuto che gli vantava le sue ricchezze. In un alterco d'osteria, il misterioso compagno di viaggio decide di giocarsi lo scettro della città combattendo contro il protagonista. Questi vince la lotta, ma la città si rivela quella della morte e lo sfidante il Principe della Discontinuità. Chiusa la Città della Morte, comincia una nuova Età dell’Oro. A causa della decadenza dei costumi che ne consegue, interviene il pontefice che ordina al protagonista di riaprire le porte della Morte."^^xsd:string ;
     odi:hasCard bacodi:asso-di-bastoni-tuttelealtrestorieTre,
         bacodi:cavaliere-di-spade-tuttelealtrestorieTre,
@@ -2388,12 +2387,12 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:hasTotalNumberOfCards 16 .
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieUno> a odi:Story ;
-    rdfs:label "Storia Uno"^^xsd:string ;
+    rdfs:label "Storia uno"^^xsd:string ;
     rdfs:comment "Elena, assediata in una città straniera e condannata dagli Dei, riceve una profezia da un indovino: Paride si innamorerà di un'altra donna. Elena raggiunge l'Olimpo e, presentandosi al banchetto degli Dei, chiede a Zeus di riferire al poeta dell'Iliade che lei si darà ad Ulisse nel ventre del Cavallo di Troia."^^xsd:string ;
     odi:hasCard bacodi:asso-di-denari-tuttelealtrestorieUno,
         bacodi:asso-di-spade-tuttelealtrestorieUno,
         bacodi:cavaliere-di-bastoni-tuttelealtrestorieUno,
-        bacodi:dieci-di-coppe-tuttelealtrestorieUno,
+        bacodi:nove-di-coppe-tuttelealtrestorieUno,
         bacodi:il--bagatto-tuttelealtrestorieuno,
         bacodi:il-carro-tuttelealtrestorieuno,
         bacodi:il-giudizio-tuttelealtrestorieUno,
@@ -2707,7 +2706,7 @@ bacodi:sette-di-bastoni-storiaUno-bosco a odi:FictionalPlace ;
 bacodi:sette-di-denari-storiaTre-luccichìo a odi:InanimateObject ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/luccichìo> .
 
-bacodi:sei-di-denari-tuttelealtrestorieCinque-ricchezza a odi:Symbol ;
+bacodi:sette-di-denari-tuttelealtrestorieCinque-ricchezza a odi:Symbol ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/ricchezza> .
 
 bacodi:sette-di-denari-tuttelealtrestorieQuattro-raggi_di_luce a odi:InanimateObject ;
@@ -3105,7 +3104,7 @@ bacodi:il-mondo-storiaSei-parigi odi:isSpecifiedWith bacodi:la-torre-storiaSei-c
 
 bacodi:il-mondo-tuttelealtrestorieUno-troia_assediata a odi:FictionalPlace ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/troia-assediata> ;
-    odi:isRelatedWith bacodi:dieci-di-coppe-tuttelealtrestorieUno-banchetti ;
+    odi:isRelatedWith bacodi:nove-di-coppe-tuttelealtrestorieUno-banchetto ;
     odi:isSpecifiedWith bacodi:la-torre-tuttelealtrestorieUno-la_caduta_di_troia ;
     odi:represents bacodi:il-mondo-tuttelealtrestorieUno-troia_assediata_luogo .
 
@@ -3229,7 +3228,7 @@ bacodi:regina-di-denari-tuttelealtrestorieUno-protagonista a odi:Character ;
     odi:hasIndirectRelationWith bacodi:asso-di-denari-tuttelealtrestorieUno-elemosina,
         bacodi:asso-di-spade-tuttelealtrestorieUno-volontà_divina,
         bacodi:cavaliere-di-bastoni-tuttelealtrestorieUno-cavallo_di_troia,
-        bacodi:dieci-di-coppe-tuttelealtrestorieUno-banchetti,
+        bacodi:nove-di-coppe-tuttelealtrestorieUno-banchetto,
         bacodi:il-bagatto-tuttelealtrestorieUno-poeta,
         bacodi:il-giudizio-tuttelealtrestorieUno-decisione_degli_Dèi,
         bacodi:il-matto-tuttelealtrestorieUno-buffone_di_corte,
@@ -3847,7 +3846,8 @@ bacodi:presente a odi:Condition ;
     rdfs:label "Presente"^^xsd:string .
 
 bacodi:bonifacio-bembo a odi:Person ;
-    rdfs:label "Bonifacio Bembo"^^xsd:string .
+    rdfs:label "Bonifacio Bembo"^^xsd:string ;
+    owl:sameAs wd:Q2486190 .
 
 bacodi:mazzo-il-castello-dei-destini-incrociati a odi:TarotDeck ;
     rdfs:label "Pierpont-Morgan Bergamo"^^xsd:string ;
