@@ -59,8 +59,8 @@ def indexes():
     suitList, typologyList = [],[]
     for res in cardsResults['results']['bindings']:
         if 'suitLabel' in res:
-            suitList.append(res['suitLabel']['value'])
-        typologyList.append(res['typologyLabel']['value'])
+            suitList.append((res['suit']['value'],res['suitLabel']['value']))
+        typologyList.append((res['typology']['value'],res['typologyLabel']['value']))
 
     suitList = list(set(suitList))
     typologyList = list(set(typologyList))
@@ -304,12 +304,14 @@ def card(cardID):
     cardDescriptionQuery = """
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
-    select distinct ?pLabel ?object ?objectLabel
+    select distinct ?pLabel ?object ?objectLabel ?externalURI
     where {
       <https://w3id.org/odi/data/carte/""" + cardID + """> ?p ?object.
       ?p rdfs:label ?pLabel.
       OPTIONAL {?object rdfs:label ?objectLabel}
+      OPTIONAL {?object owl:sameAs ?externalURI}
       FILTER (lang(?pLabel) = 'it')
     }
     """
@@ -378,14 +380,19 @@ def suit(suitID):
     suitBarQuery = """
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
+	prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-    select ?position (COUNT(?position) as ?n)
+    select ?classLabel (COUNT(?storyCard) as ?n)
     where {
       <https://w3id.org/odi/data/semi/""" + suitID + """> ^odi:hasSuit ?deckCard.
         ?deckCard ^odi:specifies ?storyCard.
-      ?storyCard odi:hasPositionInTheText ?position.
+      ?storyCard odi:carriesRepresentation ?representation.
+      ?representation a ?class.
+      ?class rdfs:label ?classLabel
+      FILTER (lang(?classLabel) = 'it')
+
     }
-    GROUP BY ?position ORDER BY ?position
+    GROUP BY ?classLabel ORDER BY ?n
     """
 
     sparql.setQuery(suitBarQuery)
@@ -448,16 +455,13 @@ def suit(suitID):
 
 def generate_bar_chart(query_result):
 
-    labels = [entry['position']['value'] for entry in query_result['results']['bindings']]
+    labels = [entry['classLabel']['value'] for entry in query_result['results']['bindings']]
     values = [int(entry['n']['value']) for entry in query_result['results']['bindings']]
 
-    unique_numbers = set(map(int, labels))
-    all_labels = [str(num) for num in range(1, max(unique_numbers) + 1)]
-    all_values = [0] * len(all_labels)
 
-    fig = px.bar(x=labels, y=values, color_discrete_sequence=['teal'],
-                labels={'x': 'Posizione', 'y': 'Numero di occorrenze'},
-                 title='Numero di occorrenze rispetto alla posizione nelle storie')
+    fig = px.bar(x=labels, y=values, color_discrete_sequence=['#99C199'],
+                labels={'x': 'Classe', 'y': 'Numero di occorrenze'},
+                 title='Numero di occorrenze rispetto alla classe di appartenenza dei significati nelle storie')
     fig.update_layout(plot_bgcolor='ghostwhite')
 
     plot_html = fig.to_html(full_html=False)
@@ -473,13 +477,17 @@ def typology(typologyID):
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
 
-    select ?position (COUNT(?position) as ?n)
+    select ?classLabel (COUNT(?storyCard) as ?n)
     where {
       <https://w3id.org/odi/data/tipologia/""" + typologyID + """> ^odi:hasTypology ?deckCard.
-        ?deckCard ^odi:specifies ?storyCard.
-      ?storyCard odi:hasPositionInTheText ?position.
+      ?deckCard ^odi:specifies ?storyCard.
+      ?storyCard odi:carriesRepresentation ?representation.
+      ?representation a ?class.
+      ?class rdfs:label ?classLabel.
+      FILTER (lang(?classLabel) = 'it')
+
     }
-    GROUP BY ?position ORDER BY ?position
+    GROUP BY ?classLabel ORDER BY ?n
     """
 
     sparql.setQuery(typeBarQuery)
@@ -546,9 +554,10 @@ def meaning(meaningID):
     PREFIX odi: <https://w3id.org/odi/>
     PREFIX bacodi: <https://w3id.org/odi/data/>
 
-    select distinct ?suitLabel
+    select distinct ?suitLabel ?description
     where {
-      <https://w3id.org/odi/data/significati/""" + meaningID + """> rdfs:label ?suitLabel
+      <https://w3id.org/odi/data/significati/""" + meaningID + """> rdfs:label ?suitLabel.
+      OPTIONAL{<https://w3id.org/odi/data/significati/""" + meaningID + """> rdfs:comment ?description}
     }
     """
 
@@ -557,6 +566,12 @@ def meaning(meaningID):
     meaningDescriptionData = sparql.query().convert()
 
     meaningLabel = meaningDescriptionData['results']['bindings'][0]['suitLabel']
+
+    # TO BE CHANGED
+    try:
+        meaningDescription = meaningDescriptionData['results']['bindings'][0]['description']
+    except:
+        meaningDescription = ''
 
     meaningQuery = """
 
@@ -586,7 +601,7 @@ def meaning(meaningID):
     meaningData = sparql.query().convert()
 
 
-    return render_template('meaningTemplate.html',  meaningLabel = meaningLabel, meaningData = meaningData)
+    return render_template('meaningTemplate.html',  meaningLabel = meaningLabel, meaningData = meaningData, meaningDescription=meaningDescription)
 
 # @app.route('/data/visualisation/<path:path>')
 # def send_static(path):
