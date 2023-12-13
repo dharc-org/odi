@@ -1559,11 +1559,11 @@ bacodi:sei-di-spade-storiaQuattro a odi:StoryCard ;
     odi:hasTextualReference "«o la forza»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sei-di-spade> .
 
-bacodi:sei-di-spade-tuttelealtrestorieQuattro a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie ;
-    odi:hasPositionInTheText 16 ;
-    odi:hasTextualReference "«battaglie di corpuscoli impalpabili, invasioni, assalti, giostre, vortici...»"^^xsd:string ;
-    odi:specifies <https://w3id.org/odi/data/carte/sei-di-spade> .
+#bacodi:sei-di-spade-tuttelealtrestorieQuattro a odi:StoryCard ;
+    #odi:carriesRepresentation bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie ;
+    #odi:hasPositionInTheText 16 ;
+    #odi:hasTextualReference "«battaglie di corpuscoli impalpabili, invasioni, assalti, giostre, vortici...»"^^xsd:string ;
+    #odi:specifies <https://w3id.org/odi/data/carte/sei-di-spade> .
 
 bacodi:sei-di-spade-tuttelealtrestorieTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sei-di-spade-tuttelealtrestorieTre-battaglie ;
@@ -2334,7 +2334,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
         bacodi:quattro-di-spade-tuttelealtrestorieQuattro,
         bacodi:regina-di-spade-tuttelealtrestorieQuattro,
         bacodi:sei-di-coppe-tuttelealtrestorieQuattro,
-        bacodi:sei-di-spade-tuttelealtrestorieQuattro,
+        #bacodi:sei-di-spade-tuttelealtrestorieQuattro,
         bacodi:sette-di-denari-tuttelealtrestorieQuattro,
         bacodi:sette-di-spade-tuttelealtrestorieQuattro ;
     odi:hasPositionInTheBook 10 ;
@@ -2717,8 +2717,8 @@ bacodi:sette-di-spade-storiaTre-armatura a odi:InanimateObject ;
 
 bacodi:sette-di-spade-tuttelealtrestorieQuattro-guerra a odi:Event ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/guerra> ;
-    odi:isSpecifiedWith bacodi:la-stella-tuttelealtrestorieQuattro-stelle,
-        bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie .
+    odi:isSpecifiedWith bacodi:la-stella-tuttelealtrestorieQuattro-stelle .
+        #bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie .
 
 bacodi:tre-di-coppe-storiaCinque-ampolla a odi:InanimateObject ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/ampolla> .
@@ -3259,8 +3259,8 @@ bacodi:sei-di-denari-storiaDue-città_di_oro a odi:FictionalPlace ;
 bacodi:sei-di-spade-storiaQuattro-forza a odi:Symbol ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/forza> .
 
-bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie a odi:Event ;
-    odi:hasMeaningOf <https://w3id.org/odi/data/significati/battaglie> .
+#bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie a odi:Event ;
+    #odi:hasMeaningOf <https://w3id.org/odi/data/significati/battaglie> .
 
 bacodi:sei-di-spade-tuttelealtrestorieTre-battaglie a odi:Symbol ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/battaglie> .
@@ -3385,7 +3385,7 @@ bacodi:cavaliere-di-denari-tuttelealtrestorieQuattro-protagonista a odi:Characte
         bacodi:quattro-di-denari-tuttelealtrestorieQuattro-viatico,
         bacodi:quattro-di-spade-tuttelealtrestorieQuattro-contesa,
         bacodi:sei-di-coppe-tuttelealtrestorieQuattro-pace_nel_mondo,
-        bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie,
+        #bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie,
         bacodi:sette-di-denari-tuttelealtrestorieQuattro-raggi_di_luce,
         bacodi:sette-di-spade-tuttelealtrestorieQuattro-guerra ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/protagonista> ;
