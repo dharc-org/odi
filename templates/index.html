@@ -16,17 +16,6 @@
   <!-- maphighlight -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="./assets/js/jquery.maphilight.min.js"></script>
-  <script type="text/javascript">
-  $(function() {
-    $('.map').maphilight({
-      'shadow':'True',
-      'strokeOpacity': 0,
-      'fillOpacity':0.3,
-    });
-  });
-
-
- </script>
 
  <style>
  #popup {
@@ -282,6 +271,16 @@
                });
                $('.toast').toast('show');
            });
+       });
+  </script>
+  
+  <script>
+       $(function() {
+         $('.map').maphilight({
+           'shadow':'True',
+           'strokeOpacity': 0,
+           'fillOpacity':0.3,
+         });
        });
    </script>
 
