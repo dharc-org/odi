@@ -178,3 +178,42 @@ network.moveTo({
  animationDuration: 1000 // Animation duration in milliseconds
 });
 }
+
+
+/*
+  =================================
+  |  SEARCH BAR IN DATA TABLES    |
+  =================================
+*/
+
+// Get the search bar and list items
+ const searchBar = document.getElementById('searchBar');
+ const listItems = document.querySelectorAll('.list-group-item');
+ const noResultsBanner = document.getElementById('noResultsBanner');
+
+ // Add event listener for the input event on the search bar
+ searchBar.addEventListener('input', function () {
+   const searchTerm = searchBar.value.toLowerCase();
+   let hasResults = false;
+
+   // Loop through each list item and check if it matches the search term
+   listItems.forEach(item => {
+     const itemText = item.textContent.toLowerCase();
+     const isMatch = itemText.includes(searchTerm);
+
+     // Show or hide the list item based on the match
+     if (isMatch) {
+       item.style.display = 'block';
+       hasResults = true;
+     } else {
+       item.style.display = 'none';
+     }
+   });
+
+   // Show or hide the "No results" banner
+   if (hasResults) {
+     noResultsBanner.style.display = 'none';
+   } else {
+     noResultsBanner.style.display = 'block';
+   }
+ });
