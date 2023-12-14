@@ -103,42 +103,30 @@
                           {{ plot_html|safe }}
                       </div>
 
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
                     <h5 class="card-title p-2">Interpretazioni</h5>
-                  </div>
-                </div>
-              </div>
-                <div class="row w-100">
+
+                    <!-- Search bar su tabelle -->
+                    <div class="float-end">
+                      <input class="search__input" type="text" id="searchBar" placeholder="Cerca...">
+                    </div>
+
+                <div class="row w-100 p-3">
                 <div class="col-md-2">
-                  <h6 class="text-center">Storia
-                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica la storia in cui la carta appare">
-                      <i class="bi bi-info-circle"></i>
-                    </button>
-                  </h6>
-                </div>
-                <div class="col-md-1">
                   <h6 class="text-center">Posizione
                     <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Ogni storia coincide con una sequenza di carte. La posizione corrisponde dunque alla posizione nella sequenza della suddetta tipologia con la sua corrispettiva carta.">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
                 </div>
-                <div class="col-md-2">
-                  <h6 class="text-center">Carta
-                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica la carta che viene utilizzata come espediente narrativo nella storia corrente">
-                      <i class="bi bi-info-circle"></i>
-                    </button>
-                  </h6>
-                </div>
-                <div class="col-md-2">
+                <div class="col-md-4">
                   <h6 class="text-center">Istanza
                     <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica l'istanza narrativa della tipologia di carta in questione, quindi la storia in cui occorre, con quali carte ed il relativo significato.">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
                 </div>
-                <div class="col-md-3">
-                  <h6 class="text-center">Testo
+                <div class="col-md-4">
+                  <h6 class="text-center">Riferimento testuale
                     <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Fornisce il riferimento testuale per una maggiore comprensione dell'istanza narrativa della carta nella storia. Ove sono presenti più estratti dal testo, questi vengono separati tramite il segno //">
                       <i class="bi bi-info-circle"></i>
                     </button>
@@ -153,42 +141,37 @@
                 </div>
                 <hr>
               </div>
-                    <ul class="list-group list-group-flush pt-3"> {% for res in typologyMeaningsResults['results']['bindings'] %}
+                    <ul class="list-group list-group-flush pt-3">
+                      {% for res in typologyMeaningsResults['results']['bindings'] %}
                       <li class="list-group-item" style="background-color:transparent">
-                            <div class="row w-100 p-3">
+                            <div class="row w-100">
 
-                              <!-- storia -->
+
+                              <!-- posizione -->
                               <div class="col-md-2">
+                                <p class="text-center">{{res['position']['value']}}</p>
+                              </div>
+
+                              <!-- istanza -->
+                              <div class="col-md-4">
                                 {% if 'storyName' in res %}
-                                  <p class="text-center">
+                                  <p>Compare in:
                                     <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}">
-                                      {{res["storyTitle"]['value']}},
                                       <i>{{res["storyName"]['value']}}</i>
                                     </a>
                                   </p>
                                 {% else %}
-                                  <p class="text-center"><a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}">Tutte le altre storie, {{res["storyTitle"]['value']}}</a></p>
+                                  <p>Compare in: <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}"><i>Tutte le altre storie</i>, {{res["storyTitle"]['value']}}</a></p>
                                 {% endif %}
-                              </div>
 
-                              <!-- posizione -->
-                              <div class="col-md-1">
-                                <p class="text-center">{{res['position']['value']}}</p>
-                              </div>
+                                <p>Carta: <a href="../{{res['deckCard']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["cardName"]['value']}}</a></p>
+                                <p>Significato: <a href="../{{res['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["meaningLabel"]['value']}}</a></p>
 
-                              <!-- carta -->
-                              <div class="col-md-2">
-                                  <p class="text-center"><a href="../{{res['deckCard']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["cardName"]['value']}}</a></p>
-                              </div>
-
-                              <!-- istanza -->
-                              <div class="col-md-2">
-                                <p class="text-center"><a href="../{{res['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["meaningLabel"]['value']}}</a></p>
                               </div>
 
                               <!-- testo -->
-                              <div class="col-md-3">
-                                <p class="text-center">{{res['texts']['value']}}</p>
+                              <div class="col-md-4">
+                                <p>{{res['texts']['value']}}</p>
                               </div>
 
                               <!-- iconografia -->

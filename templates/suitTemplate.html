@@ -14,6 +14,7 @@
     <script src="../assets/js/matomo.js"></script>
     <!-- plotly -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
   </head>
   <body>
     <div class="container-fluid">
@@ -101,23 +102,30 @@
                   <div>
                       {{ plot_html|safe }}
                   </div>
-                    <h5 class="card-title p-3">Interpretazioni</h5>
+                  <h5 class="card-title p-3">Interpretazioni</h5>
+
+                  <!-- Search bar su tabelle -->
+                  <div class="float-end">
+                    <input class="search__input" type="text" id="searchBar" placeholder="Cerca...">
+                  </div>
+
+
               <div class="row w-100 p-3">
-              <div class="col-md-1">
+              <div class="col-md-2 text-center">
                 <h6>Posizione
                   <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Ogni storia coincide con una sequenza di carte. La posizione corrisponde dunque alla posizione nella sequenza della suddetta tipologia con la sua corrispettiva carta.">
                     <i class="bi bi-info-circle"></i>
                   </button>
                 </h6>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 text-center">
                 <h6>Istanza
                   <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica l'istanza narrativa della tipologia di carta in questione, quindi la storia in cui occorre, con quali carte ed il relativo significato.">
                     <i class="bi bi-info-circle"></i>
                   </button>
                 </h6>
               </div>
-              <div class="col-md-5">
+              <div class="col-md-4 text-center">
                 <h6>Testo
                   <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Fornisce il riferimento testuale per una maggiore comprensione dell'istanza narrativa della carta nella storia. Ove sono presenti più estratti dal testo, questi vengono separati tramite il segno //">
                     <i class="bi bi-info-circle"></i>
@@ -133,13 +141,13 @@
               </div>
               <hr>
             </div>
-            <ul class="list-group list-group-flush p-3"> {% for res in suitMeaningsResults['results']['bindings'] %}
+            <ul class="list-group list-group-flush"> {% for res in suitMeaningsResults['results']['bindings'] %}
               <li class="list-group-item" style="background-color:transparent">
                     <div class="row w-100">
 
 
                       <!-- posizione -->
-                      <div class="col-md-1">
+                      <div class="col-md-2 text-center">
                         <p>{{res['position']['value']}}</p>
                       </div>
 
@@ -162,7 +170,7 @@
                       </div>
 
                       <!-- testo -->
-                      <div class="col-md-5">
+                      <div class="col-md-4">
                         <p>{{res['texts']['value']}}</p>
                       </div>
 
@@ -198,5 +206,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
     <script src="../assets/js/script.js"></script>
+
+
   </body>
 </html>
