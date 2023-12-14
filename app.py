@@ -460,9 +460,14 @@ def generate_bar_chart(query_result):
 
 
     fig = px.bar(x=labels, y=values, color_discrete_sequence=['#99C199'],
-                labels={'x': 'Classe', 'y': 'Numero di occorrenze'},
-                 title='Numero di occorrenze rispetto alla classe di appartenenza dei significati nelle storie')
-    fig.update_layout(plot_bgcolor='ghostwhite')
+                labels={'x': 'Classe del significato', 'y': 'Numero di occorrenze del seme'},
+                 title='Le classi dei significati associati a questo seme')
+
+    # Customize font for axis labels
+    fig.update_layout(xaxis=dict(title_font=dict(size=14, family="Helvetica", color="black")),
+                  yaxis=dict(title_font=dict(size=14, family="Helvetica", color="black")))
+    fig.update_layout(plot_bgcolor='ghostwhite', title_font=dict(size=18, family="Open Sans", color="black"))
+
 
     plot_html = fig.to_html(full_html=False)
 
