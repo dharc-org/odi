@@ -99,9 +99,12 @@
                     <h5 class="card-title p-2">Descrizione</h5>
                     <p class="p-3">{{typologyDescription['value']}}</p>
 
-                      <div>
-                          {{ plot_html|safe }}
-                      </div>
+                    <!-- approfondimento - barchart -->
+                    <div class="col-md-12 p-3 text-end">
+                      <a href="#barchartContainer" class="p-3">Approfondimento: Le classi dei significati associati a questo seme<i class="bi bi-arrow-down"></i></a>
+                    </div>
+
+                    <div class="card-footer text-muted">
 
                     <h5 class="card-title p-2">Interpretazioni</h5>
 
@@ -194,6 +197,12 @@
                     </ul>
                   </div>
                 </div>
+                </div>
+                <hr>
+                <div id="barchartContainer">
+                    {{ plot_html|safe }}
+                </div>
+
               </div>
             </main>
           </div>

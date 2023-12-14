@@ -103,14 +103,13 @@
                   <p class="p-3">{{meaningDescription['value']}}</p>
 
                       <h5 class="card-title p-3">Interpretazioni</h5>
+
+                      <!-- Search bar su tabelle -->
+                      <div class="float-end">
+                        <input class="search__input" type="text" id="searchBar" placeholder="Cerca...">
+                      </div>
+
                 <div class="row w-100 p-3">
-                <div class="col-md-2">
-                  <h6 class="text-center">Storia
-                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica la storia in cui la carta appare">
-                      <i class="bi bi-info-circle"></i>
-                    </button>
-                  </h6>
-                </div>
                 <div class="col-md-2">
                   <h6 class="text-center">Posizione
                     <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Ogni storia coincide con una sequenza di carte. La posizione corrisponde dunque alla posizione del suddetto significato nella sequenza di carte in cui occorre.">
@@ -118,9 +117,9 @@
                     </button>
                   </h6>
                 </div>
-                <div class="col-md-2">
-                  <h6 class="text-center">Carta
-                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica la carta che viene utilizzata come espediente narrativo nella storia corrente">
+                <div class="col-md-4">
+                  <h6 class="text-center">Istanza
+                    <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica l'istanza narrativa della carta, quindi il suo significato all'interno della storia">
                       <i class="bi bi-info-circle"></i>
                     </button>
                   </h6>
@@ -143,26 +142,22 @@
               </div>
                   <ul class="list-group list-group-flush pt-3"> {% for res in meaningData['results']['bindings'] %}
                     <li class="list-group-item">
-                      <div class="row w-100">
-
-                        <!-- storia -->
-                        <div class="col-md-2">
-                          <p class="text-center"><a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a></p>
-                        </div>
+                      <div class="row w-100 p-3">
 
                         <!-- posizione -->
                         <div class="col-md-2">
                           <p class="text-center">{{res['position']['value']}}</p>
                         </div>
 
-                        <!-- carta -->
-                        <div class="col-md-2">
-                          <p class="text-center"><a href="../{{res['deckCard']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["cardName"]['value']}}</a></p>
+                        <!-- istanza -->
+                        <div class="col-md-4">
+                          <p>Compare in: <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{% if 'storyName' in res %}<i> {{res["storyName"]['value']}}</i>{%else%}<i>Tutte le altre storie</i>, {{res["storyTitle"]['value']}} {% endif %} </a></p>
+                          <p>Carta: <a href="../{{res['deckCard']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["cardName"]['value']}}</a></p>
                         </div>
 
                         <!-- testo -->
                         <div class="col-md-4">
-                          <p class="text-center">{{res['texts']['value']}}</p>
+                          <p>{{res['texts']['value']}}</p>
                         </div>
 
                         <!-- iconografia -->

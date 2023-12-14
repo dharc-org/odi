@@ -99,9 +99,13 @@
                   <h5 class="card-title p-3">Descrizione</h5>
                   <p class="p-3">{{suitDescription['value']}}</p>
 
-                  <div>
-                      {{ plot_html|safe }}
-                  </div>
+                  <!-- approfondimento - barchart -->
+                  <div class="col-md-12 p-3 text-end">
+                  <a href="#barchartContainer" class="p-3">Approfondimento: Le classi dei significati associati a questo seme<i class="bi bi-arrow-down"></i></a>
+                </div>
+
+                <div class="card-footer text-muted">
+
                   <h5 class="card-title p-3">Interpretazioni</h5>
 
                   <!-- Search bar su tabelle -->
@@ -192,15 +196,23 @@
               </li>
               {% endfor %}
             </ul>
+
+
                 </div>
+
+                <hr>
+                <div id="barchartContainer">
+                    {{ plot_html|safe }}
+                </div>
+
+              </div>
               </div>
             </div>
           </div>
+              </main>
           </div>
         </div>
-    </main>
-</div>
-</div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

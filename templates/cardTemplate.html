@@ -145,14 +145,12 @@
                     <div class="card-footer text-muted">
                       <h5 class="card-title p-3">Interpretazioni</h5>
 
-                  <div class="row w-100 p-md-3">
-                    <div class="col-md-2">
-                      <h6 class="text-center">Storia
-                        <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content=" Indica la storia in cui la carta appare">
-                          <i class="bi bi-info-circle"></i>
-                        </button>
-                      </h6>
-                    </div>
+                      <!-- Search bar su tabelle -->
+                      <div class="float-end">
+                        <input class="search__input" type="text" id="searchBar" placeholder="Cerca...">
+                      </div>
+
+                  <div class="row w-100 p-3">
                     <div class="col-md-2">
                       <h6 class="text-center">Posizione
                         <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Ogni storia coincide con una sequenza di carte. La posizione corrisponde dunque alla posizione nella sequenza del seme di riferimento con la sua corrispettiva carta. La posizione corrisponde dunque alla posizione della carta all'interno della sequenza di carte in cui occorre.">
@@ -160,7 +158,7 @@
                         </button>
                       </h6>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                       <h6 class="text-center">Istanza
                         <button type="button" class="btn btn-lg btn-danger p-0" data-bs-toggle="popover" data-bs-content="Indica l'istanza narrativa della carta, quindi il suo significato all'interno della storia">
                           <i class="bi bi-info-circle"></i>
@@ -188,21 +186,17 @@
 
                           <div class="row w-100">
 
-                            <!-- storia -->
-                            <div class="col-md-2">
-                              <p class="text-center"><a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{{res["storyTitle"]['value']}}{% if 'storyName' in res %}, <i> {{res["storyName"]['value']}}</i>{% endif %} </a></p>
-                            </div>
-
                             <!-- posizione -->
                             <div class="col-md-2">
                               <p class="text-center">{{res['position']['value']}}</p>
                             </div>
 
-                            <!-- significato -->
-                            <div class="col-md-2">
+                            <!-- istanza -->
+                            <div class="col-md-4">
+                              <p>Compare in: <a href="../{{res['story']['value']|replace('https://w3id.org/odi/data/', '')}}" class="card-text">{% if 'storyName' in res %}<i> {{res["storyName"]['value']}}</i>{%else%}<i>Tutte le altre storie</i>, {{res["storyTitle"]['value']}}{% endif %} </a></p>
                               {% for res2 in representationCardData['results']['bindings'] %}
                                 {% if res2['story']['value'] == res['story']['value'] %}
-                                <p class="text-center"><a href="../{{res2['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}">{{ res2['meaningLabel']['value'] }}</a></p>
+                                <p>Significato: <a href="../{{res2['meaning']['value']|replace('https://w3id.org/odi/data/', '')}}">{{ res2['meaningLabel']['value'] }}</a></p>
                                 {% endif %}
                               {% endfor %}
                             </div>
