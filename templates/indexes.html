@@ -131,6 +131,24 @@
                           <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse  d-md-flex justify-content-md-end" id="navbarNavDarkDropdown">
+
+                          <!-- sorting -->
+                          <div class="row">
+                            <div class="col-md-5">
+
+                              <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <i class="bi bi-filter"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                  <li><button class="text-start" onclick="sortResults('alphabetical', 'searchResults')">Ordina alfabeticamente</button></li>
+                                  <li><button class="text-start" onclick="sortResults('occurrence', 'searchResults')">Ordina per frequenza</button></li>
+                                </ul>
+                              </div>
+                            </div>
+                        </div>
+
+                        <!-- filtering -->
                           <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                               <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Semi</button>
@@ -139,8 +157,7 @@
 
                                 {% for res in suitList %}
                                   <li>
-                                    <a class="dropdown-item dropdown-item list-group-item1" data-category={{res}} href="#">{{res[1]}}</a>
-                                    <a href="{{res[0]}}"><i class="bi bi-box-arrow-up-right"></i></a>
+                                    <a class="dropdown-item dropdown-item list-group-item1" data-category={{res}} href="#">{{res}}</a>
                                   </li>
                                 {% endfor %}
                               </ul>
@@ -150,8 +167,7 @@
                               <ul class="dropdown-menu">
                                 {% for res in typologyList %}
                                 <li class="list-inline">
-                                  <a class="dropdown-item dropdown-item list-group-item1" data-category={{res}} href="#">{{res[1]}}</a>
-                                  <a href="{{res[0]}}"><i class="bi bi-box-arrow-up-right"></i></a>
+                                  <a class="dropdown-item dropdown-item list-group-item1" data-category={{res}} href="#">{{res}}</a>
                                 </li>
                                 {% endfor %}
                               </ul>
@@ -190,7 +206,7 @@
                   <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
                       <h4 class="mb-0">I significati
-                          <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-content="I significati, ovvero le rappresentazioni espresse dalle diverse carte, sono classificate per: personaggio, luogo ideale, evento, oggetto inanimato e simbolo. L’elenco è in ordine alfabetico e organizzato in ordine di frequenza con cui le rappresentazioni occorrono nel testo.">
+                          <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-content="I significati, ovvero le rappresentazioni espresse dalle diverse carte, sono classificate per: personaggio, luogo ideale, evento, oggetto inanimato e simbolo. L’elenco è in Ordina alfabeticamente e organizzato in ordine di frequenza con cui le rappresentazioni occorrono nel testo.">
                             <i class="bi bi-info-circle-fill"></i>
                           </button>
                       </h4>
@@ -198,6 +214,24 @@
                         <span class="navbar-toggler-icon"></span>
                       </button>
                       <div class="collapse navbar-collapse d-md-flex justify-content-md-end" id="navbarNavDarkDropdown">
+
+                        <!-- sorting -->
+                        <div class="row">
+                          <div class="col-md-5">
+
+                            <div class="dropdown">
+                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-filter"></i>
+                              </button>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><button class="text-start" onclick="sortResults('alphabetical', 'searchResults2')">Ordina alfabeticamente</button></li>
+                                <li><button class="text-start" onclick="sortResults('occurrence', 'searchResults2')">Ordina per frequenza</button></li>
+                              </ul>
+                            </div>
+                          </div>
+                      </div>
+
+                      <!-- filtering -->
                         <ul class="navbar-nav">
                           <li class="nav-item dropdown dropstart">
                             <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Classe</button>
@@ -213,7 +247,7 @@
                     </div>
                   </nav>
                   <hr>
-                  <ul class="list-group list-group-flush"> {% for res in meaningsResults["results"]["bindings"] %} <a href="../{{res["meaning"]["value"]|replace('https://w3id.org/odi/data/', '')}}" class="search-result-item2 list-group-item list-group-item-action {{ res['classLabel']['value']}}">{{res["meaningLabel"]["value"]}}
+                  <ul class="list-group list-group-flush" id="searchResults2"> {% for res in meaningsResults["results"]["bindings"] %} <a href="../{{res["meaning"]["value"]|replace('https://w3id.org/odi/data/', '')}}" class="search-result-item2 list-group-item list-group-item-action {{ res['classLabel']['value']}}">{{res["meaningLabel"]["value"]}}
                       <span class="badge rounded-pill bg-success float-right" style="float:right;">{{res['nMeanings']['value']}}</span>
                     </a> {% endfor %} </ul>
                 </div>
@@ -229,6 +263,38 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 <script src="../assets/js/script.js"></script>
+
+
+<script>
+  function sortResults(sortType, searchContainerID) {
+    var resultsContainer = document.getElementById(searchContainerID);
+    var results = resultsContainer.children;
+
+    // Convert results to an array for sorting
+    var resultsArray = Array.from(results);
+
+    if (sortType === 'alphabetical') {
+      // Sort alphabetically based on card name
+      resultsArray.sort(function (a, b) {
+        var textA = a.innerText.trim();
+        var textB = b.innerText.trim();
+        return textA.localeCompare(textB);
+      });
+    } else if (sortType === 'occurrence') {
+      // Sort by occurrence (assuming 'nCards' is a numeric value)
+      resultsArray.sort(function (a, b) {
+        var countA = parseInt(a.querySelector('.badge').innerText, 10);
+        var countB = parseInt(b.querySelector('.badge').innerText, 10);
+        return countB - countA; // Sort in descending order
+      });
+    }
+
+    // Re-append sorted elements to the container
+    resultsArray.forEach(function (result) {
+      resultsContainer.appendChild(result);
+    });
+  }
+</script>
 
   </body>
 </html>
