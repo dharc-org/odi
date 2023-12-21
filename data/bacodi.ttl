@@ -26,7 +26,7 @@ bacodi:capitoloUno a odi:Chapter ;
 bacodi:capitolointroduttivo rdfs:label "Capitolo introduttivo"^^xsd:string .
 
 bacodi:due-di-bastoni-storiaTre a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:due-di-bastoni-storiaTre-necessità_di_una_scelta ;
+    odi:carriesRepresentation bacodi:due-di-bastoni-storiaTre-bivio ;
     odi:hasPositionInTheText 7 ;
     odi:hasTextualReference "«il segnale d'un bivio, d'una scelta?»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/due-di-bastoni> .
@@ -461,15 +461,15 @@ bacodi:dieci-di-spade-tuttelealtrestorieQuattro a odi:StoryCard ;
     odi:hasTextualReference "«distesa dei corpi squartati»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/dieci-di-spade> .
 
-bacodi:due-di-bastoni-storiaTre-necessità_di_una_scelta a odi:Event ;
+bacodi:due-di-bastoni-storiaTre-bivio a odi:Event ;
     odi:carriedOutBy bacodi:fante-di-spade-storiaTre-protagonista,
         bacodi:regina-di-spade-storiaTre-fanciulla ;
-    odi:hasMeaningOf <https://w3id.org/odi/data/significati/necessità-di-una-scelta> ;
+    odi:hasMeaningOf <https://w3id.org/odi/data/significati/bivio> ;
     odi:implies bacodi:otto-di-denari-storiaTre-denaro,
         bacodi:sei-di-coppe-storiaTre-banchetto .
 
 bacodi:due-di-bastoni-tuttelealtrestorieQuattro a odi:StoryCard ;
-    odi:carriesRepresentation bacodi:due-di-bastoni-tuttelealtrestorieQuattro-necessità_di_una_scelta,
+    odi:carriesRepresentation bacodi:due-di-bastoni-tuttelealtrestorieQuattro-bivio,
         bacodi:due-di-bastoni-tuttelealtrestorieQuattro-vittoria_altro_su_uno ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 11 ;
@@ -477,10 +477,10 @@ bacodi:due-di-bastoni-tuttelealtrestorieQuattro a odi:StoryCard ;
         "«Due sono le strade. Scegli»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/due-di-bastoni> .
 
-bacodi:due-di-bastoni-tuttelealtrestorieQuattro-necessità_di_una_scelta a odi:Event ;
+bacodi:due-di-bastoni-tuttelealtrestorieQuattro-bivio a odi:Event ;
     odi:carriedOutBy bacodi:cavaliere-di-denari-tuttelealtrestorieQuattro-protagonista,
         bacodi:fante-di-spade-tuttelealtrestorieQuattro-guerriero ;
-    odi:hasMeaningOf <https://w3id.org/odi/data/significati/necessità-di-una-scelta> .
+    odi:hasMeaningOf <https://w3id.org/odi/data/significati/bivio> .
 
 bacodi:due-di-coppe-storiaUno a odi:StoryCard ;
     odi:carriesRepresentation bacodi:due-di-coppe-storiaUno-incontro_di_amore ;
@@ -1559,12 +1559,6 @@ bacodi:sei-di-spade-storiaQuattro a odi:StoryCard ;
     odi:hasTextualReference "«o la forza»"^^xsd:string ;
     odi:specifies <https://w3id.org/odi/data/carte/sei-di-spade> .
 
-#bacodi:sei-di-spade-tuttelealtrestorieQuattro a odi:StoryCard ;
-    #odi:carriesRepresentation bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie ;
-    #odi:hasPositionInTheText 16 ;
-    #odi:hasTextualReference "«battaglie di corpuscoli impalpabili, invasioni, assalti, giostre, vortici...»"^^xsd:string ;
-    #odi:specifies <https://w3id.org/odi/data/carte/sei-di-spade> .
-
 bacodi:sei-di-spade-tuttelealtrestorieTre a odi:StoryCard ;
     odi:carriesRepresentation bacodi:sei-di-spade-tuttelealtrestorieTre-battaglie ;
     odi:hasPositionInTheText 11 ;
@@ -2334,7 +2328,6 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
         bacodi:quattro-di-spade-tuttelealtrestorieQuattro,
         bacodi:regina-di-spade-tuttelealtrestorieQuattro,
         bacodi:sei-di-coppe-tuttelealtrestorieQuattro,
-        #bacodi:sei-di-spade-tuttelealtrestorieQuattro,
         bacodi:sette-di-denari-tuttelealtrestorieQuattro,
         bacodi:sette-di-spade-tuttelealtrestorieQuattro ;
     odi:hasPositionInTheBook 10 ;
@@ -2718,7 +2711,6 @@ bacodi:sette-di-spade-storiaTre-armatura a odi:InanimateObject ;
 bacodi:sette-di-spade-tuttelealtrestorieQuattro-guerra a odi:Event ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/guerra> ;
     odi:isSpecifiedWith bacodi:la-stella-tuttelealtrestorieQuattro-stelle .
-        #bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie .
 
 bacodi:tre-di-coppe-storiaCinque-ampolla a odi:InanimateObject ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/ampolla> .
@@ -2972,8 +2964,8 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
 <https://w3id.org/odi/data/significati/indovino> a odi:Meaning ;
     rdfs:label "Indovino"^^xsd:string .
 
-<https://w3id.org/odi/data/significati/necessità-di-una-scelta> a odi:Meaning ;
-    rdfs:label "Necessità di una scelta"^^xsd:string .
+<https://w3id.org/odi/data/significati/bivio> a odi:Meaning ;
+    rdfs:label "Bivio"^^xsd:string .
 
 <https://w3id.org/odi/data/significati/papa> a odi:Meaning ;
     rdfs:label "Papa"^^xsd:string .
@@ -3259,9 +3251,6 @@ bacodi:sei-di-denari-storiaDue-città_di_oro a odi:FictionalPlace ;
 bacodi:sei-di-spade-storiaQuattro-forza a odi:Symbol ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/forza> .
 
-#bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie a odi:Event ;
-    #odi:hasMeaningOf <https://w3id.org/odi/data/significati/battaglie> .
-
 bacodi:sei-di-spade-tuttelealtrestorieTre-battaglie a odi:Symbol ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/battaglie> .
 
@@ -3385,7 +3374,6 @@ bacodi:cavaliere-di-denari-tuttelealtrestorieQuattro-protagonista a odi:Characte
         bacodi:quattro-di-denari-tuttelealtrestorieQuattro-viatico,
         bacodi:quattro-di-spade-tuttelealtrestorieQuattro-contesa,
         bacodi:sei-di-coppe-tuttelealtrestorieQuattro-pace_nel_mondo,
-        #bacodi:sei-di-spade-tuttelealtrestorieQuattro-battaglie,
         bacodi:sette-di-denari-tuttelealtrestorieQuattro-raggi_di_luce,
         bacodi:sette-di-spade-tuttelealtrestorieQuattro-guerra ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/protagonista> ;
@@ -3791,13 +3779,15 @@ bacodi:sostituita a odi:Condition ;
     rdfs:label "Ricchezza"^^xsd:string .
 
 bacodi:antonio-da-cicognara a odi:Person ;
-    rdfs:label "Antonio da Cicognara"^^xsd:string .
+    rdfs:label "Antonio da Cicognara"^^xsd:string ;
+    owl:sameAs wd:Q2857238 .
 
 <https://w3id.org/odi/data/significati/bosco> a odi:Meaning ;
     rdfs:label "Bosco"^^xsd:string .
 
 bacodi:collezione-colleoni a odi:Place ;
-    rdfs:label "Collezione Colleoni"^^xsd:string .
+    rdfs:label "Collezione Colleoni"^^xsd:string ;
+    owl:sameAs wd:Q1109320 .
 
 <https://w3id.org/odi/data/semi/bastoni> a odi:Suit ;
     rdfs:label "Bastoni"^^xsd:string ;
@@ -3827,10 +3817,12 @@ bacodi:collezione-colleoni a odi:Place ;
     rdfs:comment "I Trionfi (o Arcani Maggiori) sono la tipologia di tarocchi con la maggiore variazione e possibilità di interpretazione grazie alla complessità delle miniature. Nel mazzo Pierpont-Morgan Bergamo, in origine i Trionfi erano 22; Il Diavolo e La Torre sono andati perduti, ma vengono comunque utilizzati da Calvino per la creazione delle sequenze narrative."^^xsd:string .
 
 bacodi:accademia-carrara a odi:Place ;
-    rdfs:label "Accademia Carrara"^^xsd:string .
+    rdfs:label "Accademia Carrara"^^xsd:string ;
+    owl:sameAs wd:Q338367 .
 
 bacodi:morgan-library a odi:Place ;
-    rdfs:label "Morgan Library"^^xsd:string .
+    rdfs:label "Morgan Library"^^xsd:string ;
+    owl:sameAs wd:Q1478423 .
 
 <https://w3id.org/odi/data/tipologia/numerale> a odi:Typology ;
     rdfs:label "Numerale"^^xsd:string ;
@@ -3851,6 +3843,7 @@ bacodi:bonifacio-bembo a odi:Person ;
 
 bacodi:mazzo-il-castello-dei-destini-incrociati a odi:TarotDeck ;
     rdfs:label "Pierpont-Morgan Bergamo"^^xsd:string ;
+        owl:sameAs wd:Q726633
     odi:hasAuthor bacodi:antonio-da-cicognara,
         bacodi:bonifacio-bembo ;
     odi:hasCurrentNumberOfCards 74 ;

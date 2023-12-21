@@ -4,6 +4,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <https://www.w3.org/wiki/DublinCore> .
 @base <https://w3id.org/odi/> .
 
 <https://purl.org/ebr/odi#> rdf:type owl:Ontology .
@@ -124,14 +125,23 @@
 ###  https://purl.org/ebr/odi#hasAuthor
 :hasAuthor rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain :DeckCard ,
-                       :Edition ,
-                       :TarotDeck ;
+           rdfs:domain :Edition ;
            rdfs:range :Person ;
            rdfs:comment "Questa proprietà rende esplicito l'autore sia del mazzo di tarocchi sia di una specifica carta del mazzo."@it ,
                         "This property makes explicit the author of both the tarot deck and a specific card in the tarot deck."@en ;
            rdfs:label "Ha autore"@it ,
                       "Has author"@en .
+
+### http://purl.org/dc/elements/1.1/creator
+:creator rdf:type owl:ObjectProperty
+         rdfs:subPropertyOf owl:
+         rdfs:domain :DeckCard ,
+                     :TarotDeck ;
+         rdfs:range :Agent ;
+         rdfs:comment "Questa proprietà rende esplicito l'autore responsabile della produzione dei tarocchi."@it ,
+                     "This property makes explicit the author responsible for the production of the tarot."@en ;
+         rdfs:label "Creatore"@it,
+                     "Creator"@en .
 
 
 ###  https://purl.org/ebr/odi#hasCard
