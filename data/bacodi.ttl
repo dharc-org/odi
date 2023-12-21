@@ -2242,7 +2242,8 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
         bacodi:sei-di-bastoni-storiaTre,
         bacodi:sei-di-coppe-storiaTre,
         bacodi:sette-di-denari-storiaTre,
-        bacodi:sette-di-spade-storiaTre ;
+        bacodi:sette-di-spade-storiaTre,
+        bacodi:due-di-bastoni-storiaTre ; 
     odi:hasPositionInTheBook 3 ;
     odi:hasTitle "Storia della sposa dannata"^^xsd:string ;
     odi:hasTotalNumberOfCards 17 .
@@ -3843,7 +3844,7 @@ bacodi:bonifacio-bembo a odi:Person ;
 
 bacodi:mazzo-il-castello-dei-destini-incrociati a odi:TarotDeck ;
     rdfs:label "Pierpont-Morgan Bergamo"^^xsd:string ;
-        owl:sameAs wd:Q726633
+        owl:sameAs wd:Q726633;
     odi:hasAuthor bacodi:antonio-da-cicognara,
         bacodi:bonifacio-bembo ;
     odi:hasCurrentNumberOfCards 74 ;
