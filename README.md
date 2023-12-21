@@ -1,7 +1,7 @@
 # MACODI 
 ## A web-app to explore the semantic narrative of Italo Calvino's "Il castello dei destini incrociati" 
 
-**ODI** is a project which formally represents the narrative and structural elements of "Il castello dei destini incrociati" by Italo Calvino. In particular, **ODI** is the ontology describing the work, **BACODI** is the Knowledge Graph (KG) storing all data regarding the work. For a complete overview of the project please see the [technical documentation](https://odi-documentation.github.io/materials/).
+**ODI** is a project which formally represents the narrative and structural elements of "Il castello dei destini incrociati" by Italo Calvino. In particular, **ODI** is the ontology describing the work, **BACODI** is the Knowledge Graph (KG) storing all data regarding the work. For a complete overview of the project please see the [technical documentation](https://odi-documentation.github.io/materials/) and the [Github repository](https://github.com/odi-documentation/materials/).
 
 The data can be browsed via this interface which provides several paths to explore BACODI KG along with some specific data-visualisations. 
 
