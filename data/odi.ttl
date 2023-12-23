@@ -127,19 +127,18 @@
            rdfs:range :Person ;
            rdfs:comment "Questa proprietà rende esplicito l'autore sia del mazzo di tarocchi sia di una specifica carta del mazzo."@it ,
                         "This property makes explicit the author of both the tarot deck and a specific card in the tarot deck."@en ;
-           rdfs:label "Ha autore"@it ,
-                      "Has author"@en .
+           rdfs:label "Autore"@it ,
+                      "Author"@en .
 
-### https://purl.org/ebr/odi#hasCreator
-#:hasCreator rdf:type owl:ObjectProperty ;
-#         rdfs:domain :DeckCard ,
-#                     :TarotDeck ;
-#         rdfs:range :Person ;
-#         rdfs:comment "Questa proprietà rende esplicito l'autore responsabile della produzione dei tarocchi."@it ,
-#                     "This property makes explicit the author responsible for the production of the tarot."@en ;
-#         rdfs:label "Creatore"@it,
-#                     "Creator"@en ;
-#        owl:sameAs <http://purl.org/dc/terms/creator> .
+### https://purl.org/ebr/odi#hasArtist
+:hasArtist rdf:type owl:ObjectProperty ;
+           rdfs:domain :DeckCard ,
+                       :TarotDeck ;
+           rdfs:range :Person ;
+           rdfs:comment "Questa proprietà rende esplicito l'autore responsabile della produzione dei tarocchi."@it ,
+                     "This property makes explicit the author responsible for the production of the tarot."@en ;
+           rdfs:label "Artista"@it,
+                      "Artist"@en .
 
 
 ###  https://purl.org/ebr/odi#hasCard
