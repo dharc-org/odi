@@ -470,7 +470,7 @@ bacodi:due-di-bastoni-storiaTre-bivio a odi:Event ;
 
 bacodi:due-di-bastoni-tuttelealtrestorieQuattro a odi:StoryCard ;
     odi:carriesRepresentation bacodi:due-di-bastoni-tuttelealtrestorieQuattro-bivio,
-        bacodi:due-di-bastoni-tuttelealtrestorieQuattro-vittoria_altro_su_uno ;
+        bacodi:due-di-bastoni-tuttelealtrestorieQuattro-vittoria_uno_su_altro ;
     odi:hasIconography bacodi:piccola ;
     odi:hasPositionInTheText 11 ;
     odi:hasTextualReference "«Da gran tempo questo segno ricorda che l'Altro è stato vinto dall'Uno!»"^^xsd:string,
@@ -2120,8 +2120,8 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 <https://w3id.org/odi/data/significati/vista-del-massacro> a odi:Meaning ;
     rdfs:label "Vista del massacro"^^xsd:string .
 
-<https://w3id.org/odi/data/significati/vittoria-altro-su-uno> a odi:Meaning ;
-    rdfs:label "Vittoria dell'Altro sull'Uno"^^xsd:string .
+<https://w3id.org/odi/data/significati/vittoria-uno-su-altro> a odi:Meaning ;
+    rdfs:label "Vittoria dell'Uno sull'Altro"^^xsd:string .
 
 <https://w3id.org/odi/data/significati/volontà-divina> a odi:Meaning ;
     rdfs:label "Volontà divina"^^xsd:string .
@@ -3028,8 +3028,8 @@ bacodi:dieci-di-spade-storiaTre-barriera a odi:Character ;
 bacodi:dieci-di-spade-tuttelealtrestorieQuattro-cadaveri_squartati a odi:Character ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/cadaveri-squartati> .
 
-bacodi:due-di-bastoni-tuttelealtrestorieQuattro-vittoria_altro_su_uno a odi:Event ;
-    odi:hasMeaningOf <https://w3id.org/odi/data/significati/vittoria-altro-su-uno> .
+bacodi:due-di-bastoni-tuttelealtrestorieQuattro-vittoria_uno_su_altro a odi:Event ;
+    odi:hasMeaningOf <https://w3id.org/odi/data/significati/vittoria-uno-su-altro> .
 
 bacodi:due-di-denari-storiaTre-soldi a odi:InanimateObject ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/soldi> .
@@ -3369,7 +3369,7 @@ bacodi:cavaliere-di-denari-tuttelealtrestorieQuattro-protagonista a odi:Characte
         bacodi:il-diavolo-tuttelealtrestorieQuattro-diavolo,
         bacodi:regina-di-spade-tuttelealtrestorieQuattro-dea_della_distruzione ;
     odi:hasIndirectRelationWith bacodi:dieci-di-spade-tuttelealtrestorieQuattro-cadaveri_squartati,
-        bacodi:due-di-bastoni-tuttelealtrestorieQuattro-vittoria_altro_su_uno,
+        bacodi:due-di-bastoni-tuttelealtrestorieQuattro-vittoria_uno_su_altro,
         bacodi:due-di-denari-tuttelealtrestorieQuattro-dualità_bene_male,
         bacodi:la-stella-tuttelealtrestorieQuattro-stelle,
         bacodi:quattro-di-denari-tuttelealtrestorieQuattro-viatico,
@@ -3378,7 +3378,7 @@ bacodi:cavaliere-di-denari-tuttelealtrestorieQuattro-protagonista a odi:Characte
         bacodi:sette-di-denari-tuttelealtrestorieQuattro-raggi_di_luce,
         bacodi:sette-di-spade-tuttelealtrestorieQuattro-guerra ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/protagonista> ;
-    odi:isRelatedWith bacodi:due-di-bastoni-tuttelealtrestorieQuattro-vittoria_altro_su_uno ;
+    odi:isRelatedWith bacodi:due-di-bastoni-tuttelealtrestorieQuattro-vittoria_uno_su_altro ;
     odi:movingThrough bacodi:la-morte-tuttelealtrestorieQuattro-distesa_dei_cadaveri .
 
 bacodi:il-penduto-tuttelealtrestorieDue-brigante a odi:Character ;
