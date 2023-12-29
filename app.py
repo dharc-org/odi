@@ -306,11 +306,12 @@ def card(cardID):
     PREFIX bacodi: <https://w3id.org/odi/data/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
-    select distinct ?pLabel ?object ?objectLabel
+    select distinct ?pLabel ?object ?objectLabel ?externalURI
     where {
       <https://w3id.org/odi/data/carte/""" + cardID + """> ?p ?object.
       ?p rdfs:label ?pLabel.
       OPTIONAL {?object rdfs:label ?objectLabel}
+      OPTIONAL {?object owl:sameAs ?externalURI}
       FILTER (lang(?pLabel) = 'it')
     }
     """
