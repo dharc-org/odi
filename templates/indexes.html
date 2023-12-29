@@ -91,16 +91,18 @@
                 <!-- STORIES LIST -->
                 <div class="col-md-4 mt-4">
                   <nav class="navbar navbar-expand-lg">
-                    <div class="container-fluid">
+                    <div class="container-fluid d-block">
                       <h4 class="mb-0">
                         Le storie
-                        <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-content="Dopo un capitolo introduttivo (Il castello) che non contiene alcuna storia ma soltanto la presentazione dell’ambientazione, le prime sei storie della raccolta sono inserite ognuna in un proprio capitolo; le altre sei storie sono raggruppate all’interno di un ultimo capitolo della raccolta, Tutte le altre storie.">
-                          <i class="bi bi-info-circle-fill"></i>
-                        </button>
                       </h4>
+                      <div class="indexes-nav alert alert-success collapse navbar-collapse d-md-flex justify-content-md-end">
+                      <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-content="Dopo un capitolo introduttivo (Il castello) che non contiene alcuna storia ma soltanto la presentazione dell’ambientazione, le prime sei storie della raccolta sono inserite ognuna in un proprio capitolo; le altre sei storie sono raggruppate all’interno di un ultimo capitolo della raccolta, Tutte le altre storie.">
+                        <i class="bi bi-info-circle-fill"></i>
+                      </button>
+                    </div>
                     </div>
                   </nav>
-                  <hr>
+                  <hr class="no-margin-hr">
                   <ul class="list-group list-group-flush">
                     {% for res in storiesResults["results"]["bindings"] %}
                     <h6 class="ps-3 pt-2">{{res["chapterLabel"]["value"]}}</h6>
@@ -121,17 +123,13 @@
                 <div class="col-md-4">
                   <div class="container mt-4">
                     <nav class="navbar navbar-expand-lg">
-                      <div class="container-fluid">
-                        <h4 class="mb-0">Le carte
+                      <div class="container-fluid d-block">
+                        <h4 class="mb-0">Le carte</h4>
+                        <div class="indexes-nav alert alert-success collapse navbar-collapse d-md-flex justify-content-md-end" id="navbarNavDarkDropdown">
+
                           <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-content="Le carte sono suddivise per semi (Bastoni, Coppe, Denari, Spade) e per tipologia (Trionfi, Carte di corte, Numerali). L’elenco è organizzato in ordine di frequenza con cui occorrono nel testo. ">
                             <i class="bi bi-info-circle-fill"></i>
                           </button>
-                        </h4>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse  d-md-flex justify-content-md-end" id="navbarNavDarkDropdown">
-
                           <!-- sorting -->
                           <div class="row">
                             <div class="col-md-5">
@@ -177,7 +175,7 @@
                         </div>
                       </div>
                     </nav>
-                    <hr>
+                    <hr class="no-margin-hr">
                     <div class="list-group list-group-flush" id="searchResults">
                       <div class="row">
                         <div class="col-md-5"></div>
@@ -204,16 +202,17 @@
                 <!-- CARDS MEANINGS LIST -->
                 <div class="col-md-4 mt-4">
                   <nav class="navbar navbar-expand-lg">
-                    <div class="container-fluid">
+                    <div class="container-fluid d-block">
                       <h4 class="mb-0">I significati
-                          <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-content="I significati, ovvero le rappresentazioni espresse dalle diverse carte, sono classificate per: personaggio, luogo ideale, evento, oggetto inanimato e simbolo. L’elenco è in Ordina alfabeticamente e organizzato in ordine di frequenza con cui le rappresentazioni occorrono nel testo.">
-                            <i class="bi bi-info-circle-fill"></i>
-                          </button>
                       </h4>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
-                      <div class="collapse navbar-collapse d-md-flex justify-content-md-end" id="navbarNavDarkDropdown">
+                      <div class="indexes-nav alert alert-success collapse navbar-collapse d-md-flex justify-content-md-end" id="navbarNavDarkDropdown">
+
+                        <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-content="I significati, ovvero le rappresentazioni espresse dalle diverse carte, sono classificate per: personaggio, luogo ideale, evento, oggetto inanimato e simbolo. L’elenco è in Ordina alfabeticamente e organizzato in ordine di frequenza con cui le rappresentazioni occorrono nel testo.">
+                          <i class="bi bi-info-circle-fill"></i>
+                        </button>
 
                         <!-- sorting -->
                         <div class="row">
@@ -246,7 +245,7 @@
                       </div>
                     </div>
                   </nav>
-                  <hr>
+                  <hr class="no-margin-hr">
                   <ul class="list-group list-group-flush" id="searchResults2"> {% for res in meaningsResults["results"]["bindings"] %} <a href="../{{res["meaning"]["value"]|replace('https://w3id.org/odi/data/', '')}}" class="search-result-item2 list-group-item list-group-item-action {{ res['classLabel']['value']}}">{{res["meaningLabel"]["value"]}}
                       <span class="badge rounded-pill bg-success float-right" style="float:right;">{{res['nMeanings']['value']}}</span>
                     </a> {% endfor %} </ul>
