@@ -2,7 +2,7 @@
 @prefix odi: <https://w3id.org/odi/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix wd: <http://wwww.wikidata.org/entity/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 bacodi:capitoloCinque a odi:Chapter ;
@@ -2243,7 +2243,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
         bacodi:sei-di-coppe-storiaTre,
         bacodi:sette-di-denari-storiaTre,
         bacodi:sette-di-spade-storiaTre,
-        bacodi:due-di-bastoni-storiaTre ; 
+        bacodi:due-di-bastoni-storiaTre ;
     odi:hasPositionInTheBook 3 ;
     odi:hasTitle "Storia della sposa dannata"^^xsd:string ;
     odi:hasTotalNumberOfCards 17 .
