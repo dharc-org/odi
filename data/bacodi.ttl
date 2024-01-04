@@ -72,7 +72,7 @@ bacodi:la-ruota-della-fortuna-storiaDue-la_trasformazione_di_tutto_in_oro a odi:
     odi:carriedOutBy bacodi:re-di-coppe-storiaDue-protagonista .
 
 <https://w3id.org/odi/data/carte/cinque-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/6/61/Bembo-Visconti-tarot-swords-05.jpg"^^xsd:anyURI ;
@@ -83,7 +83,7 @@ bacodi:la-ruota-della-fortuna-storiaDue-la_trasformazione_di_tutto_in_oro a odi:
     odi:isNumber 5 .
 
 <https://w3id.org/odi/data/carte/quattro-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/4/43/Bembo-Visconti-tarot-cups-04.jpg"^^xsd:anyURI ;
@@ -93,7 +93,7 @@ bacodi:la-ruota-della-fortuna-storiaDue-la_trasformazione_di_tutto_in_oro a odi:
     odi:isNumber 4 .
 
 <https://w3id.org/odi/data/carte/sette-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/e/e7/Bembo-Visconti-tarot-cups-07.jpg"^^xsd:anyURI ;
@@ -103,7 +103,7 @@ bacodi:la-ruota-della-fortuna-storiaDue-la_trasformazione_di_tutto_in_oro a odi:
     odi:isNumber 7 .
 
 <https://w3id.org/odi/data/carte/tre-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/8/8a/Bembo-Visconti-tarot-staves-03.jpg"^^xsd:anyURI ;
@@ -113,7 +113,7 @@ bacodi:la-ruota-della-fortuna-storiaDue-la_trasformazione_di_tutto_in_oro a odi:
     odi:isNumber 3 .
 
 <https://w3id.org/odi/data/carte/tre-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/d/d2/Bembo-Visconti-tarot-coins-03.jpg"^^xsd:anyURI ;
@@ -123,7 +123,7 @@ bacodi:la-ruota-della-fortuna-storiaDue-la_trasformazione_di_tutto_in_oro a odi:
     odi:isNumber 3 .
 
 <https://w3id.org/odi/data/carte/tre-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:perduta ;
     odi:hasName "Tre di Spade"^^xsd:string ;
     odi:hasSuit <https://w3id.org/odi/data/semi/spade> ;
@@ -1640,7 +1640,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
         <https://w3id.org/odi/data/storie/tuttelealtrestorieUno> .
 
 <https://w3id.org/odi/data/carte/cavaliere-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:perduta ;
     odi:hasName "Cavaliere di Denari"^^xsd:string ;
     odi:hasSuit <https://w3id.org/odi/data/semi/denari> ;
@@ -1648,7 +1648,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/dieci-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/7/75/Bembo-Visconti-tarot-staves-10.jpg"^^xsd:anyURI ;
@@ -1659,7 +1659,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isNumber 10 .
 
 <https://w3id.org/odi/data/carte/fante-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/e/e8/Bembo-Visconti-tarot-cups-11-knave.jpg"^^xsd:anyURI ;
@@ -1669,7 +1669,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/fante-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/1/1b/Bembo-Visconti-tarot-coins-11-knave.jpg"^^xsd:anyURI ;
@@ -1679,7 +1679,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/otto-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/3/32/Bembo-Visconti-tarot-staves-08.jpg"^^xsd:anyURI ;
@@ -1690,7 +1690,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isNumber 8 .
 
 <https://w3id.org/odi/data/carte/quattro-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/a/a0/Bembo-Visconti-tarot-staves-04.jpg"^^xsd:anyURI ;
@@ -1701,7 +1701,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isNumber 4 .
 
 <https://w3id.org/odi/data/carte/re-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bembo-Visconti-tarot-staves-14-king.jpg"^^xsd:anyURI ;
@@ -1711,7 +1711,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/re-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://i.pinimg.com/564x/b6/54/2b/b6542b636af4ffe54c829f7fe63c316b.jpg"^^xsd:anyURI ;
@@ -1721,7 +1721,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/re-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/1/19/Bembo-Visconti-tarot-swords-14-king.jpg"^^xsd:anyURI ;
@@ -1731,7 +1731,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/regina-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/1/16/Bembo-Visconti-tarot-staves-13-queen.jpg"^^xsd:anyURI ;
@@ -1741,7 +1741,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/regina-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/9/90/Bembo-Visconti-tarot-cups-13-queen.jpg"^^xsd:anyURI ;
@@ -1751,7 +1751,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/regina-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/e/e0/Bembo-Visconti-tarot-coins-13-queen.jpg"^^xsd:anyURI ;
@@ -1761,7 +1761,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/sei-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/b/bd/Bembo-Visconti-tarot-staves-06.jpg"^^xsd:anyURI ;
@@ -1772,7 +1772,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isNumber 6 .
 
 <https://w3id.org/odi/data/carte/sei-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/6/60/Bembo-Visconti-tarot-coins-06.jpg"^^xsd:anyURI ;
@@ -1783,7 +1783,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
     odi:isNumber 6 .
 
 <https://w3id.org/odi/data/carte/sette-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/0/07/Bembo-Visconti-tarot-staves-07.jpg"^^xsd:anyURI ;
@@ -2722,7 +2722,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/bevuta-del-brigante> .
 
 <https://w3id.org/odi/data/carte/asso-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/2/2e/Bembo-Visconti-tarot-staves-01-ace.jpg"^^xsd:anyURI ;
@@ -2733,7 +2733,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 1 .
 
 <https://w3id.org/odi/data/carte/asso-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/b/b5/Bembo-Visconti-tarot-coins-01-ace.jpg"^^xsd:anyURI ;
@@ -2744,7 +2744,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 1 .
 
 <https://w3id.org/odi/data/carte/asso-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/2/2e/Bembo-Visconti-tarot-swords-01-ace.jpg"^^xsd:anyURI ;
@@ -2755,7 +2755,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 1 .
 
 <https://w3id.org/odi/data/carte/cavaliere-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/2/28/Bembo-Visconti-tarot-staves-12-knight.jpg"^^xsd:anyURI ;
@@ -2765,7 +2765,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/cavaliere-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/e/e9/Bembo-Visconti-tarot-cups-12-knight.jpg"^^xsd:anyURI ;
@@ -2775,7 +2775,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/cinque-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/d/d9/Bembo-Visconti-tarot-cups-05.jpg"^^xsd:anyURI ;
@@ -2786,7 +2786,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 5 .
 
 <https://w3id.org/odi/data/carte/cinque-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/e/e2/Bembo-Visconti-tarot-coins-05.jpg"^^xsd:anyURI ;
@@ -2797,7 +2797,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 5 .
 
 <https://w3id.org/odi/data/carte/due-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/a/ad/Bembo-Visconti-tarot-cups-02-deuce.jpg"^^xsd:anyURI ;
@@ -2808,7 +2808,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 2 .
 
 <https://w3id.org/odi/data/carte/fante-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/5/5b/Bembo-Visconti-tarot-staves-11-knave.jpg"^^xsd:anyURI ;
@@ -2818,7 +2818,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/fante-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/a/a4/Bembo-Visconti-tarot-swords-11-knave.jpg"^^xsd:anyURI ;
@@ -2828,7 +2828,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/la-imperatrice> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/5/50/Bembo-Visconti-tarot-arcanum-03-empress.jpg"^^xsd:anyURI ;
@@ -2837,7 +2837,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/la-ruota-della-fortuna> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/1/19/Bembo-Visconti-tarot-arcanum-10-wheel_of_fortune.jpg"^^xsd:anyURI ;
@@ -2846,7 +2846,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/lo-eremita> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/2/2e/Bembo-Visconti-tarot-arcanum-09-hermit.jpg"^^xsd:anyURI ;
@@ -2855,7 +2855,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/nove-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/2/26/Bembo-Visconti-tarot-coins-09.jpg"^^xsd:anyURI ;
@@ -2866,7 +2866,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 9 .
 
 <https://w3id.org/odi/data/carte/nove-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/7/79/Bembo-Visconti-tarot-swords-09.jpg"^^xsd:anyURI ;
@@ -2877,7 +2877,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 9 .
 
 <https://w3id.org/odi/data/carte/otto-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/8/88/Bembo-Visconti-tarot-swords-08.jpg"^^xsd:anyURI ;
@@ -2888,7 +2888,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 8 .
 
 <https://w3id.org/odi/data/carte/quattro-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/0/0c/Bembo-Visconti-tarot-coins-04.jpg"^^xsd:anyURI ;
@@ -2899,7 +2899,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 4 .
 
 <https://w3id.org/odi/data/carte/quattro-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/a/a5/Bembo-Visconti-tarot-swords-04.jpg"^^xsd:anyURI ;
@@ -2910,7 +2910,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 4 .
 
 <https://w3id.org/odi/data/carte/re-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/4/4f/Bembo-Visconti-tarot-coins-14-king.jpg"^^xsd:anyURI ;
@@ -2920,7 +2920,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/sei-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/d/d3/Bembo-Visconti-tarot-cups-06.jpg"^^xsd:anyURI ;
@@ -2931,7 +2931,7 @@ bacodi:tre-di-coppe-tuttelealtrestorieDue-bevuta_del_brigante a odi:Event ;
     odi:isNumber 6 .
 
 <https://w3id.org/odi/data/carte/tre-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bembo-Visconti-tarot-cups-03.jpg"^^xsd:anyURI ;
@@ -3262,7 +3262,7 @@ bacodi:sette-di-spade-storiaCinque-la_durlindana_appesa_e_dimenticata a odi:Inan
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/la-durlindana-appesa-e-dimenticata> .
 
 <https://w3id.org/odi/data/carte/cinque-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/6/68/Bembo-Visconti-tarot-staves-05.jpg"^^xsd:anyURI ;
@@ -3273,7 +3273,7 @@ bacodi:sette-di-spade-storiaCinque-la_durlindana_appesa_e_dimenticata a odi:Inan
     odi:isNumber 5 .
 
 <https://w3id.org/odi/data/carte/due-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/3/30/Bembo-Visconti-tarot-staves-02-deuce.jpg"^^xsd:anyURI ;
@@ -3284,7 +3284,7 @@ bacodi:sette-di-spade-storiaCinque-la_durlindana_appesa_e_dimenticata a odi:Inan
     odi:isNumber 2 .
 
 <https://w3id.org/odi/data/carte/due-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/1/1d/Bembo-Visconti-tarot-swords-02-deuce.jpg"^^xsd:anyURI ;
@@ -3295,7 +3295,7 @@ bacodi:sette-di-spade-storiaCinque-la_durlindana_appesa_e_dimenticata a odi:Inan
     odi:isNumber 2 .
 
 <https://w3id.org/odi/data/carte/il-papa> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bembo-Visconti-tarot-arcanum-05-hierophant.jpg"^^xsd:anyURI ;
@@ -3304,7 +3304,7 @@ bacodi:sette-di-spade-storiaCinque-la_durlindana_appesa_e_dimenticata a odi:Inan
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/otto-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/e/ed/Bembo-Visconti-tarot-coins-08.jpg"^^xsd:anyURI ;
@@ -3315,7 +3315,7 @@ bacodi:sette-di-spade-storiaCinque-la_durlindana_appesa_e_dimenticata a odi:Inan
     odi:isNumber 8 .
 
 <https://w3id.org/odi/data/carte/sei-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/c/c3/Bembo-Visconti-tarot-swords-06.jpg"^^xsd:anyURI ;
@@ -3326,7 +3326,7 @@ bacodi:sette-di-spade-storiaCinque-la_durlindana_appesa_e_dimenticata a odi:Inan
     odi:isNumber 6 .
 
 <https://w3id.org/odi/data/carte/sette-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/9/93/Bembo-Visconti-tarot-swords-07.jpg"^^xsd:anyURI ;
@@ -3406,7 +3406,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:hasMeaningOf <https://w3id.org/odi/data/significati/padre> .
 
 <https://w3id.org/odi/data/carte/asso-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/2/25/Bembo-Visconti-tarot-cups-01-ace.jpg"^^xsd:anyURI ;
@@ -3417,7 +3417,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isNumber 1 .
 
 <https://w3id.org/odi/data/carte/cavaliere-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/5/54/Bembo-Visconti-tarot-swords-12-knight.jpg"^^xsd:anyURI ;
@@ -3427,7 +3427,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/dieci-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/4/4d/Bembo-Visconti-tarot-cups-10.jpg"^^xsd:anyURI ;
@@ -3438,7 +3438,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isNumber 10 .
 
 <https://w3id.org/odi/data/carte/dieci-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/0/07/Bembo-Visconti-tarot-coins-10.jpg"^^xsd:anyURI ;
@@ -3449,7 +3449,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isNumber 10 .
 
 <https://w3id.org/odi/data/carte/dieci-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/5/58/Bembo-Visconti-tarot-swords-10.jpg"^^xsd:anyURI ;
@@ -3460,7 +3460,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isNumber 10 .
 
 <https://w3id.org/odi/data/carte/due-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/4/4d/Bembo-Visconti-tarot-coins-02-deuce.jpg"^^xsd:anyURI ;
@@ -3471,7 +3471,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isNumber 2 .
 
 <https://w3id.org/odi/data/carte/il-bagatto> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/0/00/Bembo-Visconti-tarot-arcanum-01-magician.jpg"^^xsd:anyURI ;
@@ -3480,7 +3480,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/il-carro> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/5/53/Bembo-Visconti-tarot-arcanum-07-chariot.jpg"^^xsd:anyURI ;
@@ -3489,14 +3489,14 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/il-diavolo> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:perduta ;
     odi:hasName "Il Diavolo"^^xsd:string ;
     odi:hasTypology <https://w3id.org/odi/data/tipologia/trionfo> ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/il-giudizio> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/f/f4/Bembo-Visconti-tarot-arcanum-20-judgement.jpg"^^xsd:anyURI ;
@@ -3506,7 +3506,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/il-matto> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/e/ec/Bembo-Visconti-tarot-arcanum-fool.jpg"^^xsd:anyURI ;
@@ -3515,7 +3515,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/il-mondo> a odi:DeckCard ;
-    odi:hasAuthor bacodi:antonio-da-cicognara ;
+    odi:hasArtist bacodi:antonio-da-cicognara ;
     odi:hasCondition bacodi:sostituita ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/2/2d/Bembo-Visconti-tarot-arcanum-21-world.jpg"^^xsd:anyURI ;
@@ -3524,7 +3524,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/il-penduto> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/1/14/Bembo-Visconti-tarot-arcanum-12-hanged_man.jpg"^^xsd:anyURI ;
@@ -3534,7 +3534,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/il-sole> a odi:DeckCard ;
-    odi:hasAuthor bacodi:antonio-da-cicognara ;
+    odi:hasArtist bacodi:antonio-da-cicognara ;
     odi:hasCondition bacodi:sostituita ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/4/4e/Bembo-Visconti-tarot-arcanum-19-sun.jpg"^^xsd:anyURI ;
@@ -3543,7 +3543,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/la-forza> a odi:DeckCard ;
-    odi:hasAuthor bacodi:antonio-da-cicognara ;
+    odi:hasArtist bacodi:antonio-da-cicognara ;
     odi:hasCondition bacodi:sostituita ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/7/72/Bembo-Visconti-tarot-arcanum-11-strength.jpg"^^xsd:anyURI ;
@@ -3552,7 +3552,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/la-giustizia> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/8/83/Bembo-Visconti-tarot-arcanum-08-justice.jpg"^^xsd:anyURI ;
@@ -3561,7 +3561,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/la-luna> a odi:DeckCard ;
-    odi:hasAuthor bacodi:antonio-da-cicognara ;
+    odi:hasArtist bacodi:antonio-da-cicognara ;
     odi:hasCondition bacodi:sostituita ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/1/15/Bembo-Visconti-tarot-arcanum-18-moon.jpg"^^xsd:anyURI ;
@@ -3570,7 +3570,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/la-morte> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/e/e2/Bembo-Visconti-tarot-arcanum-13.jpg"^^xsd:anyURI ;
@@ -3579,7 +3579,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/la-papessa> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/1/14/Bembo-Visconti-tarot-arcanum-02-high_priestess.jpg"^^xsd:anyURI ;
@@ -3588,7 +3588,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/la-stella> a odi:DeckCard ;
-    odi:hasAuthor bacodi:antonio-da-cicognara ;
+    odi:hasArtist bacodi:antonio-da-cicognara ;
     odi:hasCondition bacodi:sostituita ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/b/b6/Bembo-Visconti-tarot-arcanum-17-star.jpg"^^xsd:anyURI ;
@@ -3597,7 +3597,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/la-temperanza> a odi:DeckCard ;
-    odi:hasAuthor bacodi:antonio-da-cicognara ;
+    odi:hasArtist bacodi:antonio-da-cicognara ;
     odi:hasCondition bacodi:sostituita ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/5/52/Bembo-Visconti-tarot-arcanum-14-temperance.jpg"^^xsd:anyURI ;
@@ -3606,14 +3606,14 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/la-torre> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:perduta ;
     odi:hasName "La Torre"^^xsd:string ;
     odi:hasTypology <https://w3id.org/odi/data/tipologia/trionfo> ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/lo-amore> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/4/40/Bembo-Visconti-tarot-arcanum-06-lovers.jpg"^^xsd:anyURI ;
@@ -3622,7 +3622,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/lo-imperatore> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:accademia-carrara ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/2/20/Bembo-Visconti-tarot-arcanum-04-emperor.jpg"^^xsd:anyURI ;
@@ -3631,7 +3631,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/nove-di-bastoni> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/3/30/Bembo-Visconti-tarot-staves-09.jpg"^^xsd:anyURI ;
@@ -3642,7 +3642,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isNumber 9 .
 
 <https://w3id.org/odi/data/carte/nove-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/6/6f/Bembo-Visconti-tarot-cups-09.jpg"^^xsd:anyURI ;
@@ -3653,7 +3653,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isNumber 9 .
 
 <https://w3id.org/odi/data/carte/otto-di-coppe> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:collezione-colleoni ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/3/30/Bembo-Visconti-tarot-cups-08.jpg"^^xsd:anyURI ;
@@ -3664,7 +3664,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isNumber 8 .
 
 <https://w3id.org/odi/data/carte/regina-di-spade> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/0/08/Bembo-Visconti-tarot-swords-13-queen.jpg"^^xsd:anyURI ;
@@ -3674,7 +3674,7 @@ bacodi:re-di-denari-tuttelealtrestorieSei-padre a odi:Character ;
     odi:isContainedIn bacodi:mazzo-il-castello-dei-destini-incrociati .
 
 <https://w3id.org/odi/data/carte/sette-di-denari> a odi:DeckCard ;
-    odi:hasAuthor bacodi:bonifacio-bembo ;
+    odi:hasArtist bacodi:bonifacio-bembo ;
     odi:hasCondition bacodi:presente ;
     odi:hasCurrentLocation bacodi:morgan-library ;
     odi:hasImage "https://upload.wikimedia.org/wikipedia/commons/f/f8/Bembo-Visconti-tarot-coins-07.jpg"^^xsd:anyURI ;
@@ -3845,7 +3845,7 @@ bacodi:bonifacio-bembo a odi:Person ;
 bacodi:mazzo-il-castello-dei-destini-incrociati a odi:TarotDeck ;
     rdfs:label "Pierpont-Morgan Bergamo"^^xsd:string ;
         owl:sameAs wd:Q726633;
-    odi:hasAuthor bacodi:antonio-da-cicognara,
+    odi:hasArtist bacodi:antonio-da-cicognara,
         bacodi:bonifacio-bembo ;
     odi:hasCurrentNumberOfCards 74 ;
     odi:hasDate "XV secolo"^^xsd:string ;
