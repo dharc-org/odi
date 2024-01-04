@@ -3792,30 +3792,30 @@ bacodi:collezione-colleoni a odi:Place ;
 
 <https://w3id.org/odi/data/semi/bastoni> a odi:Suit ;
     rdfs:label "Bastoni"^^xsd:string ;
-    rdfs:comment "Il seme di Bastoni serve, quasi sempre, a descrivere l'ambientazione boschiva nei diversi racconti."^^xsd:string .
+    rdfs:comment "Il seme di bastoni viene impiegato quasi sempre per descrivere l'ambientazione boschiva delle storie."^^xsd:string .
 
 <https://w3id.org/odi/data/semi/denari> a odi:Suit ;
     rdfs:label "Denari"^^xsd:string ;
-    rdfs:comment "Il seme di Denari rimanda sia alla ricchezza e alla materialità sia alla sfera divina e al mondo immateriale."^^xsd:string .
+    rdfs:comment "Il seme di denari viene impiegato per richiamare due diversi campi semantici: la ricchezza e la materialità e la sfera divina. Questo seme è quello che più si discosta dalla tradizione simbolica dei tarocchi."^^xsd:string .
 
 <https://w3id.org/odi/data/semi/spade> a odi:Suit ;
     rdfs:label "Spade"^^xsd:string ;
-    rdfs:comment "Il seme di Spade richiama l'ambito bellico; a volte, più specificatamente, il tema della difesa."^^xsd:string .
+    rdfs:comment "Il seme di spade è associato all'ambito bellico. A volte, viene impiegato più specificatamente per esprimere la difesa di un personaggio in un momento di pericolo."^^xsd:string .
 
 <https://w3id.org/odi/data/semi/coppe> a odi:Suit ;
     rdfs:label "Coppe"^^xsd:string ;
-    rdfs:comment "Il seme di Coppe presenta un campo semantico meno definito rispetto agli altri tre semi (Denari, Bastoni e Spade): può rimandare al banchetto, al ristoro, all'amore e, in generale, al benessere."^^xsd:string .
+    rdfs:comment "Il seme di coppe richiama un campo semantico meno definito rispetto agli altri tre semi (i.e. denari, bastoni e spade): può rimandare infatti al banchetto, all'amore e, in generale, al benessere."^^xsd:string .
 
 <https://w3id.org/odi/data/tipologia/carta-di-corte> a odi:Typology ;
     rdfs:label "Carta di corte"^^xsd:string ;
-    rdfs:comment "Le Carte di corte, insieme ai Numerali, costituiscono gli Arcani Minori. In particolare, le Carte di corte non hanno numero e corrispondono a fanti, cavalieri, regine e re. Nel mazzo Pierpont-Morgan Bergamo, il Cavaliere di Spade è andato perduto, ma viene comunque utilizzato da Calvino per la creazione delle sequenze narrative. Nella quasi totalità dei casi, questa tipologia di tarocchi esprime un personaggio all'interno della storia."^^xsd:string .
+    rdfs:comment "Le carte di corte, insieme ai numerali, costituiscono gli arcani minori. In particolare, le carte di corte non hanno numero e corrispondono ai fanti, ai cavalieri, alle regine e ai re. Nel mazzo Pierpont-Morgan Bergamo, il Cavaliere di Spade è andato perduto, ma viene comunque utilizzato da Calvino per la creazione delle sequenze narrative. Nella quasi totalità dei casi, questa tipologia di tarocchi esprime un personaggio all'interno della storia."^^xsd:string .
 
 <https://w3id.org/odi/data/significati/protagonista> a odi:Meaning ;
     rdfs:label "Protagonista"^^xsd:string .
 
 <https://w3id.org/odi/data/tipologia/trionfo> a odi:Typology ;
     rdfs:label "Trionfo"^^xsd:string ;
-    rdfs:comment "I Trionfi (o Arcani Maggiori) sono la tipologia di tarocchi con la maggiore variazione e possibilità di interpretazione grazie alla complessità delle miniature. Nel mazzo Pierpont-Morgan Bergamo, in origine i Trionfi erano 22; Il Diavolo e La Torre sono andati perduti, ma vengono comunque utilizzati da Calvino per la creazione delle sequenze narrative."^^xsd:string .
+    rdfs:comment "I trionfi (o arcani maggiori) sono la tipologia di tarocchi con la maggiore variazione e possibilità di interpretazione grazie alla complessità delle miniature. Nel mazzo Pierpont-Morgan Bergamo, in origine i trionfi erano 22. Il Diavolo e La Torre sono andati perduti, ma vengono comunque utilizzati da Calvino per la creazione delle sequenze narrative."^^xsd:string .
 
 bacodi:accademia-carrara a odi:Place ;
     rdfs:label "Accademia Carrara"^^xsd:string ;
@@ -3827,7 +3827,7 @@ bacodi:morgan-library a odi:Place ;
 
 <https://w3id.org/odi/data/tipologia/numerale> a odi:Typology ;
     rdfs:label "Numerale"^^xsd:string ;
-    rdfs:comment "I Numerali, insieme alle Carte di corte, costituiscono gli Arcani Minori. In particolare, i Numerali sono il sistema operativo dei tarocchi e vanno da 1 a 10 per ciascuno dei 4 segni. Nel mazzo Pierpont-Morgan Bergamo, il Tre di Spade è andato perduto ed è l'unica carta, tra le quattro perdute del mazzo, ad essere stata esclusa da Calvino per la creazione delle sequenze narrative. Nei racconti, i Numerali rimandano maggiormente allo sfondo tematico e alle descrizioni delle vicende narrative, diversamente dalle Carte di corte e dai Trionfi."^^xsd:string .
+    rdfs:comment "I numerali, insieme alle carte di corte, costituiscono gli arcani minori. In particolare, i numerali sono il sistema operativo dei tarocchi e vanno da 1 a 10 per ciascuno dei 4 segni. Nel mazzo Pierpont-Morgan Bergamo, il Tre di Spade è andato perduto ed è l'unica carta, tra le quattro perdute del mazzo, ad essere stata esclusa da Calvino per la creazione delle sequenze narrative. Nei racconti, i numerali rimandano maggiormente allo sfondo tematico e alle descrizioni delle vicende narrative, diversamente dalle carte di corte e dai trionfi."^^xsd:string .
 
 bacodi:piccola a odi:Dimension ;
     rdfs:label "Piccola"^^xsd:string .
