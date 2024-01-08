@@ -2131,7 +2131,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/storiaCinque> a odi:Story ;
     rdfs:label "Storia cinque"^^xsd:string ;
-    rdfs:comment "All'apparizione di Angelica, la maga del Catai, Orlando esce dalla battaglia e comincia a inseguirla. La foresta si schiude malvolentieri e gli impedisce di raggiungerla: Angelica, infatti, si è già innamorata di Medoro. Un amorino fugge col senno di Orlando per portarlo alla valle delle ragioni perdute: il paladino uccide animali e dimentica la sua Durlindana appesa ad un albero. I cavalieri francesi cristiani di Carlo Magno sono decisi a fargli recuperare l’intelletto, ma il paladino, appeso a testa in giù, arriva ad una conclusione: «Lasciatemi così. Ho fatto tutto il giro e ho capito. Il mondo si legge all’incontrario. Tutto è chiaro»."^^xsd:string ;
+    rdfs:comment "All'apparizione di Angelica, la maga del Catai, Orlando esce dalla battaglia e comincia a inseguirla. La foresta si schiude malvolentieri e gli impedisce di raggiungerla: Angelica, infatti, si è già innamorata di Medoro. Un amorino fugge col senno di Orlando per portarlo alla valle delle ragioni perdute e il paladino dimentica la sua Durlindana appesa ad un albero. I cavalieri francesi cristiani di Carlo Magno sono decisi a fargli recuperare l’intelletto, ma il paladino, appeso a testa in giù, arriva ad una conclusione: «Lasciatemi così. Ho fatto tutto il giro e ho capito. Il mondo si legge all’incontrario. Tutto è chiaro» (Calvino 1973, 34)."^^xsd:string ;
     odi:hasCard bacodi:cinque-di-bastoni-storiaCinque,
         bacodi:cinque-di-denari-storiaCinque,
         bacodi:dieci-di-bastoni-storiaCinque,
@@ -2155,7 +2155,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/storiaDue> a odi:Story ;
     rdfs:label "Storia due"^^xsd:string ;
-    rdfs:comment "Un alchimista, alla ricerca della Fonte della Vita e della formula per trasformare i metalli in oro, si imbatte in un mago che presto si rivela essere il diavolo. Quest'ultimo promette al Faust «il segreto dell'oro» in cambio dell'anima di tutti gli abitanti della nuova città costruita  con la ricchezza. Una fanciulla si presenta alle porte della città e alla domanda delle sentinelle se voglia entrare lei risponde di non poter accedere in luoghi di metallo impenetrabile. Le guardie mal interpretano le sue parole, pensando che la ninfa non voglia perdere l'anima: lei, in verità, afferma di aver paura di non avere anima da dargli."^^xsd:string ;
+    rdfs:comment "Un alchimista, alla ricerca della Fonte della Vita e della formula per trasformare i metalli in oro, si imbatte in un mago che presto si rivela essere il diavolo. Quest'ultimo promette al Faust «il segreto dell'oro» (Calvino 1973, 17) in cambio dell'anima di tutti gli abitanti della nuova città costruita con la ricchezza. Una fanciulla si presenta alle porte della città e alla domanda delle sentinelle se voglia entrare lei risponde di non poter accedere in luoghi di metallo impenetrabile. Le guardie mal interpretano le sue parole, pensando che la ninfa non voglia perdere l'anima: lei, in verità, afferma di aver paura di non avere anima da dargli."^^xsd:string ;
     odi:hasCard bacodi:asso-di-coppe-storiaDue,
         bacodi:cinque-di-coppe-storiaDue,
         bacodi:due-di-denari-storiaDue,
@@ -2178,7 +2178,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/storiaQuattro> a odi:Story ;
     rdfs:label "Storia quattro"^^xsd:string ;
-    rdfs:comment "Un giovane ladro di tombe, scoperchiata la tomba di un papa, trova un tronco che gli permette di arrampicarsi per vedere il cimitero dall'alto. Una volta giunto in cima, scopre una città sospesa le cui case toccano il cielo: è la città del Possibile, da cui si contempla il Tutto e si decidono le Scelte. In questa città, il giovane ladro si imbatte in un angelo che gli chiede se vuole ricchezza, forza o saggezza: il giovane sceglie denari, ma l'arcangelo gli dà bastoni, scaraventandolo giù nel bosco."^^xsd:string ;
+    rdfs:comment "Un giovane ladro di tombe, scoperchiata la tomba di un papa, trova un tronco che gli permette di arrampicarsi per vedere il cimitero dall'alto. Una volta giunto in cima, scopre una città sospesa le cui case toccano il cielo: è la «Città del Possibile, da cui si contempla il Tutto e si decidono le Scelte» (Calvino 1973, 27). In questa città, il giovane ladro si imbatte in un angelo che gli chiede se vuole ricchezza, forza o saggezza: il giovane sceglie denari, ma l'arcangelo gli dà bastoni, scaraventandolo giù nel bosco."^^xsd:string ;
     odi:hasCard bacodi:asso-di-bastoni-storiaQuattro,
         bacodi:cavaliere-di-spade-storiaQuattro,
         bacodi:dieci-di-coppe-storiaQuattro,
@@ -2201,7 +2201,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/storiaSei> a odi:Story ;
     rdfs:label "Storia sei"^^xsd:string ;
-    rdfs:comment "Astolfo, recuperata la Durlindana, rimpiange il fatto che a spingerlo alla follia sia stato un dio pagano come Eros, quasi invincibile. È stato Carlo Magno ad incaricarlo di ritrovare il senno di Orlando per aiutarli a liberare Parigi, stretta dall'assedio saraceno. Il paladino si affida ad un mago e questi gli rivela di dover raggiungere la Luna dove, in ampolle messe in fila, si trovano «le storie che gli uomini non vivono, i pensieri che bussano una volta alla soglia della coscienza e svaniscono per sempre, le particelle del possibile scartate nel gioco delle combinazioni, le soluzioni a cui si potrebbe arrivare e non si arriva». Astolfo monta in sella al suo Ippogrifo e, una volta giunto a destinazione, incontra un poeta che gli svela la vera natura della Luna: un deserto."^^xsd:string ;
+    rdfs:comment "Astolfo, recuperata la Durlindana, rimpiange il fatto che a spingerlo alla follia sia stato un dio pagano come Eros, quasi invincibile. È stato Carlo Magno ad incaricarlo di ritrovare il senno di Orlando per aiutarli a liberare Parigi, stretta dall'assedio saraceno. Il paladino si affida ad un mago e questi gli rivela di dover raggiungere la Luna dove, in ampolle messe in fila, si trovano «le storie che gli uomini non vivono, i pensieri che bussano una volta alla soglia della coscienza e svaniscono per sempre, le particelle del possibile scartate nel gioco delle combinazioni, le soluzioni a cui si potrebbe arrivare e non si arriva» (Calvino 1973, 37). Astolfo monta in sella al suo Ippogrifo e, una volta giunto a destinazione, incontra un poeta che gli svela la vera natura della Luna: un deserto."^^xsd:string ;
     odi:hasCard bacodi:asso-di-denari-storiaSei,
         bacodi:asso-di-spade-storiaSei,
         bacodi:cavaliere-di-bastoni-storiaSei,
@@ -2275,7 +2275,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieCinque> a odi:Story ;
     rdfs:label "Storia cinque"^^xsd:string ;
-    rdfs:comment "Un insolito avventore si presenta alla locanda di un castellano-locandiere. Al momento di pagare, l'ospite mostra di apprezzare la taverna e paga alla fantesca rovesciando una cascata di monete da una coppa. Il protagonista decide di travestirsi da giocoliere e far fortuna usando quella coppa, ma nel bosco si imbatte in una Gran Sacerdotessa che gli ordina di restituire la coppa alle Baccanti."^^xsd:string ;
+    rdfs:comment "Un insolito avventore si presenta alla locanda di un castellano-locandiere. Al momento di pagare, l'ospite mostra di apprezzare la taverna e paga alla fantesca rovesciando una cascata di monete da una coppa. Il protagonista decide di travestirsi da giocoliere e far fortuna usando quella coppa, ma nel bosco si imbatte in una «Gran Sacerdotessa» che gli ordina di restituire la coppa alle Baccanti (Calvino 1973, 47)."^^xsd:string ;
     odi:hasCard bacodi:asso-di-coppe-tuttelealtrestorieCinque,
         bacodi:cinque-di-coppe-tuttelealtrestorieCinque,
         bacodi:due-di-denari-tuttelealtrestorieCinque,
@@ -2315,7 +2315,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieQuattro> a odi:Story ;
     rdfs:label "Storia quattro"^^xsd:string ;
-    rdfs:comment "Un papa, sotto le mentite spoglie di un cavaliere, abbandona i fasti della corte papale per portare l'estremo viatico ai moribondi sul campo di battaglia. Preso dal dubbio, chiede a Dio come mai permetta gli stermini ed una voce dal bosco gli risponde che sono in due a dividersi il mondo e le anime. Poco dopo, il papa si imbatte in un guerriero che si presenta come il Principe delle Opposizioni in grado di far ritornare l’Età dell’Oro. Il papa ed il guerriero cominciano la contesa, ma questa viene presto fermata dalla Dea della Distruzione che governa il disfarsi ed il rifarsi ininterrotto del mondo. Le carte si mescolano ed una guerra senza fine agita l'universo: le anime sono in guerra."^^xsd:string ;
+    rdfs:comment "Un papa, sotto le mentite spoglie di un cavaliere, abbandona i fasti della corte papale per portare l'estremo viatico ai moribondi sul campo di battaglia. Preso dal dubbio, chiede a Dio come mai permetta gli stermini ed una voce dal bosco gli risponde che sono in due a dividersi il mondo e le anime. Poco dopo, il papa si imbatte in un guerriero («Principe delle Opposizioni») e i due cominciano una contesa. La «Dea della Distruzione, che governa il disfarsi e il rifarsi ininterrotto del mondo» (Calvino 1973, 45) interrompe la disputa. Le carte si mescolano ed una guerra senza fine agita l'universo: le anime sono in guerra."^^xsd:string ;
     odi:hasCard bacodi:cavaliere-di-denari-tuttelealtrestorieQuattro,
         bacodi:cinque-di-bastoni-tuttelealtrestorieQuattro,
         bacodi:dieci-di-spade-tuttelealtrestorieQuattro,
@@ -2360,7 +2360,7 @@ bacodi:tuttelealtrestorie a odi:Chapter ;
 
 <https://w3id.org/odi/data/storie/tuttelealtrestorieTre> a odi:Story ;
     rdfs:label "Storia tre"^^xsd:string ;
-    rdfs:comment "Un tale, munito di un randello dai poteri straordinari, raggiunge una città sotterranea per aver seguito uno sconosciuto che gli vantava le sue ricchezze. In un alterco d'osteria, il misterioso compagno di viaggio decide di giocarsi lo scettro della città combattendo contro il protagonista. Questi vince la lotta, ma la città si rivela quella della morte e lo sfidante il Principe della Discontinuità. Chiusa la Città della Morte, comincia una nuova Età dell’Oro. A causa della decadenza dei costumi che ne consegue, interviene il pontefice che ordina al protagonista di riaprire le porte della Morte."^^xsd:string ;
+    rdfs:comment "Un tale, munito di un randello dai poteri straordinari, raggiunge una città sotterranea per aver seguito uno sconosciuto che gli vantava le sue ricchezze. In un alterco d'osteria, il misterioso compagno di viaggio decide di giocarsi lo scettro della città combattendo contro il protagonista. Questi vince la lotta, ma la città si rivela quella della morte e lo sfidante il diavolo («Principe della Discontinuità»). Chiusa la città della morte, comincia una nuova età dell’oro. A causa della decadenza dei costumi che ne consegue, interviene il pontefice che ordina al protagonista di riaprire le porte della morte."^^xsd:string ;
     odi:hasCard bacodi:asso-di-bastoni-tuttelealtrestorieTre,
         bacodi:cavaliere-di-spade-tuttelealtrestorieTre,
         bacodi:dieci-di-coppe-tuttelealtrestorieTre,
@@ -3796,7 +3796,7 @@ bacodi:collezione-colleoni a odi:Place ;
 
 <https://w3id.org/odi/data/semi/denari> a odi:Suit ;
     rdfs:label "Denari"^^xsd:string ;
-    rdfs:comment "Il seme di denari viene impiegato per richiamare due diversi campi semantici: la ricchezza e la materialità e la sfera divina. Questo seme è quello che più si discosta dalla tradizione simbolica dei tarocchi."^^xsd:string .
+    rdfs:comment "Il seme di denari viene impiegato per richiamare due diversi campi semantici: la materialità e la sfera divina. Questo seme è quello che più si discosta dalla tradizione simbolica dei tarocchi."^^xsd:string .
 
 <https://w3id.org/odi/data/semi/spade> a odi:Suit ;
     rdfs:label "Spade"^^xsd:string ;
