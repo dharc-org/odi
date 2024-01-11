@@ -31,6 +31,7 @@ cd data
 java -server -Xmx4g -jar blazegraph.jar
 ```
 - Upload both the ontology **data/odi.ttl** and the KG **data/bacodi.ttl** via the Blazegraph interface (accessible at **http://localhost:9999/**) [OR] Upload data via **cmd**
+- Note: "file://" is required for both Windows and Linux
 
 ```
 curl "http://localhost:9999/blazegraph/namespace/kb/sparql" --data-urlencode "update=DROP ALL; LOAD <file:///[local-path]/data/bacodi.ttl>"  
