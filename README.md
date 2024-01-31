@@ -3,7 +3,7 @@
 
 **ODI** is a project which formally represents the narrative and structural elements of "Il castello dei destini incrociati" by Italo Calvino. In particular, **ODI** is the ontology describing the work, **BACODI** is the Knowledge Graph (KG) storing all data regarding the work. For a complete overview of the project please see the [technical documentation website](https://odi-documentation.github.io/materials/) and the [Github repository](https://github.com/odi-documentation/materials/).
 
-The data can be browsed via this interface which provides several paths to explore BACODI KG along with some specific data-visualisations. 
+MACODI is a web-app which provides several paths to explore BACODI KG along with some specific data-visualisations. 
 
 This interface is a [Python 3](https://www.python.org/downloads/) web application built in [Flask](https://flask.palletsprojects.com/en/2.3.x/). 
 The project is ongoing and under development.
