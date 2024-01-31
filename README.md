@@ -8,7 +8,13 @@ The data can be browsed via this interface which provides several paths to explo
 This interface is a [Python 3](https://www.python.org/downloads/) web application built in [Flask](https://flask.palletsprojects.com/en/2.3.x/). 
 The project is ongoing and under development.
  
-
+##  Contributors
+- **Scientific Supervisor**: [Francesca Tomasi](https://www.unibo.it/sitoweb/francesca.tomasi)
+- **Work Analysis, Data Collection**: [Enrica Bruno](https://www.unibo.it/sitoweb/enrica.bruno2)
+- **Ontology Definition and Knowledge Base Construction**: [Enrica Bruno](https://www.unibo.it/sitoweb/enrica.bruno2), [Valentina Pasqual](https://www.unibo.it/sitoweb/valentina.pasqual2)
+- **Web Application Development**: [Valentina Pasqual](https://www.unibo.it/sitoweb/valentina.pasqual2
+- **Affiliation**: [Digital Humanities Advanced Research Center](https://centri.unibo.it/dharc/en) (/DH.arc), [Department of Classical and Italian Philology](https://ficlit.unibo.it/it) (FICLIT), University of Bologna.
+      
 ## LOCAL SETUP (Quick start)
 
 Clone this repository using the URL https://github.com/ValentinaPasqual/odi.git
