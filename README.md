@@ -12,7 +12,7 @@ The project is ongoing and under development.
 - **Scientific Supervisor**: [Francesca Tomasi](https://www.unibo.it/sitoweb/francesca.tomasi)
 - **Work Analysis, Data Collection**: [Enrica Bruno](https://www.unibo.it/sitoweb/enrica.bruno2)
 - **Ontology Definition and Knowledge Base Construction**: [Enrica Bruno](https://www.unibo.it/sitoweb/enrica.bruno2), [Valentina Pasqual](https://www.unibo.it/sitoweb/valentina.pasqual2)
-- **Web Application Development**: [Valentina Pasqual](https://www.unibo.it/sitoweb/valentina.pasqual2
+- **Web Application Development**: [Valentina Pasqual](https://www.unibo.it/sitoweb/valentina.pasqual2)
 - **Affiliation**: [Digital Humanities Advanced Research Center](https://centri.unibo.it/dharc/en) (/DH.arc), [Department of Classical and Italian Philology](https://ficlit.unibo.it/it) (FICLIT), University of Bologna.
       
 ## LOCAL SETUP (Quick start)
